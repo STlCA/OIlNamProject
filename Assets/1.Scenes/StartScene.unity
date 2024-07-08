@@ -217,6 +217,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 710313589}
   - {fileID: 909637133}
   - {fileID: 261325045}
   m_Father: {fileID: 0}
@@ -278,7 +279,7 @@ GameObject:
   - component: {fileID: 710313591}
   - component: {fileID: 710313590}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SettingButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,12 +292,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710313588}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 909637133}
+  m_Father: {fileID: 182518827}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -407,6 +408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 909637133}
+  - component: {fileID: 909637134}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -425,8 +427,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 710313589}
+  m_Children: []
   m_Father: {fileID: 182518827}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -435,6 +436,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &909637134
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909637132}
+  m_CullTransparentMesh: 1
 --- !u!1 &925594136
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +538,8 @@ MonoBehaviour:
   m_text: "\uB538\uCC9C\uC7AC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba2158eabd17a9f41b23ff848f73a75c, type: 2}
-  m_sharedMaterial: {fileID: 8494462654325887865, guid: ba2158eabd17a9f41b23ff848f73a75c, type: 2}
+  m_sharedMaterial: {fileID: 8494462654325887865, guid: ba2158eabd17a9f41b23ff848f73a75c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -899,7 +909,8 @@ MonoBehaviour:
   m_text: "\uC2DC\uC791\uD558\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2ee36e3d0505ded43bd0216027fc9a6d, type: 2}
-  m_sharedMaterial: {fileID: 4044521195839734360, guid: 2ee36e3d0505ded43bd0216027fc9a6d, type: 2}
+  m_sharedMaterial: {fileID: 4044521195839734360, guid: 2ee36e3d0505ded43bd0216027fc9a6d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
