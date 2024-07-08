@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class StartManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /*    private void Update()
+        {
+    #if UNITY_EDITOR
+            if (Input.anyKeyDown)
+                SceneManager.LoadScene("MainScene");
+    #elif UNITY_ANDROID
+            if (Input.touchCount > 0)
+                SceneManager.LoadScene("MainScene");
+    #endif
+        }*/
 
-    // Update is called once per frame
-    void Update()
+
+    public void SceneChange()
     {
-        
+        SceneManager.LoadScene("MainScene");
     }
 }
