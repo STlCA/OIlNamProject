@@ -18,9 +18,16 @@ public class StartManager : MonoBehaviour
     #endif
         }*/
 
+    public SoundManager soundManager;
+
     public void SceneChange()
     {
         SceneManager.LoadScene("MainScene");
     }
 
+/*    private void Update()
+    {
+        if (Input.anyKeyDown)
+            soundManager.EffectAudioClipPlay(0);
+    }*/
 }
