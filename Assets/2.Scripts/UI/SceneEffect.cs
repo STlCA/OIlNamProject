@@ -21,6 +21,11 @@ public class SceneEffect : MonoBehaviour
 
     public TMP_Text storyText = null;//¿”Ω√public
 
+    private void Start()
+    {
+        
+    }
+
     public void StorySceneOn()
     {
         StartCoroutine("StartFadeFlow");
