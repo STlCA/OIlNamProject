@@ -8,22 +8,32 @@ using UnityEngine.UI;
 
 public class SceneEffect : MonoBehaviour
 {
+    private StoryUI storyUI = null;
+    private StartManager startManager = null;
+
+    [Header("StartScene")]
     public Image startfadeImage = null;
     public Image fadeImage = null;
     public Image crackingImage = null;
     public Image textBackImage = null;
+    public Image skipImage = null;
 
     private float fadeTime = 1f;
     private float waitTime = 1f;
     private float time = 0f;
-
     private float circleScale = 100f;
 
     public TMP_Text storyText = null;//임시public
 
+
     private void Start()
     {
-        
+        if (GetComponent<StoryUI>() != null)
+        {
+            startManager = GetComponent<StartManager>();
+            storyUI = GetComponent<StoryUI>();
+            storyUI.Init();
+        }
     }
 
     public void StorySceneOn()
@@ -57,7 +67,7 @@ public class SceneEffect : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        StartCoroutine("TypeTextEffect");
+        StartCoroutine("StoryTypeTextEffect");
     }
 
     public IEnumerator FadeFlow()
@@ -93,36 +103,44 @@ public class SceneEffect : MonoBehaviour
         fadeImage.gameObject.SetActive(false);
     }
 
-    public void TypeEffectON(TMP_Text text)
-    {
-        storyText = text;
-    }
+    /*    public void TypeEffectON(TMP_Text text)
+        {
+            storyText = text;
+        }*/
 
-    public IEnumerator TypeTextEffect(/*string text*/)
+    public IEnumerator StoryTypeTextEffect(/*string text*/)
     {
+        StopCoroutine("StartFadeFlow");
+
+        skipImage.gameObject.SetActive(true);
         textBackImage.gameObject.SetActive(true);
 
         storyText.text = string.Empty;
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        string text = "콰지직.";
+        string text;
 
-        for (int i = 0; i < text.Length; i++)
+        for (int i = 0; i < storyUI.story.Length; ++i)
         {
-            stringBuilder.Append(text[i]);
-            storyText.text = stringBuilder.ToString();
-            yield return new WaitForSeconds(0.1f);
+            text = storyUI.story[i].text;
+
+            for (int j = 0; j < text.Length; j++)
+            {
+                stringBuilder.Append(text[j]);
+                storyText.text = stringBuilder.ToString();
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return new WaitForSeconds(1f);
+
+            if (storyUI.story[i].delete == true)
+            {
+                stringBuilder.Clear();
+                storyText.text = stringBuilder.ToString();
+            }
         }
 
-        yield return new WaitForSeconds(1f);
-
-        text = "\n\n전 세계에 균열이 발생했다.";
-        for (int i = 0; i < text.Length; i++)
-        {
-            stringBuilder.Append(text[i]);
-            storyText.text = stringBuilder.ToString();
-            yield return new WaitForSeconds(0.1f);
-        }
+        startManager.SceneChange();
     }
 }
