@@ -51,7 +51,6 @@ public class UIEffect : MonoBehaviour
 
     public void BlinkSet()
     {
-        Debug.Log("o");
         go.SetActive(true);
 
         switch (type)
