@@ -23,7 +23,7 @@ public class UIEffect : MonoBehaviour
 
     //Blink
     private float alpha = 1f;
-    private float blinkSpeed = 1f;
+    private float blinkSpeed = -1f;
     private Color color = Color.white;
 
     private void Start()
@@ -51,6 +51,7 @@ public class UIEffect : MonoBehaviour
 
     public void BlinkSet()
     {
+        Debug.Log("o");
         go.SetActive(true);
 
         switch (type)
@@ -67,37 +68,26 @@ public class UIEffect : MonoBehaviour
     public void Blink(TMP_Text txt)
     {
         alpha += Time.deltaTime * blinkSpeed;
+
         if (alpha >= 1f)
-        {
             blinkSpeed *= -1;
-
-            color.a = alpha;
-            text.color = color;
-        }
         else if (alpha <= 0f)
-        {
             blinkSpeed *= -1;
 
-            color.a = alpha;
-            text.color = color;
-        }
+        color.a = alpha;
+        text.color = color;
+
     }
     public void Blink(Image img)
     {
         alpha += Time.deltaTime * blinkSpeed;
+
         if (alpha >= 1f)
-        {
             blinkSpeed *= -1;
-
-            color.a = alpha;
-            image.color = color;
-        }
         else if (alpha <= 0f)
-        {
             blinkSpeed *= -1;
 
-            color.a = alpha;
-            image.color = color;
-        }
+        color.a = alpha;
+        image.color = color;
     }
 }
