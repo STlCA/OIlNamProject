@@ -4,17 +4,22 @@ using UnityEngine;
 
 namespace Constants
 {
-    public class Constants : MonoBehaviour
+    public enum OpeningBGM
     {
-        public enum OpeningBGM
-        {
-            BGM_SAMPLE1,
-        }
-
-        public enum EffectBGM
-        {
-            EFFECT_SAMPLE1,
-        }
+        BGM_SAMPLE1,
     }
+
+    public enum EffectBGM
+    {
+        EFFECT_SAMPLE1,
+    }
+
+    public enum UIEffectType
+    {
+        TEXT,
+        IMAGE,
+        //OBJECT,
+    }
+
 
 }
