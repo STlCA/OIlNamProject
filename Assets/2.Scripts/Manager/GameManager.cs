@@ -1,10 +1,95 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    //======================Manager
+    public PopUpController PopUpController { get { return popUpController; } }
+    private PopUpController popUpController;
+
+    public SoundManager SoundManager { get { return soundManager; } }
+    private SoundManager soundManager;
+
+    public UIManager UIManager { get { return uiMnager; } }
+    private UIManager uiMnager;
+
+    //====================== Player
+    public PlayerLevel PlayerLevel { get { return playerLevel; } }
+    private PlayerLevel playerLevel;
+
+    //====================== Money
+    public int Gold
+    {
+        get { return gold; }
+        set
+        {
+            gold = value;
+            uiMnager.GoldTypeUpdate(GoldType.GOLD, value);
+        }
+    }
+    private int gold;
+
+    public int Key
+    {
+        get { return key; }
+        set
+        {
+            key = value;
+            uiMnager.GoldTypeUpdate(GoldType.KEY, value);
+        }
+    }
+    private int key;
+
+    public int Crystal
+    {
+        get { return crystal; }
+        set
+        {
+            crystal = value;
+            uiMnager.GoldTypeUpdate(GoldType.CRYSTAL, value);
+        }
+    }
+    private int crystal;
+
+    //================================================
+
+    private void Awake()
+    {
+        #region ΩÃ±€≈Ê
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+        #endregion
+
+        //Find
+        popUpController = GetManager<PopUpController>();
+        soundManager = GetManager<SoundManager>();
+        uiMnager = GetManager<UIManager>();
+
+        //Init
+        popUpController.Init(this);
+        soundManager.Init(this);
+        uiMnager.Init(this);
+
+        //Gold
+        GoldInit();
+    }
+
+    private void GoldInit()
+    {
+        Gold = 100;
+        Key = 3;
+        Crystal = 10;
+    }
 
     public T GetManager<T>() where T : Manager
     {
@@ -19,21 +104,6 @@ public class GameManager : MonoBehaviour
         return t;
     }
 
-    private void Awake()
-    {
-        #region ΩÃ±€≈Ê
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
-        #endregion
-
-        //Find
-
-        //Init
-    }
 
     public void GameExit()
     {

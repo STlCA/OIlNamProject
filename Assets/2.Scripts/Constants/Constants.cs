@@ -21,5 +21,11 @@ namespace Constants
         //OBJECT,
     }
 
+    public enum GoldType
+    {
+        GOLD,
+        KEY,
+        CRYSTAL,
+    }
 
 }
