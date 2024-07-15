@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class GameManager : MonoBehaviour
     private UIManager uiMnager;
 
     //====================== Player
-    public PlayerLevel PlayerLevel { get { return playerLevel; } }
-    private PlayerLevel playerLevel;
+    public Player Player { get { return player; } }
+    private Player player;
 
     //====================== Money
     public int Gold

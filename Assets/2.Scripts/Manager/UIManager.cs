@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using Constants;
 using System;
+using UnityEngine.UI;
 
 public class UIManager : Manager
 {
@@ -41,5 +42,10 @@ public class UIManager : Manager
                 crystalTxt.text = valStr;
                 break;
         }
+    }
+
+    public void Temp(Image image)
+    {
+        image.gameObject.SetActive(true);
     }
 }
