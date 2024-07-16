@@ -15,9 +15,9 @@ public class MainSceneManager : MonoBehaviour
 
     [Header("PlayerUI")]
     public TMP_Text nameTxt;
-    public TMP_Text setNametxt;
     //public TMP_Text levelTxt;
     public TMP_Text expTxt;
+    public TMP_InputField nameInputField;
 
     private void Start()
     {
@@ -38,14 +38,13 @@ public class MainSceneManager : MonoBehaviour
         List<TMP_Text> player = new()
         {
             nameTxt,
-            setNametxt,
             //levelTxt,
-            expTxt
+            expTxt,
         };
 
         GameManager.Instance.UIManager.MainUIUpdate(golds);
 
-        GameManager.Instance.Player.PlayerUIUpdate(player);
+        GameManager.Instance.Player.PlayerUIUpdate(player, nameInputField);
     }
 
     public void MainGame()

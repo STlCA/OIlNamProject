@@ -6,12 +6,9 @@ using UnityEngine;
 public class Player : Manager
 {
     [SerializeField] private TMP_Text nameTxt;
-    [SerializeField] private TMP_Text setNametxt;
     //[SerializeField] private TMP_Text levelTxt;
     [SerializeField] private TMP_Text expTxt;
-
-    public TMP_Text userNameTxt;
-    public TMP_InputField nameInputField;
+    [SerializeField] private TMP_InputField nameInputField;
 
     public string UserName { get; private set; }
     public int Level { get; private set; }
@@ -39,15 +36,15 @@ public class Player : Manager
         CurrentExt = 1;
     }
 
-    public void PlayerUIUpdate(List<TMP_Text> player)
+    public void PlayerUIUpdate(List<TMP_Text> player,TMP_InputField input)
     {
         nameTxt = player[0];
-        setNametxt = player[1];
         //levelTxt = player[2];
-        expTxt = player[2];
+        expTxt = player[1];
+
+        nameInputField = input;
 
         nameTxt.text = UserName + "Lv." + Level;
-        setNametxt.text = UserName;
         //levelTxt.text = Level.ToString();
         expTxt.text = ExpPercent.ToString("00.00") + "%";
     }
@@ -56,7 +53,7 @@ public class Player : Manager
     {
         if (nameInputField.text.Length > 0)
         {
-            userNameTxt.text = nameInputField.text;
+            nameTxt.text = nameInputField.text;
             nameInputField.text = "";
         }
         else
