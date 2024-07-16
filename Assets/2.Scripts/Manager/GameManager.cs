@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -104,7 +105,6 @@ public class GameManager : MonoBehaviour
         T t = FindObjectOfType<T>();
         return t;
     }
-
 
     public void GameExit()
     {
