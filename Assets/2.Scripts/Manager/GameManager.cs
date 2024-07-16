@@ -76,11 +76,13 @@ public class GameManager : MonoBehaviour
         popUpController = GetManager<PopUpController>();
         soundManager = GetManager<SoundManager>();
         uiMnager = GetManager<UIManager>();
+        player = GetManager<Player>();
 
         //Init
         popUpController.Init(this);
         soundManager.Init(this);
         uiMnager.Init(this);
+        player.Init(this);
 
         //Gold
         GoldInit();

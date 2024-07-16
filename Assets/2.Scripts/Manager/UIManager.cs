@@ -31,7 +31,7 @@ public class UIManager : Manager
         if (goldTxt == null)
             return;
 
-        string valStr = val.ToString();
+/*        string valStr = val.ToString();
 
         int temp = 0;
 
@@ -44,19 +44,19 @@ public class UIManager : Manager
                 temp = valStr.Length - 3;
                 valStr.Insert(temp, ",");
             }
-        }
+        }*/
 
         switch (type)
         {
             case GoldType.GOLD:
-                goldTxt.text = valStr;
+                goldTxt.text = val.ToString("N");
                 break;
             case GoldType.KEY:
-                keyTxt1.text = valStr;
-                keyTxt2.text = valStr;
+                keyTxt1.text = val.ToString("N");
+                keyTxt2.text = val.ToString("N");
                 break;
             case GoldType.CRYSTAL:
-                crystalTxt.text = valStr;
+                crystalTxt.text = val.ToString("N");
                 break;
         }
     }
