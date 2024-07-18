@@ -1,8 +1,46 @@
 
-Loading: C:\Users\grays\OneDrive\πŸ≈¡ »≠∏È\Project\Unity\OIlNamProject\RawData\Temp_Data.xlsx
+Loading: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Enemy_Data.xlsx
 Parse sheet: Sheet1
-Parsing: C:\Users\grays\OneDrive\πŸ≈¡ »≠∏È\Project\Unity\OIlNamProject\RawData\Temp_Data.xlsx.$$$\Sheet1.csv
-Closing: C:\Users\grays\OneDrive\πŸ≈¡ »≠∏È\Project\Unity\OIlNamProject\RawData\Temp_Data.xlsx
+Parsing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Enemy_Data.xlsx.$$$\Sheet1.csv
+Closing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Enemy_Data.xlsx
+------------------------------------------------------------------------------
+[Enemy_Data.xlsx(Sheet1): ROW 1]
+Found object mark: '#EnemyData[{}]'
+[Enemy_Data.xlsx(Sheet1): ROW 1]
+ Key: ID at 1
+[Enemy_Data.xlsx(Sheet1): ROW 1]
+ Key: Name at 2
+[Enemy_Data.xlsx(Sheet1): ROW 1]
+ Key: HP at 3
+[Enemy_Data.xlsx(Sheet1): ROW 1]
+ Key: Speed at 4
+[Enemy_Data.xlsx(Sheet1): ROW 1]
+ Key: Gold at 5
+[Enemy_Data.xlsx(Sheet1): ROW 1]
+ Key: EXP at 6
+[Enemy_Data.xlsx(Sheet1): ROW 1]
+ Key: Level at 7
+Parsing Array Object Table...
+
+Loading: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Story_Data.xlsx
+Parse sheet: Sheet1
+Parsing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Story_Data.xlsx.$$$\Sheet1.csv
+Closing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Story_Data.xlsx
+------------------------------------------------------------------------------
+[Story_Data.xlsx(Sheet1): ROW 1]
+Found object mark: '#StoryData[{}]'
+[Story_Data.xlsx(Sheet1): ROW 1]
+ Key: ID at 1
+[Story_Data.xlsx(Sheet1): ROW 1]
+ Key: Text at 2
+[Story_Data.xlsx(Sheet1): ROW 1]
+ Key: Delete at 3
+Parsing Array Object Table...
+
+Loading: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Temp_Data.xlsx
+Parse sheet: Sheet1
+Parsing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Temp_Data.xlsx.$$$\Sheet1.csv
+Closing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Temp_Data.xlsx
 ------------------------------------------------------------------------------
 [Temp_Data.xlsx(Sheet1): ROW 1]
 Found object mark: '#TempData[{}]'

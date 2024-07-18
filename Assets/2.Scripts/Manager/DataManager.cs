@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataManager : MonoBehaviour
+public class DataManager : Manager
 {
     public EnemyDataBase enemyDataBase;
+    public StoryDataBase storyDataBase;
 
     private void Awake()
     {
@@ -27,5 +28,21 @@ public class DataManager : MonoBehaviour
             Debug.LogError("Failed to load enemyDataBase.json");
         }
 
+    }
+    
+    private void StoryAwake()
+    {
+        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Story_Data");
+        if (jsonFile != null)
+        {
+            string json = jsonFile.text;
+
+            storyDataBase = JsonUtility.FromJson<StoryDataBase>(json);
+            storyDataBase.Initialize();
+        }
+        else
+        {
+            Debug.LogError("Failed to load storyDataBase.json");
+        }
     }
 }

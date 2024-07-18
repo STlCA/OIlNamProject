@@ -4,9 +4,9 @@ using System.IO;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 [System.Serializable]
-public class EnemyInfo
+public class StoryInfo
 {
-    public int ID;  
+    public int ID;
     public string Name;
     public float HP;
     public float Speed;
@@ -16,30 +16,30 @@ public class EnemyInfo
 }
 
 // 마물에 대한 정보를 가져온다
-public class EnemyInstance
+public class StoryInstance
 {
     int no;
-    public EnemyInfo EnemyInfo { get; set; }
+    public StoryInfo StoryInfo { get; set; }
 }
 
 [System.Serializable]
-public class EnemyDataBase
+public class StoryDataBase
 {
-    public List<EnemyInfo> EnemyData;
-    public Dictionary<int, EnemyInfo> enemyDic = new();
+    public List<StoryInfo> StoryData;
+    public Dictionary<int, StoryInfo> storyDic = new();
 
     public void Initialize()
     {
-        foreach (EnemyInfo enemy in EnemyData)
+        foreach (StoryInfo enemy in StoryData)
         {
-            enemyDic.Add(enemy.ID, enemy);
+            storyDic.Add(enemy.ID, enemy);
         }
     }
 
-    public EnemyInfo GetEnemyByKey(int id)
+    public StoryInfo GetEnemyByKey(int id)
     {
-        if (enemyDic.ContainsKey(id))
-            return enemyDic[id];
+        if (storyDic.ContainsKey(id))
+            return storyDic[id];
 
         return null;
     }

@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     //======================Manager
+
+    public DataManager DataManager { get { return dataManager; } }
+    private DataManager dataManager;
+
     public PopUpController PopUpController { get { return popUpController; } }
     private PopUpController popUpController;
 
@@ -73,12 +77,15 @@ public class GameManager : MonoBehaviour
         #endregion
 
         //Find
+        dataManager = GetManager<DataManager>();
         popUpController = GetManager<PopUpController>();
         soundManager = GetManager<SoundManager>();
         uiMnager = GetManager<UIManager>();
         player = GetManager<Player>();
 
+
         //Init
+        dataManager.Init(this);
         popUpController.Init(this);
         soundManager.Init(this);
         uiMnager.Init(this);
