@@ -3,13 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneEffect : MonoBehaviour
+public class SceneEffect : Manager
 {
     private StoryUI storyUI = null;
     private StartManager startManager = null;
+
+
+    //GameManager children이 아니면 fadeImage공용프리팹으로?
 
     [Header("StartScene")]
     public Image startfadeImage = null;
@@ -18,13 +23,17 @@ public class SceneEffect : MonoBehaviour
     public Image textBackImage = null;
     public Image skipImage = null;
 
+    [Header("Scene")]
+    public Canvas myCanvas;
+    private Image myfadeImage = null;
+    private Slider mySlider = null;
+
     private float fadeTime = 1f;
     private float waitTime = 1f;
     private float time = 0f;
     private float circleScale = 100f;
 
-    public TMP_Text storyText = null;//임시public
-
+    [HideInInspector]public TMP_Text storyText = null;//임시public
 
     private void Start()
     {
@@ -34,6 +43,17 @@ public class SceneEffect : MonoBehaviour
             storyUI = GetComponent<StoryUI>();
             storyUI.Init();
         }
+
+        CanvasInit();
+    }
+
+    private void CanvasInit()
+    {
+        myfadeImage = myCanvas.GetComponentInChildren<Image>();
+        mySlider = myCanvas.GetComponentInChildren<Slider>();
+
+        myfadeImage.gameObject.SetActive(false);
+        mySlider.gameObject.SetActive(false);
     }
 
     public void StorySceneOn()
@@ -70,43 +90,6 @@ public class SceneEffect : MonoBehaviour
         StartCoroutine("StoryTypeTextEffect");
     }
 
-    public IEnumerator FadeFlow()
-    {
-        fadeImage.gameObject.SetActive(true);
-        Color alpha = fadeImage.color;
-        time = 0f;
-
-        Time.timeScale = 0.0f;
-
-        while (alpha.a < 1f)
-        {
-            time += Time.deltaTime / fadeTime;
-            alpha.a = Mathf.Lerp(0, 1, time);
-            fadeImage.color = alpha;
-            yield return null;
-        }
-
-        time = 0f;
-
-        Time.timeScale = 1f;
-
-        yield return new WaitForSeconds(waitTime);
-
-        while (alpha.a > 0f)
-        {
-            time += Time.deltaTime / fadeTime;
-            alpha.a = Mathf.Lerp(1, 0, time);
-            fadeImage.color = alpha;
-            yield return null;
-        }
-
-        fadeImage.gameObject.SetActive(false);
-    }
-
-    /*    public void TypeEffectON(TMP_Text text)
-        {
-            storyText = text;
-        }*/
 
     public IEnumerator StoryTypeTextEffect(/*string text*/)
     {
@@ -142,5 +125,106 @@ public class SceneEffect : MonoBehaviour
         }
 
         startManager.SceneChange();
+    }
+
+    public IEnumerator FadeFlow(Image image)
+    {
+        image.gameObject.SetActive(true);
+        Color alpha = image.color;
+        time = 0f;
+
+        Time.timeScale = 0.0f;
+
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / fadeTime;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            image.color = alpha;
+            yield return null;
+        }
+
+        time = 0f;
+
+        Time.timeScale = 1f;
+
+        yield return new WaitForSeconds(waitTime);
+
+        while (alpha.a > 0f)
+        {
+            time += Time.deltaTime / fadeTime;
+            alpha.a = Mathf.Lerp(1, 0, time);
+            image.color = alpha;
+            yield return null;
+        }
+
+        image.gameObject.SetActive(false);
+    }
+
+
+    public void GameToMain()
+    {
+        StopAllCoroutines();
+        StartCoroutine(CoLoadingScene("MainScene", false));
+    }
+    public void MainToGame()
+    {
+        StopAllCoroutines();
+        StartCoroutine(CoLoadingScene("GameScene", true));
+    }
+
+    private IEnumerator SceneChangeFadeIn()
+    {
+        myfadeImage.gameObject.SetActive(true);
+
+        Color alpha = myfadeImage.color;
+        time = 0f;
+
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / 1;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            myfadeImage.color = alpha;
+            yield return null;
+        }
+
+        mySlider.gameObject.SetActive(true);
+    }
+
+    public IEnumerator CoLoadingScene(string scnenName, bool gameScene)
+    {
+        yield return StartCoroutine("SceneChangeFadeIn");
+
+        AsyncOperation loading = SceneManager.LoadSceneAsync(scnenName);
+
+        while (!loading.isDone) //씬 로딩 완료시 while문이 나가짐
+        {
+            if (loading.progress >= 0.9f)
+                mySlider.value = 1f;
+            else
+                mySlider.value = loading.progress;
+
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+
+        mySlider.gameObject.SetActive(false);
+
+        yield return StartCoroutine("SceneChangeFadeOut");
+    }
+
+    public IEnumerator SceneChangeFadeOut()
+    {
+        Color alpha = myfadeImage.color;
+
+        while (alpha.a > 0f)
+        {
+            time += Time.deltaTime / 1;
+            alpha.a = Mathf.Lerp(1, 0, time);
+            myfadeImage.color = alpha;
+            yield return null;
+        }
+
+        Time.timeScale = 1f;
+
+        myfadeImage.gameObject.SetActive(false);
     }
 }

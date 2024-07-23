@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PopUpController : Manager
 {
+    private SoundManager soundManager;
+
+    private void Start()
+    {
+        soundManager = GameManager.Instance.SoundManager;
+    }
+
     //ON OFF Change
     public void UIOnOff(GameObject ui)
     {
@@ -37,6 +44,42 @@ public class PopUpController : Manager
             return;
 
         ui.SetActive(false);
+    }
+    //
+    public void PauseUIOn(GameObject ui)
+    {
+        soundManager.EffectAudioClipPlay(0);
+        
+        if (ui == null)
+            return;
+
+        ui.SetActive(true);
+
+        Time.timeScale = 0f;
+    }
+    public void PauseUIOff(GameObject ui)
+    {
+        soundManager.EffectAudioClipPlay(0);
+
+        if (ui == null)
+            return;
+
+        Time.timeScale = 1f;
+
+        ui.SetActive(false);
+    }
+    public void PauseUIHomeOut(GameObject ui)
+    {
+        soundManager.EffectAudioClipPlay(0);
+
+        if (ui == null)
+            return;
+
+        ui.SetActive(false);
+
+        Time.timeScale = 1f;
+
+        GameManager.Instance.SceneEffect.GameToMain();
     }
 }
 

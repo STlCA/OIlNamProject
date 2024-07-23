@@ -4,9 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainSceneManager : MonoBehaviour
 {
+    private GameManager gameManager;
+    private UIManager uiManager;
+
     [Header("GoldUI")]
     public TMP_Text goldTxt;
     public TMP_Text keyTxt1;
@@ -19,8 +23,19 @@ public class MainSceneManager : MonoBehaviour
     public TMP_Text expTxt;
     public TMP_InputField nameInputField;
 
+    [Header("Sound")]
+    public AudioSource bgmSource;
+    public AudioSource effectSource;
+
+    [Header("Scene")]
+    public Image fadeImage;
+    public Slider slider;
+
     private void Start()
     {
+        gameManager = GameManager.Instance;
+        uiManager = GameManager.Instance.UIManager;
+
         if (goldTxt != null)
             Init();
     }
@@ -42,17 +57,25 @@ public class MainSceneManager : MonoBehaviour
             expTxt,
         };
 
-        GameManager.Instance.UIManager.MainUIUpdate(golds);
+        uiManager.MainUIUpdate(golds);
 
-        GameManager.Instance.Player.PlayerUIUpdate(player, nameInputField);
+        gameManager.Player.PlayerUIUpdate(player, nameInputField);
+
+        gameManager.SoundManager.SourceSet(bgmSource, effectSource);
     }
 
-    public void MainGame()
+    public void GameStart(GameObject ui)
     {
-        SceneManager.LoadScene("GameScene");
+        if(StartCheck())
+        {
+            gameManager.Key -= 1;
+            gameManager.SceneEffect.MainToGame();
+        }
+        else
+            gameManager.PopUpController.UIOn(ui);
     }
-    public void GameMain()
+    private bool StartCheck()
     {
-        SceneManager.LoadScene("MainScene");
+        return gameManager.Key > 0;
     }
 }

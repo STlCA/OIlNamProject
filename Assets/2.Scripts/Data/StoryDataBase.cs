@@ -30,13 +30,13 @@ public class StoryDataBase
 
     public void Initialize()
     {
-        foreach (StoryInfo enemy in StoryData)
+        foreach (StoryInfo story in StoryData)
         {
-            storyDic.Add(enemy.ID, enemy);
+            storyDic.Add(story.ID, story);
         }
     }
 
-    public StoryInfo GetEnemyByKey(int id)
+    public StoryInfo GetStoryByKey(int id)
     {
         if (storyDic.ContainsKey(id))
             return storyDic[id];

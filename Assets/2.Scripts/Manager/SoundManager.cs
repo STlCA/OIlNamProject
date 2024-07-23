@@ -71,6 +71,12 @@ public class SoundManager : Manager
         }
     }*/
 
+    public void SourceSet(AudioSource bgm, AudioSource effect)
+    {
+        BGMSource = bgm;
+        EffectSource = effect;
+    }
+
     public void EffectAudioClipPlay(int index)
     {
         EffectSource.PlayOneShot(effectAudioList[index], 1);

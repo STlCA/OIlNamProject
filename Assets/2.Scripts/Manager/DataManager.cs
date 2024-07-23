@@ -11,6 +11,7 @@ public class DataManager : Manager
     private void Awake()
     {
         EnemyAwake();
+        StoryAwake();
     }
 
     private void EnemyAwake()

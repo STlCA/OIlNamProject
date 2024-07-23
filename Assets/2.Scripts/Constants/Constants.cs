@@ -7,6 +7,7 @@ namespace Constants
     public enum OpeningBGM
     {
         BGM_SAMPLE1,
+        
     }
 
     public enum EffectBGM

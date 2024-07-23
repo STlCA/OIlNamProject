@@ -5,9 +5,10 @@ using UnityEngine;
 using Constants;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : Manager
-{   
+{
     //test
     [SerializeField] private TMP_Text goldTxt;
     [SerializeField] private TMP_Text keyTxt1;
@@ -31,20 +32,20 @@ public class UIManager : Manager
         if (goldTxt == null)
             return;
 
-/*        string valStr = val.ToString();
+        /*        string valStr = val.ToString();
 
-        int temp = 0;
+                int temp = 0;
 
-        if (valStr.Length >= 4)
-        {
-            temp = valStr.Length;
+                if (valStr.Length >= 4)
+                {
+                    temp = valStr.Length;
 
-            while (temp >= 3)
-            {
-                temp = valStr.Length - 3;
-                valStr.Insert(temp, ",");
-            }
-        }*/
+                    while (temp >= 3)
+                    {
+                        temp = valStr.Length - 3;
+                        valStr.Insert(temp, ",");
+                    }
+                }*/
 
         switch (type)
         {
@@ -60,4 +61,5 @@ public class UIManager : Manager
                 break;
         }
     }
+
 }

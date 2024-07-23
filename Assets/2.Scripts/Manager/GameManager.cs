@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     public UIManager UIManager { get { return uiMnager; } }
     private UIManager uiMnager;
 
+    public SceneEffect SceneEffect { get { return sceneEffect; } }
+    private SceneEffect sceneEffect;
+
     //====================== Player
     public Player Player { get { return player; } }
     private Player player;
@@ -48,7 +51,7 @@ public class GameManager : MonoBehaviour
         {
             key = value;
             uiMnager.GoldTypeUpdate(GoldType.KEY, value);
-        }
+          }
     }
     private int key;
 
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
         soundManager = GetManager<SoundManager>();
         uiMnager = GetManager<UIManager>();
         player = GetManager<Player>();
+        sceneEffect = GetManager<SceneEffect>();
 
 
         //Init
@@ -90,6 +94,7 @@ public class GameManager : MonoBehaviour
         soundManager.Init(this);
         uiMnager.Init(this);
         player.Init(this);
+        sceneEffect.Init(this);
 
         //Gold
         GoldInit();
