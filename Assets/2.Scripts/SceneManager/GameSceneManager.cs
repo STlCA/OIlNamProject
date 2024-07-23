@@ -17,6 +17,7 @@ public class GameSceneManager : MonoBehaviour
 
     private void SoundInit()
     {
-        GameManager.Instance.SoundManager.SourceSet(bgmSource, effectSource);
+        if(GameManager.Instance!=null)
+            GameManager.Instance.SoundManager.SourceSet(bgmSource, effectSource);
     }
 }

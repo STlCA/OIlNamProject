@@ -8,7 +8,8 @@ public class PopUpController : Manager
 
     private void Start()
     {
-        soundManager = GameManager.Instance.SoundManager;
+        if(GameManager.Instance != null)
+            soundManager = GameManager.Instance.SoundManager;
     }
 
     //ON OFF Change
