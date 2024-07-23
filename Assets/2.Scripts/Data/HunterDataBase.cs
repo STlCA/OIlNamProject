@@ -1,16 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 [System.Serializable]
 public class HunterInfo
 {
     public int ID;
     public string Name;
-    public float HP;
+    public string Description;
+    public float ATK;
+    public float Attack_Speed;
+    public float Attack_Range;
+    public int Skill_ID;
+    public string Unit_Modeling;
+
     public float Speed;
-    public int EXP;
-    public int Level;
+
+    public void Init()
+    {
+        Speed = Attack_Speed / 10000;
+    }
+
+/*    public string Path;
+    public List<string> SpriteName;
+
+    public List<Sprite> SpriteList;
+
+    public void Init()
+    {
+        foreach (string path in SpriteName)
+        {
+            SpriteList.Add(Resources.Load<Sprite>(Path + path));
+        }
+    }*/
 }
 
 public class HunterInstance
@@ -30,6 +54,7 @@ public class HunterDataBase
     {
         foreach (HunterInfo hunter in HunterData)
         {
+            hunter.Init();
             hunterDic.Add(hunter.ID, hunter);
         }
     }

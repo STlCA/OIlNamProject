@@ -7,6 +7,7 @@ public class DataManager : Manager
 {
     public EnemyDataBase enemyDataBase;
     public StoryDataBase storyDataBase;
+    public HunterDataBase hunterDataBase;
 
     private void Awake()
     {
@@ -44,6 +45,22 @@ public class DataManager : Manager
         else
         {
             Debug.LogError("Failed to load storyDataBase.json");
+        }
+    }
+
+    private void HunterAwake()
+    {
+        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Hunter_Data");
+        if (jsonFile != null)
+        {
+            string json = jsonFile.text;
+
+            hunterDataBase = JsonUtility.FromJson<HunterDataBase>(json);
+            hunterDataBase.Initialize();
+        }
+        else
+        {
+            Debug.LogError("Failed to load hunterDataBase.json");
         }
     }
 }
