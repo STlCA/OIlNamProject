@@ -7,15 +7,10 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 public class StoryInfo
 {
     public int ID;
-    public string Name;
-    public float HP;
-    public float Speed;
-    public int Gold;
-    public int EXP;
-    public int Level;
+    public string Text;
+    public bool Delete;
 }
 
-// 마물에 대한 정보를 가져온다
 public class StoryInstance
 {
     int no;

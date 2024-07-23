@@ -50,14 +50,14 @@ public class UIManager : Manager
         switch (type)
         {
             case GoldType.GOLD:
-                goldTxt.text = val.ToString("N");
+                goldTxt.text = val.ToString("N0");
                 break;
             case GoldType.KEY:
-                keyTxt1.text = val.ToString("N");
-                keyTxt2.text = val.ToString("N");
+                keyTxt1.text = val.ToString("N0");
+                keyTxt2.text = val.ToString("N0");
                 break;
             case GoldType.CRYSTAL:
-                crystalTxt.text = val.ToString("N");
+                crystalTxt.text = val.ToString("N0");
                 break;
         }
     }
