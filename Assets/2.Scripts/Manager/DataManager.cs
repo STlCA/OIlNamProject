@@ -7,7 +7,7 @@ public class DataManager : Manager
 {
     public EnemyDataBase enemyDataBase;
     public StoryDataBase storyDataBase;
-    public HunterDataBase hunterDataBase;
+    public UnitDataBase unitDataBase;
 
     private void Awake()
     {
@@ -48,19 +48,19 @@ public class DataManager : Manager
         }
     }
 
-    private void HunterAwake()
+    private void UnitAwake()
     {
-        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Hunter_Data");
+        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Unit_Data");
         if (jsonFile != null)
         {
             string json = jsonFile.text;
 
-            hunterDataBase = JsonUtility.FromJson<HunterDataBase>(json);
-            hunterDataBase.Initialize();
+            unitDataBase = JsonUtility.FromJson<UnitDataBase>(json);
+            unitDataBase.Initialize();
         }
         else
         {
-            Debug.LogError("Failed to load hunterDataBase.json");
+            Debug.LogError("Failed to load unitDataBase.json");
         }
     }
 }

@@ -22,31 +22,6 @@ Found object mark: '#EnemyData[{}]'
  Key: Level at 7
 Parsing Array Object Table...
 
-Loading: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Hunter_Data.xlsx
-Parse sheet: Sheet1
-Parsing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Hunter_Data.xlsx.$$$\Sheet1.csv
-Closing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Hunter_Data.xlsx
-------------------------------------------------------------------------------
-[Hunter_Data.xlsx(Sheet1): ROW 1]
-Found object mark: '#HunterData[{}]'
-[Hunter_Data.xlsx(Sheet1): ROW 1]
- Key: ID at 1
-[Hunter_Data.xlsx(Sheet1): ROW 1]
- Key: Name at 2
-[Hunter_Data.xlsx(Sheet1): ROW 1]
- Key: Description at 3
-[Hunter_Data.xlsx(Sheet1): ROW 1]
- Key: ATK at 4
-[Hunter_Data.xlsx(Sheet1): ROW 1]
- Key: Attack_Speed at 5
-[Hunter_Data.xlsx(Sheet1): ROW 1]
- Key: Attack_Range at 6
-[Hunter_Data.xlsx(Sheet1): ROW 1]
- Key: Skill_ID at 7
-[Hunter_Data.xlsx(Sheet1): ROW 1]
- Key: Unit_Modeling at 8
-Parsing Array Object Table...
-
 Loading: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Story_Data.xlsx
 Parse sheet: Sheet1
 Parsing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Story_Data.xlsx.$$$\Sheet1.csv
@@ -77,4 +52,29 @@ Found object mark: '#TempData[{}]'
  Key: Path at 3
 [Temp_Data.xlsx(Sheet1): ROW 1]
  Key: SpriteName[] at 4
+Parsing Array Object Table...
+
+Loading: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Unit_Data.xlsx
+Parse sheet: Sheet1
+Parsing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Unit_Data.xlsx.$$$\Sheet1.csv
+Closing: C:\Users\grays\Desktop\Project\Unity\OIlNamProject\RawData\Unit_Data.xlsx
+------------------------------------------------------------------------------
+[Unit_Data.xlsx(Sheet1): ROW 1]
+Found object mark: '#UnitData[{}]'
+[Unit_Data.xlsx(Sheet1): ROW 1]
+ Key: ID at 1
+[Unit_Data.xlsx(Sheet1): ROW 1]
+ Key: Name at 2
+[Unit_Data.xlsx(Sheet1): ROW 1]
+ Key: Description at 3
+[Unit_Data.xlsx(Sheet1): ROW 1]
+ Key: ATK at 4
+[Unit_Data.xlsx(Sheet1): ROW 1]
+ Key: Attack_Speed at 5
+[Unit_Data.xlsx(Sheet1): ROW 1]
+ Key: Attack_Range at 6
+[Unit_Data.xlsx(Sheet1): ROW 1]
+ Key: Skill_ID at 7
+[Unit_Data.xlsx(Sheet1): ROW 1]
+ Key: Unit_Modeling at 8
 Parsing Array Object Table...

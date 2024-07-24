@@ -4,22 +4,44 @@ using UnityEngine;
 
 public class UnitSpawn : MonoBehaviour
 {
-    private Transform[] spawnPoints;
-    private List<Transform> spawnList;
+    private Transform[] spawnArray;
+    private List<Transform> spawnPoints;
+
+    private List<int> spawnUnitID = new();
 
     private void Start()
-    {
+    { 
         PointsInit();
     }
 
     private void PointsInit()
     {
-        spawnPoints = GetComponentsInChildren<Transform>();
-        spawnList  = new List<Transform>(spawnPoints);
-        spawnList.Remove(spawnList[0]);
-        spawnPoints = spawnList.ToArray();
+        spawnArray = GetComponentsInChildren<Transform>();
+        spawnPoints  = new List<Transform>(spawnArray);
+        spawnPoints.Remove(spawnPoints[0]);
+    }
 
-        spawnList.Clear();
+    public Vector3 RandomUnitSpawn()
+    {
+        if (spawnPoints.Count == 0)
+        {
+            //TODO : 동료를 더이상 소환할수없습니다 팝업 혹은 글귀 올라가면서 투명해지는
+
+            Debug.Log("동료를 더이상 소환할수없습니다.");
+            return Vector3.zero;
+        }
+
+        return RandomSpawnPoint().position;
+    }
+
+    private Transform RandomSpawnPoint()
+    {
+        int index = Random.Range(0, spawnPoints.Count);
+
+        Transform transform = spawnPoints[index];
+        spawnPoints.Remove(spawnPoints[index]);
+
+        return transform;
     }
 
 

@@ -1,8 +1,8 @@
 {
-	"HunterData": [
+	"UnitData": [
 		{
-			"ID": 1,
-			"Name": "초보자",
+			"ID": 101,
+			"Name": "초보자1",
 			"Description": "모든지 열심히 합니다.",
 			"ATK": 20.5,
 			"Attack_Speed": 16500,
@@ -11,7 +11,27 @@
 			"Unit_Modeling": "초보자.gif"
 		},
 		{
-			"ID": 2,
+			"ID": 102,
+			"Name": "초보자2",
+			"Description": "모든지 열심히 합니다.",
+			"ATK": 20.5,
+			"Attack_Speed": 16500,
+			"Attack_Range": 210,
+			"Skill_ID": 1,
+			"Unit_Modeling": "초보자.gif"
+		},
+		{
+			"ID": 103,
+			"Name": "초보자3",
+			"Description": "모든지 열심히 합니다.",
+			"ATK": 20.5,
+			"Attack_Speed": 16500,
+			"Attack_Range": 210,
+			"Skill_ID": 1,
+			"Unit_Modeling": "초보자.gif"
+		},
+		{
+			"ID": 201,
 			"Name": "전사 1",
 			"Description": "힘이 쎈 부족원입니다.",
 			"ATK": 27,
@@ -21,7 +41,7 @@
 			"Unit_Modeling": "전사 1.gif"
 		},
 		{
-			"ID": 3,
+			"ID": 202,
 			"Name": "전사 2",
 			"Description": "부족장입니다.",
 			"ATK": 30,
@@ -31,7 +51,7 @@
 			"Unit_Modeling": "전사 2.gif"
 		},
 		{
-			"ID": 4,
+			"ID": 203,
 			"Name": "전사 3",
 			"Description": "조금 느리지만 힘이 쎈 족장입니다.",
 			"ATK": 31.6,
@@ -41,7 +61,7 @@
 			"Unit_Modeling": "전사 3.gif"
 		},
 		{
-			"ID": 5,
+			"ID": 301,
 			"Name": "궁수 1",
 			"Description": "멀리 쏘는 건 자신 있습니다.",
 			"ATK": 13.32,
@@ -51,7 +71,7 @@
 			"Unit_Modeling": "궁수 1.gif"
 		},
 		{
-			"ID": 6,
+			"ID": 302,
 			"Name": "궁수 2",
 			"Description": "날쎈 궁수입니다.",
 			"ATK": 14,
@@ -61,7 +81,7 @@
 			"Unit_Modeling": "궁수 2.gif"
 		},
 		{
-			"ID": 7,
+			"ID": 303,
 			"Name": "궁수 3",
 			"Description": "궁수 중엔 내가 제일 쎕니다.",
 			"ATK": 15,
@@ -71,7 +91,7 @@
 			"Unit_Modeling": "궁수 3.gif"
 		},
 		{
-			"ID": 8,
+			"ID": 401,
 			"Name": "마법사 1",
 			"Description": "20년 동안 모솔입니다.",
 			"ATK": 25.6,
@@ -81,7 +101,7 @@
 			"Unit_Modeling": "마법사 1.gif"
 		},
 		{
-			"ID": 9,
+			"ID": 402,
 			"Name": "마법사 2",
 			"Description": "25년 동안 모솔입니다.",
 			"ATK": 26.7,
@@ -91,7 +111,7 @@
 			"Unit_Modeling": "마법사 2.gif"
 		},
 		{
-			"ID": 10,
+			"ID": 404,
 			"Name": "마법사 3",
 			"Description": "30년 동안 모솔입니다.",
 			"ATK": 27,
