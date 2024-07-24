@@ -13,6 +13,7 @@ public class DataManager : Manager
     {
         EnemyAwake();
         StoryAwake();
+        UnitAwake();
     }
 
     private void EnemyAwake()

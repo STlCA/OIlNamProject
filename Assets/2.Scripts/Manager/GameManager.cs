@@ -28,9 +28,14 @@ public class GameManager : MonoBehaviour
     public SceneEffect SceneEffect { get { return sceneEffect; } }
     private SceneEffect sceneEffect;
 
-    //====================== Player
+    //====================== Player,Unit
     public Player Player { get { return player; } }
     private Player player;
+
+    public UnitManager UnitManager { get { return unitManager; } }
+    private UnitManager unitManager;
+
+    public UnitController UnitController;
 
     //====================== Money
     public int Gold
@@ -86,6 +91,7 @@ public class GameManager : MonoBehaviour
         uiMnager = GetManager<UIManager>();
         player = GetManager<Player>();
         sceneEffect = GetManager<SceneEffect>();
+        unitManager = GetManager<UnitManager>();
 
 
         //Init
@@ -95,6 +101,7 @@ public class GameManager : MonoBehaviour
         uiMnager.Init(this);
         player.Init(this);
         sceneEffect.Init(this);
+        unitManager.Init(this);
 
         //Gold
         GoldInit();

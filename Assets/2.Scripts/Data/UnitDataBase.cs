@@ -8,6 +8,8 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 public class UnitInfo
 {
     public int ID;
+    public int Step;
+    public string Type;
     public string Name;
     public string Description;
     public float ATK;
@@ -15,12 +17,15 @@ public class UnitInfo
     public float Attack_Range;
     public int Skill_ID;
     public string Unit_Modeling;
+    public bool Open; 
 
     public float Speed;
+    public Sprite Sprite;
 
     public void Init()
     {
         Speed = Attack_Speed / 10000;
+        Sprite = Resources.Load<Sprite>("Unit/"+Unit_Modeling);
     }
 
     /*    public string Path;
@@ -39,20 +44,26 @@ public class UnitInfo
 
 public class UnitInstance
 {
-    int no;
+    public int id;
     public UnitInfo unitInfo { get; set; }
+    
+    public void Init(int id, UnitInfo unit)
+    {
+        this.id = id;
+        unitInfo = unit;
+    }
 }
 
 [System.Serializable]
 public class UnitDataBase
 {
-    public List<UnitInfo> unitData;
+    public List<UnitInfo> UnitData;//이름 똑같게
     public Dictionary<int, UnitInfo> unitDic = new();
 
 
     public void Initialize()
     {
-        foreach (UnitInfo unit in unitData)
+        foreach (UnitInfo unit in UnitData)
         {
             unit.Init();
             unitDic.Add(unit.ID, unit);
