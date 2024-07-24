@@ -11,7 +11,7 @@ public class CanSpawn
 public class UnitSpawn : MonoBehaviour
 {
     private Transform[] spawnArray;
-    private List<Transform> spawnPoints;
+    private List<Vector3> spawnPoints;
 
     private List<int> spawnUnitID = new();
 
@@ -23,7 +23,13 @@ public class UnitSpawn : MonoBehaviour
     private void PointsInit()
     {
         spawnArray = GetComponentsInChildren<Transform>();
-        spawnPoints = new List<Transform>(spawnArray);
+        spawnPoints = new List<Vector3>();
+
+        foreach (Transform t in spawnArray)
+        {
+            spawnPoints.Add(t.position);
+        }
+
         spawnPoints.Remove(spawnPoints[0]);
     }
 
@@ -40,24 +46,25 @@ public class UnitSpawn : MonoBehaviour
         }
 
         canSpawn.canSpawn = true;
-        canSpawn.pos = RandomSpawnPoint().position;
+        canSpawn.pos = RandomSpawnPoint();
 
         return canSpawn;
     }
 
-    private Transform RandomSpawnPoint()
+    private Vector3 RandomSpawnPoint()
     {
         int index = Random.Range(0, spawnPoints.Count);
 
-        Transform transform = spawnPoints[index];
-        spawnPoints.Remove(spawnPoints[index]);
+        Vector3 pos = new();
+        pos = spawnPoints[index];
+        spawnPoints.Remove(spawnPoints[index]);       
 
-        return transform;
+        return pos;
     }
 
-    public void PlusSpawnPoint(Transform transform)
+    public void PlusSpawnPoint(Vector3 pos)
     {
-        spawnPoints.Add(transform);
+        spawnPoints.Add(pos);
     }
 
 

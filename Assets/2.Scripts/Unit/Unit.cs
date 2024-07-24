@@ -11,8 +11,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public GameObject btnUI;
     public Image nonClickImage;
-
-    private Image iconImage;
+    public Image iconImage;
 
     public int id;
 
@@ -47,6 +46,9 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void UnitUpgrade()
     {
+        controller.UnitUpgrade(id,transform.position);
+        iconImage.gameObject.SetActive(true);
 
+        id++;
     }
 }

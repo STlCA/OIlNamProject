@@ -5,24 +5,40 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
+using static UnityEngine.UI.CanvasScaler;
 
 [System.Serializable]
 public class SpawnData
 {
     public GameObject unitGo;
-    public Transform transform;
-    public UnitInstance unitInstance;
+    public SpriteRenderer spriteRenderer;
+    public Vector3 pos;
+    public int id;
     public int upgradeStep;
 
-    public void Init(GameObject go, UnitInstance unit)
+
+    public void Init(GameObject go, UnitInstance unit, int upgrade = 1)
     {
         unitGo = go;
-        transform = go.GetComponent<Transform>();
-        unitInstance = unit;
-        upgradeStep = 1;
+        pos = go.GetComponent<Transform>().position;
+        id = unit.unitInfo.ID;
+        upgradeStep = upgrade;
 
-        go.GetComponentInChildren<SpriteRenderer>().sprite = unitInstance.unitInfo.Sprite;
+        spriteRenderer = go.GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.sprite = unit.unitInfo.Sprite;
         go.GetComponentInChildren<Unit>().id = unit.id;
+    }
+}
+
+public class CanUpgrade
+{
+    public int count = 0;
+    public List<Vector3> pos = new();
+
+    public void Init(int count, Vector3 pos)
+    {
+        this.count = count;
+        this.pos.Add(pos);
     }
 }
 
@@ -46,8 +62,8 @@ public class UnitController : MonoBehaviour
     [Header("UI")]
     public TMP_Text infoTxt;
 
-    public Dictionary<Vector3,SpawnData> spawnData = new();
-    public Dictionary<int, int> canUpgrade = new();
+    public Dictionary<Vector3, SpawnData> spawnData = new();
+    public Dictionary<int, CanUpgrade> canUpgrade = new();
 
     private void Start()
     {
@@ -82,34 +98,93 @@ public class UnitController : MonoBehaviour
             return;
         }
 
-        UnitInstance newUnit = unitManager.GetRandomUnit();
+        UnitInstance newUnit = new();
+        newUnit = unitManager.GetRandomUnit();
 
         SpawnData newData = new SpawnData();
         newData.Init(unitGo, newUnit);
-        
+
         //임시
         unitGo.GetComponentInChildren<Unit>().controller = this;
 
         infoTxt.text = newUnit.unitInfo.Name + " 동료를 획득하였습니다.";
 
-        spawnData.Add(canSpawn.pos,newData);
+        spawnData.Add(canSpawn.pos, newData);
 
         if (canUpgrade.ContainsKey(newUnit.id) == true)
-            canUpgrade[newUnit.id]++;
+        {
+            canUpgrade[newUnit.id].count++;
+            canUpgrade[newUnit.id].pos.Add(canSpawn.pos);
+        }
         else
-            canUpgrade.Add(newUnit.id, 1);
+        {
+            CanUpgrade temp = new CanUpgrade();
+            temp.Init(1, canSpawn.pos);
+
+            canUpgrade.Add(newUnit.id, temp);
+        }
     }
 
     public bool CanUpgradeCheck(int id)
     {
-        if (canUpgrade[id] >= 3)
+        if (canUpgrade[id].count >= 3)
             return true;
         else
             return false;
     }
 
-    public void UnitUpgrade()
+    public void UnitUpgrade(int id, Vector3 pos)
     {
+        if (CanUpgradeCheck(id) == false)
+            return;
 
+        canUpgrade[id].count -= 3;
+        canUpgrade[id].pos.Remove(pos);
+
+        int count = 0;
+
+        Vector3[] tempPos = new Vector3[2];
+
+        foreach (var val in canUpgrade[id].pos)
+        {
+            if (val != pos && count < 2)
+            {
+                unitSpawnGo.PlusSpawnPoint(spawnData[val].pos);
+
+                Destroy(spawnData[val].unitGo);
+                spawnData.Remove(val);
+
+                tempPos[count] = val;
+                count++;
+            }
+        }
+
+        canUpgrade[id].pos.Remove(tempPos[0]);
+        canUpgrade[id].pos.Remove(tempPos[1]);
+
+        spawnData[pos].upgradeStep++;
+        spawnData[pos].id++;
+        spawnData[pos].spriteRenderer.sprite = unitDataBase.GetUnitByKey(id + 1).Sprite;
+        //아마 atk speed도 필요할듯
+
+
+        //얕은복사로 인해 실패.
+        /*        spawnData[pos].unitInstance.unitInfo = null;
+                spawnData[pos].unitInstance.unitInfo = new();
+                UnitInfo info = new();
+                info = unitDataBase.GetUnitByKey(id + 1);
+                spawnData[pos].unitInstance.unitInfo = info;*/
+
+
+
+        if (canUpgrade.ContainsKey(id + 1) == true)
+            canUpgrade[id + 1].pos.Add(pos);
+        else
+        {
+            CanUpgrade temp = new CanUpgrade();
+            temp.Init(1, pos);
+
+            canUpgrade.Add(id + 1, temp);
+        }
     }
 }

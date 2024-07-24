@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class UnitManager : Manager
 {
@@ -32,8 +33,10 @@ public class UnitManager : Manager
             if (unit.Step == 1 && unit.Open == true)
             {
                 UnitInstance newUnit = new();
+                UnitInfo newInfo = new();
+                newInfo = unitDataBase.GetUnitByKey(id);
 
-                newUnit.Init(id, unit);
+                newUnit.Init(id, newInfo);
 
                 canSpawnUnit.Add(newUnit);
             }
@@ -44,7 +47,7 @@ public class UnitManager : Manager
     {
         int index = Random.Range(0, canSpawnUnit.Count);
 
-        UnitInstance newUnit = new UnitInstance();
+        UnitInstance newUnit = new();
         newUnit = canSpawnUnit[index];
 
         return newUnit;
