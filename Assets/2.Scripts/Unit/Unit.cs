@@ -11,9 +11,10 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public GameObject btnUI;
     public Image nonClickImage;
-    public Image iconImage;
+    public List<Image> iconImage;
 
     public int id;
+    private int step = 0;
 
     private void Start()
     {
@@ -23,6 +24,9 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (step == 3)
+            return;
+
         UIOnOff(btnUI);
     }
 
@@ -44,11 +48,17 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public void UIOff()
+    {
+        btnUI.gameObject.SetActive(false);
+    }
+
     public void UnitUpgrade()
     {
         controller.UnitUpgrade(id,transform.position);
-        iconImage.gameObject.SetActive(true);
+        iconImage[step].gameObject.SetActive(true);
 
         id++;
+        step++;
     }
 }
