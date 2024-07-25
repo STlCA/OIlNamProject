@@ -66,6 +66,7 @@ public class DataTable_EnemyLoader
         ItemsDict = new Dictionary<int, DataTable_Enemy>();
         foreach (var item in ItemsList)
         {
+            item.Init();
             ItemsDict.Add(item.key, item);
         }
     }

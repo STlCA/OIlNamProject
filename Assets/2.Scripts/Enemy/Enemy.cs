@@ -9,11 +9,11 @@ public class Enemy : MonoBehaviour
     // Script
     public EnemyMove enemyMove;
     private GameManager gameManager;
-    public DataManager dataManager;
+    private DataManager dataManager;
     private DataTable_EnemyLoader enemyDatabase;
 
     private DataTable_Enemy enemy;
-    private Image image;
+    private SpriteRenderer image;
     private bool isDead;
 
     //private void Start()
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     //}
 
     // 마물 설정 초기화
-    public void Init(int id/*, DataTable_EnemyLoader enemyDatabase*/)
+    public void Init(int id, DataManager DM/*, DataTable_EnemyLoader enemyDatabase*/)
     {
         if (GameManager.Instance != null)
         {
@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            dataManager = DM;
             enemyDatabase = dataManager.dataTable_EnemyLoader;
         }
 
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour
 
         // 
         enemy = enemyDatabase.GetEnemyByKey(id);
+        image = GetComponent<SpriteRenderer>();
         image.sprite = enemy.sprite;
     }
 
@@ -69,9 +71,9 @@ public class Enemy : MonoBehaviour
     }
 
     // 마물이 공격 받았을 때
-    public void EnemyAttacked(int damage)
+    public void EnemyAttacked(float damage)
     {
-        int hp = enemy.HP;
+        float hp = enemy.HP;
         hp -= damage;
 
         // 적이 죽었을 때

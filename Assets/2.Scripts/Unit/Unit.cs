@@ -14,12 +14,14 @@ public class UnitData
     public float speed;
     public float time;
     public int step;
+    public float atk;
 
-    public void Init(int id, float range, float speed)
+    public void Init(int id, float range, float speed,float atk)
     {
         this.id = id;
         this.range = range;
         this.speed = speed;
+        this.atk = atk;
         time = speed;
         step = 0;
     }
@@ -144,8 +146,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
         skillGO.transform.position = findEnemy.transform.position;
         Debug.Log("Attack호출됨");
-        //Enemy enemy = FindEnemy();
-        //enemy.Attack();
+        findEnemy.EnemyAttacked(myData.atk);
     }
 
     private Enemy FindEnemy()

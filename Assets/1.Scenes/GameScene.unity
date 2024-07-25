@@ -3277,8 +3277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c694bedd2c4401b4f872537908c0361c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDataBase:
-    EnemyData: []
   storyDataBase:
     StoryData: []
   unitDataBase:
@@ -3816,7 +3814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EventMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483648
   m_MaxRayIntersections: 0
 --- !u!1 &540483171
 GameObject:
@@ -5863,7 +5861,6 @@ MonoBehaviour:
   unitManager: {fileID: 641419075}
   UnitPrefab: {fileID: 3711611451568309910, guid: 1b6ade22d0c2f6a40a64cf64779b2702,
     type: 3}
-  DataManager: {fileID: 447362145}
   infoTxt: {fileID: 112947220}
 --- !u!4 &883968213
 Transform:
@@ -9707,8 +9704,9 @@ MonoBehaviour:
   - {fileID: 125610313}
   - {fileID: 1689321293}
   - {fileID: 1559703768}
-  enemyPrefab: {fileID: 7716784584950809418, guid: 8d4f89bd71d54ca4fbc3136f5dd939ea,
+  enemyPrefab: {fileID: 8948626663979057521, guid: c16095440e3555f48a713c971dd6d8d1,
     type: 3}
+  dataManager: {fileID: 447362145}
 --- !u!4 &1371952856
 Transform:
   m_ObjectHideFlags: 0

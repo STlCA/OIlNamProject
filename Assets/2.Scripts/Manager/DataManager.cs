@@ -10,21 +10,21 @@ public class DataManager : Manager
     public StoryDataBase storyDataBase;
     public UnitDataBase unitDataBase;
 
-    //private void Awake()
-    //{
-    //    EnemyAwake();
-    //    StoryAwake();
-    //    UnitAwake();
-    //}
-
-    public override void Init(GameManager gm)
+    private void Awake()
     {
-        base.Init(gm);
-
         EnemyAwake();
         StoryAwake();
         UnitAwake();
     }
+
+    //public override void Init(GameManager gm)
+    //{
+    //    base.Init(gm);
+    //
+    //    EnemyAwake();
+    //    StoryAwake();
+    //    UnitAwake();
+    //}
 
     private void EnemyAwake()
     {

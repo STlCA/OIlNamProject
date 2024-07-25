@@ -3277,8 +3277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c694bedd2c4401b4f872537908c0361c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDataBase:
-    EnemyData: []
   storyDataBase:
     StoryData: []
   unitDataBase:
@@ -9708,6 +9706,7 @@ MonoBehaviour:
   - {fileID: 1559703768}
   enemyPrefab: {fileID: 8948626663979057521, guid: c16095440e3555f48a713c971dd6d8d1,
     type: 3}
+  dataManager: {fileID: 447362145}
 --- !u!4 &1371952856
 Transform:
   m_ObjectHideFlags: 0
