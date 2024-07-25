@@ -40,6 +40,11 @@ public class CanUpgrade
         this.count = count;
         this.pos.Add(pos);
     }
+    public void AddCount(int count, Vector3 pos)
+    {
+        this.count += count;
+        this.pos.Add(pos);
+    }
 }
 
 public class UnitController : MonoBehaviour
@@ -128,7 +133,7 @@ public class UnitController : MonoBehaviour
     public bool CanUpgradeCheck(int id)
     {
         if (canUpgrade[id].count >= 3)
-            return true;
+            return true;                
         else
             return false;
     }
@@ -164,7 +169,7 @@ public class UnitController : MonoBehaviour
 
         spawnData[pos].upgradeStep++;
         spawnData[pos].id++;
-        spawnData[pos].spriteRenderer.sprite = unitDataBase.GetUnitByKey(id + 1).Sprite;
+        //spawnData[pos].spriteRenderer.sprite = unitDataBase.GetUnitByKey(id + 1).Sprite;----------지금스프라이트준비안댐
         //아마 atk speed도 필요할듯
 
 
@@ -178,7 +183,9 @@ public class UnitController : MonoBehaviour
 
 
         if (canUpgrade.ContainsKey(id + 1) == true)
-            canUpgrade[id + 1].pos.Add(pos);
+        {
+            canUpgrade[id + 1].AddCount(1, pos);
+        }
         else
         {
             CanUpgrade temp = new CanUpgrade();
