@@ -20,9 +20,13 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     public GameObject skillGO;
 
     public int id;
+    public float range = 0;
+    public float speed = 0;
+    private float time = 0;
     private int step = 0;
+    private CircleCollider2D rangeCollider;
 
-    private List<Enemy> enemyList;
+    private List<Enemy> enemyList = new();
 
     private void Start()
     {
@@ -30,7 +34,16 @@ public class Unit : MonoBehaviour, IPointerClickHandler
             controller = GameManager.Instance.UnitController;
 
         unitAnimation = GetComponent<UnitAnimation>();
+
+        rangeCollider = GetComponent<CircleCollider2D>();
+        rangeCollider.radius = range;
     }
+
+    private void Update()
+    {
+        if (time <= speed)
+            time += Time.deltaTime;
+        }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -74,15 +87,20 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("충돌");
+
         Enemy monster = collision.GetComponent<Enemy>();
 
         if (monster != null)
         {
             enemyList.Add(monster);
 
-            if (enemyList.Count == 1)
+            if (time >= speed)
             {
-                skillGO.transform.position = monster.transform.position;                
+                Debug.Log("몹");
+                time = 0;
+
+                //skillGO.transform.position = monster.transform.position;                
                 unitAnimation.AttackEffect();
             }
         }
@@ -98,7 +116,8 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void Attack()//animation에서 호출하기
     {
-        Enemy enemy = FindEnemy();
+        Debug.Log("Attack호출됨");
+        //Enemy enemy = FindEnemy();
         //enemy.Attack();
     }
 

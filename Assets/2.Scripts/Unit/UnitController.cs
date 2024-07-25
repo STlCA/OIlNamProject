@@ -11,6 +11,7 @@ using static UnityEngine.UI.CanvasScaler;
 public class SpawnData
 {
     public GameObject unitGo;
+    public Unit unitData;
     public SpriteRenderer spriteRenderer;
     public Vector3 pos;
     public int id;
@@ -26,7 +27,10 @@ public class SpawnData
 
         spriteRenderer = go.GetComponentInChildren<SpriteRenderer>();
         spriteRenderer.sprite = unit.unitInfo.Sprite;
-        go.GetComponentInChildren<Unit>().id = unit.id;
+        unitData = go.GetComponentInChildren<Unit>();
+        unitData.id = unit.id;
+        unitData.range = unit.unitInfo.Range;
+        unitData.speed = unit.unitInfo.Speed;
     }
 }
 
@@ -60,10 +64,6 @@ public class UnitController : MonoBehaviour
     [Header("Prefab")]
     public GameObject UnitPrefab;
 
-    [Header("Temp")]
-    public DataManager DataManager;
-    private UnitDataBase unitDataBase;
-
     [Header("UI")]
     public TMP_Text infoTxt;
 
@@ -74,13 +74,8 @@ public class UnitController : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            unitDataBase = GameManager.Instance.DataManager.unitDataBase;
             unitManager = GameManager.Instance.UnitManager;
             GameManager.Instance.UnitController = this;
-        }
-        else
-        {
-            unitDataBase = DataManager.unitDataBase;
         }
     }
 
@@ -133,7 +128,7 @@ public class UnitController : MonoBehaviour
     public bool CanUpgradeCheck(int id)
     {
         if (canUpgrade[id].count >= 3)
-            return true;                
+            return true;
         else
             return false;
     }

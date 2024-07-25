@@ -19,7 +19,4 @@ public class TimeUI : MonoBehaviour
         time += Time.deltaTime;
         timeTxt.text = time.ToString("00:00");
     }
-
-
-
 }

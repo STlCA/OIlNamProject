@@ -12,20 +12,22 @@ public class UnitInfo
     public string Type;
     public string Name;
     public string Description;
-    public float ATK;
-    public float Attack_Speed;
-    public float Attack_Range;
+    public int ATK;
+    public int Attack_Speed;
+    public int Attack_Range;
     public int Skill_ID;
     public string Unit_Modeling;
-    public bool Open; 
+    public bool Open;
 
     public float Speed;
+    public float Range;
     public Sprite Sprite;
 
     public void Init()
     {
-        Speed = Attack_Speed / 10000;
-        Sprite = Resources.Load<Sprite>("Unit/"+Unit_Modeling);
+        Speed = Attack_Speed / 10000f;
+        Range = Attack_Range / 100f;
+        Sprite = Resources.Load<Sprite>("Unit/" + Unit_Modeling);
     }
 
     /*    public string Path;
@@ -46,7 +48,7 @@ public class UnitInstance
 {
     public int id;
     public UnitInfo unitInfo { get; set; }
-    
+
     public void Init(int id, UnitInfo unit)
     {
         this.id = id;
