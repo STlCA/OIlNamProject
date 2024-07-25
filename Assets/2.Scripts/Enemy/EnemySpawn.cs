@@ -7,7 +7,8 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private Transform[] wayPoints;
     //[SerializeField] private Enemy enemyPrefab;
     [SerializeField] private GameObject enemyPrefab;
-    public DataManager dataManager;
+    public DataManager dataManager;//임시//수정
+    public GameSceneManager gameSceneManager;//수정
 
     private List<Enemy> enemyList;
     private int wavePerMax = 30;
@@ -56,7 +57,7 @@ public class EnemySpawn : MonoBehaviour
 
         GameObject clone = Instantiate(enemyPrefab, wayPoints[0].position, Quaternion.identity);
         Enemy enemy = clone.GetComponent<Enemy>();
-        enemy.Init(1, dataManager);
+        enemy.Init(1, gameSceneManager, dataManager);//수정
         enemyMove = enemy.enemyMove;
 
         enemyMove.Init(wayPoints);
