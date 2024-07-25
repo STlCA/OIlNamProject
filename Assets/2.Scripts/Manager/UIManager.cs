@@ -22,12 +22,12 @@ public class UIManager : Manager
         keyTxt2 = gold[2];
         crystalTxt = gold[3];
 
-        GoldTypeUpdate(GoldType.GOLD, gameManager.Gold);
-        GoldTypeUpdate(GoldType.KEY, gameManager.Key);
-        GoldTypeUpdate(GoldType.CRYSTAL, gameManager.Crystal);
+        GoldTypeUpdate(MoneyType.Point, gameManager.Point);
+        GoldTypeUpdate(MoneyType.KEY, gameManager.Key);
+        GoldTypeUpdate(MoneyType.Gold, gameManager.Gold);
     }
 
-    public void GoldTypeUpdate(GoldType type, int val)
+    public void GoldTypeUpdate(MoneyType type, int val)
     {
         if (goldTxt == null)
             return;
@@ -49,14 +49,14 @@ public class UIManager : Manager
 
         switch (type)
         {
-            case GoldType.GOLD:
+            case MoneyType.Point:
                 goldTxt.text = val.ToString("N0");
                 break;
-            case GoldType.KEY:
+            case MoneyType.KEY:
                 keyTxt1.text = val.ToString("N0");
                 keyTxt2.text = val.ToString("N0");
                 break;
-            case GoldType.CRYSTAL:
+            case MoneyType.Gold:
                 crystalTxt.text = val.ToString("N0");
                 break;
         }

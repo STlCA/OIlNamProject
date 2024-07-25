@@ -38,38 +38,38 @@ public class GameManager : MonoBehaviour
     public UnitController UnitController;
 
     //====================== Money
-    public int Gold
+    public int Point
     {
-        get { return gold; }
+        get { return point; }
         set
         {
-            gold = value;
-            uiMnager.GoldTypeUpdate(GoldType.GOLD, value);
+            point += value;
+            uiMnager.GoldTypeUpdate(MoneyType.Point, point);
         }
     }
-    private int gold;
+    private int point;
 
     public int Key
     {
         get { return key; }
         set
         {
-            key = value;
-            uiMnager.GoldTypeUpdate(GoldType.KEY, value);
-          }
+            key += value;
+            uiMnager.GoldTypeUpdate(MoneyType.KEY, key);
+        }
     }
     private int key;
 
-    public int Crystal
+    public int Gold
     {
-        get { return crystal; }
+        get { return gold; }
         set
         {
-            crystal = value;
-            uiMnager.GoldTypeUpdate(GoldType.CRYSTAL, value);
+            gold += value;
+            uiMnager.GoldTypeUpdate(MoneyType.Gold, gold);
         }
     }
-    private int crystal;
+    private int gold;
 
     //================================================
 
@@ -104,14 +104,27 @@ public class GameManager : MonoBehaviour
         unitManager.Init(this);
 
         //Gold
-        GoldInit();
+        MoneyInit();
     }
 
-    private void GoldInit()
+    private void MoneyInit()
     {
-        Gold = 10000;
-        Key = 0;
-        Crystal = 10;
+        Point = 10;
+        Key = 3;
+        Gold = 100;
+    }
+
+    public void MoneyChange(MoneyType type, int val)
+    {
+        switch (type)
+        {
+            case MoneyType.Point:
+                Point = val; break;
+            case MoneyType.KEY:
+                Key = val; break;
+            case MoneyType.Gold:
+                Gold = val; break;
+        }
     }
 
     public T GetManager<T>() where T : Manager

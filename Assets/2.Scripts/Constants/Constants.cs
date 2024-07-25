@@ -22,11 +22,11 @@ namespace Constants
         //OBJECT,
     }
 
-    public enum GoldType
+    public enum MoneyType
     {
-        GOLD,
+        Point,
         KEY,
-        CRYSTAL,
+        Gold,
     }
 
 }
