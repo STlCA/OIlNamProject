@@ -26,7 +26,7 @@ namespace Constants
     {
         Point,
         KEY,
-        Gold,
+        Ruby,
     }
 
 }

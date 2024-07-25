@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
     {
         isDead = true;
         this.gameObject.SetActive(false);
-        gameSceneManager.ChangeRuby(2);//수정
+        gameSceneManager.ChangeGold(2);//수정
     }
 
     // 마물이 공격 받았을 때

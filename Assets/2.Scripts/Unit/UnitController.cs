@@ -86,11 +86,11 @@ public class UnitController : MonoBehaviour
         GameObject unitGo = Instantiate(UnitPrefab);
         CanSpawn canSpawn = unitSpawnGo.RandomUnitSpawn();
 
-        if (canSpawn.canSpawn == true && gameSceneManager.CanUseRuby())
+        if (canSpawn.canSpawn == true && gameSceneManager.CanUseGold())
         {
             unitGo.transform.position = canSpawn.pos;
 
-            gameSceneManager.ChangeRuby(-gameSceneManager.ChangeUseRuby());
+            gameSceneManager.ChangeGold(-gameSceneManager.ChangeUseGold());
 
 
         }

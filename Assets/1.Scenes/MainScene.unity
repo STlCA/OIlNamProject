@@ -167,8 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c694bedd2c4401b4f872537908c0361c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDataBase:
-    EnemyData: []
   storyDataBase:
     StoryData: []
   unitDataBase:
@@ -1821,7 +1819,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419045700
 MonoBehaviour:
@@ -1843,7 +1841,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1842836331, guid: 96d26daf4d432994192c21317c128c0c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2919,7 +2917,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538363997
 MonoBehaviour:
@@ -2941,7 +2939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2142374088, guid: ccde0b437723801428be004c0770c218, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3540,10 +3538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 538e698476223a3478fec1a40f309ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldTxt: {fileID: 0}
+  pointTxt: {fileID: 0}
   keyTxt1: {fileID: 0}
   keyTxt2: {fileID: 0}
-  crystalTxt: {fileID: 0}
+  rubyTxt: {fileID: 0}
 --- !u!1 &643469310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,7 +3600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2122880559, guid: ccde0b437723801428be004c0770c218, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4049,7 +4047,7 @@ GameObject:
   - component: {fileID: 834060215}
   - component: {fileID: 834060214}
   m_Layer: 5
-  m_Name: Crystal
+  m_Name: Ruby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7038,7 +7036,7 @@ GameObject:
   - component: {fileID: 1388418779}
   - component: {fileID: 1388418778}
   m_Layer: 5
-  m_Name: Gold
+  m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8909,7 +8907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2122880559, guid: ccde0b437723801428be004c0770c218, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9687,6 +9685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3f689fe7145284bbb3854dfbe67d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 0}
 --- !u!1 &1796927967
 GameObject:
   m_ObjectHideFlags: 0

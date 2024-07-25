@@ -10,26 +10,26 @@ using UnityEngine.SceneManagement;
 public class UIManager : Manager
 {
     //test
-    [SerializeField] private TMP_Text goldTxt;
+    [SerializeField] private TMP_Text pointTxt;
     [SerializeField] private TMP_Text keyTxt1;
     [SerializeField] private TMP_Text keyTxt2;
-    [SerializeField] private TMP_Text crystalTxt;
+    [SerializeField] private TMP_Text rubyTxt;
 
-    public void MainUIUpdate(List<TMP_Text> gold)
+    public void MainUIUpdate(List<TMP_Text> money)
     {
-        goldTxt = gold[0];
-        keyTxt1 = gold[1];
-        keyTxt2 = gold[2];
-        crystalTxt = gold[3];
+        pointTxt = money[0];
+        keyTxt1 = money[1];
+        keyTxt2 = money[2];
+        rubyTxt = money[3];
 
-        GoldTypeUpdate(MoneyType.Point, gameManager.Point);
-        GoldTypeUpdate(MoneyType.KEY, gameManager.Key);
-        GoldTypeUpdate(MoneyType.Gold, gameManager.Gold);
+        MoneyTypeUpdate(MoneyType.Point, gameManager.Point);
+        MoneyTypeUpdate(MoneyType.KEY, gameManager.Key);
+        MoneyTypeUpdate(MoneyType.Ruby, gameManager.Ruby);
     }
 
-    public void GoldTypeUpdate(MoneyType type, int val)
+    public void MoneyTypeUpdate(MoneyType type, int val)
     {
-        if (goldTxt == null)
+        if (pointTxt == null)
             return;
 
         /*        string valStr = val.ToString();
@@ -50,14 +50,14 @@ public class UIManager : Manager
         switch (type)
         {
             case MoneyType.Point:
-                goldTxt.text = val.ToString("N0");
+                pointTxt.text = val.ToString("N0");
                 break;
             case MoneyType.KEY:
                 keyTxt1.text = val.ToString("N0");
                 keyTxt2.text = val.ToString("N0");
                 break;
-            case MoneyType.Gold:
-                crystalTxt.text = val.ToString("N0");
+            case MoneyType.Ruby:
+                rubyTxt.text = val.ToString("N0");
                 break;
         }
     }

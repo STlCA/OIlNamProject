@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         set
         {
             point += value;
-            uiMnager.GoldTypeUpdate(MoneyType.Point, point);
+            uiMnager.MoneyTypeUpdate(MoneyType.Point, point);
         }
     }
     private int point;
@@ -55,21 +55,21 @@ public class GameManager : MonoBehaviour
         set
         {
             key += value;
-            uiMnager.GoldTypeUpdate(MoneyType.KEY, key);
+            uiMnager.MoneyTypeUpdate(MoneyType.KEY, key);
         }
     }
     private int key;
 
-    public int Gold
+    public int Ruby
     {
-        get { return gold; }
+        get { return ruby; }
         set
         {
-            gold += value;
-            uiMnager.GoldTypeUpdate(MoneyType.Gold, gold);
+            ruby += value;
+            uiMnager.MoneyTypeUpdate(MoneyType.Ruby, ruby);
         }
     }
-    private int gold;
+    private int ruby;
 
     //================================================
 
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     {
         Point = 10;
         Key = 3;
-        Gold = 100;
+        Ruby = 100;
     }
 
     public void MoneyChange(MoneyType type, int val)
@@ -122,8 +122,8 @@ public class GameManager : MonoBehaviour
                 Point = val; break;
             case MoneyType.KEY:
                 Key = val; break;
-            case MoneyType.Gold:
-                Gold = val; break;
+            case MoneyType.Ruby:
+                Ruby = val; break;
         }
     }
 
