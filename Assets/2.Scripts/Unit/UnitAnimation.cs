@@ -10,6 +10,10 @@ public class UnitAnimation : MonoBehaviour
     public void AttackEffect()
     {
         unitAnimator.SetTrigger("Attack");
-        //skillAnimator.SetTrigger("attack");
     }
+    public void AttackSkillEffect()
+    {
+        skillAnimator.SetTrigger("Attack");
+    }
+
 }

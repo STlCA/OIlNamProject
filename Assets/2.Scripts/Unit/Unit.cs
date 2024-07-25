@@ -6,6 +6,25 @@ using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class UnitData
+{
+    public int id;
+    public float range;
+    public float speed;
+    public float time;
+    public int step;
+
+    public void Init(int id, float range, float speed)
+    {
+        this.id = id;
+        this.range = range;
+        this.speed = speed;
+        time = speed;
+        step = 0;
+    }
+}
+
 public class Unit : MonoBehaviour, IPointerClickHandler
 {
     public UnitController controller; // 나중에private
@@ -19,14 +38,16 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     [Header("Skill")]
     public GameObject skillGO;
 
-    public int id;
-    public float range = 0;
-    public float speed = 0;
-    private float time = 0;
-    private int step = 0;
+    public UnitData myData;
+    /*    public int id;
+        public float range = 0;
+        public float speed = 0;
+        public float time = 0;
+        private int step = 0;*/
     private CircleCollider2D rangeCollider;
 
     private List<Enemy> enemyList = new();
+    private Enemy findEnemy;
 
     private void Start()
     {
@@ -36,18 +57,31 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         unitAnimation = GetComponent<UnitAnimation>();
 
         rangeCollider = GetComponent<CircleCollider2D>();
-        rangeCollider.radius = range;
+        rangeCollider.radius = myData.range;
     }
 
     private void Update()
     {
-        if (time <= speed)
-            time += Time.deltaTime;
+        myData.time += Time.deltaTime;
+
+
+        if (myData.time >= myData.speed)
+        {
+
+            findEnemy = FindEnemy();
+            if (findEnemy != null)
+            {
+                Debug.Log("몹");
+
+                unitAnimation.AttackEffect();
+                myData.time = 0;
+            }
         }
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (step == 3)
+        if (myData.step == 3)
             return;
 
         UIOnOff(btnUI);
@@ -62,7 +96,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
             ui.SetActive(false);
         else
         {
-            if (controller.CanUpgradeCheck(id))
+            if (controller.CanUpgradeCheck(myData.id))
                 nonClickImage.gameObject.SetActive(false);
             else
                 nonClickImage.gameObject.SetActive(true);
@@ -78,11 +112,11 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void UnitUpgrade()
     {
-        controller.UnitUpgrade(id, transform.position);
-        iconImage[step].gameObject.SetActive(true);
+        controller.UnitUpgrade(myData.id, transform.position);
+        iconImage[myData.step].gameObject.SetActive(true);
 
-        id++;
-        step++;
+        myData.id++;
+        myData.step++;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -94,15 +128,6 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         if (monster != null)
         {
             enemyList.Add(monster);
-
-            if (time >= speed)
-            {
-                Debug.Log("몹");
-                time = 0;
-
-                //skillGO.transform.position = monster.transform.position;                
-                unitAnimation.AttackEffect();
-            }
         }
     }
 
@@ -116,6 +141,8 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void Attack()//animation에서 호출하기
     {
+        unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
+        skillGO.transform.position = findEnemy.transform.position;
         Debug.Log("Attack호출됨");
         //Enemy enemy = FindEnemy();
         //enemy.Attack();

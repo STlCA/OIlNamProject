@@ -28,9 +28,7 @@ public class SpawnData
         spriteRenderer = go.GetComponentInChildren<SpriteRenderer>();
         spriteRenderer.sprite = unit.unitInfo.Sprite;
         unitData = go.GetComponentInChildren<Unit>();
-        unitData.id = unit.id;
-        unitData.range = unit.unitInfo.Range;
-        unitData.speed = unit.unitInfo.Speed;
+        unitData.myData.Init(unit.id, unit.unitInfo.Range, unit.unitInfo.Range);
     }
 }
 
