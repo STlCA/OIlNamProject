@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
@@ -7,10 +8,12 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private Transform[] wayPoints;
     //[SerializeField] private Enemy enemyPrefab;
     [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private TMP_Text enemyCountText;
+
     public DataManager dataManager;
 
     private List<Enemy> enemyList;
-    private int wavePerMax = 30;
+    private int maxPerWave = 40;    // wave 당 최대 마물 수
     private int currentCount = 0;
 
     EnemyMove enemyMove;
@@ -32,11 +35,11 @@ public class EnemySpawn : MonoBehaviour
     private IEnumerator SpawnEnemy()
     {
         // 이번 Wave에 아직 생성되어야 할 마물이 있다면
-        while (currentCount <= wavePerMax)
+        while (currentCount <= maxPerWave)
         {
             CreateEnemy();
 
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(0.5f);
         }
 
         currentCount = 0;
@@ -61,5 +64,13 @@ public class EnemySpawn : MonoBehaviour
 
         enemyMove.Init(wayPoints);
         enemyList.Add(enemy);
+
+        UpdateEnemyCountUI();
+    }
+
+    // 마물 수 UI 업데이트
+    private void UpdateEnemyCountUI()
+    {
+        enemyCountText.text = enemyList.Count.ToString() + " / 100";
     }
 }
