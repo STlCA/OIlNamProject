@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PopUpController : Manager
 {
-    private SoundManager soundManager;
+    public SoundManager soundManager;//³ªÁß¿¡private
+    private float currentTimeScale;
 
     private void Start()
     {
         if(GameManager.Instance != null)
-            soundManager = GameManager.Instance.SoundManager;
+            soundManager = GameManager.Instance.SoundManager;     
     }
 
     //ON OFF Change
@@ -55,7 +56,7 @@ public class PopUpController : Manager
             return;
 
         ui.SetActive(true);
-
+        currentTimeScale = Time.timeScale;
         Time.timeScale = 0f;
     }
     public void PauseUIOff(GameObject ui)
@@ -65,7 +66,7 @@ public class PopUpController : Manager
         if (ui == null)
             return;
 
-        Time.timeScale = 1f;
+        Time.timeScale = currentTimeScale;
 
         ui.SetActive(false);
     }
