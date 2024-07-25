@@ -55,6 +55,7 @@ public class EnemySpawn : MonoBehaviour
 
         GameObject clone = Instantiate(enemyPrefab, wayPoints[0].position, Quaternion.identity);
         Enemy enemy = clone.GetComponent<Enemy>();
+        enemy.Init(1);
         enemyMove = enemy.enemyMove;
 
         enemyMove.Init(wayPoints);
