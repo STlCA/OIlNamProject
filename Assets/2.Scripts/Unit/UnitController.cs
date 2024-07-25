@@ -55,6 +55,9 @@ public class UnitController : MonoBehaviour
     //controller = 공격,호출,검사
     // spawn = 스폰
 
+    [Header("GameScene")]
+    public GameSceneManager gameSceneManager;
+
     [Header("Unit")]
     public UnitSpawn unitSpawnGo;
     public UnitManager unitManager;// 나중에 private
@@ -67,6 +70,7 @@ public class UnitController : MonoBehaviour
 
     public Dictionary<Vector3, SpawnData> spawnData = new();
     public Dictionary<int, CanUpgrade> canUpgrade = new();
+
 
     private void Start()
     {
@@ -82,9 +86,13 @@ public class UnitController : MonoBehaviour
         GameObject unitGo = Instantiate(UnitPrefab);
         CanSpawn canSpawn = unitSpawnGo.RandomUnitSpawn();
 
-        if (canSpawn.canSpawn == true)
+        if (canSpawn.canSpawn == true && gameSceneManager.CanUseRuby())
         {
             unitGo.transform.position = canSpawn.pos;
+
+            gameSceneManager.ChangeRuby(-gameSceneManager.ChangeUseRuby());
+
+
         }
         else
         {

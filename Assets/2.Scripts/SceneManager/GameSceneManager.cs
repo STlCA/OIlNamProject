@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,16 +9,43 @@ public class GameSceneManager : MonoBehaviour
     [Header("Sound")]
     public AudioSource bgmSource;
     public AudioSource effectSource;
+
+    [Header("UI")]
+    public TMP_Text rubyTxt;
+    public TMP_Text useRubyTxt;
+
     private float time = 1;
+    public int Ruby
+    {
+        get { return ruby; }
+        private set
+        {
+            ruby += value;
+            rubyTxt.text = ruby.ToString("N0");
+        }
+    }
+    private int ruby;
+
+    public int UseRuby
+    {
+        get { return useRuby; }
+        private set
+        {
+            useRuby += value;
+            useRubyTxt.text = useRuby.ToString("N0");
+        }
+    }
+    private int useRuby;
 
     private void Start()
     {
         SoundInit();
+        RubyInit();
     }
 
     private void SoundInit()
     {
-        if(GameManager.Instance!=null)
+        if (GameManager.Instance != null)
             GameManager.Instance.SoundManager.SourceSet(bgmSource, effectSource);
     }
 
@@ -34,5 +62,30 @@ public class GameSceneManager : MonoBehaviour
             time = 1;
 
         Time.timeScale = time;
+    }
+
+    public void RubyInit()
+    {
+        Ruby = 25;
+        UseRuby = 5;
+    }
+
+    public void ChangeRuby(int val)
+    {
+        Ruby = val;
+    }
+
+    public bool CanUseRuby()
+    {
+        bool canUse = Ruby >= UseRuby;                
+
+        return canUse;
+    }
+    public int ChangeUseRuby()
+    {
+        int val = UseRuby;
+        UseRuby = 2;
+
+        return val;
     }
 }

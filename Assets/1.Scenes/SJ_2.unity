@@ -1986,7 +1986,7 @@ GameObject:
   - component: {fileID: 285108927}
   - component: {fileID: 285108926}
   m_Layer: 5
-  m_Name: Coin
+  m_Name: Ruby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6237,6 +6237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a2a009af284244d8e47d2f0372b016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSceneManager: {fileID: 1715538311}
   unitSpawnGo: {fileID: 1115554006}
   unitManager: {fileID: 641419075}
   UnitPrefab: {fileID: 3711611451568309910, guid: 1b6ade22d0c2f6a40a64cf64779b2702,
@@ -12489,6 +12490,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 23869144}
   effectSource: {fileID: 1778466894}
+  rubyTxt: {fileID: 290250786}
+  useRubyTxt: {fileID: 2027774924}
 --- !u!1 &1721825521
 GameObject:
   m_ObjectHideFlags: 0
