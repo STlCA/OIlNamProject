@@ -13,17 +13,32 @@ public class TimerUI : MonoBehaviour
     private int minute;
     private int second;
 
+    private WaveUI waveUI;
+
     private Coroutine coTimer = null;
 
     private void Awake()
     {
+        //time = 30;
+
+        //SetTimer();
+    }
+
+    public void Init()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.TimerUI = this;
+            waveUI = GameManager.Instance.WaveUI;
+        }
+
         time = 30;
 
         SetTimer();
     }
 
     // 타이머 시작
-    private void SetTimer()
+    public void SetTimer()
     {
         if (coTimer != null)
         {
@@ -45,7 +60,8 @@ public class TimerUI : MonoBehaviour
 
         if (curTime <= 0)
         {
-            SetTimer();
+            //SetTimer();
+            waveUI.NextWave();
         }
     }
 

@@ -32,14 +32,14 @@ public class Enemy : MonoBehaviour
     //}
 
     // 마물 설정 초기화
-    public void Init(int id, GameSceneManager GSM, DataManager DM = null/*, DataTable_EnemyLoader enemyDatabase*/)//수정
+    public void Init(int id, GameSceneManager GSM, DataManager DM = null)//수정
     {
         if (GameManager.Instance != null)
         {
             gameManager = GameManager.Instance;
             dataManager = gameManager.DataManager;
             enemyDatabase = dataManager.dataTable_EnemyLoader;
-            enemySpawn = gameManager.enemySpawn;
+            enemySpawn = gameManager.EnemySpawn;
             gameSceneManager = GSM;//수정
         }
         else
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
             dataManager = DM;
             gameSceneManager = GSM;//수정
             enemyDatabase = dataManager.dataTable_EnemyLoader;
-            enemySpawn = gameManager.enemySpawn;
+            enemySpawn = gameManager.EnemySpawn;
         }
 
         // Script
@@ -89,10 +89,10 @@ public class Enemy : MonoBehaviour
         {
             hp = 0;
 
-            Disable();
-            //*** TODO : (임시방편으로 오브젝트 삭제 만듬->)아래 코드들 비활성화하고 난 뒤 위의 Disable() 활성화 ***
-            //enemySpawn.EnemyDie(this, gameObject);
-            //gameSceneManager.ChangeGold(2);//수정
+            //Disable();
+            //*** TODO : (임시방편으로 오브젝트 삭제 만듬->) 후에 아래 코드들 비활성화하고 난 뒤 위의 Disable() 활성화 ***
+            gameSceneManager.ChangeGold(2);//수정
+            enemySpawn.EnemyDie(this, gameObject);
         }
     }
 }

@@ -38,10 +38,11 @@ public class EnemySpawn : MonoBehaviour
         {
             gameManager = GameManager.Instance;
             player = gameManager.Player;
+            GameManager.Instance.EnemySpawn = this;
         }
         else
         {
-            player = gameManager.Player;
+            player = GameManager.Instance.Player;
         }
 
         StartCoroutine(SpawnEnemy());
@@ -51,14 +52,12 @@ public class EnemySpawn : MonoBehaviour
     private IEnumerator SpawnEnemy()
     {
         // 이번 Wave에 아직 생성되어야 할 마물이 있다면
-        while (currentCount <= maxPerWave)
+        while (currentCount < maxPerWave)
         {
             CreateEnemy();
 
             yield return new WaitForSeconds(0.6f);
         }
-
-        currentCount = 0;
     }
 
     // 마물을 생성한다.
@@ -81,8 +80,15 @@ public class EnemySpawn : MonoBehaviour
         enemyMove.Init(wayPoints);
         enemyList.Add(enemy);
 
-        //currentCount++;
+        currentCount++;
         UpdateEnemyCountUI();
+    }
+
+    // 마물 생성 코루틴 재시작
+    public void RestartSpawnEnemy()
+    {
+        currentCount = 0;
+        StartCoroutine(SpawnEnemy());
     }
 
     // ***임시*** 마물이 죽었을 때
