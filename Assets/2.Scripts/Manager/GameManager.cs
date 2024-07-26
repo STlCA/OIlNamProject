@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public WaveUI WaveUI;
     public TimerUI TimerUI;
 
+    public BestRecord BestRecord;
+
     //====================== Player,Unit
     public Player Player { get { return player; } }
     private Player player;
