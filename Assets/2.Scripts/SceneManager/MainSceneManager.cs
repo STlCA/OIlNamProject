@@ -66,9 +66,9 @@ public class MainSceneManager : MonoBehaviour
 
     public void GameStart(GameObject ui)
     {
-        if(StartCheck())
+        if (StartCheck())
         {
-            gameManager.Key -= 1;
+            gameManager.MoneyChange(Constants.MoneyType.KEY, -1);
             gameManager.SceneEffect.MainToGame();
         }
         else

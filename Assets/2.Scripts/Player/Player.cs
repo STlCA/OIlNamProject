@@ -16,15 +16,15 @@ public class Player : Manager
     {
         get
         {
-            if (CurrentExt / FullExp == 1)
+            if (CurrentExp / FullExp == 1)
                 return 100;
             else
-                return CurrentExt / FullExp;
+                return CurrentExp / FullExp;
         }
         private set { }
     }
     public float FullExp { get; private set; }
-    public float CurrentExt { get; private set; }
+    public float CurrentExp { get; private set; }
 
     public override void Init(GameManager gm)
     {
@@ -33,10 +33,10 @@ public class Player : Manager
         UserName = "딸천재오일남";
         Level = 1;
         FullExp = 100;
-        CurrentExt = 1;
+        CurrentExp = 0;
     }
 
-    public void PlayerUIUpdate(List<TMP_Text> player,TMP_InputField input)
+    public void PlayerUIUpdate(List<TMP_Text> player, TMP_InputField input)
     {
         nameTxt = player[0];
         //levelTxt = player[2];
@@ -62,4 +62,14 @@ public class Player : Manager
         //TODO : SaveSystem에 저장
     }
 
+    public void ExpUp(int monster)
+    {
+        CurrentExp = monster * 2;
+
+        while (CurrentExp >= FullExp)
+        {
+            CurrentExp -= 100;
+            Level += 1;
+        }
+    }
 }
