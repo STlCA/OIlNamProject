@@ -15,6 +15,7 @@ public class EnemySpawn : MonoBehaviour
     public DataManager dataManager;//임시//수정
     public GameSceneManager gameSceneManager;//수정
     private WaveUI waveUI;
+    private LethalEnergy lethalEnergy;//수정
 
     private List<Enemy> enemyList;
     private int maxPerWave = 40;    // wave 당 최대 마물 수
@@ -30,6 +31,8 @@ public class EnemySpawn : MonoBehaviour
 
         waveUI = GetComponent<WaveUI>();
         //enemyMove = enemyPrefab.GetComponent<EnemyMove>();
+
+        lethalEnergy = gameSceneManager.GetComponent<LethalEnergy>();
     }
 
     private void Start()
@@ -101,9 +104,10 @@ public class EnemySpawn : MonoBehaviour
         enemyList.Remove(enemy);
         Destroy(gameObject);
         UpdateEnemyCountUI();
+        lethalEnergy.ChangeEnergy(1);
 
         // 소환된 마물이 다 죽었을 때
-        if(enemyList.Count == 0)
+        if (enemyList.Count == 0)
         {
             waveUI.NextWave();
         }

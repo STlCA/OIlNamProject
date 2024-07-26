@@ -4562,7 +4562,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 658897398}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1715538312}
+        m_TargetAssemblyTypeName: LethalEnergy, Assembly-CSharp
+        m_MethodName: UseLethal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &658897398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12541,6 +12553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1715538310}
   - component: {fileID: 1715538311}
+  - component: {fileID: 1715538312}
   m_Layer: 0
   m_Name: ==GameSceneManager==
   m_TagString: Untagged
@@ -12579,6 +12592,20 @@ MonoBehaviour:
   effectSource: {fileID: 1778466894}
   goldTxt: {fileID: 290250786}
   useGoldTxt: {fileID: 2027774924}
+--- !u!114 &1715538312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715538309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae8fbd468798894eb260d36eec4563c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energySlider: {fileID: 1201062574}
+  energyText: {fileID: 1034793085}
 --- !u!1 &1721825521
 GameObject:
   m_ObjectHideFlags: 0

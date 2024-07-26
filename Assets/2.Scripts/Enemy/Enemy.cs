@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     private DataManager dataManager;
     private DataTable_EnemyLoader enemyDatabase;
     private GameSceneManager gameSceneManager;//수정
-    private EnemySpawn enemySpawn;
+    private EnemySpawn enemySpawn;    
 
     // 마물 정보
     private DataTable_Enemy enemy;
