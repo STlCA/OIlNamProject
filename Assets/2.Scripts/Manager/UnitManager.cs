@@ -9,7 +9,7 @@ public class UnitManager : Manager
 
     [Header("Temp")]
     public DataManager DataManager;
-    private UnitDataBase unitDataBase;
+    public UnitDataBase unitDataBase;
 
     public List<UnitInstance> canSpawnUnit = new();
 

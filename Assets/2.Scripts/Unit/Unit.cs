@@ -16,14 +16,17 @@ public class UnitData
     public int step;
     public float atk;
 
-    public void Init(int id, float range, float speed,float atk)
+    public void Init(int id, float range, float speed, float atk, int step = 0)
     {
         this.id = id;
         this.range = range;
         this.speed = speed;
         this.atk = atk;
         time = speed;
-        step = 0;
+
+        if (step == 0)
+            step = 0;
+        this.step += step;
     }
 }
 
@@ -103,6 +106,12 @@ public class Unit : MonoBehaviour, IPointerClickHandler
             else
                 nonClickImage.gameObject.SetActive(true);
 
+            Debug.Log(myData.id);
+            Debug.Log(myData.step);
+            Debug.Log(myData.atk);
+            Debug.Log(myData.range);
+            Debug.Log(myData.speed);
+
             ui.SetActive(true);
         }
     }
@@ -115,10 +124,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     public void UnitUpgrade()
     {
         controller.UnitUpgrade(myData.id, transform.position);
-        iconImage[myData.step].gameObject.SetActive(true);
-
-        myData.id++;
-        myData.step++;
+        iconImage[myData.step-1].gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

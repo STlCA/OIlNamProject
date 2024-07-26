@@ -30,6 +30,10 @@ public class SpawnData
         unitData = go.GetComponentInChildren<Unit>();
         unitData.myData.Init(unit.id, unit.unitInfo.Range, unit.unitInfo.Range, unit.unitInfo.ATK);
     }
+    public void UnitDataUpdate(UnitInstance unit)
+    {
+        unitData.myData.Init(unit.id, unit.unitInfo.Range, unit.unitInfo.Range, unit.unitInfo.ATK, 1);
+    }
 }
 
 public class CanUpgrade
@@ -67,6 +71,7 @@ public class UnitController : MonoBehaviour
 
     [Header("UI")]
     public TMP_Text infoTxt;
+
 
     public Dictionary<Vector3, SpawnData> spawnData = new();
     public Dictionary<int, CanUpgrade> canUpgrade = new();
@@ -168,6 +173,10 @@ public class UnitController : MonoBehaviour
         canUpgrade[id].pos.Remove(tempPos[0]);
         canUpgrade[id].pos.Remove(tempPos[1]);
 
+        UnitInstance newUnit = new();
+        newUnit.id = id+1;
+        newUnit.unitInfo = unitManager.unitDataBase.GetUnitByKey(id + 1);
+        spawnData[pos].UnitDataUpdate(newUnit);
         spawnData[pos].upgradeStep++;
         spawnData[pos].id++;
         //spawnData[pos].spriteRenderer.sprite = unitDataBase.GetUnitByKey(id + 1).Sprite;----------지금스프라이트준비안댐
