@@ -346,7 +346,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_white_icons_10
+      name: creator
       rect:
         serializedVersion: 2
         x: 64
@@ -409,7 +409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_white_icons_13
+      name: sound
       rect:
         serializedVersion: 2
         x: 16
@@ -871,7 +871,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_white_icons_35
+      name: info
       rect:
         serializedVersion: 2
         x: 80
@@ -908,10 +908,8 @@ TextureImporter:
       Pause: -122281328
       Setting: -1946888507
       UI_white_icons_1: -370690504
-      UI_white_icons_10: 338285367
       UI_white_icons_11: -438513167
       UI_white_icons_12: -583497444
-      UI_white_icons_13: -1716217595
       UI_white_icons_14: 881294011
       UI_white_icons_16: -821021549
       UI_white_icons_17: -220739523
@@ -929,13 +927,15 @@ TextureImporter:
       UI_white_icons_32: 783933154
       UI_white_icons_33: -1026035942
       UI_white_icons_34: -2079657441
-      UI_white_icons_35: 1127297178
       UI_white_icons_5: 703516594
       UI_white_icons_8: -1378996307
       UI_white_icons_9: -1027145490
+      creator: 338285367
       exit: 1229861505
+      info: 1127297178
       logout: 64314213
       notice: 1584379064
+      sound: -1716217595
       tempPoint: 2142374088
       tempkey: 2122880559
   mipmapLimitGroupName: 
