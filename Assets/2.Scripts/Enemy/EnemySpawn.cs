@@ -74,10 +74,13 @@ public class EnemySpawn : MonoBehaviour
 
         //enemyMove = enemyPrefab.GetComponent<EnemyMove>();
         //enemyMove.Init(wayPoints);
-        
+
+        int maxIndex = waveUI.currentWave / 10 + 1;
+        int randomEnemyIndex = Random.Range(1, maxIndex + 1);
+
         GameObject clone = Instantiate(enemyPrefab, wayPoints[0].position, Quaternion.identity);
         Enemy enemy = clone.GetComponent<Enemy>();
-        enemy.Init(1, gameSceneManager, dataManager);//수정
+        enemy.Init(randomEnemyIndex, gameSceneManager, dataManager);//수정
         enemyMove = enemy.enemyMove;
 
         enemyMove.Init(wayPoints);

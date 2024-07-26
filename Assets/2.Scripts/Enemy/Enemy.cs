@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     private EnemySpawn enemySpawn;    
 
     // 마물 정보
-    private DataTable_Enemy enemy;
+    public DataTable_Enemy enemyData;
     private SpriteRenderer image;
     private bool isDead;
 
@@ -57,9 +57,9 @@ public class Enemy : MonoBehaviour
         //this.enemyDatabase = dataManager.dataTable_EnemyLoader;
 
         // 
-        enemy = enemyDatabase.GetEnemyByKey(id);
+        enemyData = enemyDatabase.GetEnemyByKey(id);
         image = GetComponent<SpriteRenderer>();
-        image.sprite = enemy.sprite;
+        image.sprite = enemyData.sprite;
     }
 
     // 마물 활성화
@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour
     // 마물이 공격 받았을 때
     public void EnemyAttacked(float damage)
     {
-        float hp = enemy.HP;
+        float hp = enemyData.HP;
         hp -= damage;
 
         // 적이 죽었을 때

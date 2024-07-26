@@ -6,7 +6,7 @@ using UnityEngine;
 public class WaveUI : MonoBehaviour
 {
     [SerializeField] private int wave = 50;
-    [SerializeField] private int currentWave = 1;
+    [SerializeField] public int currentWave = 1;
     [SerializeField] private TMP_Text waveText;
     [SerializeField] private TimerUI timerUI;
     private EnemySpawn enemySpawn;

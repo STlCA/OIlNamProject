@@ -11,6 +11,8 @@ public class EnemyMove : MonoBehaviour
     private int wayPointCount;
     private int currentIndex;
 
+    private Enemy enemy;
+
     private void Awake()
     {
 
@@ -19,6 +21,9 @@ public class EnemyMove : MonoBehaviour
     // 마물 초기화
     public void Init(Transform[] _wayPoints)
     {
+        enemy = GetComponent<Enemy>();
+
+        speed = enemy.enemyData.Speed;
         currentIndex = 0;
 
         // 웨이포인트 할당
