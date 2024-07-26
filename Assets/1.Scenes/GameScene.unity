@@ -12554,6 +12554,7 @@ GameObject:
   - component: {fileID: 1715538310}
   - component: {fileID: 1715538311}
   - component: {fileID: 1715538312}
+  - component: {fileID: 1715538313}
   m_Layer: 0
   m_Name: ==GameSceneManager==
   m_TagString: Untagged
@@ -12606,6 +12607,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energySlider: {fileID: 1201062574}
   energyText: {fileID: 1034793085}
+--- !u!114 &1715538313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715538309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc8c6e99f305274ebbfd1e2d65e7f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyText: {fileID: 1534602830}
+  energySlider: {fileID: 348143443}
 --- !u!1 &1721825521
 GameObject:
   m_ObjectHideFlags: 0
