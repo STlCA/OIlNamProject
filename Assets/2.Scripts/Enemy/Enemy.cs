@@ -89,10 +89,10 @@ public class Enemy : MonoBehaviour
         {
             hp = 0;
 
-            //Disable();
+            Disable();
             //*** TODO : (임시방편으로 오브젝트 삭제 만듬->)아래 코드들 비활성화하고 난 뒤 위의 Disable() 활성화 ***
-            enemySpawn.EnemyDie(this, gameObject);
-            gameSceneManager.ChangeGold(2);//수정
+            //enemySpawn.EnemyDie(this, gameObject);
+            //gameSceneManager.ChangeGold(2);//수정
         }
     }
 }

@@ -42,9 +42,20 @@ public class SceneEffect : Manager
             startManager = GetComponent<StartManager>();
             storyUI = GetComponent<StoryUI>();
             storyUI.Init();
-        }
 
-        CanvasInit();
+            CanvasInit();
+        }
+    }
+
+    public override void Init(GameManager gm)
+    {
+        base.Init(gm);
+
+        myfadeImage = myCanvas.GetComponentInChildren<Image>();
+        mySlider = myCanvas.GetComponentInChildren<Slider>();
+
+        myfadeImage.gameObject.SetActive(false);
+        mySlider.gameObject.SetActive(false);
     }
 
     private void CanvasInit()
