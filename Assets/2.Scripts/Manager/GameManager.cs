@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 
         //Find
         dataManager = GetManager<DataManager>();
-        popUpController = GetManager<PopUpController>();
+        popUpController = GetFind<PopUpController>();
         soundManager = GetManager<SoundManager>();
         uiMnager = GetManager<UIManager>();
         player = GetManager<Player>();
@@ -95,7 +95,6 @@ public class GameManager : MonoBehaviour
 
         //Init
         dataManager.Init(this);
-        popUpController.Init(this);
         soundManager.Init(this);
         uiMnager.Init(this);
         player.Init(this);

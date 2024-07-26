@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopUpController : Manager
+public class PopUpController : MonoBehaviour
 {
     public SoundManager soundManager;//³ªÁß¿¡private
     private float currentTimeScale;

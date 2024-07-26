@@ -37,6 +37,8 @@ public class UnitSpawn : MonoBehaviour
     {
         CanSpawn canSpawn = new CanSpawn();
 
+        Debug.Log("스폰포인트 : " + spawnPoints.Count);
+
         if (spawnPoints.Count == 0)
         {
             canSpawn.canSpawn = false;
@@ -57,7 +59,7 @@ public class UnitSpawn : MonoBehaviour
 
         Vector3 pos = new();
         pos = spawnPoints[index];
-        spawnPoints.Remove(spawnPoints[index]);       
+        spawnPoints.Remove(spawnPoints[index]);
 
         return pos;
     }

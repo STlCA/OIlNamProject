@@ -106,11 +106,11 @@ public class Unit : MonoBehaviour, IPointerClickHandler
             else
                 nonClickImage.gameObject.SetActive(true);
 
-            Debug.Log(myData.id);
-            Debug.Log(myData.step);
-            Debug.Log(myData.atk);
-            Debug.Log(myData.range);
-            Debug.Log(myData.speed);
+            /*            Debug.Log(myData.id);
+                        Debug.Log(myData.step);
+                        Debug.Log(myData.atk);
+                        Debug.Log(myData.range);
+                        Debug.Log(myData.speed);*/
 
             ui.SetActive(true);
         }
@@ -124,7 +124,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     public void UnitUpgrade()
     {
         controller.UnitUpgrade(myData.id, transform.position);
-        iconImage[myData.step-1].gameObject.SetActive(true);
+        iconImage[myData.step - 1].gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -149,8 +149,11 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void Attack()//animation에서 호출하기
     {
-        unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
+        if (findEnemy == null)
+            return;
+
         skillGO.transform.position = findEnemy.transform.position;
+        unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
         Debug.Log("Attack호출됨");
         findEnemy.EnemyAttacked(myData.atk);
     }

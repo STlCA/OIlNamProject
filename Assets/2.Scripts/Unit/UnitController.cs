@@ -88,10 +88,13 @@ public class UnitController : MonoBehaviour
 
     public void UnitRecall()
     {
+        if (!gameSceneManager.CanUseGold())
+            return;
+
         GameObject unitGo = Instantiate(UnitPrefab);
         CanSpawn canSpawn = unitSpawnGo.RandomUnitSpawn();
 
-        if (canSpawn.canSpawn == true && gameSceneManager.CanUseGold())
+        if (canSpawn.canSpawn == true)
         {
             unitGo.transform.position = canSpawn.pos;
 
