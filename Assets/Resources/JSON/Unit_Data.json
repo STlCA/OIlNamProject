@@ -11,7 +11,7 @@
 			"Attack_Range": 210,
 			"Skill_ID": 1,
 			"Unit_Modeling": "Base0",
-			"Open": "true"
+			"Open": "false"
 		},
 		{
 			"ID": 102,
@@ -23,8 +23,8 @@
 			"Attack_Speed": 16500,
 			"Attack_Range": 210,
 			"Skill_ID": 1,
-			"Unit_Modeling": "초보자.gif",
-			"Open": "true"
+			"Unit_Modeling": "Base0",
+			"Open": "false"
 		},
 		{
 			"ID": 103,
@@ -36,8 +36,8 @@
 			"Attack_Speed": 16500,
 			"Attack_Range": 210,
 			"Skill_ID": 1,
-			"Unit_Modeling": "초보자.gif",
-			"Open": "true"
+			"Unit_Modeling": "Base0",
+			"Open": "false"
 		},
 		{
 			"ID": 201,
@@ -50,7 +50,7 @@
 			"Attack_Range": 170,
 			"Skill_ID": 2,
 			"Unit_Modeling": "Human0",
-			"Open": "true"
+			"Open": "false"
 		},
 		{
 			"ID": 202,
@@ -62,8 +62,8 @@
 			"Attack_Speed": 17000,
 			"Attack_Range": 160,
 			"Skill_ID": 3,
-			"Unit_Modeling": "전사 2.gif",
-			"Open": "true"
+			"Unit_Modeling": "Human0",
+			"Open": "false"
 		},
 		{
 			"ID": 203,
@@ -75,8 +75,8 @@
 			"Attack_Speed": 17000,
 			"Attack_Range": 150,
 			"Skill_ID": 4,
-			"Unit_Modeling": "전사 3.gif",
-			"Open": "true"
+			"Unit_Modeling": "Human0",
+			"Open": "false"
 		},
 		{
 			"ID": 301,
@@ -101,7 +101,7 @@
 			"Attack_Speed": 16000,
 			"Attack_Range": 210,
 			"Skill_ID": 6,
-			"Unit_Modeling": "궁수 2.gif",
+			"Unit_Modeling": "Archer0",
 			"Open": "true"
 		},
 		{
@@ -114,7 +114,7 @@
 			"Attack_Speed": 16000,
 			"Attack_Range": 200,
 			"Skill_ID": 7,
-			"Unit_Modeling": "궁수 3.gif",
+			"Unit_Modeling": "Archer0",
 			"Open": "true"
 		},
 		{
@@ -127,7 +127,7 @@
 			"Attack_Speed": 16700,
 			"Attack_Range": 270,
 			"Skill_ID": 8,
-			"Unit_Modeling": "Archer0",
+			"Unit_Modeling": "Mage0",
 			"Open": "false"
 		},
 		{
@@ -140,7 +140,7 @@
 			"Attack_Speed": 16700,
 			"Attack_Range": 260,
 			"Skill_ID": 9,
-			"Unit_Modeling": "마법사 2.gif",
+			"Unit_Modeling": "Mage0",
 			"Open": "false"
 		},
 		{
@@ -153,7 +153,7 @@
 			"Attack_Speed": 16700,
 			"Attack_Range": 250,
 			"Skill_ID": 10,
-			"Unit_Modeling": "마법사 3.gif",
+			"Unit_Modeling": "Mage0",
 			"Open": "false"
 		}
 	]

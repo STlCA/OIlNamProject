@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_white_icons_0
+      name: logout
       rect:
         serializedVersion: 2
         x: 0
@@ -178,7 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_white_icons_2
+      name: Light
       rect:
         serializedVersion: 2
         x: 32
@@ -220,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_white_icons_4
+      name: Day
       rect:
         serializedVersion: 2
         x: 64
@@ -262,7 +262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_white_icons_6
+      name: Left
       rect:
         serializedVersion: 2
         x: 0
@@ -451,7 +451,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_white_icons_15
+      name: Setting
       rect:
         serializedVersion: 2
         x: 48
@@ -577,7 +577,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_white_icons_21
+      name: notice
       rect:
         serializedVersion: 2
         x: 48
@@ -902,22 +902,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Day: -144522993
+      Left: 1348881410
+      Light: -1491513633
       Pause: -122281328
-      UI_white_icons_0: 64314213
+      Setting: -1946888507
       UI_white_icons_1: -370690504
       UI_white_icons_10: 338285367
       UI_white_icons_11: -438513167
       UI_white_icons_12: -583497444
       UI_white_icons_13: -1716217595
       UI_white_icons_14: 881294011
-      UI_white_icons_15: -1946888507
       UI_white_icons_16: -821021549
       UI_white_icons_17: -220739523
       UI_white_icons_18: 392407724
       UI_white_icons_19: 1229861505
-      UI_white_icons_2: -1491513633
       UI_white_icons_20: 1074322089
-      UI_white_icons_21: 1584379064
       UI_white_icons_23: 1042624671
       UI_white_icons_24: -1037511055
       UI_white_icons_25: -1082609723
@@ -931,11 +931,11 @@ TextureImporter:
       UI_white_icons_33: -1026035942
       UI_white_icons_34: -2079657441
       UI_white_icons_35: 1127297178
-      UI_white_icons_4: -144522993
       UI_white_icons_5: 703516594
-      UI_white_icons_6: 1348881410
       UI_white_icons_8: -1378996307
       UI_white_icons_9: -1027145490
+      logout: 64314213
+      notice: 1584379064
       tempPoint: 2142374088
       tempkey: 2122880559
   mipmapLimitGroupName: 

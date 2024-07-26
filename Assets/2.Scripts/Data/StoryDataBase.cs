@@ -9,6 +9,11 @@ public class StoryInfo
     public int ID;
     public string Text;
     public bool Delete;
+
+    public void Init()
+    {
+        Text = Text.Replace("&", "\n");
+    }
 }
 
 public class StoryInstance
@@ -27,6 +32,7 @@ public class StoryDataBase
     {
         foreach (StoryInfo story in StoryData)
         {
+            story.Init();
             storyDic.Add(story.ID, story);
         }
     }

@@ -24,7 +24,7 @@ public class SceneEffect : Manager
     public Image skipImage = null;
 
     [Header("Scene")]
-    public Canvas myCanvas;
+    public GameObject myCanvas;
     private Image myfadeImage = null;
     private Slider mySlider = null;
 
@@ -49,8 +49,10 @@ public class SceneEffect : Manager
 
     private void CanvasInit()
     {
-        myfadeImage = myCanvas.GetComponentInChildren<Image>();
-        mySlider = myCanvas.GetComponentInChildren<Slider>();
+        GameObject go = Instantiate(myCanvas);
+
+        myfadeImage = go.GetComponentInChildren<Image>();
+        mySlider = go.GetComponentInChildren<Slider>();
 
         myfadeImage.gameObject.SetActive(false);
         mySlider.gameObject.SetActive(false);
