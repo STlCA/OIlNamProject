@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public SceneEffect SceneEffect { get { return sceneEffect; } }
     private SceneEffect sceneEffect;
 
+    //====================== Enemy
+    public EnemySpawn enemySpawn;
+
     //====================== Player,Unit
     public Player Player { get { return player; } }
     private Player player;

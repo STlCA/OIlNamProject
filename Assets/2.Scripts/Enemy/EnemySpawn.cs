@@ -9,12 +9,17 @@ public class EnemySpawn : MonoBehaviour
     //[SerializeField] private Enemy enemyPrefab;
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private TMP_Text enemyCountText;
+
+    public GameManager gameManager;
+    public Player player;
     public DataManager dataManager;//임시//수정
     public GameSceneManager gameSceneManager;//수정
+    private WaveUI waveUI;
 
     private List<Enemy> enemyList;
     private int maxPerWave = 40;    // wave 당 최대 마물 수
     private int currentCount = 0;
+    public int deadEnemyCount = 0;  // 처리한 마물 수
 
     EnemyMove enemyMove;
 
@@ -23,11 +28,22 @@ public class EnemySpawn : MonoBehaviour
         // 생성된 마물을 넣어놓을 리스트 할당
         enemyList = new List<Enemy>();
 
+        waveUI = GetComponent<WaveUI>();
         //enemyMove = enemyPrefab.GetComponent<EnemyMove>();
     }
 
     private void Start()
     {
+        if (GameManager.Instance != null)
+        {
+            gameManager = GameManager.Instance;
+            player = gameManager.Player;
+        }
+        else
+        {
+            player = gameManager.Player;
+        }
+
         StartCoroutine(SpawnEnemy());
     }
 
@@ -39,7 +55,7 @@ public class EnemySpawn : MonoBehaviour
         {
             CreateEnemy();
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.6f);
         }
 
         currentCount = 0;
@@ -56,7 +72,7 @@ public class EnemySpawn : MonoBehaviour
 
         //enemyMove = enemyPrefab.GetComponent<EnemyMove>();
         //enemyMove.Init(wayPoints);
-
+        
         GameObject clone = Instantiate(enemyPrefab, wayPoints[0].position, Quaternion.identity);
         Enemy enemy = clone.GetComponent<Enemy>();
         enemy.Init(1, gameSceneManager, dataManager);//수정
@@ -65,7 +81,26 @@ public class EnemySpawn : MonoBehaviour
         enemyMove.Init(wayPoints);
         enemyList.Add(enemy);
 
+        //currentCount++;
         UpdateEnemyCountUI();
+    }
+
+    // ***임시*** 마물이 죽었을 때
+    public void EnemyDie(Enemy enemy, GameObject gameObject)
+    {
+        // ***** TODO : 마물 죽었을 때 처리 방법 수정하기 *****
+        //currentCount--;
+        deadEnemyCount++;
+        player.ExpUp(deadEnemyCount);
+        enemyList.Remove(enemy);
+        Destroy(gameObject);
+        UpdateEnemyCountUI();
+
+        // 소환된 마물이 다 죽었을 때
+        if(enemyList.Count == 0)
+        {
+            waveUI.NextWave();
+        }
     }
 
     // 마물 수 UI 업데이트
