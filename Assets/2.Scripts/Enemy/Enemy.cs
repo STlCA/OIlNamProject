@@ -12,7 +12,9 @@ public class Enemy : MonoBehaviour
     private DataManager dataManager;
     private DataTable_EnemyLoader enemyDatabase;
     private GameSceneManager gameSceneManager;//수정
+    private EnemySpawn enemySpawn;
 
+    // 마물 정보
     private DataTable_Enemy enemy;
     private SpriteRenderer image;
     private bool isDead;
@@ -37,6 +39,7 @@ public class Enemy : MonoBehaviour
             gameManager = GameManager.Instance;
             dataManager = gameManager.DataManager;
             enemyDatabase = dataManager.dataTable_EnemyLoader;
+            enemySpawn = gameManager.enemySpawn;
             gameSceneManager = GSM;//수정
         }
         else
@@ -44,6 +47,7 @@ public class Enemy : MonoBehaviour
             dataManager = DM;
             gameSceneManager = GSM;//수정
             enemyDatabase = dataManager.dataTable_EnemyLoader;
+            enemySpawn = gameManager.enemySpawn;
         }
 
         // Script
@@ -85,7 +89,10 @@ public class Enemy : MonoBehaviour
         {
             hp = 0;
 
-            Disable();
+            //Disable();
+            //*** TODO : (임시방편으로 오브젝트 삭제 만듬->)아래 코드들 비활성화하고 난 뒤 위의 Disable() 활성화 ***
+            enemySpawn.EnemyDie(this, gameObject);
+            gameSceneManager.ChangeGold(2);//수정
         }
     }
 }
