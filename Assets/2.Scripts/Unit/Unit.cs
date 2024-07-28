@@ -11,7 +11,8 @@ public class UnitData
 {
     public int id;
     public float range;
-    public float speed;
+    public float fixSpeed;
+    public float currentSpeed;
     public float time;
     public int step;
     public float atk;
@@ -20,13 +21,25 @@ public class UnitData
     {
         this.id = id;
         this.range = range;
-        this.speed = speed;
+        fixSpeed = speed;
         this.atk = atk;
         time = speed;
 
         if (step == 0)
             step = 0;
         this.step += step;
+
+        currentSpeed = fixSpeed;
+    }
+    public void SpeedChange(int changeVal)
+    {
+        if (changeVal == 0)
+        {
+            currentSpeed = fixSpeed;
+            return;
+        }
+
+        currentSpeed = fixSpeed / 100 * changeVal;
     }
 }
 
@@ -54,6 +67,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     private List<Enemy> enemyList = new();
     private Enemy findEnemy;
 
+
     private void Start()
     {
         if (GameManager.Instance != null)
@@ -70,7 +84,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         myData.time += Time.deltaTime;
 
 
-        if (myData.time >= myData.speed)
+        if (myData.time >= myData.currentSpeed)
         {
 
             findEnemy = FindEnemy();

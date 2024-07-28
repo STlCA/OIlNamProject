@@ -207,4 +207,12 @@ public class UnitController : MonoBehaviour
             canUpgrade.Add(id + 1, temp);
         }
     }
+
+    public void BadEnergy(int percent)
+    {
+        foreach (var val in spawnData)
+        {
+            val.Value.unitData.myData.SpeedChange(percent);
+        }
+    }
 }

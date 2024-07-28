@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 
 public class HappyEnergy : MonoBehaviour
 {
+    public GameSceneManager gameSceneManager;
+
     [Header("EnergyBar")]
     public Slider energySlider;
     public TMP_Text energyText;
@@ -30,15 +32,25 @@ public class HappyEnergy : MonoBehaviour
         {
             energy += value;
 
-            if (energy >= 100)
-                energy = 100;
+            if (energy >= totalEnergy)
+                energy = totalEnergy;
 
-            energySlider.value = energy / 100;
+            energySlider.value = energy / totalEnergy;
             TextChange();
             EnergyCheck();
+            PercentChange();
         }
     }
     private int energy;
+
+    private int totalEnergy;
+    private float currentEnergyPercent;
+
+
+    private void PercentChange()
+    {
+        currentEnergyPercent = energy / totalEnergy * 100;
+    }
 
     private void TextChange()
     {
@@ -55,7 +67,8 @@ public class HappyEnergy : MonoBehaviour
 
     private void HappyEnergyInit()
     {
-        Energy = 50;
+        Energy = 100;
+        totalEnergy = 200;
     }
 
     private void Start()
@@ -76,24 +89,30 @@ public class HappyEnergy : MonoBehaviour
 
     private void EnergyCheck()
     {
-        if (1 <= Energy && Energy <= 30)
+        if (1 <= currentEnergyPercent && currentEnergyPercent <= 30)
         {
-            if (Energy <= 20)
+            if (currentEnergyPercent <= 20)
+            {
+                gameSceneManager.unitController.BadEnergy(5);
                 Debug.Log("해로운 효과");
+            }
             else
+            {
+                gameSceneManager.unitController.BadEnergy(0);
                 Debug.Log("해로운 효과 끄기");
+            }
 
             SetTryValue(3, 10);
         }
-        else if (31 <= Energy && Energy <= 60)
+        else if (31 <= currentEnergyPercent && currentEnergyPercent <= 60)
             SetTryValue(5, 25);
-        else if (61 <= Energy && Energy <= 80)
+        else if (61 <= currentEnergyPercent && currentEnergyPercent <= 80)
             SetTryValue(7, 40);
-        else if (81 <= Energy && Energy <= 90)
+        else if (81 <= currentEnergyPercent && currentEnergyPercent <= 90)
             SetTryValue(10, 55);
         else
         {
-            if (Energy >= 100)
+            if (currentEnergyPercent >= 100)
                 Debug.Log("이로운 효과");
             else
                 Debug.Log("이로운 효과 끄기");
@@ -126,5 +145,10 @@ public class HappyEnergy : MonoBehaviour
     private void SetPopUp()
     {
         popUp.gameObject.SetActive(true);
+    }
+
+    public float GetHappyEnergyPercent()//20미만일때 마물이동속도+5%
+    {
+        return currentEnergyPercent;
     }
 }

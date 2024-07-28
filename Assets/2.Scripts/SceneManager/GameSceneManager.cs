@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameSceneManager : MonoBehaviour
 {
+    public UnitController unitController;
+
     [Header("Sound")]
     public AudioSource bgmSource;
     public AudioSource effectSource;

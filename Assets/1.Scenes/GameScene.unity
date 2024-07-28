@@ -12589,6 +12589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e354225842b2fd46a3aec6563184e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitController: {fileID: 883968212}
   bgmSource: {fileID: 23869144}
   effectSource: {fileID: 1778466894}
   goldTxt: {fileID: 290250786}
@@ -12619,8 +12620,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc8c6e99f305274ebbfd1e2d65e7f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyText: {fileID: 1534602830}
+  gameSceneManager: {fileID: 1715538311}
   energySlider: {fileID: 348143443}
+  energyText: {fileID: 1534602830}
+  popUp: {fileID: 0}
 --- !u!1 &1721825521
 GameObject:
   m_ObjectHideFlags: 0
