@@ -10167,6 +10167,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 8948626663979057521, guid: c16095440e3555f48a713c971dd6d8d1,
     type: 3}
   enemyCountText: {fileID: 224954760}
+  gameoverPopup: {fileID: 1000437948}
   gameManager: {fileID: 0}
   player: {fileID: 0}
   dataManager: {fileID: 447362145}
@@ -12590,6 +12591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitController: {fileID: 883968212}
+  happyEnergy: {fileID: 0}
   bgmSource: {fileID: 23869144}
   effectSource: {fileID: 1778466894}
   goldTxt: {fileID: 290250786}
@@ -12606,6 +12608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae8fbd468798894eb260d36eec4563c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSceneManager: {fileID: 0}
   energySlider: {fileID: 1201062574}
   energyText: {fileID: 1034793085}
 --- !u!114 &1715538313
@@ -12624,6 +12627,7 @@ MonoBehaviour:
   energySlider: {fileID: 348143443}
   energyText: {fileID: 1534602830}
   popUp: {fileID: 0}
+  clickFalse: {fileID: 0}
 --- !u!1 &1721825521
 GameObject:
   m_ObjectHideFlags: 0

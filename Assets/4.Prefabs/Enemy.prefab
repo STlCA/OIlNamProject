@@ -100,8 +100,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMove: {fileID: 0}
-  dataManager: {fileID: 6182797237231658063, guid: 502454c78a8ab9d45b0ff3c38206fdd1,
-    type: 3}
+  enemyData:
+    key: 0
+    Name: 
+    Description: 
+    HP: 0
+    Speed: 0
+    Exp: 0
+    PlayGoods: 0
+    Path: 
+    sprite: {fileID: 0}
 --- !u!114 &1334607384761096248
 MonoBehaviour:
   m_ObjectHideFlags: 0
