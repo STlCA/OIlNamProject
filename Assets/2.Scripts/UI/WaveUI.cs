@@ -36,11 +36,10 @@ public class WaveUI : MonoBehaviour
     {
         enemySpawn.gameSceneManager.happyEnergy.HappyEnergyCheck();
 
-        // 넘어갈 다음 일반 Wave가 있을 때
         currentWave++;
 
         // 넘어갈 다음 Wave가 있을 때
-        if(currentWave > maxWave)
+        if(currentWave < maxWave)
         {
             int tmpWave = currentWave % 10;
 
