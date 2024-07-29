@@ -39,7 +39,7 @@ public class UnitData
             return;
         }
 
-        currentSpeed = fixSpeed / 100 * changeVal;
+        currentSpeed += fixSpeed / 100 * changeVal;
     }
 }
 
@@ -53,8 +53,9 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     public Image nonClickImage;
     public List<Image> iconImage;
 
-    [Header("Skill")]
+    [Header("Self")]
     public GameObject skillGO;
+    public GameObject rangeGO;
 
     public UnitData myData;
     /*    public int id;
@@ -77,6 +78,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
         rangeCollider = GetComponent<CircleCollider2D>();
         rangeCollider.radius = myData.range;
+        rangeGO.transform.localScale = new Vector3(myData.range, myData.range);
     }
 
     private void Update()
@@ -103,10 +105,11 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         if (myData.step == 3)
             return;
 
-        UIOnOff(btnUI);
+        UIOnOff(btnUI,true);
+        UIOnOff(rangeGO);
     }
 
-    public void UIOnOff(GameObject ui)
+    public void UIOnOff(GameObject ui, bool isBtn = false)
     {
         if (ui == null)
             return;
@@ -115,16 +118,13 @@ public class Unit : MonoBehaviour, IPointerClickHandler
             ui.SetActive(false);
         else
         {
-            if (controller.CanUpgradeCheck(myData.id))
-                nonClickImage.gameObject.SetActive(false);
-            else
-                nonClickImage.gameObject.SetActive(true);
-
-            /*            Debug.Log(myData.id);
-                        Debug.Log(myData.step);
-                        Debug.Log(myData.atk);
-                        Debug.Log(myData.range);
-                        Debug.Log(myData.speed);*/
+            if(isBtn == true)
+            {
+                if (controller.CanUpgradeCheck(myData.id))
+                    nonClickImage.gameObject.SetActive(false);
+                else
+                    nonClickImage.gameObject.SetActive(true);
+            }
 
             ui.SetActive(true);
         }

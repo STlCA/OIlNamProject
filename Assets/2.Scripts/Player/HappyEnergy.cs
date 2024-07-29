@@ -17,6 +17,7 @@ public class HappyEnergy : MonoBehaviour
 
     [Header("PopUP")]
     public GameObject popUp;
+    public GameObject clickFalse;
 
     private string text;
 
@@ -24,6 +25,8 @@ public class HappyEnergy : MonoBehaviour
     private int tryCount;
     private float tryTime;
     private float percent;
+
+    private bool onPopup = false;
 
     public int Energy
     {
@@ -35,10 +38,10 @@ public class HappyEnergy : MonoBehaviour
             if (energy >= totalEnergy)
                 energy = totalEnergy;
 
-            energySlider.value = energy / totalEnergy;
+            energySlider.value = (float)energy / totalEnergy;
+            PercentChange();
             TextChange();
             EnergyCheck();
-            PercentChange();
         }
     }
     private int energy;
@@ -49,15 +52,15 @@ public class HappyEnergy : MonoBehaviour
 
     private void PercentChange()
     {
-        currentEnergyPercent = energy / totalEnergy * 100;
+        currentEnergyPercent = (float)energy / totalEnergy * 100;
     }
 
     private void TextChange()
     {
         text = "";
-        for (int i = 0; i < energy.ToString().Length; i++)
+        for (int i = 0; i < currentEnergyPercent.ToString().Length; i++)
         {
-            text += energy.ToString()[i];
+            text += currentEnergyPercent.ToString()[i];
             text += "\n";
         }
         text += "%";
@@ -67,8 +70,8 @@ public class HappyEnergy : MonoBehaviour
 
     private void HappyEnergyInit()
     {
-        Energy = 100;
         totalEnergy = 200;
+        Energy = 190;
     }
 
     private void Start()
@@ -78,9 +81,10 @@ public class HappyEnergy : MonoBehaviour
 
     private void Update()
     {
-        totalTime += Time.deltaTime;
+        if (!onPopup)
+            totalTime += Time.deltaTime;
 
-        if (totalTime >= tryCount)
+        if (totalTime >= tryTime)
         {
             CallTry();
             totalTime = 0;
@@ -90,7 +94,7 @@ public class HappyEnergy : MonoBehaviour
     private void EnergyCheck()
     {
         if (1 <= currentEnergyPercent && currentEnergyPercent <= 30)
-            SetTryValue(3, 10);        
+            SetTryValue(3, 10);
         else if (31 <= currentEnergyPercent && currentEnergyPercent <= 60)
             SetTryValue(5, 25);
         else if (61 <= currentEnergyPercent && currentEnergyPercent <= 80)
@@ -113,15 +117,20 @@ public class HappyEnergy : MonoBehaviour
 
     private void CallTry()
     {
+        Debug.Log("계산 돌아가는중");
+
         int random = Random.Range(0, 100);
 
         if (random <= percent)
+        {
+            onPopup = true;
             SetPopUp();
-
+        }
     }
 
     private void SetPopUp()
     {
+        Debug.Log("켜짐");
         popUp.gameObject.SetActive(true);
     }
 
@@ -139,5 +148,55 @@ public class HappyEnergy : MonoBehaviour
 
 
         return currentEnergyPercent;
+    }
+
+    public void ClickMessage(int num)
+    {
+        switch (num)
+        {
+            case 1:
+                if (gameSceneManager.Gold < 15)
+                {
+                    StopCoroutine("CoClickFalse");
+                    StartCoroutine("CoClickFalse");
+                    return;
+                }
+                gameSceneManager.ChangeGold(-15);
+                ChangeHappyEnergy(20);
+                Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
+                popUp.gameObject.SetActive(false);
+                onPopup = false;
+                break;
+            case 2:
+                if (gameSceneManager.Gold < 10)
+                {
+                    StopCoroutine("CoClickFalse");
+                    StartCoroutine("CoClickFalse");
+                    return;
+                }
+                gameSceneManager.ChangeGold(-10);
+                ChangeHappyEnergy(20);
+                Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
+                popUp.gameObject.SetActive(false);
+                onPopup = false;
+                break;
+            case 3:
+                ChangeHappyEnergy(-15);
+                popUp.gameObject.SetActive(false);
+                onPopup = false;
+                break;
+            default:
+                Debug.Log("버튼 메세지 번호 설정 안됨");
+                break;
+        }
+    }
+
+    private IEnumerator CoClickFalse()
+    {
+        clickFalse.SetActive(true);
+
+        yield return new WaitForSecondsRealtime(2);
+
+        clickFalse.SetActive(false);
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameSceneManager : MonoBehaviour
 {
     public UnitController unitController;
+    public HappyEnergy happyEnergy;
 
     [Header("Sound")]
     public AudioSource bgmSource;
@@ -43,6 +44,8 @@ public class GameSceneManager : MonoBehaviour
     {
         SoundInit();
         GoldInit();
+
+        happyEnergy = GetComponent<HappyEnergy>();
     }
 
     private void SoundInit()
