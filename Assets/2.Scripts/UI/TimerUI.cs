@@ -7,7 +7,7 @@ public class TimerUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text timeText;
 
-    private float time;
+    private int time;
     private float curTime;
 
     private int minute;
@@ -34,11 +34,11 @@ public class TimerUI : MonoBehaviour
 
         time = 30;
 
-        SetTimer();
+        SetTimer(time);
     }
 
     // 타이머 시작
-    public void SetTimer()
+    public void SetTimer(int seconds)
     {
         if (coTimer != null)
         {
