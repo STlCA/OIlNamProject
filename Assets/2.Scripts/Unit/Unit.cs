@@ -15,14 +15,16 @@ public class UnitData
     public float currentSpeed;
     public float time;
     public int step;
-    public float atk;
+    public float fixAtk;
+    public float currentAtk;
+    public float plusAtk;
 
     public void Init(int id, float range, float speed, float atk, int step = 0)
     {
         this.id = id;
         this.range = range;
         fixSpeed = speed;
-        this.atk = atk;
+        fixAtk = atk;
         time = speed;
 
         if (step == 0)
@@ -30,6 +32,7 @@ public class UnitData
         this.step += step;
 
         currentSpeed = fixSpeed;
+        currentAtk = fixAtk;
     }
     public void SpeedChange(int changeVal)
     {
@@ -40,6 +43,22 @@ public class UnitData
         }
 
         currentSpeed += fixSpeed / 100 * changeVal;
+    }
+    public void ATKChange(int changeVal, bool isFixChange = false)//fix인애 fix아닌애 두번부르기 fix먼저 부르기
+    {
+        if (isFixChange)
+        {
+            fixAtk += fixAtk / 100 * changeVal;
+            return;
+        }
+
+        if (changeVal == 0)
+        {
+            currentAtk = fixAtk;
+            return;
+        }
+
+        currentAtk += fixAtk / 100 * changeVal;
     }
 }
 
@@ -169,7 +188,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         skillGO.transform.position = findEnemy.transform.position;
         unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
         Debug.Log("Attack호출됨");
-        findEnemy.EnemyAttacked(myData.atk);
+        findEnemy.EnemyAttacked(myData.currentAtk);
     }
 
     private Enemy FindEnemy()

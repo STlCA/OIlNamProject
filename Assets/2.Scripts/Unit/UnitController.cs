@@ -208,11 +208,19 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    public void BadEnergy(int percent)
+    public void SpeedChange(int percent)
     {
         foreach (var val in spawnData)
         {
             val.Value.unitData.myData.SpeedChange(percent);
+        }
+    }
+
+    public void ATKChange(int percent,bool isFixChange = false)
+    {
+        foreach (var val in spawnData)
+        {
+            val.Value.unitData.myData.ATKChange(percent, isFixChange);
         }
     }
 }

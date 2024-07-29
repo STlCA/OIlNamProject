@@ -64,7 +64,7 @@ public class Player : Manager
 
     public void ExpUp(int monster)
     {
-        CurrentExp = monster * 2;
+        CurrentExp = monster * 0.02f;//TODO : ³ªÁß¿¡ ±âÈ¹ÆÀ¼öÄ¡Á¶Àý
 
         while (CurrentExp >= FullExp)
         {

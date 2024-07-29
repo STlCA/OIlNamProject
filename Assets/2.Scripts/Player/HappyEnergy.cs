@@ -181,6 +181,7 @@ public class HappyEnergy : MonoBehaviour
                 onPopup = false;
                 break;
             case 3:
+                gameSceneManager.ChangeGold(30);
                 ChangeHappyEnergy(-15);
                 popUp.gameObject.SetActive(false);
                 onPopup = false;

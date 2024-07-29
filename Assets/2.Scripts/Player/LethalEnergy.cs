@@ -7,6 +7,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class LethalEnergy : MonoBehaviour
 {
+    public GameSceneManager gameSceneManager;
+
     public Slider energySlider;
     public TMP_Text energyText;
 
@@ -14,6 +16,8 @@ public class LethalEnergy : MonoBehaviour
 
     private void Start()
     {
+        gameSceneManager = GetComponent<GameSceneManager>();
+
         LethalEnergyInit();
     }
 
@@ -24,21 +28,24 @@ public class LethalEnergy : MonoBehaviour
         {
             energy += value;
 
-            if (energy >= 100)
-                energy = 100;
+            if (energy >= 200)
+                energy = 200;
 
-            energySlider.value = energy / 100;
+            percent = energy / 200 * 100;
+            energySlider.value = energy / 200;
+
             TextChange();
         }
     }
     private float energy = 0;
+    private float percent;
 
     private void TextChange()
     {
         text = "";
-        for (int i = 0; i < energy.ToString().Length; i++)
+        for (int i = 0; i < percent.ToString().Length; i++)
         {
-            text += energy.ToString()[i];
+            text += percent.ToString()[i];
             text += "\n";
         }
         text += "%";
@@ -48,7 +55,7 @@ public class LethalEnergy : MonoBehaviour
 
     public void LethalEnergyInit()
     {
-        Energy = 0;
+        Energy = 200;
     }
 
     public void ChangeEnergy(float val)
@@ -58,7 +65,21 @@ public class LethalEnergy : MonoBehaviour
 
     public void UseLethal()//버튼 연결
     {
-        if (Energy >= 100)
-            ChangeEnergy(-100);
+        if (Energy < 200)
+            return;
+
+        ChangeEnergy(-200);
+        gameSceneManager.unitController.SpeedChange(20);
+        gameSceneManager.unitController.ATKChange(20);
+
+        StartCoroutine("CoCancelLethal");
+    }
+
+    public IEnumerator CoCancelLethal()
+    {
+        yield return new WaitForSeconds(20);
+
+        gameSceneManager.unitController.SpeedChange(0);
+        gameSceneManager.unitController.ATKChange(0);
     }
 }
