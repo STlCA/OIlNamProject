@@ -90,35 +90,13 @@ public class HappyEnergy : MonoBehaviour
     private void EnergyCheck()
     {
         if (1 <= currentEnergyPercent && currentEnergyPercent <= 30)
-        {
-            if (currentEnergyPercent <= 20)
-            {
-                gameSceneManager.unitController.BadEnergy(5);
-                Debug.Log("해로운 효과");
-            }
-            else
-            {
-                gameSceneManager.unitController.BadEnergy(0);
-                Debug.Log("해로운 효과 끄기");
-            }
-
-            SetTryValue(3, 10);
-        }
+            SetTryValue(3, 10);        
         else if (31 <= currentEnergyPercent && currentEnergyPercent <= 60)
             SetTryValue(5, 25);
         else if (61 <= currentEnergyPercent && currentEnergyPercent <= 80)
             SetTryValue(7, 40);
-        else if (81 <= currentEnergyPercent && currentEnergyPercent <= 90)
+        else if (81 <= currentEnergyPercent && currentEnergyPercent <= 100)
             SetTryValue(10, 55);
-        else
-        {
-            if (currentEnergyPercent >= 100)
-                Debug.Log("이로운 효과");
-            else
-                Debug.Log("이로운 효과 끄기");
-
-            SetTryValue(10, 55);
-        }
     }
 
     public void ChangeHappyEnergy(int val)
@@ -149,6 +127,17 @@ public class HappyEnergy : MonoBehaviour
 
     public float GetHappyEnergyPercent()//20미만일때 마물이동속도+5%
     {
+        //이걸부르는곳에서 gameSceneManager.unitController.BadEnergy(5);쓰기
+        if (currentEnergyPercent <= 20)
+            Debug.Log("해로운 효과");
+        else
+            Debug.Log("해로운 효과 끄기");
+        if (currentEnergyPercent >= 100)
+            Debug.Log("이로운 효과");
+        else
+            Debug.Log("이로운 효과 끄기");
+
+
         return currentEnergyPercent;
     }
 }
