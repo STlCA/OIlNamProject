@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float speed;
     private Vector3 direction;
 
     [SerializeField] private Transform[] wayPoints;

@@ -9,6 +9,7 @@ public class EnemySpawn : MonoBehaviour
     //[SerializeField] private Enemy enemyPrefab;
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private TMP_Text enemyCountText;
+    [SerializeField] private GameObject gameoverPopup;
 
     public GameManager gameManager;
     public Player player;
@@ -16,6 +17,7 @@ public class EnemySpawn : MonoBehaviour
     public GameSceneManager gameSceneManager;//수정
     private WaveUI waveUI;
     private LethalEnergy lethalEnergy;//수정
+    //private PopUpController popUpController;
 
     private List<Enemy> enemyList;
     private int maxPerWave = 40;    // wave 당 최대 마물 수
@@ -47,6 +49,8 @@ public class EnemySpawn : MonoBehaviour
         {
             player = GameManager.Instance.Player;
         }
+
+        //popUpController = gameManager.GetComponent<PopUpController>();
 
         StartCoroutine(SpawnEnemy());
     }
@@ -86,6 +90,11 @@ public class EnemySpawn : MonoBehaviour
         enemyMove.Init(wayPoints);
         enemyList.Add(enemy);
 
+        if (enemyList.Count >= 100)
+        {
+            GameOver();
+        }
+
         currentCount++;
         UpdateEnemyCountUI();
     }
@@ -120,5 +129,11 @@ public class EnemySpawn : MonoBehaviour
     private void UpdateEnemyCountUI()
     {
         enemyCountText.text = enemyList.Count.ToString() + " / 100";
+    }
+
+    // 마물이 100마리가 넘어가면 게임 오버
+    private void GameOver()
+    {
+        GameManager.Instance.PopUpController.PauseUIOn(gameoverPopup);
     }
 }
