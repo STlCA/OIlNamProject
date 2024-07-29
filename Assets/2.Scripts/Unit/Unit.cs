@@ -17,7 +17,7 @@ public class UnitData
     public int step;
     public float fixAtk;
     public float currentAtk;
-    public float plusAtk;
+    public float plusAtk;    
 
     public void Init(int id, float range, float speed, float atk, int step = 0)
     {
@@ -124,34 +124,35 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         if (myData.step == 3)
             return;
 
-        UIOnOff(btnUI,true);
-        UIOnOff(rangeGO);
+        UIOnOff();
     }
 
-    public void UIOnOff(GameObject ui, bool isBtn = false)
+    public void UIOnOff()
     {
-        if (ui == null)
+        if (btnUI == null)
             return;
 
-        if (ui.activeSelf == true)
-            ui.SetActive(false);
+        if (btnUI.activeSelf == true)
+        {
+            btnUI.SetActive(false);
+            rangeGO.SetActive(false);
+        }
         else
         {
-            if(isBtn == true)
-            {
-                if (controller.CanUpgradeCheck(myData.id))
-                    nonClickImage.gameObject.SetActive(false);
-                else
-                    nonClickImage.gameObject.SetActive(true);
-            }
+            if (controller.CanUpgradeCheck(myData.id))
+                nonClickImage.gameObject.SetActive(false);
+            else
+                nonClickImage.gameObject.SetActive(true);
 
-            ui.SetActive(true);
+            btnUI.SetActive(true);
+            rangeGO.SetActive(true);
         }
     }
 
     public void UIOff()
     {
         btnUI.gameObject.SetActive(false);
+        rangeGO.SetActive(false);
     }
 
     public void UnitUpgrade()

@@ -6899,6 +6899,10 @@ MonoBehaviour:
   gameSceneManager: {fileID: 1715538311}
   unitSpawnGo: {fileID: 1115554006}
   unitManager: {fileID: 641419075}
+  animators:
+  - {fileID: 9100000, guid: 4ea12c0afa3fb894ba164beebce37173, type: 2}
+  - {fileID: 9100000, guid: 22f046980bb56b643b687170cb7e8c2d, type: 2}
+  - {fileID: 9100000, guid: 8f98164e0c6a45e4cadf424da749b0c6, type: 2}
   UnitPrefab: {fileID: 3711611451568309910, guid: 1b6ade22d0c2f6a40a64cf64779b2702,
     type: 3}
   infoTxt: {fileID: 112947220}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
@@ -65,6 +66,7 @@ public class UnitController : MonoBehaviour
     [Header("Unit")]
     public UnitSpawn unitSpawnGo;
     public UnitManager unitManager;// 나중에 private
+    public List<AnimatorController> animators = new List<AnimatorController>();
 
     [Header("Prefab")]
     public GameObject UnitPrefab;
@@ -72,9 +74,9 @@ public class UnitController : MonoBehaviour
     [Header("UI")]
     public TMP_Text infoTxt;
 
-
     public Dictionary<Vector3, SpawnData> spawnData = new();
     public Dictionary<int, CanUpgrade> canUpgrade = new();
+    public Dictionary<int, AnimatorController> unitAnimator = new();
 
 
     private void Start()
@@ -83,6 +85,13 @@ public class UnitController : MonoBehaviour
         {
             unitManager = GameManager.Instance.UnitManager;
             GameManager.Instance.UnitController = this;
+        }
+
+        for (int i = 0; i < animators.Count; i++)
+        {
+            int temp = 201;
+
+            unitAnimator.Add(temp + (i * 100), animators[i]);
         }
     }
 
@@ -115,11 +124,14 @@ public class UnitController : MonoBehaviour
         UnitInstance newUnit = new();
         newUnit = unitManager.GetRandomUnit();
 
+
+
         SpawnData newData = new SpawnData();
         newData.Init(unitGo, newUnit);
 
         //임시
         unitGo.GetComponentInChildren<Unit>().controller = this;
+        unitGo.GetComponentInChildren<UnitAnimation>().unitAnimator.runtimeAnimatorController = unitAnimator[newUnit.id];
 
         infoTxt.text = newUnit.unitInfo.Name + " 동료를 획득하였습니다.";
 
@@ -177,7 +189,7 @@ public class UnitController : MonoBehaviour
         canUpgrade[id].pos.Remove(tempPos[1]);
 
         UnitInstance newUnit = new();
-        newUnit.id = id+1;
+        newUnit.id = id + 1;
         newUnit.unitInfo = unitManager.unitDataBase.GetUnitByKey(id + 1);
         spawnData[pos].UnitDataUpdate(newUnit);
         spawnData[pos].upgradeStep++;
@@ -216,7 +228,7 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    public void ATKChange(int percent,bool isFixChange = false)
+    public void ATKChange(int percent, bool isFixChange = false)
     {
         foreach (var val in spawnData)
         {
