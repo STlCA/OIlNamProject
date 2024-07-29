@@ -69,7 +69,7 @@ public class LethalEnergy : MonoBehaviour
             return;
 
         ChangeEnergy(-200);
-        gameSceneManager.unitController.SpeedChange(20);
+        gameSceneManager.unitController.SpeedChange(-20);
         gameSceneManager.unitController.ATKChange(20);
 
         StartCoroutine("CoCancelLethal");
@@ -79,7 +79,7 @@ public class LethalEnergy : MonoBehaviour
     {
         yield return new WaitForSeconds(20);
 
-        gameSceneManager.unitController.SpeedChange(0);
-        gameSceneManager.unitController.ATKChange(0);
+        gameSceneManager.unitController.SpeedChange(20);
+        gameSceneManager.unitController.ATKChange(-20);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
@@ -17,7 +18,8 @@ public class UnitData
     public int step;
     public float fixAtk;
     public float currentAtk;
-    public float plusAtk;    
+    public float plusSpeed;
+    public float plusAtk;
 
     public void Init(int id, float range, float speed, float atk, int step = 0)
     {
@@ -36,13 +38,15 @@ public class UnitData
     }
     public void SpeedChange(int changeVal)
     {
-        if (changeVal == 0)
+        plusSpeed += changeVal;
+
+        if (plusSpeed == 0)
         {
             currentSpeed = fixSpeed;
             return;
         }
 
-        currentSpeed += fixSpeed / 100 * changeVal;
+        currentSpeed += fixSpeed / 100 * plusSpeed;
     }
     public void ATKChange(int changeVal, bool isFixChange = false)//fix인애 fix아닌애 두번부르기 fix먼저 부르기
     {
@@ -52,13 +56,15 @@ public class UnitData
             return;
         }
 
-        if (changeVal == 0)
+        plusAtk += changeVal;
+
+        if (plusAtk == 0)
         {
             currentAtk = fixAtk;
             return;
         }
 
-        currentAtk += fixAtk / 100 * changeVal;
+        currentAtk += fixAtk / 100 * plusAtk;
     }
 }
 

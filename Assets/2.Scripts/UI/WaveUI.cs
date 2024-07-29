@@ -34,6 +34,8 @@ public class WaveUI : MonoBehaviour
     // 다음 Wave로 진입
     public void NextWave()
     {
+        enemySpawn.gameSceneManager.happyEnergy.HappyEnergyCheck();
+
         // 넘어갈 다음 일반 Wave가 있을 때
         currentWave++;
         UpdateWaveUI();

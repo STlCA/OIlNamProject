@@ -27,6 +27,8 @@ public class HappyEnergy : MonoBehaviour
     private float percent;
 
     private bool onPopup = false;
+    private bool onBad = false;
+    private bool onHappy = false;
 
     public int Energy
     {
@@ -134,20 +136,36 @@ public class HappyEnergy : MonoBehaviour
         popUp.gameObject.SetActive(true);
     }
 
-    public float GetHappyEnergyPercent()//20미만일때 마물이동속도+5%
+    public void HappyEnergyCheck()//20미만일때 마물이동속도+5%
     {
         //이걸부르는곳에서 gameSceneManager.unitController.BadEnergy(5);쓰기
         if (currentEnergyPercent <= 20)
+        {
+            //마물
+            onBad = true;
+            gameSceneManager.unitController.SpeedChange(5);
             Debug.Log("해로운 효과");
-        else
+        }
+        else if (21 <= currentEnergyPercent && currentEnergyPercent > 100)
+        {
+            if (onBad)
+            {
+                onBad = false;
+                gameSceneManager.unitController.SpeedChange(-5);
+            }
+            if (onHappy)
+            {
+                onHappy = false;
+                gameSceneManager.unitController.ATKChange(-30);
+            }
             Debug.Log("해로운 효과 끄기");
-        if (currentEnergyPercent >= 100)
+        }
+        else if (currentEnergyPercent >= 100)
+        {
+            onHappy = true;
+            gameSceneManager.unitController.ATKChange(30);
             Debug.Log("이로운 효과");
-        else
-            Debug.Log("이로운 효과 끄기");
-
-
-        return currentEnergyPercent;
+        }
     }
 
     public void ClickMessage(int num)
