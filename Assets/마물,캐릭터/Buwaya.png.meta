@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5eb6f483e1394b742a8e34ad2a45c115
+guid: 79b722f448e762a4194c170ff75dc453
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GUI_0
+      name: Buwaya_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 204
-        width: 61
-        height: 90
+        x: 4
+        y: 72
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 111f76de903be1f41967fd2ee3f62d68
-      internalID: 1281410415
+      spriteID: d0023d2fdfdb57940a3589024e8078ef
+      internalID: 1585199600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_1
+      name: Buwaya_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 205
-        width: 61
-        height: 87
+        x: 28
+        y: 72
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3aacd0ac66d7a24eace96f2e4f9db4e
-      internalID: 1348459293
+      spriteID: baaa08c506c10a94d9399d06e8f7d155
+      internalID: 1941467912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_2
+      name: Buwaya_2
       rect:
         serializedVersion: 2
-        x: 197
-        y: 225
-        width: 91
-        height: 54
+        x: 52
+        y: 72
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fa6df4084cbddd4c9b585ee28b1bd62
-      internalID: 910818358
+      spriteID: d9288646945383a4d9da288e7f1b28e6
+      internalID: -1112341634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_3
+      name: Buwaya_3
       rect:
         serializedVersion: 2
-        x: 20
-        y: 107
-        width: 140
-        height: 66
+        x: 2
+        y: 48
+        width: 17
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03f7d24e7ac25a74d9a2ac069238e247
-      internalID: -337019305
+      spriteID: 6e8b0644133a6cc46996e8d24f12f899
+      internalID: -614414795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_4
+      name: Buwaya_4
       rect:
         serializedVersion: 2
-        x: 196
-        y: 78
-        width: 95
-        height: 136
+        x: 26
+        y: 48
+        width: 17
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +234,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba448bec60ae87b42a27386d99f140e6
-      internalID: 855413458
+      spriteID: 907d4803464b82d45bcd05b101964ca7
+      internalID: -1674418088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_5
+      name: Buwaya_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 48
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0c70ac88a0c7e43b9e1c6ec69f8f5a
+      internalID: -266658276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buwaya_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 24
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a534ed6921b0eb8408539e6851c244ad
+      internalID: -663295467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buwaya_7
       rect:
         serializedVersion: 2
         x: 29
-        y: 65
-        width: 33
-        height: 14
+        y: 24
+        width: 17
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +297,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f93df6363f2dbb84294f7b887000e964
-      internalID: 70682573
+      spriteID: 0ebd9fcdac4b97e479dcd141269bc628
+      internalID: 1110604627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_6
+      name: Buwaya_8
       rect:
         serializedVersion: 2
-        x: 197
-        y: 42
-        width: 24
-        height: 24
+        x: 53
+        y: 24
+        width: 17
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +318,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8199bdd28a2cab949bc5fbd10a3c7eb6
-      internalID: 1783573493
+      spriteID: 37ce33fb67c452f4992c21e9fbf2e3a4
+      internalID: 1024923035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_7
+      name: Buwaya_9
       rect:
         serializedVersion: 2
-        x: 224
-        y: 42
-        width: 25
-        height: 24
+        x: 4
+        y: 0
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +339,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62abeedc6139c7f42aaab1cc574a8392
-      internalID: 1227569799
+      spriteID: df55b330110d8e34c9a3a9995cae698b
+      internalID: 126647393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_8
+      name: Buwaya_10
       rect:
         serializedVersion: 2
-        x: 252
-        y: 42
-        width: 24
-        height: 24
+        x: 28
+        y: 0
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +360,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5179c4786644a14d98f18eb346f422d
-      internalID: 866170006
+      spriteID: beb8bc16336b6bc47976341470607037
+      internalID: -49435272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_9
+      name: Buwaya_11
       rect:
         serializedVersion: 2
-        x: 197
-        y: 14
-        width: 24
-        height: 24
+        x: 52
+        y: 0
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,50 +381,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68f3b7ae190af6147af2c26ea1c6eb2b
-      internalID: 214571134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_10
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 14
-        width: 25
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 273184c9e35bb6f43b3b31a897a3bae1
-      internalID: -544210414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GUI_11
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 14
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e92abbf485684a84e9e47544eb8a1e89
-      internalID: -2063599418
+      spriteID: 26858458ed0593049a3a831ab8f2f984
+      internalID: 1043888466
       vertices: []
       indices: 
       edges: []
@@ -398,18 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GUI_0: 1281410415
-      GUI_1: 1348459293
-      GUI_10: -544210414
-      GUI_11: -2063599418
-      GUI_2: 910818358
-      GUI_3: -337019305
-      GUI_4: 855413458
-      GUI_5: 70682573
-      GUI_6: 1783573493
-      GUI_7: 1227569799
-      GUI_8: 866170006
-      GUI_9: 214571134
+      Buwaya_0: 1585199600
+      Buwaya_1: 1941467912
+      Buwaya_10: -49435272
+      Buwaya_11: 1043888466
+      Buwaya_2: -1112341634
+      Buwaya_3: -614414795
+      Buwaya_4: -1674418088
+      Buwaya_5: -266658276
+      Buwaya_6: -663295467
+      Buwaya_7: 1110604627
+      Buwaya_8: 1024923035
+      Buwaya_9: 126647393
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
