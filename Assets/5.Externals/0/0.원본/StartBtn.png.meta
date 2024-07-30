@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5344ba2ef550fe7459c69eb3430ba094
+guid: 08216e3aa2f7f0c4eb6a4d5f8ddd0df9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,7 +120,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -136,253 +136,379 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Busaw_0
+      name: StartBtn_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 72
-        width: 15
-        height: 19
+        x: 0
+        y: 50
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42346cd3724625e40aa7537f8fef343e
-      internalID: -2038581645
+      spriteID: 60848e9b6591c6242b359a81875171f4
+      internalID: -1013208710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Busaw_1
+      name: StartBtn_1
       rect:
         serializedVersion: 2
-        x: 28
-        y: 72
-        width: 16
-        height: 20
+        x: 27
+        y: 50
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d62acfac97e27e44d896533f675a86e4
-      internalID: 999453935
+      spriteID: 35644b19877f697458e0e551b95b2678
+      internalID: -1178557867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Busaw_2
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 72
-        width: 15
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3e07a73bfffd1d4a85c13be6b73cf2c
-      internalID: -1347097456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Busaw_3
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 48
-        width: 13
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88d7f1840ab352d4daac60b43ac6ee50
-      internalID: -230419358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Busaw_4
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 48
-        width: 13
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e33f779691a6f3449799b668b4ea320
-      internalID: 1522225431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Busaw_5
+      name: StartBtn_2
       rect:
         serializedVersion: 2
         x: 54
-        y: 48
-        width: 13
-        height: 20
+        y: 50
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 328c3b9340316df4aa9b6e8d9ada82fb
-      internalID: -1866735168
+      spriteID: 79aa0983408782d4ea68c580360a259e
+      internalID: -697485046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Busaw_6
+      name: StartBtn_3
       rect:
         serializedVersion: 2
-        x: 5
-        y: 24
-        width: 13
-        height: 20
+        x: 0
+        y: 40
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5846a36031dc8ad498eefa5366d27be3
-      internalID: 355218849
+      spriteID: 7146a3eb77d0d264fbf854eeefc362f1
+      internalID: -1233438967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Busaw_7
+      name: StartBtn_4
       rect:
         serializedVersion: 2
-        x: 29
-        y: 24
-        width: 13
-        height: 21
+        x: 27
+        y: 40
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba6e57eba09034741900d59d76820d07
-      internalID: 1533898583
+      spriteID: 389671ff7b7f63a4990c4a7566947342
+      internalID: 196669651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Busaw_8
+      name: StartBtn_5
       rect:
         serializedVersion: 2
-        x: 53
-        y: 24
-        width: 13
-        height: 20
+        x: 54
+        y: 40
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d474bac2547631f4fbafc22dec8af40f
-      internalID: 1862821609
+      spriteID: 9a0d0b04af4a61e48ae50c0260301c98
+      internalID: 1742686217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Busaw_9
+      name: StartBtn_6
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
+        y: 30
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60406e3becf10f64a8a8be4e76cab25d
+      internalID: 1094860261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartBtn_7
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 30
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1890583a7721a9e49a1335922a0be24f
+      internalID: 1082916349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartBtn_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 30
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba48b33598861994681169cc1b8cfb85
+      internalID: -2006153607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShopBtn
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 20
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07dd250a459cb2c44b498e9e1310e69e
+      internalID: -60800879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartBtn_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 20
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4cf90c0f6c591743afb0a41b5a42c46
+      internalID: -1376286721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartBtn_11
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 20
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9858114b982c4d04ab06d8de0d64133b
+      internalID: 1491195182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartBtnBlue
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e8bd6a62a5d1648a86793b4087592c
+      internalID: 112900009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartBtn_13
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 10
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a57f99c858de184cb49ccf9521e2fed
+      internalID: -746647398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartBtn_14
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 10
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 545ea557915607349bc424c2d6e987bf
+      internalID: -1771825056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartBtn_15
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 15
-        height: 19
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81d34b63c83f9e54bad007a5008ff78b
-      internalID: 1492745923
+      spriteID: a1d87fcd6a0b20846969ca7dfd4aba00
+      internalID: 918360213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Busaw_10
+      name: StartBtn_16
       rect:
         serializedVersion: 2
-        x: 28
+        x: 27
         y: 0
-        width: 16
-        height: 20
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcf0452101f9cff45a569630e50f6675
-      internalID: 858392286
+      spriteID: 818706ce2af4d0f44a8d74d8e600aa86
+      internalID: 1633588880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Busaw_11
+      name: StartBtn_17
       rect:
         serializedVersion: 2
-        x: 52
+        x: 54
         y: 0
-        width: 15
-        height: 19
+        width: 27
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ef0b645655dbc14988c06eef3bdcfab
-      internalID: -531135297
+      spriteID: 3dfe9243a4ce9b14b814743a335a451a
+      internalID: 174968857
       vertices: []
       indices: 
       edges: []
@@ -398,18 +524,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Busaw_0: -2038581645
-      Busaw_1: 999453935
-      Busaw_10: 858392286
-      Busaw_11: -531135297
-      Busaw_2: -1347097456
-      Busaw_3: -230419358
-      Busaw_4: 1522225431
-      Busaw_5: -1866735168
-      Busaw_6: 355218849
-      Busaw_7: 1533898583
-      Busaw_8: 1862821609
-      Busaw_9: 1492745923
+      ShopBtn: -60800879
+      StartBtnBlue: 112900009
+      StartBtn_0: -1013208710
+      StartBtn_1: -1178557867
+      StartBtn_10: -1376286721
+      StartBtn_11: 1491195182
+      StartBtn_13: -746647398
+      StartBtn_14: -1771825056
+      StartBtn_15: 918360213
+      StartBtn_16: 1633588880
+      StartBtn_17: 174968857
+      StartBtn_2: -697485046
+      StartBtn_3: -1233438967
+      StartBtn_4: 196669651
+      StartBtn_5: 1742686217
+      StartBtn_6: 1094860261
+      StartBtn_7: 1082916349
+      StartBtn_8: -2006153607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

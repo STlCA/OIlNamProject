@@ -1,0 +1,1643 @@
+fileFormatVersion: 2
+guid: 94a9f853137613748bd41a8bebcd04ee
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Slider1_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 381
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd44474514934cc49a9db0002383a23c
+      internalID: 903870805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 384
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0fb63be1831a9449c549690b81c2c5
+      internalID: 1164668104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 384
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29985223ea23d8a4aae75d140698c2b6
+      internalID: 1550839462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 384
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520f4ef03c45c9d4dbfccdd3915e9cff
+      internalID: -930540222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_4
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 384
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c3422614724b547b0eb0620ff8b5d2
+      internalID: 1596954884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 384
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e764f84780ec845907c5e0269b3918
+      internalID: 1735303613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_6
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 384
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90431ce5c0764804a962d920b7248eb5
+      internalID: -2099710904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_7
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 384
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09abe989f55c1014397b193fce607e1d
+      internalID: -25659268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 385
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca609fe1466f264d8b4376007f238b4
+      internalID: 157628400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_9
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 383
+        width: 64
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d6e34aad952d447a92262019e6a72a
+      internalID: -306850986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_10
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 380
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5165a0b9213292c4a90d92836399ffaf
+      internalID: -2076151761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 350
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55215d0f026ed7344a314009942cddbb
+      internalID: -1716448372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_12
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 352
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f499c388afd8e47a2866612990d8fb
+      internalID: -1548726591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_13
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 352
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ee761bbb4f285438913f7ff5933371
+      internalID: 1299886557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_14
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 352
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40b2874f56d35c418c32d97fff7bb64
+      internalID: 406659660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_15
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 352
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1a376f19dddb04e81f8dfef0c33a63
+      internalID: -1829133867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_16
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 352
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de23aa2b8788ee44b8530f319c265043
+      internalID: -1629827977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 352
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94f701abcd6ee54aa16602f163b0ada
+      internalID: 1116296326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_18
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 352
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0bfc2e76050e248b0a68f5bd50a867
+      internalID: 1776923842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_19
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 353
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1ea52259240cc408c887f54fe0c0cd
+      internalID: 884289914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_20
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 350
+        width: 64
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02413c7734a09e4408a5d7e7d25367e7
+      internalID: 986133366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_21
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 349
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378d96601830b164685b1f7a38602406
+      internalID: -1025777669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 318
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71493f67b026c074e987a5a84684f857
+      internalID: 1469447106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_23
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 320
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ceb34c3f355ec4eb7e329d04abb056
+      internalID: 1773118490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_24
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 320
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5812d342d46981849b5f6055bca5bcd3
+      internalID: -1062529622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_25
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 320
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b26c961e803ed4ca4bb32ab4ce8080
+      internalID: 970961184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_26
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 320
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02056b0c82cc9c146b3047be2c50fcd3
+      internalID: -1350063100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 320
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b84f3d1e4f7900418702e30e5c02546
+      internalID: -1519955948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_28
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 320
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4335fa5dfb7792479ae0004a80ec5a0
+      internalID: -1271780877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_29
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 320
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e6e545427824f469ac223e95359c32
+      internalID: 1688124898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_30
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 321
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c274293bb14cd8747af5fe9b9334a0a9
+      internalID: 630000149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_31
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 318
+        width: 64
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5abb3561e7358846958df4d783a239d
+      internalID: 1099693841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_32
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 316
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7508914541b774ca5216cd6abe18d9
+      internalID: -80321398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_123
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 65
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2bc2a3a6d56c24b8fa872cf4c01fcd
+      internalID: -1295760154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_124
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 68
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 365de8b524460a14bb8fe0129252cecf
+      internalID: -375272997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_125
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 68
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff484b71704f164f99543036162d8c8
+      internalID: -894884769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_126
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 68
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5853075fea37944aa7c21575f92275
+      internalID: -1315346052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_127
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 68
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798583a1acc40ca43954e6b09491418e
+      internalID: -389359825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_128
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 68
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55dd6e7e079efa24f83069ed26e17c86
+      internalID: -1258850344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_129
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 68
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3551c3d8b70468e4f8585d3f67ec3180
+      internalID: 481574209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_130
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 68
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa28e9e7837b584187f2f5bc2ce1d10
+      internalID: -481042462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_131
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 69
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa24a5079b6ef0c48acf3768ad5e7bc8
+      internalID: -1401866927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_132
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 67
+        width: 64
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a173b66ce61dcd84abba5bb4dfe9786f
+      internalID: 371964099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_133
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf2ed78dcbdf574c8cfcbda3e581a7a
+      internalID: 695669579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_134
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 36
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979b4aa49202f1f4888576288b4f1ffe
+      internalID: 203916860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_135
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 36
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24ce8fed69e990469c22cc2ee2842ac
+      internalID: 1423670459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_136
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 36
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52f9825239c7ab46a89261b8c564505
+      internalID: -1782577429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_137
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 36
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d6d05573b3da049bb806ad5135704c
+      internalID: -933585488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_138
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 36
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de1e66f77a863a48beb1627d1b44171
+      internalID: -756348027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_139
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 36
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cebcab7f7e0c984a97ef402f2338f0e
+      internalID: 1544241978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_140
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 36
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ebe36a92d291042b67d800abd43e97
+      internalID: -99278966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_141
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 37
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c12bc745d89cd45a1ddba7ed58b69c
+      internalID: -311589398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_142
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 34
+        width: 64
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c358033bebacccc428c18a5714c2a101
+      internalID: 1695640233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d2fabd7a2d4bc4bae33bf93f1cbf27
+      internalID: -492448911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_144
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 4
+        width: 32
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0261109f4e2d6274184b834da0d4b7a3
+      internalID: 552441083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_145
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 4
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df090f6db48d75e4fa0b3f016abc1b1c
+      internalID: 845173159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_146
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 4
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16def5b201fe8c488876b36a4002b93
+      internalID: 80390017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_147
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 4
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6773f91bffb654f9344e1b58f8fdf5
+      internalID: -1153880246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_148
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 4
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b0725fe457b584880d62f581db5d6b
+      internalID: -541326818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_149
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 4
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a32a70f58ab964f91a97eb1384d1ee
+      internalID: -1644457114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_150
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 4
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76ae3b0a0e51864ebd94e5b4a06a696
+      internalID: 528709502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_151
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 5
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00cb7d1f81ac1a44adfc61e142d5212
+      internalID: -1547449895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slider1_152
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 2
+        width: 64
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a6f034943713a4ebffef70133c5801
+      internalID: 494904482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Slider1_0: 903870805
+      Slider1_1: 1164668104
+      Slider1_10: -2076151761
+      Slider1_100: 328864184
+      Slider1_101: -2115664190
+      Slider1_102: 1933466725
+      Slider1_103: 1469714440
+      Slider1_104: -1266923590
+      Slider1_105: 1985620424
+      Slider1_106: -1634762744
+      Slider1_107: -1173545028
+      Slider1_108: -1005867375
+      Slider1_109: 1193241757
+      Slider1_11: -1716448372
+      Slider1_110: 1134993281
+      Slider1_111: 714133354
+      Slider1_112: 1287481956
+      Slider1_113: 638123154
+      Slider1_114: 1076833022
+      Slider1_115: -498408425
+      Slider1_116: 548564341
+      Slider1_117: 1248565401
+      Slider1_118: -1074471189
+      Slider1_119: 707944433
+      Slider1_12: -1548726591
+      Slider1_120: -309507644
+      Slider1_121: -799884911
+      Slider1_122: 1075654089
+      Slider1_123: -1295760154
+      Slider1_124: -375272997
+      Slider1_125: -894884769
+      Slider1_126: -1315346052
+      Slider1_127: -389359825
+      Slider1_128: -1258850344
+      Slider1_129: 481574209
+      Slider1_13: 1299886557
+      Slider1_130: -481042462
+      Slider1_131: -1401866927
+      Slider1_132: 371964099
+      Slider1_133: 695669579
+      Slider1_134: 203916860
+      Slider1_135: 1423670459
+      Slider1_136: -1782577429
+      Slider1_137: -933585488
+      Slider1_138: -756348027
+      Slider1_139: 1544241978
+      Slider1_14: 406659660
+      Slider1_140: -99278966
+      Slider1_141: -311589398
+      Slider1_142: 1695640233
+      Slider1_143: -492448911
+      Slider1_144: 552441083
+      Slider1_145: 845173159
+      Slider1_146: 80390017
+      Slider1_147: -1153880246
+      Slider1_148: -541326818
+      Slider1_149: -1644457114
+      Slider1_15: -1829133867
+      Slider1_150: 528709502
+      Slider1_151: -1547449895
+      Slider1_152: 494904482
+      Slider1_153: 1845161164
+      Slider1_16: -1629827977
+      Slider1_17: 1116296326
+      Slider1_18: 1776923842
+      Slider1_19: 884289914
+      Slider1_2: 1550839462
+      Slider1_20: 986133366
+      Slider1_21: -1025777669
+      Slider1_22: 1469447106
+      Slider1_23: 1773118490
+      Slider1_24: -1062529622
+      Slider1_25: 970961184
+      Slider1_26: -1350063100
+      Slider1_27: -1519955948
+      Slider1_28: -1271780877
+      Slider1_29: 1688124898
+      Slider1_3: -930540222
+      Slider1_30: 630000149
+      Slider1_31: 1099693841
+      Slider1_32: -80321398
+      Slider1_33: 1787127870
+      Slider1_34: -1650217201
+      Slider1_35: 343585328
+      Slider1_36: 903211396
+      Slider1_37: 1206828859
+      Slider1_38: -1750324516
+      Slider1_39: -890517357
+      Slider1_4: 1596954884
+      Slider1_40: -1135429069
+      Slider1_41: 1954868135
+      Slider1_42: 364645762
+      Slider1_43: 939857953
+      Slider1_44: 2048904030
+      Slider1_45: 177951472
+      Slider1_46: 1905120541
+      Slider1_47: 860884701
+      Slider1_48: -214248647
+      Slider1_49: 1129752830
+      Slider1_5: 1735303613
+      Slider1_50: 755016664
+      Slider1_51: 1722040176
+      Slider1_52: 640743924
+      Slider1_53: 304819314
+      Slider1_54: 171992065
+      Slider1_55: 171210841
+      Slider1_56: 1153557893
+      Slider1_57: -575028992
+      Slider1_58: 1487749218
+      Slider1_59: 829359577
+      Slider1_6: -2099710904
+      Slider1_60: -1858155186
+      Slider1_61: 1761653097
+      Slider1_62: 1719113333
+      Slider1_63: -1572256182
+      Slider1_64: -1620950737
+      Slider1_65: -1391962360
+      Slider1_66: -562480703
+      Slider1_67: -1921154228
+      Slider1_68: 2112460056
+      Slider1_69: -411354789
+      Slider1_7: -25659268
+      Slider1_70: -1485401692
+      Slider1_71: 605091026
+      Slider1_72: -1606000572
+      Slider1_73: 225938034
+      Slider1_74: 797838769
+      Slider1_75: -2048098250
+      Slider1_76: -1923691676
+      Slider1_77: 1548573578
+      Slider1_78: -1023389426
+      Slider1_79: -779826791
+      Slider1_8: 157628400
+      Slider1_80: 1948407362
+      Slider1_81: 1892692667
+      Slider1_82: 292018121
+      Slider1_83: -1875487162
+      Slider1_84: -739882454
+      Slider1_85: -401497570
+      Slider1_86: -1181705150
+      Slider1_87: -31207420
+      Slider1_88: 926412082
+      Slider1_89: -295135426
+      Slider1_9: -306850986
+      Slider1_90: -879535073
+      Slider1_91: -927714105
+      Slider1_92: -1892147945
+      Slider1_93: -872999869
+      Slider1_94: -1610891803
+      Slider1_95: 182218502
+      Slider1_96: -691482252
+      Slider1_97: 1845993258
+      Slider1_98: 176119712
+      Slider1_99: -588421693
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
