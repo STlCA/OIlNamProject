@@ -19,18 +19,19 @@ public struct Story
 public class StoryUI : MonoBehaviour
 {
     public DataManager dataManager;
-    private StoryDataBase storyDataBase;
+    private DataTable_StoryLoader storyDataBase;
+    //private StoryDataBase storyDataBase;
 
     public Story[] story = new Story[13];
 
     public void Init()
     {
-        storyDataBase = dataManager.storyDataBase;
+        storyDataBase = dataManager.dataTable_StoryLoader;
 
         for (int i = 0; i < story.Length; i++)
         {
             story[i] = new Story();
-            story[i].SetStory(storyDataBase.GetStoryByKey(i).Text, storyDataBase.GetStoryByKey(i).Delete);
+            story[i].SetStory(storyDataBase.GetByKey(i).Text.Replace("&", "\n"), storyDataBase.GetByKey(i).Delete);
         }
 
 /*        story[0].SetStory("ÄâÁöÁ÷.", false);

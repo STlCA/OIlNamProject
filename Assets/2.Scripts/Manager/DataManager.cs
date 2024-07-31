@@ -6,13 +6,17 @@ using UnityEngine;
 public class DataManager : Manager
 {
     //public EnemyDataBase enemyDataBase;
+    //public StoryDataBase storyDataBase;
     public DataTable_EnemyLoader dataTable_EnemyLoader;
-    public StoryDataBase storyDataBase;
+    public DataTable_StoryLoader dataTable_StoryLoader;
     public UnitDataBase unitDataBase;
+    public DataTable_MessageLoader dataTable_MessageLoader;
 
     private void Awake()
     {
         EnemyAwake();
+        MessageAwake();
+
         StoryAwake();
         UnitAwake();
     }
@@ -28,7 +32,7 @@ public class DataManager : Manager
 
     private void EnemyAwake()
     {
-        //TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Enemy_Data");
+/*        //TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Enemy_Data");
         //if (jsonFile != null)
         //{
         //    string json = jsonFile.text;
@@ -39,24 +43,26 @@ public class DataManager : Manager
         //else
         //{
         //    Debug.LogError("Failed to load enemyDataBase.json");
-        //}
+        //}*/
         dataTable_EnemyLoader = new DataTable_EnemyLoader();
     }
     
     private void StoryAwake()
     {
-        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Story_Data");
-        if (jsonFile != null)
-        {
-            string json = jsonFile.text;
+        /*        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Story_Data");
+                if (jsonFile != null)
+                {
+                    string json = jsonFile.text;
 
-            storyDataBase = JsonUtility.FromJson<StoryDataBase>(json);
-            storyDataBase.Initialize();
-        }
-        else
-        {
-            Debug.LogError("Failed to load storyDataBase.json");
-        }
+                    storyDataBase = JsonUtility.FromJson<StoryDataBase>(json);
+                    storyDataBase.Initialize();
+                }
+                else
+                {
+                    Debug.LogError("Failed to load storyDataBase.json");
+                }*/
+
+        dataTable_StoryLoader = new DataTable_StoryLoader();
     }
 
     private void UnitAwake()
@@ -73,5 +79,10 @@ public class DataManager : Manager
         {
             Debug.LogError("Failed to load unitDataBase.json");
         }
+    }
+
+    private void MessageAwake()
+    {
+        dataTable_MessageLoader = new DataTable_MessageLoader();
     }
 }

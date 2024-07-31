@@ -10,6 +10,8 @@ using Random = UnityEngine.Random;
 public class HappyEnergy : MonoBehaviour
 {
     public GameSceneManager gameSceneManager;
+    public DataTable_MessageLoader messageDatabase;
+    public DataManager tempDataManager;
 
     [Header("EnergyBar")]
     public Slider energySlider;
@@ -18,13 +20,18 @@ public class HappyEnergy : MonoBehaviour
     [Header("PopUP")]
     public GameObject popUp;
     public GameObject clickFalse;
+    public TMP_Text message;
+    public TMP_Text answer1;
+    public TMP_Text answer2;
 
     private string text;
 
-    private float totalTime;
-    private int tryCount;
-    private float tryTime;
-    private float percent;
+    /*
+     *  확률때 필요
+        private float totalTime;
+        private int tryCount;
+        private float tryTime;
+        private float percent;*/
 
     private bool onPopup = false;
     private bool onBad = false;
@@ -43,7 +50,7 @@ public class HappyEnergy : MonoBehaviour
             energySlider.value = (float)energy / totalEnergy;
             PercentChange();
             TextChange();
-            EnergyCheck();
+            /*EnergyCheck();*/
         }
     }
     private int energy;
@@ -78,6 +85,11 @@ public class HappyEnergy : MonoBehaviour
 
     private void Start()
     {
+        if (GameManager.Instance != null)
+            messageDatabase = GameManager.Instance.DataManager.dataTable_MessageLoader;
+        else
+            messageDatabase = tempDataManager.dataTable_MessageLoader;
+
         HappyEnergyInit();
     }
 
@@ -93,7 +105,7 @@ public class HappyEnergy : MonoBehaviour
         }*/
     }
 
-    private void EnergyCheck()
+/*    private void EnergyCheck()
     {
         if (1 <= currentEnergyPercent && currentEnergyPercent <= 30)
             SetTryValue(3, 10);
@@ -103,19 +115,19 @@ public class HappyEnergy : MonoBehaviour
             SetTryValue(7, 40);
         else if (81 <= currentEnergyPercent && currentEnergyPercent <= 100)
             SetTryValue(10, 55);
-    }
+    }*/
 
     public void ChangeHappyEnergy(int val)
     {
         Energy = val;
     }
 
-    private void SetTryValue(int tryCount, float percent)
+/*    private void SetTryValue(int tryCount, float percent)
     {
         this.tryCount = tryCount;
         this.percent = percent;
         tryTime = 60 / tryCount;
-    }
+    }*/
 
 /*    private void CallTry()
     {
@@ -130,10 +142,34 @@ public class HappyEnergy : MonoBehaviour
         }
     }*/
 
-    private void SetPopUp()
+    public void SetPopUp()
     {
+        if (onPopup)
+            return;
+
         Debug.Log("켜짐");
+        SetMessage();
+        onPopup = true;
         popUp.gameObject.SetActive(true);
+    }
+
+    private void SetMessage()
+    {
+        List<int> list = new();
+
+        foreach (var item in messageDatabase.ItemsList)
+        {
+            list.Add(item.key);
+        }
+
+        int temp = Random.Range(0, list.Count);
+
+        DataTable_Message data = new();
+        data = messageDatabase.GetByKey(list[temp]);
+
+        message.text = data.Message;
+        answer1.text = data.Answer1;
+        answer2.text = data.Answer2;
     }
 
     public void HappyEnergyCheck()//20미만일때 마물이동속도+5%
