@@ -57,9 +57,9 @@ public class Enemy : MonoBehaviour
         //this.enemyDatabase = dataManager.dataTable_EnemyLoader;
 
         // 
-        enemyData = enemyDatabase.GetEnemyByKey(id);
+        //enemyData = enemyDatabase.GetEnemyByKey(id);
         image = GetComponent<SpriteRenderer>();
-        image.sprite = enemyData.sprite;
+        //image.sprite = enemyData.sprite;
     }
 
     // 마물 활성화
