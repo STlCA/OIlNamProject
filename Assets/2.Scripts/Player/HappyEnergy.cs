@@ -83,14 +83,14 @@ public class HappyEnergy : MonoBehaviour
 
     private void Update()
     {
-        if (!onPopup)
+/*        if (!onPopup)
             totalTime += Time.deltaTime;
 
         if (totalTime >= tryTime)
         {
             CallTry();
             totalTime = 0;
-        }
+        }*/
     }
 
     private void EnergyCheck()
@@ -117,7 +117,7 @@ public class HappyEnergy : MonoBehaviour
         tryTime = 60 / tryCount;
     }
 
-    private void CallTry()
+/*    private void CallTry()
     {
         Debug.Log("계산 돌아가는중");
 
@@ -128,7 +128,7 @@ public class HappyEnergy : MonoBehaviour
             onPopup = true;
             SetPopUp();
         }
-    }
+    }*/
 
     private void SetPopUp()
     {

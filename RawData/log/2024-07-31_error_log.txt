@@ -1,0 +1,11 @@
+2024-07-31 오후 5:55:15: Error converting value '6시 퇴근인데 퇴근 시켜줘' for variable 'Answer2' in sheet 'Message' of file 'excel_files\DataTable.xlsx': The input string '6시 퇴근인데 퇴근 시켜줘' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Int32.Parse(String s)
+   at ExcelToJsonWizard.Program.ConvertToType(String value, String type, String variableName, String logFilePath, String excelPath, String sheetName)
+2024-07-31 오후 5:55:15: Error processing sheet Message in file excel_files\DataTable.xlsx: The input string '6시 퇴근인데 퇴근 시켜줘' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Int32.Parse(String s)
+   at ExcelToJsonWizard.Program.ConvertToType(String value, String type, String variableName, String logFilePath, String excelPath, String sheetName)
+   at ExcelToJsonWizard.Program.GenerateClassAndJsonFromExcel(String excelPath, String loaderDir, String jsonDir, String logFilePath, Boolean allowMultipleSheets, Boolean useResources, String resourcesInternalPath)
+2024-07-31 오후 7:58:00: Error processing sheet Message in file excel_files\DataTable.xlsx: The first column must be 'key'.
+   at ExcelToJsonWizard.Program.GenerateClassAndJsonFromExcel(String excelPath, String loaderDir, String jsonDir, String logFilePath, Boolean allowMultipleSheets, Boolean useResources, String resourcesInternalPath)
