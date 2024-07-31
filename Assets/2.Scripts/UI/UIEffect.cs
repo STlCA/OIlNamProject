@@ -24,7 +24,7 @@ public class UIEffect : MonoBehaviour
     //Blink
     private float alpha = 1f;
     private float blinkSpeed = -1f;
-    private Color color = Color.white;
+    private Color color = Color.black;
 
     private void Start()
     {
