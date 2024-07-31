@@ -13,7 +13,7 @@ public class SPUM_Prefabs : MonoBehaviour
     public Animator _anim;
     public bool _horse;
     public bool isRideHorse{
-        get => _horse;
+        get => _horse;//
         set {
             _horse = value;
             UnitTypeChanged?.Invoke();
