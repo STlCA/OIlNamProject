@@ -422,7 +422,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Btn1_13
+      name: Setting
       rect:
         serializedVersion: 2
         x: 48
@@ -695,7 +695,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Btn1_26
+      name: Day
       rect:
         serializedVersion: 2
         x: 16
@@ -793,7 +793,6 @@ TextureImporter:
       Btn1_10: -227383441
       Btn1_11: 1249561707
       Btn1_12: 1474131592
-      Btn1_13: -14594673
       Btn1_14: 902124147
       Btn1_15: -844044559
       Btn1_16: -229298291
@@ -806,7 +805,6 @@ TextureImporter:
       Btn1_23: -2128247134
       Btn1_24: 640307736
       Btn1_25: 321738630
-      Btn1_26: -1854856493
       Btn1_27: -1855260960
       Btn1_28: 67910939
       Btn1_29: 714289859
@@ -817,8 +815,10 @@ TextureImporter:
       Btn1_7: 904726570
       Btn1_8: -261873764
       Btn1_9: -1030643438
+      Day: -1854856493
       Logout: 924984484
       Notice: 457322616
+      Setting: -14594673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
