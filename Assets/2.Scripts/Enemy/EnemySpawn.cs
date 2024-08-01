@@ -58,8 +58,8 @@ public class EnemySpawn : MonoBehaviour
 
         waveUI.Init();
 
-        int enemyCount = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
-        StartCoroutine(SpawnEnemy(enemyCount, 1));
+        int maxPerWave = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
+        StartCoroutine(SpawnEnemy(maxPerWave, 1));
     }
 
     // SpawnPoint에서 마물 생성
@@ -146,8 +146,10 @@ public class EnemySpawn : MonoBehaviour
         UpdateEnemyCountUI();
         lethalEnergy.ChangeEnergy(1);
 
-        // 소환된 마물이 다 죽었을 때
-        if (enemyList.Count == 0)
+        int maxPerWave = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
+
+        // 해당 Wave에 소환된 마물이 다 죽었을 때
+        if (currentCount >= maxPerWave && enemyList.Count == 0)
         {
             waveUI.NextWave();
         }
