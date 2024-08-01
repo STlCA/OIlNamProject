@@ -7,12 +7,16 @@ public class DataManager : Manager
 {
     //public EnemyDataBase enemyDataBase;
     public DataTable_EnemyLoader dataTable_EnemyLoader;
+    public DataTable_ChapterLoader dataTable_ChapterLoader;
+    public DataTable_BossLoader dataTable_BossLoader;
     public StoryDataBase storyDataBase;
     public UnitDataBase unitDataBase;
 
     private void Awake()
     {
         EnemyAwake();
+        ChapterAwake();
+        BossAwake();
         StoryAwake();
         UnitAwake();
     }
@@ -41,6 +45,16 @@ public class DataManager : Manager
         //    Debug.LogError("Failed to load enemyDataBase.json");
         //}
         dataTable_EnemyLoader = new DataTable_EnemyLoader();
+    }
+
+    private void ChapterAwake()
+    {
+        dataTable_ChapterLoader = new DataTable_ChapterLoader();
+    }
+    
+    private void BossAwake()
+    {
+        dataTable_BossLoader = new DataTable_BossLoader();
     }
     
     private void StoryAwake()

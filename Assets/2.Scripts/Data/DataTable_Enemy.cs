@@ -17,16 +17,6 @@ public class DataTable_Enemy
     public string Name;
 
     /// <summary>
-    /// Description
-    /// </summary>
-    public string Description;
-
-    /// <summary>
-    /// HP
-    /// </summary>
-    public int HP;
-
-    /// <summary>
     /// Movement_Speed
     /// </summary>
     public int Speed;
@@ -46,17 +36,11 @@ public class DataTable_Enemy
     /// </summary>
     public string Path;
 
-    public Sprite sprite;
-
-    public void Init()
-    {
-        sprite = Resources.Load<Sprite>(Path);
-    }
 }
 public class DataTable_EnemyLoader
 {
-    public List<DataTable_Enemy> ItemsList;
-    public Dictionary<int, DataTable_Enemy> ItemsDict = new();
+    public List<DataTable_Enemy> ItemsList { get; private set; }
+    public Dictionary<int, DataTable_Enemy> ItemsDict { get; private set; }
 
     public DataTable_EnemyLoader(string path = "JSON/DataTable_Enemy")
     {
@@ -66,7 +50,6 @@ public class DataTable_EnemyLoader
         ItemsDict = new Dictionary<int, DataTable_Enemy>();
         foreach (var item in ItemsList)
         {
-            item.Init();
             ItemsDict.Add(item.key, item);
         }
     }
@@ -77,11 +60,12 @@ public class DataTable_EnemyLoader
         public List<DataTable_Enemy> Items;
     }
 
-    public DataTable_Enemy GetEnemyByKey(int id)
+    public DataTable_Enemy GetByKey(int key)
     {
-        if (ItemsDict.ContainsKey(id))
-            return ItemsDict[id];
-
+        if (ItemsDict.ContainsKey(key))
+        {
+            return ItemsDict[key];
+        }
         return null;
     }
 }
