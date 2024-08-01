@@ -14,6 +14,8 @@ public class TimerUI : MonoBehaviour
     private int second;
 
     private WaveUI waveUI;
+    public DataManager dataManager;//임시//수정
+    public DataTable_ChapterLoader chapterDatabase;
 
     private Coroutine coTimer = null;
 
@@ -32,7 +34,9 @@ public class TimerUI : MonoBehaviour
             waveUI = GameManager.Instance.WaveUI;
         }
 
-        time = 30;
+        chapterDatabase = dataManager.dataTable_ChapterLoader;
+
+        time = chapterDatabase.GetByKey(waveUI.currentWave).Time;
 
         SetTimer(time);
     }

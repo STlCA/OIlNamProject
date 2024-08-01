@@ -44,4 +44,13 @@ public class DataTable_StoryLoader
     {
         public List<DataTable_Story> Items;
     }
+
+    public DataTable_Story GetByKey(int key)
+    {
+        if (ItemsDict.ContainsKey(key))
+        {
+            return ItemsDict[key];
+        }
+        return null;
+    }
 }

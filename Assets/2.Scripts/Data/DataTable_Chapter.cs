@@ -47,14 +47,29 @@ public class DataTable_Chapter
     public int SpawnEnemy;
 
     /// <summary>
+    /// Spawn_Boss
+    /// </summary>
+    public int SpawnBoss;
+
+    /// <summary>
     /// Spawn_Count
     /// </summary>
     public int EnemyCount;
 
     /// <summary>
+    /// Spawn_Boss_Count
+    /// </summary>
+    public int BossCount;
+
+    /// <summary>
     /// Spawn_Hp
     /// </summary>
-    public int HP;
+    public int EnemyHP;
+
+    /// <summary>
+    /// Boss_HP
+    /// </summary>
+    public int BossHP;
 
 }
 public class DataTable_ChapterLoader

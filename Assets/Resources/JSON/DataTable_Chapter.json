@@ -9,8 +9,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 401,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 20
+      "BossCount": -1,
+      "EnemyHP": 20,
+      "BossHP": -1
     },
     {
       "key": 2,
@@ -21,8 +24,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 401,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 26
+      "BossCount": -1,
+      "EnemyHP": 26,
+      "BossHP": -1
     },
     {
       "key": 3,
@@ -33,8 +39,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 401,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 40
+      "BossCount": -1,
+      "EnemyHP": 40,
+      "BossHP": -1
     },
     {
       "key": 4,
@@ -45,8 +54,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 401,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 54
+      "BossCount": -1,
+      "EnemyHP": 54,
+      "BossHP": -1
     },
     {
       "key": 5,
@@ -57,8 +69,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 402,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 74
+      "BossCount": -1,
+      "EnemyHP": 74,
+      "BossHP": -1
     },
     {
       "key": 6,
@@ -69,8 +84,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 402,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 98
+      "BossCount": -1,
+      "EnemyHP": 98,
+      "BossHP": -1
     },
     {
       "key": 7,
@@ -81,8 +99,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 402,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 128
+      "BossCount": -1,
+      "EnemyHP": 128,
+      "BossHP": -1
     },
     {
       "key": 8,
@@ -93,8 +114,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 402,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 164
+      "BossCount": -1,
+      "EnemyHP": 164,
+      "BossHP": -1
     },
     {
       "key": 9,
@@ -105,8 +129,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 402,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 236
+      "BossCount": -1,
+      "EnemyHP": 236,
+      "BossHP": -1
     },
     {
       "key": 10,
@@ -116,9 +143,12 @@
       "Time": 60,
       "Gold": 15,
       "Message": -1,
-      "SpawnEnemy": 501,
-      "EnemyCount": 1,
-      "HP": 11600
+      "SpawnEnemy": -1,
+      "SpawnBoss": 501,
+      "EnemyCount": -1,
+      "BossCount": 1,
+      "EnemyHP": -1,
+      "BossHP": 11600
     },
     {
       "key": 11,
@@ -129,8 +159,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 403,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 700
+      "BossCount": -1,
+      "EnemyHP": 700,
+      "BossHP": -1
     },
     {
       "key": 12,
@@ -141,8 +174,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 403,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 733
+      "BossCount": -1,
+      "EnemyHP": 733,
+      "BossHP": -1
     },
     {
       "key": 13,
@@ -153,8 +189,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 403,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 770
+      "BossCount": -1,
+      "EnemyHP": 770,
+      "BossHP": -1
     },
     {
       "key": 14,
@@ -165,8 +204,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 403,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 815
+      "BossCount": -1,
+      "EnemyHP": 815,
+      "BossHP": -1
     },
     {
       "key": 15,
@@ -177,8 +219,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 404,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 866
+      "BossCount": -1,
+      "EnemyHP": 866,
+      "BossHP": -1
     },
     {
       "key": 16,
@@ -189,8 +234,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 404,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 914
+      "BossCount": -1,
+      "EnemyHP": 914,
+      "BossHP": -1
     },
     {
       "key": 17,
@@ -201,8 +249,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 404,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 939
+      "BossCount": -1,
+      "EnemyHP": 939,
+      "BossHP": -1
     },
     {
       "key": 18,
@@ -213,8 +264,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 404,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 967
+      "BossCount": -1,
+      "EnemyHP": 967,
+      "BossHP": -1
     },
     {
       "key": 19,
@@ -225,8 +279,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 404,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 1004
+      "BossCount": -1,
+      "EnemyHP": 1004,
+      "BossHP": -1
     },
     {
       "key": 20,
@@ -236,9 +293,12 @@
       "Time": 60,
       "Gold": 15,
       "Message": -1,
-      "SpawnEnemy": 502,
-      "EnemyCount": 1,
-      "HP": 38280
+      "SpawnEnemy": -1,
+      "SpawnBoss": 502,
+      "EnemyCount": -1,
+      "BossCount": 1,
+      "EnemyHP": -1,
+      "BossHP": 38280
     },
     {
       "key": 21,
@@ -249,8 +309,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 405,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 1070
+      "BossCount": -1,
+      "EnemyHP": 1070,
+      "BossHP": -1
     },
     {
       "key": 22,
@@ -261,8 +324,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 405,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 1129
+      "BossCount": -1,
+      "EnemyHP": 1129,
+      "BossHP": -1
     },
     {
       "key": 23,
@@ -273,8 +339,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 405,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 1181
+      "BossCount": -1,
+      "EnemyHP": 1181,
+      "BossHP": -1
     },
     {
       "key": 24,
@@ -285,8 +354,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 405,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 1221
+      "BossCount": -1,
+      "EnemyHP": 1221,
+      "BossHP": -1
     },
     {
       "key": 25,
@@ -297,8 +369,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 406,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2024
+      "BossCount": -1,
+      "EnemyHP": 2024,
+      "BossHP": -1
     },
     {
       "key": 26,
@@ -309,8 +384,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 406,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2088
+      "BossCount": -1,
+      "EnemyHP": 2088,
+      "BossHP": -1
     },
     {
       "key": 27,
@@ -321,8 +399,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 406,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2121
+      "BossCount": -1,
+      "EnemyHP": 2121,
+      "BossHP": -1
     },
     {
       "key": 28,
@@ -333,8 +414,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 406,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2169
+      "BossCount": -1,
+      "EnemyHP": 2169,
+      "BossHP": -1
     },
     {
       "key": 29,
@@ -345,8 +429,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 406,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2222
+      "BossCount": -1,
+      "EnemyHP": 2222,
+      "BossHP": -1
     },
     {
       "key": 30,
@@ -356,9 +443,12 @@
       "Time": 60,
       "Gold": 15,
       "Message": -1,
-      "SpawnEnemy": 503,
-      "EnemyCount": 1,
-      "HP": 252648
+      "SpawnEnemy": -1,
+      "SpawnBoss": 503,
+      "EnemyCount": -1,
+      "BossCount": 1,
+      "EnemyHP": -1,
+      "BossHP": 252648
     },
     {
       "key": 31,
@@ -369,8 +459,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 407,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2378
+      "BossCount": -1,
+      "EnemyHP": 2378,
+      "BossHP": -1
     },
     {
       "key": 32,
@@ -381,8 +474,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 407,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2471
+      "BossCount": -1,
+      "EnemyHP": 2471,
+      "BossHP": -1
     },
     {
       "key": 33,
@@ -393,8 +489,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 407,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2566
+      "BossCount": -1,
+      "EnemyHP": 2566,
+      "BossHP": -1
     },
     {
       "key": 34,
@@ -405,8 +504,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 407,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2626
+      "BossCount": -1,
+      "EnemyHP": 2626,
+      "BossHP": -1
     },
     {
       "key": 35,
@@ -417,8 +519,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 408,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2722
+      "BossCount": -1,
+      "EnemyHP": 2722,
+      "BossHP": -1
     },
     {
       "key": 36,
@@ -429,8 +534,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 408,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2799
+      "BossCount": -1,
+      "EnemyHP": 2799,
+      "BossHP": -1
     },
     {
       "key": 37,
@@ -441,8 +549,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 408,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2882
+      "BossCount": -1,
+      "EnemyHP": 2882,
+      "BossHP": -1
     },
     {
       "key": 38,
@@ -453,8 +564,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 408,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 2973
+      "BossCount": -1,
+      "EnemyHP": 2973,
+      "BossHP": -1
     },
     {
       "key": 39,
@@ -465,8 +579,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 408,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 3013
+      "BossCount": -1,
+      "EnemyHP": 3013,
+      "BossHP": -1
     },
     {
       "key": 40,
@@ -476,9 +593,12 @@
       "Time": 60,
       "Gold": 15,
       "Message": -1,
-      "SpawnEnemy": 504,
-      "EnemyCount": 1,
-      "HP": 631620
+      "SpawnEnemy": -1,
+      "SpawnBoss": 504,
+      "EnemyCount": -1,
+      "BossCount": 1,
+      "EnemyHP": 631620,
+      "BossHP": 631620
     },
     {
       "key": 41,
@@ -489,8 +609,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 409,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 3693
+      "BossCount": -1,
+      "EnemyHP": 3693,
+      "BossHP": -1
     },
     {
       "key": 42,
@@ -501,8 +624,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 409,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 3798
+      "BossCount": -1,
+      "EnemyHP": 3798,
+      "BossHP": -1
     },
     {
       "key": 43,
@@ -513,8 +639,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 409,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 3861
+      "BossCount": -1,
+      "EnemyHP": 3861,
+      "BossHP": -1
     },
     {
       "key": 44,
@@ -525,8 +654,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 409,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 3913
+      "BossCount": -1,
+      "EnemyHP": 3913,
+      "BossHP": -1
     },
     {
       "key": 45,
@@ -537,8 +669,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 410,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 4444
+      "BossCount": -1,
+      "EnemyHP": 4444,
+      "BossHP": -1
     },
     {
       "key": 46,
@@ -549,8 +684,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 410,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 4547
+      "BossCount": -1,
+      "EnemyHP": 4547,
+      "BossHP": -1
     },
     {
       "key": 47,
@@ -561,8 +699,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 410,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 4673
+      "BossCount": -1,
+      "EnemyHP": 4673,
+      "BossHP": -1
     },
     {
       "key": 48,
@@ -573,8 +714,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 410,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 4747
+      "BossCount": -1,
+      "EnemyHP": 4747,
+      "BossHP": -1
     },
     {
       "key": 49,
@@ -585,8 +729,11 @@
       "Gold": 15,
       "Message": 1,
       "SpawnEnemy": 410,
+      "SpawnBoss": -1,
       "EnemyCount": 40,
-      "HP": 5000
+      "BossCount": -1,
+      "EnemyHP": 5000,
+      "BossHP": -1
     },
     {
       "key": 50,
@@ -597,20 +744,11 @@
       "Gold": 15,
       "Message": -1,
       "SpawnEnemy": 401,
+      "SpawnBoss": 505,
       "EnemyCount": 40,
-      "HP": 5000
-    },
-    {
-      "key": 51,
-      "Group": 1001,
-      "Stage": 1,
-      "Wave": 50,
-      "Time": 60,
-      "Gold": 15,
-      "Message": -1,
-      "SpawnEnemy": 505,
-      "EnemyCount": 1,
-      "HP": 2000000
+      "BossCount": 1,
+      "EnemyHP": 5000,
+      "BossHP": 2000000
     }
   ]
 }

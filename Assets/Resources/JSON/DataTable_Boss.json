@@ -3,56 +3,41 @@
     {
       "key": 501,
       "Name": "보스1",
-      "HP": 11600,
       "Speed": 1,
       "Exp": 10,
       "PlayGoods": 20,
-      "Stage": 1,
-      "Wave": 10,
       "Path": "Boss/Boss01"
     },
     {
       "key": 502,
       "Name": "보스2",
-      "HP": 38280,
       "Speed": 1,
       "Exp": 10,
       "PlayGoods": 30,
-      "Stage": 1,
-      "Wave": 20,
       "Path": "Boss/Boss02"
     },
     {
       "key": 503,
       "Name": "보스3",
-      "HP": 252648,
       "Speed": 1,
       "Exp": 10,
       "PlayGoods": 40,
-      "Stage": 1,
-      "Wave": 30,
       "Path": "Boss/Boss03"
     },
     {
       "key": 504,
       "Name": "보스4",
-      "HP": 631620,
       "Speed": 1,
       "Exp": 10,
       "PlayGoods": 50,
-      "Stage": 1,
-      "Wave": 40,
       "Path": "Boss/Boss04"
     },
     {
       "key": 505,
       "Name": "보스5",
-      "HP": 2000000,
       "Speed": 1,
       "Exp": 10,
       "PlayGoods": 0,
-      "Stage": 1,
-      "Wave": 50,
       "Path": "Boss/Boss05"
     }
   ]
