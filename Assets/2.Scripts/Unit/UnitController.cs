@@ -78,6 +78,8 @@ public class UnitController : MonoBehaviour
     public Dictionary<int, CanUpgrade> canUpgrade = new();
     public Dictionary<int, AnimatorController> unitAnimator = new();
 
+    public List<GameObject> onUnitPopUP = new();
+
 
     private void Start()
     {

@@ -6,6 +6,7 @@ using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -156,6 +157,13 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (controller.onUnitPopUP.Count != 0)
+        {
+            controller.onUnitPopUP[0].SetActive(false);
+            controller.onUnitPopUP[1].SetActive(false);
+            controller.onUnitPopUP.Clear();
+        }
+
         if (myData.step == 2)
             return;
 
@@ -166,6 +174,9 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     {
         if (btnUI == null)
             return;
+
+        controller.onUnitPopUP.Add(btnUI);
+        controller.onUnitPopUP.Add(rangeGO);
 
         if (btnUI.activeSelf == true)
         {
@@ -191,6 +202,11 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     }
 
     public void UnitUpgrade()
+    {
+        controller.UnitUpgrade(myData.id, transform.position);
+        iconImage[myData.step - 1].gameObject.SetActive(true);
+    }
+    public void SellUnit()
     {
         controller.UnitUpgrade(myData.id, transform.position);
         iconImage[myData.step - 1].gameObject.SetActive(true);
