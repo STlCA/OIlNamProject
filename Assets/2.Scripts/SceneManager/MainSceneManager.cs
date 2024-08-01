@@ -14,7 +14,6 @@ public class MainSceneManager : MonoBehaviour
     [Header("GoldUI")]
     public TMP_Text goldTxt;
     public TMP_Text keyTxt1;
-    public TMP_Text keyTxt2;
     public TMP_Text crystalTxt;
 
     [Header("PlayerUI")]
@@ -46,7 +45,6 @@ public class MainSceneManager : MonoBehaviour
         {
             goldTxt,
             keyTxt1,
-            keyTxt2,
             crystalTxt
         };
 
@@ -68,7 +66,7 @@ public class MainSceneManager : MonoBehaviour
     {
         if (StartCheck())
         {
-            gameManager.MoneyChange(Constants.MoneyType.KEY, -1);
+            gameManager.MoneyChange(Constants.MoneyType.KEY, -5);
             gameManager.SceneEffect.MainToGame();
         }
         else

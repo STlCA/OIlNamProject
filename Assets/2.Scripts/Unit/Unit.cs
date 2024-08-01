@@ -119,6 +119,8 @@ public class Unit : MonoBehaviour, IPointerClickHandler
                 myData.speed = 0;
             }
         }
+
+        Debug.Log(enemyList.Count);
     }
 
     public void OnPointerClick(PointerEventData eventData)

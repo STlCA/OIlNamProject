@@ -88,7 +88,7 @@ public class HappyEnergy : MonoBehaviour
     private void HappyEnergyInit()
     {
         totalEnergy = 200;
-        Energy = 190;
+        Energy = 100;
     }
 
     private void Start()
@@ -202,7 +202,7 @@ public class HappyEnergy : MonoBehaviour
         text3[0].text = currentMessage.Info3;
         text3[1].text = currentMessage.Answer3;
         text3[2].text = currentMessage.Energy3.ToString();
-        text3[3].text = currentMessage.Price3.ToString();
+        text3[3].text = "+" + currentMessage.Price3.ToString();
 
     }
 

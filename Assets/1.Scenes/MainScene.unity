@@ -1716,7 +1716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB538\uCC9C\uC7AC\uC624\uC77C\uB0A8 Lv.99"
+  m_text: "\uB538\uCC9C\uC7AC Lv.99"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a7caffeeef08bde4cb444adc9237b1e7, type: 2}
   m_sharedMaterial: {fileID: 616585381604430723, guid: a7caffeeef08bde4cb444adc9237b1e7,
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.3
+  m_fontSize: 68.7
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3351,7 +3351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9,999
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a7caffeeef08bde4cb444adc9237b1e7, type: 2}
   m_sharedMaterial: {fileID: 616585381604430723, guid: a7caffeeef08bde4cb444adc9237b1e7,
@@ -3379,10 +3379,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.9
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3763,7 +3763,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointTxt: {fileID: 0}
   keyTxt1: {fileID: 0}
-  keyTxt2: {fileID: 0}
   rubyTxt: {fileID: 0}
 --- !u!1 &643469310
 GameObject:
@@ -4249,7 +4248,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldTxt: {fileID: 1806435075}
   keyTxt1: {fileID: 71956250}
-  keyTxt2: {fileID: 603365649}
   crystalTxt: {fileID: 1643673896}
   nameTxt: {fileID: 362980291}
   expTxt: {fileID: 838699769}
@@ -9392,7 +9390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
+  m_AnchoredPosition: {x: 95.9, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660273273

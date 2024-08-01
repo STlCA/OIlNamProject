@@ -56,7 +56,7 @@ public class LethalEnergy : MonoBehaviour
 
     public void LethalEnergyInit()
     {
-        Energy = 200;
+        Energy = 0;
     }
 
     public void ChangeEnergy(float val)
