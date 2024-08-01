@@ -17,6 +17,16 @@ public class DataTable_Enemy
     public string Name;
 
     /// <summary>
+    /// Description
+    /// </summary>
+    public string Description;
+
+    /// <summary>
+    /// HP
+    /// </summary>
+    public int HP;
+
+    /// <summary>
     /// Movement_Speed
     /// </summary>
     public int Speed;

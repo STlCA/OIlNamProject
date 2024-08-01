@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -18,8 +20,12 @@ public class UnitData
     public int step;
     public float fixAtk;
     public float currentAtk;
+    public float plusFixSpeed;
+    public float plusFixAtk;
     public float plusSpeed;
     public float plusAtk;
+    public float tempAtk;
+    public float tempSpeed;
 
     public void Init(int id, float range, float speed, float atk, int step = 0)
     {
@@ -36,35 +42,59 @@ public class UnitData
         currentSpeed = fixSpeed;
         currentAtk = fixAtk;
     }
-    public void SpeedChange(int changeVal)
-    {
-        plusSpeed += changeVal;
 
-        if (plusSpeed == 0)
-        {
-            currentSpeed = fixSpeed;
-            return;
-        }
-
-        currentSpeed += fixSpeed / 100 * plusSpeed;
-    }
-    public void ATKChange(int changeVal, bool isFixChange = false)//fix인애 fix아닌애 두번부르기 fix먼저 부르기
+    public void PlusSpeed(int changeVal, bool isFixChange = false, bool nowChange = false, bool isOneTime = false)
     {
         if (isFixChange)
+            plusFixSpeed += changeVal;
+
+        if (isOneTime)
+            tempSpeed += changeVal;
+        else
+            plusSpeed += changeVal;
+
+        if (nowChange)
+            SpeedChange();
+    }
+    public void SpeedChange(int tempValue = 0)
+    {
+        if (plusFixSpeed != 0)
         {
-            fixAtk += fixAtk / 100 * changeVal;
-            return;
+            fixSpeed += fixSpeed / 100 * plusFixSpeed;
+            plusFixSpeed = 0;
         }
 
-        plusAtk += changeVal;
+        currentSpeed += fixSpeed / 100 * (plusSpeed + tempSpeed);
+        tempSpeed = 0;
 
-        if (plusAtk == 0)
+        Debug.Log("속도바뀜");
+    }
+
+    public void PlusATK(int changeVal, bool isFixChange = false, bool nowChange = false, bool isOneTime = false)
+    {
+        if (isFixChange)
+            plusFixAtk += changeVal;
+
+        if (isOneTime)
+            tempAtk += changeVal;
+        else
+            plusAtk += changeVal;
+
+        if (nowChange)
+            ATKChange();
+    }
+    public void ATKChange()
+    {
+        if (plusFixAtk != 0)
         {
-            currentAtk = fixAtk;
-            return;
+            fixAtk += fixAtk / 100 * plusFixAtk;
+            plusFixAtk = 0;
         }
 
-        currentAtk += fixAtk / 100 * plusAtk;
+        currentAtk += fixAtk / 100 * (plusAtk + tempAtk);
+        tempAtk = 0;
+
+        Debug.Log("공격력바뀜");
     }
 }
 
@@ -127,7 +157,14 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (myData.step == 3)
+        if (controller.onUnitPopUP.Count != 0)
+        {
+            controller.onUnitPopUP[0].SetActive(false);
+            controller.onUnitPopUP[1].SetActive(false);
+            controller.onUnitPopUP.Clear();
+        }
+
+        if (myData.step == 2)
             return;
 
         UIOnOff();
@@ -137,6 +174,9 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     {
         if (btnUI == null)
             return;
+
+        controller.onUnitPopUP.Add(btnUI);
+        controller.onUnitPopUP.Add(rangeGO);
 
         if (btnUI.activeSelf == true)
         {
@@ -162,6 +202,11 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     }
 
     public void UnitUpgrade()
+    {
+        controller.UnitUpgrade(myData.id, transform.position);
+        iconImage[myData.step - 1].gameObject.SetActive(true);
+    }
+    public void SellUnit()
     {
         controller.UnitUpgrade(myData.id, transform.position);
         iconImage[myData.step - 1].gameObject.SetActive(true);

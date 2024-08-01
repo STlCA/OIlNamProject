@@ -78,6 +78,8 @@ public class UnitController : MonoBehaviour
     public Dictionary<int, CanUpgrade> canUpgrade = new();
     public Dictionary<int, AnimatorController> unitAnimator = new();
 
+    public List<GameObject> onUnitPopUP = new();
+
 
     private void Start()
     {
@@ -220,19 +222,19 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    public void SpeedChange(int percent)
+    public void SpeedChange(int percent, bool isFixChange = false, bool nowChange = false, bool isOneTime = false)
     {
         foreach (var val in spawnData)
         {
-            val.Value.unitData.myData.SpeedChange(percent);
+            val.Value.unitData.myData.PlusSpeed(percent, isFixChange, nowChange, isOneTime);
         }
     }
 
-    public void ATKChange(int percent, bool isFixChange = false)
+    public void ATKChange(int percent, bool isFixChange = false, bool nowChange = false, bool isOneTime = false)
     {
         foreach (var val in spawnData)
         {
-            val.Value.unitData.myData.ATKChange(percent, isFixChange);
+            val.Value.unitData.myData.PlusATK(percent, isFixChange, nowChange, isOneTime);
         }
     }
 }
