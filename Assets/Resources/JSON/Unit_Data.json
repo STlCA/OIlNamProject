@@ -11,7 +11,8 @@
 			"Attack_Range": 210,
 			"Skill_ID": 1,
 			"Unit_Modeling": "Base0",
-			"Open": "false"
+			"Open": "false",
+			"SellGold": 4
 		},
 		{
 			"ID": 102,
@@ -24,7 +25,8 @@
 			"Attack_Range": 210,
 			"Skill_ID": 1,
 			"Unit_Modeling": "Base0",
-			"Open": "false"
+			"Open": "false",
+			"SellGold": 10
 		},
 		{
 			"ID": 103,
@@ -37,7 +39,8 @@
 			"Attack_Range": 210,
 			"Skill_ID": 1,
 			"Unit_Modeling": "Base0",
-			"Open": "false"
+			"Open": "false",
+			"SellGold": 20
 		},
 		{
 			"ID": 201,
@@ -50,7 +53,8 @@
 			"Attack_Range": 170,
 			"Skill_ID": 2,
 			"Unit_Modeling": "Human0",
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 4
 		},
 		{
 			"ID": 202,
@@ -63,7 +67,8 @@
 			"Attack_Range": 160,
 			"Skill_ID": 3,
 			"Unit_Modeling": "Human0",
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 10
 		},
 		{
 			"ID": 203,
@@ -76,7 +81,8 @@
 			"Attack_Range": 150,
 			"Skill_ID": 4,
 			"Unit_Modeling": "Human0",
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 20
 		},
 		{
 			"ID": 301,
@@ -84,12 +90,13 @@
 			"Type": "궁수",
 			"Name": "궁수 1",
 			"Description": "멀리 쏘는 건 자신 있습니다.",
-			"ATK": 20,
+			"ATK": 13.32,
 			"Attack_Speed": 16000,
 			"Attack_Range": 220,
 			"Skill_ID": 5,
 			"Unit_Modeling": "Archer0",
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 4
 		},
 		{
 			"ID": 302,
@@ -97,12 +104,13 @@
 			"Type": "궁수",
 			"Name": "궁수 2",
 			"Description": "날쎈 궁수입니다.",
-			"ATK": 25,
+			"ATK": 14,
 			"Attack_Speed": 16000,
 			"Attack_Range": 210,
 			"Skill_ID": 6,
 			"Unit_Modeling": "Archer0",
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 10
 		},
 		{
 			"ID": 303,
@@ -110,12 +118,13 @@
 			"Type": "궁수",
 			"Name": "궁수 3",
 			"Description": "궁수 중엔 내가 제일 쎕니다.",
-			"ATK": 30,
+			"ATK": 15,
 			"Attack_Speed": 16000,
 			"Attack_Range": 200,
 			"Skill_ID": 7,
 			"Unit_Modeling": "Archer0",
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 20
 		},
 		{
 			"ID": 401,
@@ -128,7 +137,8 @@
 			"Attack_Range": 270,
 			"Skill_ID": 8,
 			"Unit_Modeling": "Mage0",
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 4
 		},
 		{
 			"ID": 402,
@@ -141,7 +151,8 @@
 			"Attack_Range": 260,
 			"Skill_ID": 9,
 			"Unit_Modeling": "Mage0",
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 10
 		},
 		{
 			"ID": 403,
@@ -154,20 +165,8 @@
 			"Attack_Range": 250,
 			"Skill_ID": 10,
 			"Unit_Modeling": "Mage0",
-			"Open": "true"
-		},
-		{
-			"ID": 0,
-			"Step": 0,
-			"Type": 0,
-			"Name": 0,
-			"Description": 0,
-			"ATK": 0,
-			"Attack_Speed": 0,
-			"Attack_Range": 0,
-			"Skill_ID": 0,
-			"Unit_Modeling": 0,
-			"Open": "true"
+			"Open": "true",
+			"SellGold": 20
 		}
 	]
 }
