@@ -17,11 +17,6 @@ public class DataTable_Boss
     public string Name;
 
     /// <summary>
-    /// HP
-    /// </summary>
-    public int HP;
-
-    /// <summary>
     /// Movement_Speed
     /// </summary>
     public int Speed;
@@ -35,16 +30,6 @@ public class DataTable_Boss
     /// Acquisition_Play Goods
     /// </summary>
     public int PlayGoods;
-
-    /// <summary>
-    /// Appearance_Stage
-    /// </summary>
-    public int Stage;
-
-    /// <summary>
-    /// Appearance_Wave
-    /// </summary>
-    public int Wave;
 
     /// <summary>
     /// Boss_Modeling

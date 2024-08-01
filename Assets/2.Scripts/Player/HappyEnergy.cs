@@ -10,8 +10,6 @@ using Random = UnityEngine.Random;
 public class HappyEnergy : MonoBehaviour
 {
     public GameSceneManager gameSceneManager;
-    public DataTable_MessageLoader messageDatabase;
-    public DataManager tempDataManager;
 
     private DataTable_Message currentMessage = new();
 
@@ -92,11 +90,6 @@ public class HappyEnergy : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.Instance != null)
-            messageDatabase = GameManager.Instance.DataManager.dataTable_MessageLoader;
-        else
-            messageDatabase = tempDataManager.dataTable_MessageLoader;
-
         HappyEnergyInit();
 
         text1 = slot1.GetComponentsInChildren<TMP_Text>();
@@ -153,14 +146,9 @@ public class HappyEnergy : MonoBehaviour
             }
         }*/
 
-    public void SetPopUp()
+    private void SetPopUp()
     {
-        if (onPopup)
-            return;
-
         Debug.Log("ÄÑÁü");
-        SetMessage();
-        onPopup = true;
         popUp.gameObject.SetActive(true);
     }
 

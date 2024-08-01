@@ -1,54 +1,84 @@
 {
   "Items": [
     {
-      "key": 1,
+      "key": 401,
       "Name": "마물1",
-      "Description": "귀여운 마물입니다.",
-      "HP": 22,
       "Speed": 1,
       "Exp": 2,
       "PlayGoods": 2,
       "Path": "Enemy/Enemy01"
     },
     {
-      "key": 2,
+      "key": 402,
       "Name": "마물2",
-      "Description": "못생긴 마물입니다.",
-      "HP": 27,
       "Speed": 1,
       "Exp": 2,
       "PlayGoods": 2,
       "Path": "Enemy/Enemy02"
     },
     {
-      "key": 3,
+      "key": 403,
       "Name": "마물3",
-      "Description": "멋있는 마물입니다.",
-      "HP": 27,
       "Speed": 1,
       "Exp": 2,
       "PlayGoods": 2,
       "Path": "Enemy/Enemy03"
     },
     {
-      "key": 4,
+      "key": 404,
       "Name": "마물4",
-      "Description": "소심한 마물입니다.",
-      "HP": 20,
       "Speed": 1,
       "Exp": 2,
       "PlayGoods": 2,
       "Path": "Enemy/Enemy04"
     },
     {
-      "key": 5,
+      "key": 405,
       "Name": "마물5",
-      "Description": "끈질긴 마물입니다.",
-      "HP": 30,
       "Speed": 1,
       "Exp": 2,
       "PlayGoods": 2,
       "Path": "Enemy/Enemy05"
+    },
+    {
+      "key": 406,
+      "Name": "마물6",
+      "Speed": 1,
+      "Exp": 2,
+      "PlayGoods": 2,
+      "Path": "Enemy/Enemy06"
+    },
+    {
+      "key": 407,
+      "Name": "마물7",
+      "Speed": 1,
+      "Exp": 2,
+      "PlayGoods": 2,
+      "Path": "Enemy/Enemy07"
+    },
+    {
+      "key": 408,
+      "Name": "마물8",
+      "Speed": 1,
+      "Exp": 2,
+      "PlayGoods": 2,
+      "Path": "Enemy/Enemy08"
+    },
+    {
+      "key": 409,
+      "Name": "마물9",
+      "Speed": 1,
+      "Exp": 2,
+      "PlayGoods": 2,
+      "Path": "Enemy/Enemy09"
+    },
+    {
+      "key": 410,
+      "Name": "마물10",
+      "Speed": 1,
+      "Exp": 2,
+      "PlayGoods": 2,
+      "Path": "Enemy/Enemy10"
     }
   ]
 }

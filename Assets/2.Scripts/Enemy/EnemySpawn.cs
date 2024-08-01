@@ -9,7 +9,8 @@ public class EnemySpawn : MonoBehaviour
     //[SerializeField] private Enemy enemyPrefab;
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private TMP_Text enemyCountText;
-    [SerializeField] private GameObject gameoverPopup;
+    [SerializeField] private GameObject gameoverPopup;  // 게임 오버 UI
+    [SerializeField] private GameObject clearUIPopup;   // 게임 클리어 UI
 
     public GameManager gameManager;
     public Player player;
@@ -17,12 +18,14 @@ public class EnemySpawn : MonoBehaviour
     public GameSceneManager gameSceneManager;//수정
     private WaveUI waveUI;
     private LethalEnergy lethalEnergy;//수정
+    public DataTable_ChapterLoader chapterDatabase;
     //private PopUpController popUpController;
 
     private List<Enemy> enemyList;
-    private int maxPerWave = 40;    // wave 당 최대 마물 수
+    //private int maxPerWave = 40;    // wave 당 최대 마물 수
     private int currentCount = 0;
     public int deadEnemyCount = 0;  // 처리한 마물 수
+    private float waitSeconds = 0.7f;
 
     EnemyMove enemyMove;
 
@@ -49,26 +52,32 @@ public class EnemySpawn : MonoBehaviour
         {
             player = GameManager.Instance.Player;
         }
-
+        
         //popUpController = gameManager.GetComponent<PopUpController>();
+        chapterDatabase = dataManager.dataTable_ChapterLoader;
 
-        StartCoroutine(SpawnEnemy());
+        waveUI.Init();
+
+        int enemyCount = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
+        StartCoroutine(SpawnEnemy(enemyCount, 1));
     }
 
     // SpawnPoint에서 마물 생성
-    private IEnumerator SpawnEnemy()
+    private IEnumerator SpawnEnemy(int maxPerWave, int waveNum)
     {
+        //int maxPerWave = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
+
         // 이번 Wave에 아직 생성되어야 할 마물이 있다면
         while (currentCount < maxPerWave)
         {
-            CreateEnemy();
+            CreateEnemy(waveNum);
 
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(waitSeconds);
         }
     }
 
     // 마물을 생성한다.
-    private void CreateEnemy()
+    private void CreateEnemy(int waveNum)
     {
         // ********** TODO : 오브젝트 풀링 사용을 위해 수정되어야 함! 지금은 우선 오브젝트를 생성하는 방법임. **********
         // 마물에 대한 정보를 받아오는 것에 대해서도 생각 할 것
@@ -79,31 +88,43 @@ public class EnemySpawn : MonoBehaviour
         //enemyMove = enemyPrefab.GetComponent<EnemyMove>();
         //enemyMove.Init(wayPoints);
 
-        int maxIndex = waveUI.currentWave / 10 + 1;
-        int randomEnemyIndex = Random.Range(1, maxIndex + 1);
+        int chapterID = waveNum;
+        int enemyID = chapterDatabase.GetByKey(chapterID).SpawnEnemy;
+        int bossID = chapterDatabase.GetByKey(chapterID).SpawnBoss;
 
         GameObject clone = Instantiate(enemyPrefab, wayPoints[0].position, Quaternion.identity);
         Enemy enemy = clone.GetComponent<Enemy>();
-        enemy.Init(randomEnemyIndex, gameSceneManager, dataManager);//수정
+
+        if (enemyID > -1)
+        {
+            enemy.Init(enemyID, chapterID, gameSceneManager, dataManager);//수정
+            enemyList.Add(enemy);
+            currentCount++;
+        }
+        if (bossID > -1)
+        {
+            enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
+        }
+
         enemyMove = enemy.enemyMove;
 
-        enemyMove.Init(wayPoints);
-        enemyList.Add(enemy);
+        enemyMove.Init(enemyID, bossID, wayPoints);
 
         if (enemyList.Count >= 100)
         {
             GameOver();
         }
 
-        currentCount++;
         UpdateEnemyCountUI();
     }
 
     // 마물 생성 코루틴 재시작
-    public void RestartSpawnEnemy()
+    public void RestartSpawnEnemy(int enemyCount, int waveNum)
     {
         currentCount = 0;
-        StartCoroutine(SpawnEnemy());
+        //int enemyCount = chapterDatabase.GetByKey(waveNum).EnemyCount;
+
+        StartCoroutine(SpawnEnemy(enemyCount, waveNum));
     }
 
     // ***임시*** 마물이 죽었을 때
@@ -135,5 +156,12 @@ public class EnemySpawn : MonoBehaviour
     private void GameOver()
     {
         GameManager.Instance.PopUpController.PauseUIOn(gameoverPopup);
+
+    }
+    
+    // 게임 클리어
+    private void GameClear()
+    {
+        GameManager.Instance.PopUpController.PauseUIOn(clearUIPopup);
     }
 }

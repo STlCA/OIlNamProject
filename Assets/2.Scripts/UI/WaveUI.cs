@@ -10,16 +10,31 @@ public class WaveUI : MonoBehaviour
     [SerializeField] private TMP_Text waveText;
     [SerializeField] private TimerUI timerUI;
     private EnemySpawn enemySpawn;
+    private DataTable_ChapterLoader chapterDatabase;
 
-    private void Start()
+    //private void Start()
+    //{
+    //    if (GameManager.Instance != null)
+    //    {
+    //        GameManager.Instance.WaveUI = this;
+    //    }
+        
+    //    timerUI = timerUI.GetComponent<TimerUI>();
+    //    enemySpawn = GetComponent<EnemySpawn>();
+
+    //    StartWave();
+    //}
+
+    public void Init()
     {
         if (GameManager.Instance != null)
         {
             GameManager.Instance.WaveUI = this;
         }
-        
+
         timerUI = timerUI.GetComponent<TimerUI>();
         enemySpawn = GetComponent<EnemySpawn>();
+        chapterDatabase = enemySpawn.chapterDatabase;
 
         StartWave();
     }
@@ -39,23 +54,42 @@ public class WaveUI : MonoBehaviour
         currentWave++;
 
         // 넘어갈 다음 Wave가 있을 때
-        if(currentWave < maxWave)
+        if(currentWave <= maxWave)
         {
             int tmpWave = currentWave % 10;
+            int setTime = chapterDatabase.GetByKey(currentWave).Time;
 
             UpdateWaveUI();
+
+            //timerUI.SetTimer(setTime);
+            //enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
 
             // 다음이 일반 Wave일 때
             if (tmpWave != 0)
             {
-                timerUI.SetTimer(30);
-                enemySpawn.RestartSpawnEnemy();
+                int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
+
+                timerUI.SetTimer(setTime);
+                enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
             }
             // 다음이 보스 Wave일 때
+            else if(tmpWave == 0 || tmpWave != 50)
+            {
+                int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
+
+                timerUI.SetTimer(setTime);
+                // **** TODO : 보스몬스터 소환 구현하기 ****
+                enemySpawn.RestartSpawnEnemy(bossCount, currentWave);
+            }
+            // 다음이 50 Wave일 때
             else
             {
-                timerUI.SetTimer(60);
-                // **** TODO : 보스몬스터 소환 구현하기 ****
+                int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
+                int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
+
+                timerUI.SetTimer(setTime);
+                enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
+                enemySpawn.RestartSpawnEnemy(bossCount, currentWave);
             }
         }
     }
