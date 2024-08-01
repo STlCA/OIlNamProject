@@ -19,18 +19,21 @@ public class EnemyMove : MonoBehaviour
     }
 
     // 마물 초기화
-    public void Init(int enemyID, int bossID, Transform[] _wayPoints)
+    public void Init(int enemyID, int bossID, Transform[] _wayPoints, bool isBoss = false)
     {
         enemy = GetComponent<Enemy>();
-
-        if(enemyID > -1)
+        if (!isBoss)
         {
-            speed = enemy.enemyData.enemyData.Speed;
+            if (enemyID > -1)
+            {
+                speed = enemy.enemyData.enemyData.Speed;
+            }
         }
         else
         {
             speed = enemy.bossData.bossData.Speed;
         }
+        
         currentIndex = 0;
 
         // 웨이포인트 할당

@@ -63,21 +63,21 @@ public class EnemySpawn : MonoBehaviour
     }
 
     // SpawnPoint에서 마물 생성
-    private IEnumerator SpawnEnemy(int maxPerWave, int waveNum)
+    private IEnumerator SpawnEnemy(int maxPerWave, int waveNum, bool isBoss = false)
     {
         //int maxPerWave = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
 
         // 이번 Wave에 아직 생성되어야 할 마물이 있다면
         while (currentCount < maxPerWave)
         {
-            CreateEnemy(waveNum);
+            CreateEnemy(waveNum, isBoss);
 
             yield return new WaitForSeconds(waitSeconds);
         }
     }
 
     // 마물을 생성한다.
-    private void CreateEnemy(int waveNum)
+    private void CreateEnemy(int waveNum, bool isBoss = false)
     {
         // ********** TODO : 오브젝트 풀링 사용을 위해 수정되어야 함! 지금은 우선 오브젝트를 생성하는 방법임. **********
         // 마물에 대한 정보를 받아오는 것에 대해서도 생각 할 것
@@ -95,20 +95,27 @@ public class EnemySpawn : MonoBehaviour
         GameObject clone = Instantiate(enemyPrefab, wayPoints[0].position, Quaternion.identity);
         Enemy enemy = clone.GetComponent<Enemy>();
 
-        if (enemyID > -1)
+        if (!isBoss)
         {
-            enemy.Init(enemyID, chapterID, gameSceneManager, dataManager);//수정
-            enemyList.Add(enemy);
-            currentCount++;
+            if (enemyID > -1)
+            {
+                enemy.Init(enemyID, chapterID, gameSceneManager, dataManager);//수정
+                enemyList.Add(enemy);
+                currentCount++;
+            }
         }
-        if (bossID > -1)
+        else
         {
-            enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
+            if (bossID > -1)
+            {
+                enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
+                currentCount++;
+            }
         }
 
         enemyMove = enemy.enemyMove;
 
-        enemyMove.Init(enemyID, bossID, wayPoints);
+        enemyMove.Init(enemyID, bossID, wayPoints, isBoss);
 
         if (enemyList.Count >= 100)
         {
@@ -119,12 +126,12 @@ public class EnemySpawn : MonoBehaviour
     }
 
     // 마물 생성 코루틴 재시작
-    public void RestartSpawnEnemy(int enemyCount, int waveNum)
+    public void RestartSpawnEnemy(int enemyCount, int waveNum, bool isBoss = false)
     {
         currentCount = 0;
         //int enemyCount = chapterDatabase.GetByKey(waveNum).EnemyCount;
 
-        StartCoroutine(SpawnEnemy(enemyCount, waveNum));
+        StartCoroutine(SpawnEnemy(enemyCount, waveNum, isBoss));
     }
 
     // ***임시*** 마물이 죽었을 때

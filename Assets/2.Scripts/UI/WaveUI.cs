@@ -73,13 +73,13 @@ public class WaveUI : MonoBehaviour
                 enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
             }
             // 다음이 보스 Wave일 때
-            else if(tmpWave == 0 || tmpWave != 50)
+            else if(tmpWave == 0 && currentWave != 50)
             {
                 int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
 
                 timerUI.SetTimer(setTime);
                 // **** TODO : 보스몬스터 소환 구현하기 ****
-                enemySpawn.RestartSpawnEnemy(bossCount, currentWave);
+                enemySpawn.RestartSpawnEnemy(bossCount, currentWave, true);
             }
             // 다음이 50 Wave일 때
             else
@@ -89,7 +89,7 @@ public class WaveUI : MonoBehaviour
 
                 timerUI.SetTimer(setTime);
                 enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
-                enemySpawn.RestartSpawnEnemy(bossCount, currentWave);
+                enemySpawn.RestartSpawnEnemy(bossCount, currentWave, true);
             }
         }
     }
