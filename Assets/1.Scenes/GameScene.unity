@@ -12873,6 +12873,7 @@ MonoBehaviour:
     type: 3}
   enemyCountText: {fileID: 224954760}
   gameoverPopup: {fileID: 1000437948}
+  clearUIPopup: {fileID: 0}
   gameManager: {fileID: 0}
   player: {fileID: 0}
   dataManager: {fileID: 447362145}
@@ -20507,6 +20508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1953603435}
+  dataManager: {fileID: 447362145}
 --- !u!1 &1951549744
 GameObject:
   m_ObjectHideFlags: 0
