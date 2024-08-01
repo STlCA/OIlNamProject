@@ -34,7 +34,7 @@ public class WaveUI : MonoBehaviour
     // 다음 Wave로 진입
     public void NextWave()
     {
-        enemySpawn.gameSceneManager.happyEnergy.HappyEnergyCheck();
+        enemySpawn.gameSceneManager.happyEnergy.HappyEnergyCheck();//속도, 공격력 nowChange true여서 바꾸는것중에 제일 아래로와야함
 
         currentWave++;
 

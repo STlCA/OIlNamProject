@@ -13,6 +13,8 @@ public class HappyEnergy : MonoBehaviour
     public DataTable_MessageLoader messageDatabase;
     public DataManager tempDataManager;
 
+    private DataTable_Message currentMessage = new();
+
     [Header("EnergyBar")]
     public Slider energySlider;
     public TMP_Text energyText;
@@ -21,8 +23,13 @@ public class HappyEnergy : MonoBehaviour
     public GameObject popUp;
     public GameObject clickFalse;
     public TMP_Text message;
-    public TMP_Text answer1;
-    public TMP_Text answer2;
+    public GameObject slot1;
+    private TMP_Text[] text1;
+    public GameObject slot2;
+    private TMP_Text[] text2;
+    public GameObject slot3;
+    private TMP_Text[] text3;
+
 
     private string text;
 
@@ -91,56 +98,60 @@ public class HappyEnergy : MonoBehaviour
             messageDatabase = tempDataManager.dataTable_MessageLoader;
 
         HappyEnergyInit();
+
+        text1 = slot1.GetComponentsInChildren<TMP_Text>();
+        text2 = slot2.GetComponentsInChildren<TMP_Text>();
+        text3 = slot3.GetComponentsInChildren<TMP_Text>();
     }
 
     private void Update()
     {
-/*        if (!onPopup)
-            totalTime += Time.deltaTime;
+        /*        if (!onPopup)
+                    totalTime += Time.deltaTime;
 
-        if (totalTime >= tryTime)
-        {
-            CallTry();
-            totalTime = 0;
-        }*/
+                if (totalTime >= tryTime)
+                {
+                    CallTry();
+                    totalTime = 0;
+                }*/
     }
 
-/*    private void EnergyCheck()
-    {
-        if (1 <= currentEnergyPercent && currentEnergyPercent <= 30)
-            SetTryValue(3, 10);
-        else if (31 <= currentEnergyPercent && currentEnergyPercent <= 60)
-            SetTryValue(5, 25);
-        else if (61 <= currentEnergyPercent && currentEnergyPercent <= 80)
-            SetTryValue(7, 40);
-        else if (81 <= currentEnergyPercent && currentEnergyPercent <= 100)
-            SetTryValue(10, 55);
-    }*/
+    /*    private void EnergyCheck()
+        {
+            if (1 <= currentEnergyPercent && currentEnergyPercent <= 30)
+                SetTryValue(3, 10);
+            else if (31 <= currentEnergyPercent && currentEnergyPercent <= 60)
+                SetTryValue(5, 25);
+            else if (61 <= currentEnergyPercent && currentEnergyPercent <= 80)
+                SetTryValue(7, 40);
+            else if (81 <= currentEnergyPercent && currentEnergyPercent <= 100)
+                SetTryValue(10, 55);
+        }*/
 
     public void ChangeHappyEnergy(int val)
     {
         Energy = val;
     }
 
-/*    private void SetTryValue(int tryCount, float percent)
-    {
-        this.tryCount = tryCount;
-        this.percent = percent;
-        tryTime = 60 / tryCount;
-    }*/
-
-/*    private void CallTry()
-    {
-        Debug.Log("계산 돌아가는중");
-
-        int random = Random.Range(0, 100);
-
-        if (random <= percent)
+    /*    private void SetTryValue(int tryCount, float percent)
         {
-            onPopup = true;
-            SetPopUp();
-        }
-    }*/
+            this.tryCount = tryCount;
+            this.percent = percent;
+            tryTime = 60 / tryCount;
+        }*/
+
+    /*    private void CallTry()
+        {
+            Debug.Log("계산 돌아가는중");
+
+            int random = Random.Range(0, 100);
+
+            if (random <= percent)
+            {
+                onPopup = true;
+                SetPopUp();
+            }
+        }*/
 
     public void SetPopUp()
     {
@@ -164,12 +175,22 @@ public class HappyEnergy : MonoBehaviour
 
         int temp = Random.Range(0, list.Count);
 
-        DataTable_Message data = new();
-        data = messageDatabase.GetByKey(list[temp]);
 
-        message.text = data.Message;
-        answer1.text = data.Answer1;
-        answer2.text = data.Answer2;
+        currentMessage = messageDatabase.GetByKey(list[temp]);
+
+        message.text = currentMessage.Message;
+
+        text1[0].text = currentMessage.Answer1;
+        text1[1].text = currentMessage.Energy1.ToString();
+        text1[2].text = currentMessage.Price1.ToString();
+
+        text2[0].text = currentMessage.Answer2;
+        text2[1].text = currentMessage.Energy2.ToString();
+        text2[2].text = currentMessage.Price2.ToString();
+
+        text3[1].text = currentMessage.Energy3.ToString();
+        text3[2].text = currentMessage.Price3.ToString();
+
     }
 
     public void HappyEnergyCheck()//20미만일때 마물이동속도+5%
@@ -179,7 +200,7 @@ public class HappyEnergy : MonoBehaviour
         {
             //마물
             onBad = true;
-            gameSceneManager.unitController.SpeedChange(5);
+            gameSceneManager.unitController.SpeedChange(5, false, true);
             Debug.Log("해로운 효과");
         }
         else if (21 <= currentEnergyPercent && currentEnergyPercent > 100)
@@ -187,19 +208,19 @@ public class HappyEnergy : MonoBehaviour
             if (onBad)
             {
                 onBad = false;
-                gameSceneManager.unitController.SpeedChange(-5);
+                gameSceneManager.unitController.SpeedChange(-5, false, true);
             }
             if (onHappy)
             {
                 onHappy = false;
-                gameSceneManager.unitController.ATKChange(-30);
+                gameSceneManager.unitController.ATKChange(-30, false, true);
             }
             Debug.Log("해로운 효과 끄기");
         }
         else if (currentEnergyPercent >= 100)
         {
             onHappy = true;
-            gameSceneManager.unitController.ATKChange(30);
+            gameSceneManager.unitController.ATKChange(30, false, true);
             Debug.Log("이로운 효과");
         }
     }
@@ -209,34 +230,36 @@ public class HappyEnergy : MonoBehaviour
         switch (num)
         {
             case 1:
-                if (gameSceneManager.Gold < 15)
+                if (gameSceneManager.Gold < (currentMessage.Price1 * -1))
                 {
                     StopCoroutine("CoClickFalse");
                     StartCoroutine("CoClickFalse");
                     return;
                 }
-                gameSceneManager.ChangeGold(-15);
-                ChangeHappyEnergy(20);
+                gameSceneManager.ChangeGold(currentMessage.Price1);
+                ChangeHappyEnergy(currentMessage.Energy1);
+                gameSceneManager.unitController.ATKChange(20,false,false,true);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
                 popUp.gameObject.SetActive(false);
                 onPopup = false;
                 break;
             case 2:
-                if (gameSceneManager.Gold < 10)
+                if (gameSceneManager.Gold < (currentMessage.Price2 * -1))
                 {
                     StopCoroutine("CoClickFalse");
                     StartCoroutine("CoClickFalse");
                     return;
                 }
-                gameSceneManager.ChangeGold(-10);
-                ChangeHappyEnergy(20);
+                gameSceneManager.ChangeGold(currentMessage.Price2);
+                ChangeHappyEnergy(currentMessage.Energy2);
+                gameSceneManager.unitController.ATKChange(2,true);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
                 popUp.gameObject.SetActive(false);
                 onPopup = false;
                 break;
             case 3:
-                gameSceneManager.ChangeGold(30);
-                ChangeHappyEnergy(-15);
+                gameSceneManager.ChangeGold(currentMessage.Price3);
+                ChangeHappyEnergy(currentMessage.Energy3);
                 popUp.gameObject.SetActive(false);
                 onPopup = false;
                 break;

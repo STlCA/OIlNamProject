@@ -18,6 +18,7 @@ public class UnitInfo
     public int Skill_ID;
     public string Unit_Modeling;
     public bool Open;
+    public int SellGold;
 
     public float Speed;
     public float Range;
