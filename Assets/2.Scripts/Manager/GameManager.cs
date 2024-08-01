@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
     private void MoneyInit()
     {
         Point = 10;
-        Key = 3;
+        Key = 999;
         Ruby = 100;
     }
 

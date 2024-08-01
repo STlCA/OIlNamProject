@@ -1,13 +1,7 @@
 using Constants;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.UI;
-using static UnityEngine.UI.CanvasScaler;
 
 [System.Serializable]
 public class SpawnData
@@ -91,7 +85,7 @@ public class UnitController : MonoBehaviour
     [Header("Unit")]
     public UnitSpawn unitSpawnGo;
     public UnitManager unitManager;// ³ªÁß¿¡ private
-    public List<AnimatorController> animators = new List<AnimatorController>();
+    public List<RuntimeAnimatorController> animators = new();
 
     [Header("Prefab")]
     public GameObject UnitPrefab;
@@ -102,7 +96,7 @@ public class UnitController : MonoBehaviour
 
     public Dictionary<Vector3, SpawnData> spawnData = new();
     public Dictionary<int, CanUpgrade> canUpgrade = new();
-    public Dictionary<int, AnimatorController> unitAnimator = new();
+    public Dictionary<int, RuntimeAnimatorController> unitAnimator = new();
 
     public List<GameObject> onUnitPopUP = new();
 

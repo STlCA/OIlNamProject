@@ -188,16 +188,21 @@ public class HappyEnergy : MonoBehaviour
 
         message.text = currentMessage.Message;
 
-        text1[0].text = currentMessage.Answer1;
-        text1[1].text = currentMessage.Energy1.ToString();
-        text1[2].text = currentMessage.Price1.ToString();
+        text1[0].text = currentMessage.Info1_1;
+        text1[1].text = currentMessage.Info1_2;        
+        text1[2].text = currentMessage.Answer1;
+        text1[3].text = currentMessage.Energy1.ToString();
+        text1[4].text = currentMessage.Price1.ToString();
 
-        text2[0].text = currentMessage.Answer2;
-        text2[1].text = currentMessage.Energy2.ToString();
-        text2[2].text = currentMessage.Price2.ToString();
+        text2[0].text = currentMessage.Info2;
+        text2[1].text = currentMessage.Answer2;
+        text2[2].text = currentMessage.Energy2.ToString();
+        text2[3].text = currentMessage.Price2.ToString();
 
-        text3[1].text = currentMessage.Energy3.ToString();
-        text3[2].text = currentMessage.Price3.ToString();
+        text3[0].text = currentMessage.Info3;
+        text3[1].text = currentMessage.Answer3;
+        text3[2].text = currentMessage.Energy3.ToString();
+        text3[3].text = currentMessage.Price3.ToString();
 
     }
 

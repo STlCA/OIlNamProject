@@ -1,12 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using Unity.VisualScripting;
-using UnityEditor.U2D.Animation;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 [System.Serializable]
@@ -144,11 +138,13 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void UIOnOff()
     {
+        Debug.Log("¿©±äµé¾î¿È");
+
         if (btnUI == null)
             return;
 
-        controller.onUnitPopUP.Add(btnUI);
-        controller.onUnitPopUP.Add(rangeGO);
+/*        controller.onUnitPopUP.Add(btnUI);
+        controller.onUnitPopUP.Add(rangeGO);*/
 
         if (btnUI.activeSelf == true)
         {

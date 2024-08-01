@@ -17,6 +17,16 @@ public class DataTable_Message
     public string Message;
 
     /// <summary>
+    /// Info1_1
+    /// </summary>
+    public string Info1_1;
+
+    /// <summary>
+    /// Info1_2
+    /// </summary>
+    public string Info1_2;
+
+    /// <summary>
     /// Answer1
     /// </summary>
     public string Answer1;
@@ -32,6 +42,11 @@ public class DataTable_Message
     public int Price1;
 
     /// <summary>
+    /// Info2
+    /// </summary>
+    public string Info2;
+
+    /// <summary>
     /// Answer2
     /// </summary>
     public string Answer2;
@@ -45,6 +60,16 @@ public class DataTable_Message
     /// Energy2
     /// </summary>
     public int Energy2;
+
+    /// <summary>
+    /// Info3
+    /// </summary>
+    public string Info3;
+
+    /// <summary>
+    /// Answer3
+    /// </summary>
+    public string Answer3;
 
     /// <summary>
     /// Price3
