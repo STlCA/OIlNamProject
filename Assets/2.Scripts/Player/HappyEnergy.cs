@@ -10,8 +10,9 @@ using Random = UnityEngine.Random;
 public class HappyEnergy : MonoBehaviour
 {
     public GameSceneManager gameSceneManager;
-
+    public DataTable_MessageLoader messageDatabase;
     private DataTable_Message currentMessage = new();
+    public DataManager tempDataManager;
 
     [Header("EnergyBar")]
     public Slider energySlider;
@@ -90,6 +91,15 @@ public class HappyEnergy : MonoBehaviour
 
     private void Start()
     {
+        if (GameManager.Instance != null)
+        {
+            messageDatabase = GameManager.Instance.DataManager.dataTable_MessageLoader;
+        }
+        else
+        {
+            messageDatabase = tempDataManager.dataTable_MessageLoader;
+        }
+
         HappyEnergyInit();
 
         text1 = slot1.GetComponentsInChildren<TMP_Text>();
@@ -146,10 +156,18 @@ public class HappyEnergy : MonoBehaviour
             }
         }*/
 
-    private void SetPopUp()
+    public void SetPopUp()//웨이브체크해서부르기 TODO
     {
-        Debug.Log("켜짐");
-        popUp.gameObject.SetActive(true);
+        if (onPopup)
+            return;
+
+        else
+        {
+            Debug.Log("켜짐");
+            SetMessage();
+            popUp.gameObject.SetActive(true);
+        }
+
     }
 
     private void SetMessage()
@@ -226,7 +244,7 @@ public class HappyEnergy : MonoBehaviour
                 }
                 gameSceneManager.ChangeGold(currentMessage.Price1);
                 ChangeHappyEnergy(currentMessage.Energy1);
-                gameSceneManager.unitController.ATKChange(20,false,false,true);
+                gameSceneManager.unitController.ATKChange(20, false, false, true);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
                 popUp.gameObject.SetActive(false);
                 onPopup = false;
@@ -240,7 +258,7 @@ public class HappyEnergy : MonoBehaviour
                 }
                 gameSceneManager.ChangeGold(currentMessage.Price2);
                 ChangeHappyEnergy(currentMessage.Energy2);
-                gameSceneManager.unitController.ATKChange(2,true);
+                gameSceneManager.unitController.ATKChange(2, true);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
                 popUp.gameObject.SetActive(false);
                 onPopup = false;

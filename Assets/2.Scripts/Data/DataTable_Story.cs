@@ -14,12 +14,12 @@ public class DataTable_Story
     /// <summary>
     /// Text
     /// </summary>
-    public string text;
+    public string Text;
 
     /// <summary>
     /// Delete
     /// </summary>
-    public bool delete;
+    public bool Delete;
 
 }
 public class DataTable_StoryLoader

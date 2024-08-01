@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 
 [Serializable]
-public class DataTable_Enemy
+public class DataTable_Message
 {
     /// <summary>
     /// Index
@@ -12,52 +12,62 @@ public class DataTable_Enemy
     public int key;
 
     /// <summary>
-    /// Name
+    /// Message
     /// </summary>
-    public string Name;
+    public string Message;
 
     /// <summary>
-    /// Description
+    /// Answer1
     /// </summary>
-    public string Description;
+    public string Answer1;
 
     /// <summary>
-    /// HP
+    /// Energy1
     /// </summary>
-    public int HP;
+    public int Energy1;
 
     /// <summary>
-    /// Movement_Speed
+    /// Price1
     /// </summary>
-    public int Speed;
+    public int Price1;
 
     /// <summary>
-    /// Gain_Experience
+    /// Answer2
     /// </summary>
-    public int Exp;
+    public string Answer2;
 
     /// <summary>
-    /// Acquisition_Play Goods
+    /// Price2
     /// </summary>
-    public int PlayGoods;
+    public int Price2;
 
     /// <summary>
-    /// Monster_Modeling
+    /// Energy2
     /// </summary>
-    public string Path;
+    public int Energy2;
+
+    /// <summary>
+    /// Price3
+    /// </summary>
+    public int Price3;
+
+    /// <summary>
+    /// Energy3
+    /// </summary>
+    public int Energy3;
 
 }
-public class DataTable_EnemyLoader
+public class DataTable_MessageLoader
 {
-    public List<DataTable_Enemy> ItemsList { get; private set; }
-    public Dictionary<int, DataTable_Enemy> ItemsDict { get; private set; }
+    public List<DataTable_Message> ItemsList { get; private set; }
+    public Dictionary<int, DataTable_Message> ItemsDict { get; private set; }
 
-    public DataTable_EnemyLoader(string path = "JSON/DataTable_Enemy")
+    public DataTable_MessageLoader(string path = "JSON/DataTable_Message")
     {
         string jsonData;
         jsonData = Resources.Load<TextAsset>(path).text;
         ItemsList = JsonUtility.FromJson<Wrapper>(jsonData).Items;
-        ItemsDict = new Dictionary<int, DataTable_Enemy>();
+        ItemsDict = new Dictionary<int, DataTable_Message>();
         foreach (var item in ItemsList)
         {
             ItemsDict.Add(item.key, item);
@@ -67,10 +77,10 @@ public class DataTable_EnemyLoader
     [Serializable]
     private class Wrapper
     {
-        public List<DataTable_Enemy> Items;
+        public List<DataTable_Message> Items;
     }
 
-    public DataTable_Enemy GetByKey(int key)
+    public DataTable_Message GetByKey(int key)
     {
         if (ItemsDict.ContainsKey(key))
         {

@@ -9,6 +9,7 @@ public class DataManager : Manager
     public DataTable_EnemyLoader dataTable_EnemyLoader;
     public DataTable_ChapterLoader dataTable_ChapterLoader;
     public DataTable_BossLoader dataTable_BossLoader;
+    public DataTable_MessageLoader dataTable_MessageLoader;
     public StoryDataBase storyDataBase;
     public UnitDataBase unitDataBase;
 
@@ -17,6 +18,8 @@ public class DataManager : Manager
         EnemyAwake();
         ChapterAwake();
         BossAwake();
+        MessageAwake();
+
         StoryAwake();
         UnitAwake();
     }
@@ -87,5 +90,10 @@ public class DataManager : Manager
         {
             Debug.LogError("Failed to load unitDataBase.json");
         }
+    }
+
+    private void MessageAwake()
+    {
+        dataTable_MessageLoader = new DataTable_MessageLoader();
     }
 }
