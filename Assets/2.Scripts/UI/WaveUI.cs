@@ -13,6 +13,8 @@ public class WaveUI : MonoBehaviour
 
     private EnemySpawn enemySpawn;
     private DataTable_ChapterLoader chapterDatabase;
+    private HappyEnergy happyEnergy;
+    [SerializeField] private GameSceneManager gameSceneManager;
 
     //private void Start()
     //{
@@ -20,7 +22,7 @@ public class WaveUI : MonoBehaviour
     //    {
     //        GameManager.Instance.WaveUI = this;
     //    }
-        
+
     //    timerUI = timerUI.GetComponent<TimerUI>();
     //    enemySpawn = GetComponent<EnemySpawn>();
 
@@ -37,6 +39,7 @@ public class WaveUI : MonoBehaviour
         timerUI = timerUI.GetComponent<TimerUI>();
         enemySpawn = GetComponent<EnemySpawn>();
         chapterDatabase = enemySpawn.chapterDatabase;
+        happyEnergy = gameSceneManager.GetComponent<HappyEnergy>();
 
         StartWave();
     }
@@ -60,8 +63,15 @@ public class WaveUI : MonoBehaviour
         {
             int tmpWave = currentWave % 10;
             int setTime = chapterDatabase.GetByKey(currentWave).Time;
+            int daughterWave = chapterDatabase.GetByKey(currentWave).Message;
 
             UpdateWaveUI();
+
+            // 딸 팝업 호출
+            if(daughterWave > 0)
+            {
+                happyEnergy.SetPopUp();
+            }
 
             //timerUI.SetTimer(setTime);
             //enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
@@ -80,7 +90,6 @@ public class WaveUI : MonoBehaviour
                 int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
 
                 timerUI.SetTimer(setTime);
-                // **** TODO : 보스몬스터 소환 구현하기 ****
                 enemySpawn.RestartSpawnEnemy(bossCount, currentWave, true);
             }
             // 다음이 50 Wave일 때

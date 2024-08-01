@@ -5274,6 +5274,7 @@ MonoBehaviour:
   dataManager: {fileID: 8211429596669660521}
   gameSceneManager: {fileID: 2866201617070711164}
   deadEnemyCount: 0
+  isBossDead: 0
 --- !u!222 &2115295545377681982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18876,6 +18877,8 @@ MonoBehaviour:
   currentWave: 1
   waveText: {fileID: 634134822075162613}
   timerUI: {fileID: 8776003912076747724}
+  isBossWave: 0
+  gameSceneManager: {fileID: 2866201617070711164}
 --- !u!1 &6432431999746994698
 GameObject:
   m_ObjectHideFlags: 0
