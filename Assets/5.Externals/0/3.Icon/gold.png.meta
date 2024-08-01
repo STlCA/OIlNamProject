@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb6a263fe135cb64a9d92e6952c5cbc1
+guid: e793755c7fc145a4183da4ac1372413f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UIIcon_0
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_0"
       rect:
         serializedVersion: 2
         x: 3
@@ -157,20 +157,20 @@ TextureImporter:
         width: 22
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acd28e2ad22cadd4eb972c5f1aae8fd5
-      internalID: -1791157585
+      spriteID: 280081ba541d173488f4b7f9d30e3fd4
+      internalID: 336278306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gold
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_1"
       rect:
         serializedVersion: 2
         x: 33
@@ -178,20 +178,20 @@ TextureImporter:
         width: 25
         height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e81e3e295cf171e4eacc5dae90ca3792
-      internalID: 526328236
+      spriteID: bbe25f5f24df1d74491a3c335b8e2cd0
+      internalID: 2042511388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_2
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_2"
       rect:
         serializedVersion: 2
         x: 66
@@ -199,20 +199,20 @@ TextureImporter:
         width: 24
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f4b73935a9f8b2488ea39592258831b
-      internalID: 1281170023
+      spriteID: 2daf2ea0422eeb24584c5f0263bf4ec0
+      internalID: 1685049761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_3
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_3"
       rect:
         serializedVersion: 2
         x: 98
@@ -220,20 +220,20 @@ TextureImporter:
         width: 24
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dad9df3e43ab5e4e91416de0535ed68
-      internalID: 1229457401
+      spriteID: 41abe41623f7389498c4c19e3f94a6e1
+      internalID: -27918408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_4
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_4"
       rect:
         serializedVersion: 2
         x: 130
@@ -241,20 +241,20 @@ TextureImporter:
         width: 24
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e88f5e33526b5a54f9aaef5d893fa317
-      internalID: -863218864
+      spriteID: 93cab36c4acd12e48b30b000dda5c74c
+      internalID: 737857836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_5
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_5"
       rect:
         serializedVersion: 2
         x: 161
@@ -262,62 +262,83 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9101ad9fcfd72954a88a3689daba5124
-      internalID: -1539154418
+      spriteID: bf87664bba4e486448a4df0adf4fadfc
+      internalID: 2128295165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_7
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_6"
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 56
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab2422696208fc45b6462cf77b23854
+      internalID: 168247378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_7"
       rect:
         serializedVersion: 2
         x: 229
-        y: 36
+        y: 47
         width: 22
-        height: 26
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25a1595db690f9040b43e9a3087d05e7
-      internalID: -1464213927
+      spriteID: 278dbf22798cbd949b4477487e4987df
+      internalID: -1898512793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_8
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_8"
       rect:
         serializedVersion: 2
-        x: 258
+        x: 264
         y: 36
-        width: 25
+        width: 19
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1143c976387abe74ea206046fe8a3d9d
-      internalID: -275656153
+      spriteID: 5b925ea6d8f43fc45b004a2165059d8e
+      internalID: -2112628301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luby
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_9"
       rect:
         serializedVersion: 2
         x: 293
@@ -325,41 +346,146 @@ TextureImporter:
         width: 18
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faa6a8a60eb805547ab7612036a10d58
-      internalID: -1986064669
+      spriteID: 271e3c2f6dc66bb4385e0ad7f5b3e5bf
+      internalID: 955687164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_12
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_10"
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 51
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83c7b33f1a06c94282a84479baf4632
+      internalID: 1552193647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_11"
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 43
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf545ad2ebb8feb44857bb3848c09ed0
+      internalID: -1755872015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_12"
       rect:
         serializedVersion: 2
         x: 192
         y: 36
         width: 27
-        height: 26
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4814e70fc9154747932ef8e10c7a36e
-      internalID: 449548836
+      spriteID: 4ef1b3ed71a7c19468cda1604573b00c
+      internalID: 984745465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_16
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_13"
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 45
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0387aa5384ef69b4089a9ee28cba9e5b
+      internalID: -808690512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_14"
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 41
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51496e3e6f3f217479911bee693691ed
+      internalID: -1587783510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_15"
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 36
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb44cec7fa855a0459e86843a8af9b5a
+      internalID: 755877835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_16"
       rect:
         serializedVersion: 2
         x: 1
@@ -367,20 +493,20 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 862ac3ea25a19704888b252cd7f62751
-      internalID: -2066459537
+      spriteID: 4f72d31202dffbb4385a45cf9e8f8cbd
+      internalID: -995189790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_17
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_17"
       rect:
         serializedVersion: 2
         x: 33
@@ -388,20 +514,20 @@ TextureImporter:
         width: 26
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60cfb477ea58754459cfa8acd9fb4228
-      internalID: -633333396
+      spriteID: 58f1d342770a80a4284451d3e01f7e69
+      internalID: -9338878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_18
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_18"
       rect:
         serializedVersion: 2
         x: 65
@@ -409,20 +535,20 @@ TextureImporter:
         width: 26
         height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3991c68da0ece7f46914aaf697738c6c
-      internalID: -1509786758
+      spriteID: c999a18689e90134cb85360e849ccf4e
+      internalID: 375703088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_19
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_19"
       rect:
         serializedVersion: 2
         x: 97
@@ -430,20 +556,20 @@ TextureImporter:
         width: 26
         height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f09e218565a6b4641ac29716c0ae7e71
-      internalID: -405188996
+      spriteID: 7c995208e613a3d41a52c89405e7cb9f
+      internalID: -433867712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coin
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_20"
       rect:
         serializedVersion: 2
         x: 129
@@ -451,20 +577,20 @@ TextureImporter:
         width: 26
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ccc18fbbfe721e4abfca5c241dd7124
-      internalID: 254255707
+      spriteID: 1480426ceb8f47541a3b79ad56fe87c0
+      internalID: 382103835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_21
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_21"
       rect:
         serializedVersion: 2
         x: 163
@@ -472,20 +598,20 @@ TextureImporter:
         width: 22
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdaf79d7544e9bc46a02b06d174d90fb
-      internalID: 178323029
+      spriteID: 1cadbc1f9f2d71f48a7383bacc6fc465
+      internalID: -1299483440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_22
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_22"
       rect:
         serializedVersion: 2
         x: 194
@@ -493,20 +619,20 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c573d0c6015e0d458ad025f092dde64
-      internalID: -1617283047
+      spriteID: 370e4191baed72940b3e70a1c83d2493
+      internalID: -1458069824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_23
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_23"
       rect:
         serializedVersion: 2
         x: 224
@@ -514,20 +640,20 @@ TextureImporter:
         width: 28
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb41c4f26516feb4db6fa157d639b211
-      internalID: 2080020676
+      spriteID: a3d3751c574392342bbcacdd262816a2
+      internalID: -1765478601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_24
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_24"
       rect:
         serializedVersion: 2
         x: 257
@@ -535,20 +661,20 @@ TextureImporter:
         width: 26
         height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96a6e28b76e606d4785707d8f759e20e
-      internalID: 835130582
+      spriteID: 67d70e4b4c54e2b4bb70c970e3973641
+      internalID: -2025577461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_25
+      name: "\uACE8\uB4DC,\uB8E8\uBE44s_25"
       rect:
         serializedVersion: 2
         x: 290
@@ -556,14 +682,14 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 517b7a76de347d64e8331b4aa3ccf964
-      internalID: 391718880
+      spriteID: 01dec905bdc2ce140b52a0c1b3978191
+      internalID: 1799537160
       vertices: []
       indices: 
       edges: []
@@ -579,33 +705,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Coin: 254255707
-      Gold: 526328236
-      Luby: -1986064669
-      UIIcon_0: -1791157585
-      UIIcon_10: -814842990
-      UIIcon_11: -394506808
-      UIIcon_12: 449548836
-      UIIcon_13: -985496071
-      UIIcon_14: -1345399978
-      UIIcon_15: 753051083
-      UIIcon_16: -2066459537
-      UIIcon_17: -633333396
-      UIIcon_18: -1509786758
-      UIIcon_19: -405188996
-      UIIcon_2: 1281170023
-      UIIcon_21: 178323029
-      UIIcon_22: -1617283047
-      UIIcon_23: 2080020676
-      UIIcon_24: 835130582
-      UIIcon_25: 391718880
-      UIIcon_26: -2080673608
-      UIIcon_3: 1229457401
-      UIIcon_4: -863218864
-      UIIcon_5: -1539154418
-      UIIcon_6: 200447297
-      UIIcon_7: -1464213927
-      UIIcon_8: -275656153
+      "\uACE8\uB4DC,\uB8E8\uBE44s_0": 336278306
+      "\uACE8\uB4DC,\uB8E8\uBE44s_1": 2042511388
+      "\uACE8\uB4DC,\uB8E8\uBE44s_10": 1552193647
+      "\uACE8\uB4DC,\uB8E8\uBE44s_11": -1755872015
+      "\uACE8\uB4DC,\uB8E8\uBE44s_12": 984745465
+      "\uACE8\uB4DC,\uB8E8\uBE44s_13": -808690512
+      "\uACE8\uB4DC,\uB8E8\uBE44s_14": -1587783510
+      "\uACE8\uB4DC,\uB8E8\uBE44s_15": 755877835
+      "\uACE8\uB4DC,\uB8E8\uBE44s_16": -995189790
+      "\uACE8\uB4DC,\uB8E8\uBE44s_17": -9338878
+      "\uACE8\uB4DC,\uB8E8\uBE44s_18": 375703088
+      "\uACE8\uB4DC,\uB8E8\uBE44s_19": -433867712
+      "\uACE8\uB4DC,\uB8E8\uBE44s_2": 1685049761
+      "\uACE8\uB4DC,\uB8E8\uBE44s_20": 382103835
+      "\uACE8\uB4DC,\uB8E8\uBE44s_21": -1299483440
+      "\uACE8\uB4DC,\uB8E8\uBE44s_22": -1458069824
+      "\uACE8\uB4DC,\uB8E8\uBE44s_23": -1765478601
+      "\uACE8\uB4DC,\uB8E8\uBE44s_24": -2025577461
+      "\uACE8\uB4DC,\uB8E8\uBE44s_25": 1799537160
+      "\uACE8\uB4DC,\uB8E8\uBE44s_3": -27918408
+      "\uACE8\uB4DC,\uB8E8\uBE44s_4": 737857836
+      "\uACE8\uB4DC,\uB8E8\uBE44s_5": 2128295165
+      "\uACE8\uB4DC,\uB8E8\uBE44s_6": 168247378
+      "\uACE8\uB4DC,\uB8E8\uBE44s_7": -1898512793
+      "\uACE8\uB4DC,\uB8E8\uBE44s_8": -2112628301
+      "\uACE8\uB4DC,\uB8E8\uBE44s_9": 955687164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
