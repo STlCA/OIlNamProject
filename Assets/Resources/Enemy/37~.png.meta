@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb83826bcf60ea84cb8ed7e48fd832bd
+guid: 98cf047d1f6152343aea22ab08071887
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -132,17 +132,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boar2_0
+      name: Busaw_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 5
         y: 72
-        width: 12
-        height: 16
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,146 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c174d5fdaf75fc438512090a3ad40c3
-      internalID: 1978902866
+      spriteID: 42346cd3724625e40aa7537f8fef343e
+      internalID: -2038581645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_1
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 72
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9af178b6a0730be42b760f5a701125be
-      internalID: 1467414442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_2
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 72
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e82cf22f53e969048a459ce3502f666b
-      internalID: 1651473734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 48
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be0ce7c991cb70e4d8bb74c4538c7c69
-      internalID: 374145890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_4
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 48
-        width: 17
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96c99f4c33eba8b4d8113f4cffbc76cc
-      internalID: 421231800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_5
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 48
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f1e4e8714c6aac4c8368f1735130c11
-      internalID: 508358841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_6
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 24
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39eab9bbb32703c419c62b7f9c9c6408
-      internalID: -1753403104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_7
+      name: Busaw_1
       rect:
         serializedVersion: 2
         x: 28
-        y: 24
-        width: 17
-        height: 15
+        y: 72
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b2065d5536ad1f49a934ca08c81fcb4
-      internalID: -1329528769
+      spriteID: d62acfac97e27e44d896533f675a86e4
+      internalID: 999453935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_8
+      name: Busaw_2
       rect:
         serializedVersion: 2
         x: 52
-        y: 24
-        width: 17
-        height: 14
+        y: 72
+        width: 15
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00bbfae321d46be459292e42161bcb4c
-      internalID: -539738478
+      spriteID: b3e07a73bfffd1d4a85c13be6b73cf2c
+      internalID: -1347097456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_9
+      name: Busaw_3
       rect:
         serializedVersion: 2
         x: 6
-        y: 0
-        width: 12
-        height: 14
+        y: 48
+        width: 13
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3e985a171f868e45bcd367f560b0708
-      internalID: 205332104
+      spriteID: 88d7f1840ab352d4daac60b43ac6ee50
+      internalID: -230419358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_10
+      name: Busaw_4
       rect:
         serializedVersion: 2
         x: 30
-        y: 0
-        width: 12
-        height: 15
+        y: 48
+        width: 13
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad18505a64a59784cbe84f1a933f56fb
-      internalID: 1217108641
+      spriteID: 1e33f779691a6f3449799b668b4ea320
+      internalID: 1522225431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_11
+      name: Busaw_5
       rect:
         serializedVersion: 2
         x: 54
-        y: 0
-        width: 12
-        height: 14
+        y: 48
+        width: 13
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,8 +268,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea77635b80591b14393ef7898151c6d7
-      internalID: 1059672393
+      spriteID: 328c3b9340316df4aa9b6e8d9ada82fb
+      internalID: -1866735168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Busaw_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 24
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5846a36031dc8ad498eefa5366d27be3
+      internalID: 355218849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Busaw_7
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 24
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba6e57eba09034741900d59d76820d07
+      internalID: 1533898583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Busaw_8
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 24
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d474bac2547631f4fbafc22dec8af40f
+      internalID: 1862821609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Busaw_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d34b63c83f9e54bad007a5008ff78b
+      internalID: 1492745923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Busaw_10
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf0452101f9cff45a569630e50f6675
+      internalID: 858392286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Busaw_11
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef0b645655dbc14988c06eef3bdcfab
+      internalID: -531135297
       vertices: []
       indices: 
       edges: []
@@ -398,18 +411,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boar2_0: 1978902866
-      Boar2_1: 1467414442
-      Boar2_10: 1217108641
-      Boar2_11: 1059672393
-      Boar2_2: 1651473734
-      Boar2_3: 374145890
-      Boar2_4: 421231800
-      Boar2_5: 508358841
-      Boar2_6: -1753403104
-      Boar2_7: -1329528769
-      Boar2_8: -539738478
-      Boar2_9: 205332104
+      Busaw_0: -2038581645
+      Busaw_1: 999453935
+      Busaw_10: 858392286
+      Busaw_11: -531135297
+      Busaw_2: -1347097456
+      Busaw_3: -230419358
+      Busaw_4: 1522225431
+      Busaw_5: -1866735168
+      Busaw_6: 355218849
+      Busaw_7: 1533898583
+      Busaw_8: 1862821609
+      Busaw_9: 1492745923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

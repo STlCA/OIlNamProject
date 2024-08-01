@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb83826bcf60ea84cb8ed7e48fd832bd
+guid: bb6d734b477b1414595882f0f7f13680
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,17 +132,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boar2_0
+      name: Bungisngis_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 5
         y: 72
-        width: 12
-        height: 16
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,18 +163,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c174d5fdaf75fc438512090a3ad40c3
-      internalID: 1978902866
+      spriteID: b7cc91b5b85a32e4a85e5c4dbb1f3d8a
+      internalID: -1875016467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_1
+      name: Bungisngis_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 28
         y: 72
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7446428f2e80048bb752c9a11349eb
+      internalID: 479837204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bungisngis_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 72
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a87f0138d3709049b6d5e54aaf6e9a1
+      internalID: -157925497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bungisngis_3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 48
         width: 12
         height: 17
       alignment: 0
@@ -171,188 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9af178b6a0730be42b760f5a701125be
-      internalID: 1467414442
+      spriteID: 0d04e5a88250641489679396b2275e03
+      internalID: 944025067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_2
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 72
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e82cf22f53e969048a459ce3502f666b
-      internalID: 1651473734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 48
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be0ce7c991cb70e4d8bb74c4538c7c69
-      internalID: 374145890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_4
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 48
-        width: 17
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96c99f4c33eba8b4d8113f4cffbc76cc
-      internalID: 421231800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_5
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 48
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f1e4e8714c6aac4c8368f1735130c11
-      internalID: 508358841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_6
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 24
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39eab9bbb32703c419c62b7f9c9c6408
-      internalID: -1753403104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_7
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 24
-        width: 17
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b2065d5536ad1f49a934ca08c81fcb4
-      internalID: -1329528769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_8
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 24
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00bbfae321d46be459292e42161bcb4c
-      internalID: -539738478
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_9
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 0
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3e985a171f868e45bcd367f560b0708
-      internalID: 205332104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_10
+      name: Bungisngis_4
       rect:
         serializedVersion: 2
         x: 30
-        y: 0
+        y: 48
         width: 12
-        height: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad18505a64a59784cbe84f1a933f56fb
-      internalID: 1217108641
+      spriteID: 344fa036bc3e1aa4bb68e4de6eaf0e04
+      internalID: -310384195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_11
+      name: Bungisngis_5
       rect:
         serializedVersion: 2
         x: 54
-        y: 0
+        y: 48
         width: 12
-        height: 14
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,8 +268,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea77635b80591b14393ef7898151c6d7
-      internalID: 1059672393
+      spriteID: bc8ad0804a3efdc4dac2a77a6f411ba7
+      internalID: 1379752108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bungisngis_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 24
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2fe9617bdd1b3c458fa6f7f5b6cbd7d
+      internalID: 1722394261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bungisngis_7
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 24
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e476d4eec06004dafa380bacac8a1e
+      internalID: -1079729976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bungisngis_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 24
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5baa9e70e5064a74eb594970028ede34
+      internalID: 66806233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bungisngis_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cb729240a6af248bf11a2607347b5e
+      internalID: 1589218853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bungisngis_10
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b414c0e38d49d6c4587f763180d94f47
+      internalID: 262796510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bungisngis_11
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5c0e3b74fe4c84ba6d5c913dbcb475
+      internalID: -380793575
       vertices: []
       indices: 
       edges: []
@@ -398,18 +411,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boar2_0: 1978902866
-      Boar2_1: 1467414442
-      Boar2_10: 1217108641
-      Boar2_11: 1059672393
-      Boar2_2: 1651473734
-      Boar2_3: 374145890
-      Boar2_4: 421231800
-      Boar2_5: 508358841
-      Boar2_6: -1753403104
-      Boar2_7: -1329528769
-      Boar2_8: -539738478
-      Boar2_9: 205332104
+      Bungisngis_0: -1875016467
+      Bungisngis_1: 479837204
+      Bungisngis_10: 262796510
+      Bungisngis_11: -380793575
+      Bungisngis_2: -157925497
+      Bungisngis_3: 944025067
+      Bungisngis_4: -310384195
+      Bungisngis_5: 1379752108
+      Bungisngis_6: 1722394261
+      Bungisngis_7: -1079729976
+      Bungisngis_8: 66806233
+      Bungisngis_9: 1589218853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
