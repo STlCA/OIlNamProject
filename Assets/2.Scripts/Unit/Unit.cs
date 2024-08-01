@@ -14,88 +14,60 @@ public class UnitData
 {
     public int id;
     public float range;
+    public float speed;
+    public int step;
+
+    public float fixSpeedData;//¹Ù²ÙÁöx
     public float fixSpeed;
     public float currentSpeed;
-    public float time;
-    public int step;
+
     public float fixAtk;
     public float currentAtk;
-    public float plusFixSpeed;
-    public float plusFixAtk;
-    public float plusSpeed;
-    public float plusAtk;
-    public float tempAtk;
-    public float tempSpeed;
 
     public void Init(int id, float range, float speed, float atk, int step = 0)
     {
         this.id = id;
         this.range = range;
-        fixSpeed = speed;
+        fixSpeedData = speed;
+        this.speed = speed;
         fixAtk = atk;
-        time = speed;
 
         if (step == 0)
             step = 0;
         this.step += step;
 
-        currentSpeed = fixSpeed;
         currentAtk = fixAtk;
     }
 
-    public void PlusSpeed(int changeVal, bool isFixChange = false, bool nowChange = false, bool isOneTime = false)
+    public void SpeedChange(int changeVal, bool isFixChange = false)//value´Â ÃÑ °è»êµÈ ÆÛ¼¾Æ®
     {
-        if (isFixChange)
-            plusFixSpeed += changeVal;
-
-        if (isOneTime)
-            tempSpeed += changeVal;
-        else
-            plusSpeed += changeVal;
-
-        if (nowChange)
-            SpeedChange();
-    }
-    public void SpeedChange(int tempValue = 0)
-    {
-        if (plusFixSpeed != 0)
+        if (changeVal == 0)
         {
-            fixSpeed += fixSpeed / 100 * plusFixSpeed;
-            plusFixSpeed = 0;
+            if (isFixChange)
+                fixSpeed = fixSpeedData;
+            else
+                speed = fixSpeed;
+
+            return;
         }
 
-        currentSpeed += fixSpeed / 100 * (plusSpeed + tempSpeed);
-        tempSpeed = 0;
-
-        Debug.Log("¼Óµµ¹Ù²ñ");
-    }
-
-    public void PlusATK(int changeVal, bool isFixChange = false, bool nowChange = false, bool isOneTime = false)
-    {
         if (isFixChange)
-            plusFixAtk += changeVal;
-
-        if (isOneTime)
-            tempAtk += changeVal;
+            fixSpeed = fixSpeedData + fixSpeedData / 100 * changeVal;
         else
-            plusAtk += changeVal;
-
-        if (nowChange)
-            ATKChange();
+            speed = fixSpeed + fixSpeed / 100 * changeVal;        
     }
-    public void ATKChange()
+
+    public void ATKChange(int changeVal, bool isFixChange = false)
     {
-        if (plusFixAtk != 0)
-        {
-            fixAtk += fixAtk / 100 * plusFixAtk;
-            plusFixAtk = 0;
-        }
+        if (changeVal == 0)
+            return;
 
-        currentAtk += fixAtk / 100 * (plusAtk + tempAtk);
-        tempAtk = 0;
-
-        Debug.Log("°ø°Ý·Â¹Ù²ñ");
+        if (isFixChange)
+            fixAtk += fixAtk / 100 * changeVal;
+        else
+            currentAtk += currentAtk / 100 * changeVal;
     }
+
 }
 
 public class Unit : MonoBehaviour, IPointerClickHandler
@@ -138,10 +110,10 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     private void Update()
     {
-        myData.time += Time.deltaTime;
+        myData.speed += Time.deltaTime;
 
 
-        if (myData.time >= myData.currentSpeed)
+        if (myData.speed >= myData.currentSpeed)
         {
 
             findEnemy = FindEnemy();
@@ -150,7 +122,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
                 Debug.Log("¸÷");
 
                 unitAnimation.AttackEffect();
-                myData.time = 0;
+                myData.speed = 0;
             }
         }
     }
@@ -206,10 +178,10 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         controller.UnitUpgrade(myData.id, transform.position);
         iconImage[myData.step - 1].gameObject.SetActive(true);
     }
+
     public void SellUnit()
     {
-        controller.UnitUpgrade(myData.id, transform.position);
-        iconImage[myData.step - 1].gameObject.SetActive(true);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

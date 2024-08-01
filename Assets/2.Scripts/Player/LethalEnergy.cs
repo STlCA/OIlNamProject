@@ -1,3 +1,4 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -69,8 +70,8 @@ public class LethalEnergy : MonoBehaviour
             return;
 
         ChangeEnergy(-200);
-        gameSceneManager.unitController.SpeedChange(-20, false, true);
-        gameSceneManager.unitController.ATKChange(20, false, true);
+        gameSceneManager.unitController.PlusSpeed(-20, PlusChangeType.LethalChange, true);
+        gameSceneManager.unitController.PlusATK(20, PlusChangeType.LethalChange, true);
 
         StartCoroutine("CoCancelLethal");
     }
@@ -79,7 +80,7 @@ public class LethalEnergy : MonoBehaviour
     {
         yield return new WaitForSeconds(20);
 
-        gameSceneManager.unitController.SpeedChange(20, false, true);
-        gameSceneManager.unitController.ATKChange(-20, false, true);
+        gameSceneManager.unitController.PlusSpeed(20, PlusChangeType.LethalChange, true);
+        gameSceneManager.unitController.PlusATK(-20, PlusChangeType.LethalChange, true);
     }
 }

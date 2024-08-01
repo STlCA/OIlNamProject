@@ -1,3 +1,4 @@
+using Constants;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,6 +43,7 @@ public class HappyEnergy : MonoBehaviour
     private bool onPopup = false;
     private bool onBad = false;
     private bool onHappy = false;
+    private bool onLove = false;
 
     public int Energy
     {
@@ -160,12 +162,12 @@ public class HappyEnergy : MonoBehaviour
     {
         if (onPopup)
             return;
-
         else
         {
             Debug.Log("켜짐");
             SetMessage();
             popUp.gameObject.SetActive(true);
+            onPopup = true;
         }
 
     }
@@ -201,34 +203,42 @@ public class HappyEnergy : MonoBehaviour
 
     public void HappyEnergyCheck()//20미만일때 마물이동속도+5%
     {
+        if (onBad)
+        {
+            onBad = false;
+            gameSceneManager.unitController.PlusSpeed(-5, PlusChangeType.NormalChange, false);
+        }            
+        else if (onHappy)
+        {
+            onHappy = false;
+            gameSceneManager.unitController.PlusATK(-10, PlusChangeType.NormalChange, false);
+
+        }
+        else if (onLove)
+        {
+            onLove = false;
+            gameSceneManager.unitController.PlusATK(-30, PlusChangeType.NormalChange, false);
+        }
+
+
         //이걸부르는곳에서 gameSceneManager.unitController.BadEnergy(5);쓰기
         if (currentEnergyPercent <= 20)
         {
             //마물
             onBad = true;
-            gameSceneManager.unitController.SpeedChange(5, false, true);
-            Debug.Log("해로운 효과");
+            gameSceneManager.unitController.PlusSpeed(5, PlusChangeType.NormalChange, true);
         }
-        else if (21 <= currentEnergyPercent && currentEnergyPercent > 100)
+        else if (75 <= currentEnergyPercent && currentEnergyPercent > 100)
         {
-            if (onBad)
-            {
-                onBad = false;
-                gameSceneManager.unitController.SpeedChange(-5, false, true);
-            }
-            if (onHappy)
-            {
-                onHappy = false;
-                gameSceneManager.unitController.ATKChange(-30, false, true);
-            }
-            Debug.Log("해로운 효과 끄기");
+            onHappy = true;
+            gameSceneManager.unitController.PlusATK(10, PlusChangeType.NormalChange, true);
         }
         else if (currentEnergyPercent >= 100)
         {
-            onHappy = true;
-            gameSceneManager.unitController.ATKChange(30, false, true);
-            Debug.Log("이로운 효과");
+            onLove = true;
+            gameSceneManager.unitController.PlusATK(30, PlusChangeType.NormalChange, true);
         }
+        
     }
 
     public void ClickMessage(int num)
@@ -244,7 +254,7 @@ public class HappyEnergy : MonoBehaviour
                 }
                 gameSceneManager.ChangeGold(currentMessage.Price1);
                 ChangeHappyEnergy(currentMessage.Energy1);
-                gameSceneManager.unitController.ATKChange(20, false, false, true);
+                gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange,false);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
                 popUp.gameObject.SetActive(false);
                 onPopup = false;
@@ -258,7 +268,7 @@ public class HappyEnergy : MonoBehaviour
                 }
                 gameSceneManager.ChangeGold(currentMessage.Price2);
                 ChangeHappyEnergy(currentMessage.Energy2);
-                gameSceneManager.unitController.ATKChange(2, true);
+                gameSceneManager.unitController.PlusATK(2, PlusChangeType.FixChange, false);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
                 popUp.gameObject.SetActive(false);
                 onPopup = false;

@@ -1,3 +1,4 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -54,6 +55,30 @@ public class CanUpgrade
     }
 }
 
+public struct PlusValue
+{
+    public int fixTempSpeed; // 대기중
+    public int fixSpeed;//적용중
+
+    public int tempSpeed; //대기중
+    public int speed; //적용중
+
+    public int lethalTempSpeed;// 대기중이지만 사실 지금은 필살기 즉발
+
+
+
+    public int fixTempAtk; // 대기중
+    public int fixAtk;//적용중
+
+    public int tempAtk; //대기중
+    public int atk; //적용중
+
+    public int lethalTempAtk;// 대기중이지만 사실 지금은 필살기 즉발
+
+    public int deleteSpeed;
+    public int deleteAtk;
+}
+
 public class UnitController : MonoBehaviour
 {
     //unit = 강화 도감
@@ -72,13 +97,16 @@ public class UnitController : MonoBehaviour
     public GameObject UnitPrefab;
 
     [Header("UI")]
-    public TMP_Text infoTxt;
+    public GameObject infoGO;
+    private TMP_Text infoTxt;
 
     public Dictionary<Vector3, SpawnData> spawnData = new();
     public Dictionary<int, CanUpgrade> canUpgrade = new();
     public Dictionary<int, AnimatorController> unitAnimator = new();
 
     public List<GameObject> onUnitPopUP = new();
+
+    public PlusValue plusValue = new();
 
 
     private void Start()
@@ -95,6 +123,8 @@ public class UnitController : MonoBehaviour
 
             unitAnimator.Add(temp + (i * 100), animators[i]);
         }
+
+        infoTxt = infoGO.GetComponentInChildren<TMP_Text>();
     }
 
     public void UnitRecall()
@@ -222,19 +252,132 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    public void SpeedChange(int percent, bool isFixChange = false, bool nowChange = false, bool isOneTime = false)
+    public void PlusSpeed(int changeVal, PlusChangeType type, bool nowChange = false)//딸 팝업 선택했을때, 필살기 사용했을때
     {
-        foreach (var val in spawnData)
+        switch (type)
         {
-            val.Value.unitData.myData.PlusSpeed(percent, isFixChange, nowChange, isOneTime);
+            case PlusChangeType.FixChange:
+                plusValue.fixTempSpeed += changeVal;
+                if (nowChange)
+                {
+                    SpeedChange(type, plusValue.fixTempSpeed + plusValue.fixSpeed);
+                    plusValue.fixSpeed += plusValue.fixTempSpeed;
+                    plusValue.fixTempSpeed = 0;
+                }
+                break;
+            case PlusChangeType.NormalChange:
+                plusValue.tempSpeed += changeVal;
+                plusValue.deleteSpeed += changeVal;
+                if (nowChange)
+                {
+                    SpeedChange(type, plusValue.speed + plusValue.tempSpeed);
+                    plusValue.speed += plusValue.tempSpeed;
+                    plusValue.tempSpeed = 0;
+                }
+                break;
+            case PlusChangeType.LethalChange:
+                plusValue.lethalTempSpeed += changeVal;
+                if (nowChange)
+                {
+                    SpeedChange(type, plusValue.speed + plusValue.lethalTempSpeed);
+                    plusValue.speed += plusValue.lethalTempSpeed;
+                    plusValue.lethalTempSpeed = 0;
+                }
+                break;
+            case PlusChangeType.DeleteChange:
+                if (plusValue.deleteSpeed != 0)
+                {
+                    plusValue.speed -= plusValue.deleteSpeed;
+                    SpeedChange(type, plusValue.speed);
+                    plusValue.deleteSpeed = 0;
+                }
+                break;
         }
     }
 
-    public void ATKChange(int percent, bool isFixChange = false, bool nowChange = false, bool isOneTime = false)
+    private void SpeedChange(PlusChangeType type, int percent)
     {
-        foreach (var val in spawnData)
+        switch (type)
         {
-            val.Value.unitData.myData.PlusATK(percent, isFixChange, nowChange, isOneTime);
+            case PlusChangeType.FixChange:
+                foreach (var val in spawnData)
+                {
+                    val.Value.unitData.myData.SpeedChange(percent, true);
+                    val.Value.unitData.myData.SpeedChange(plusValue.speed);
+                }
+                break;
+            case PlusChangeType.NormalChange:
+                foreach (var val in spawnData)
+                {
+                    val.Value.unitData.myData.SpeedChange(percent);
+                }
+                break;
+            case PlusChangeType.LethalChange:
+                foreach (var val in spawnData)
+                {
+                    val.Value.unitData.myData.SpeedChange(percent);
+                }
+                break;
+        }
+    }
+
+    public void PlusATK(int changeVal, PlusChangeType type, bool nowChange = false)//딸 팝업 선택했을때, 필살기 사용했을때
+    {
+        switch (type)
+        {
+            case PlusChangeType.FixChange:
+                plusValue.fixTempAtk += changeVal;
+                if (nowChange)
+                {
+                    ATKChange(type, plusValue.fixTempAtk + plusValue.fixAtk);
+                    plusValue.fixAtk += plusValue.fixTempAtk;
+                    plusValue.fixTempAtk = 0;
+                }
+                break;
+            case PlusChangeType.NormalChange:
+                plusValue.tempAtk += changeVal;
+                if (nowChange)
+                {
+                    ATKChange(type, plusValue.atk + plusValue.tempAtk);
+                    plusValue.atk += plusValue.tempAtk;
+                    plusValue.tempAtk = 0;
+                }
+                break;
+            case PlusChangeType.LethalChange:
+                plusValue.lethalTempAtk += changeVal;
+                if (nowChange)
+                {
+                    ATKChange(type, plusValue.atk + plusValue.lethalTempAtk);
+                    plusValue.atk += plusValue.lethalTempAtk;
+                    plusValue.lethalTempAtk = 0;
+                }
+                break;
+        }
+    }
+
+    private void ATKChange(PlusChangeType type, int percent)
+    {
+        switch (type)
+        {
+            case PlusChangeType.FixChange:
+                foreach (var val in spawnData)
+                {
+                    val.Value.unitData.myData.ATKChange(percent, true);
+                    val.Value.unitData.myData.ATKChange(plusValue.atk);
+                }
+                break;
+            case PlusChangeType.NormalChange:
+                foreach (var val in spawnData)
+                {
+                    val.Value.unitData.myData.ATKChange(percent);
+                }
+                break;
+            case PlusChangeType.LethalChange:
+                foreach (var val in spawnData)
+                {
+                    val.Value.unitData.myData.ATKChange(percent);
+                }
+                break;
         }
     }
 }

@@ -29,4 +29,12 @@ namespace Constants
         Ruby,
     }
 
+    public enum PlusChangeType
+    {
+        FixChange,
+        NormalChange,
+        LethalChange,
+        DeleteChange,
+    }
+
 }
