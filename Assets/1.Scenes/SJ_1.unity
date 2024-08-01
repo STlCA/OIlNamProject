@@ -18163,9 +18163,8 @@ MonoBehaviour:
   popUp: {fileID: 2083864712}
   clickFalse: {fileID: 600018681}
   message: {fileID: 1869543711}
-  slot1: {fileID: 291309049}
-  slot2: {fileID: 155574908}
-  slot3: {fileID: 2049881661}
+  answer1: {fileID: 0}
+  answer2: {fileID: 0}
 --- !u!1 &1721825521
 GameObject:
   m_ObjectHideFlags: 0
