@@ -14,6 +14,7 @@ public class TimerUI : MonoBehaviour
     private int second;
 
     private WaveUI waveUI;
+    private EnemySpawn enemySpawn;
     public DataManager dataManager;//임시//수정
     public DataTable_ChapterLoader chapterDatabase;
 
@@ -34,6 +35,7 @@ public class TimerUI : MonoBehaviour
             waveUI = GameManager.Instance.WaveUI;
         }
 
+        enemySpawn = waveUI.GetComponent<EnemySpawn>();
         chapterDatabase = dataManager.dataTable_ChapterLoader;
 
         time = chapterDatabase.GetByKey(waveUI.currentWave).Time;
@@ -65,6 +67,18 @@ public class TimerUI : MonoBehaviour
         if (curTime <= 0)
         {
             //SetTimer();
+            if (waveUI.isBossWave)
+            {
+                // 보스 Wave에서 보스가 죽었을 경우 다음 웨이브로 넘어감
+                if (enemySpawn.isBossDead)
+                {
+                    waveUI.NextWave();
+                }
+                else
+                {
+                    enemySpawn.GameOver();
+                }
+            }
             waveUI.NextWave();
         }
     }

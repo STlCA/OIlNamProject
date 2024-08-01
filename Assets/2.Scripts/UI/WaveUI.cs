@@ -9,6 +9,8 @@ public class WaveUI : MonoBehaviour
     [SerializeField] public int currentWave = 1;
     [SerializeField] private TMP_Text waveText;
     [SerializeField] private TimerUI timerUI;
+    public bool isBossWave = false;
+
     private EnemySpawn enemySpawn;
     private DataTable_ChapterLoader chapterDatabase;
 

@@ -26,6 +26,7 @@ public class EnemySpawn : MonoBehaviour
     private int currentCount = 0;
     public int deadEnemyCount = 0;  // 처리한 마물 수
     private float waitSeconds = 0.7f;
+    public bool isBossDead = false;
 
     EnemyMove enemyMove;
 
@@ -110,6 +111,8 @@ public class EnemySpawn : MonoBehaviour
             {
                 enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
                 currentCount++;
+                waveUI.isBossWave = true;
+                isBossDead = false;
             }
         }
 
@@ -139,11 +142,20 @@ public class EnemySpawn : MonoBehaviour
     {
         // ***** TODO : 마물 죽었을 때 처리 방법 수정하기 *****
         //currentCount--;
-        deadEnemyCount++;
-        player.ExpUp(deadEnemyCount);
-        enemyList.Remove(enemy);
+
+        // 처리한 마물이 보스인지, 마물인지 확인
+        if(enemy.isBoss)
+        {
+            isBossDead = true;
+        }
+        else
+        {
+            deadEnemyCount++;
+            player.ExpUp(deadEnemyCount);
+            enemyList.Remove(enemy);
+            UpdateEnemyCountUI();
+        }
         Destroy(gameObject);
-        UpdateEnemyCountUI();
         lethalEnergy.ChangeEnergy(1);
 
         int maxPerWave = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
@@ -161,8 +173,8 @@ public class EnemySpawn : MonoBehaviour
         enemyCountText.text = enemyList.Count.ToString() + " / 100";
     }
 
-    // 마물이 100마리가 넘어가면 게임 오버
-    private void GameOver()
+    // 게임 오버
+    public void GameOver()
     {
         GameManager.Instance.PopUpController.PauseUIOn(gameoverPopup);
 

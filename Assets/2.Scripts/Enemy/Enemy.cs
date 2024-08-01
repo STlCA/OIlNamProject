@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
     public BossData bossData;
     private SpriteRenderer image;
     private bool isDead;
-    private bool isBoss = false;
+    public bool isBoss = false;
 
     //private void Start()
     //{
