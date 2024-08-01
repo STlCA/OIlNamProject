@@ -318,6 +318,12 @@ public class UnitController : MonoBehaviour
                     val.Value.unitData.myData.SpeedChange(percent);
                 }
                 break;
+            case PlusChangeType.DeleteChange:
+                foreach (var val in spawnData)
+                {
+                    val.Value.unitData.myData.SpeedChange(percent);
+                }
+                break;
         }
     }
 
@@ -335,6 +341,7 @@ public class UnitController : MonoBehaviour
                 }
                 break;
             case PlusChangeType.NormalChange:
+                plusValue.deleteAtk += changeVal;
                 plusValue.tempAtk += changeVal;
                 if (nowChange)
                 {
@@ -350,6 +357,14 @@ public class UnitController : MonoBehaviour
                     ATKChange(type, plusValue.atk + plusValue.lethalTempAtk);
                     plusValue.atk += plusValue.lethalTempAtk;
                     plusValue.lethalTempAtk = 0;
+                }
+                break;
+            case PlusChangeType.DeleteChange:
+                if (plusValue.deleteAtk != 0)
+                {
+                    plusValue.atk -= plusValue.deleteAtk;
+                    SpeedChange(type, plusValue.atk);
+                    plusValue.deleteAtk = 0;
                 }
                 break;
         }
@@ -378,6 +393,13 @@ public class UnitController : MonoBehaviour
                     val.Value.unitData.myData.ATKChange(percent);
                 }
                 break;
+            case PlusChangeType.DeleteChange:
+                foreach (var val in spawnData)
+                {
+                    val.Value.unitData.myData.ATKChange(percent);
+                }
+                break;
+
         }
     }
 }
