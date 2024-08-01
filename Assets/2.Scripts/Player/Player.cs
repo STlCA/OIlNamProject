@@ -30,7 +30,7 @@ public class Player : Manager
     {
         base.Init(gm);
 
-        UserName = "딸천재오일남";
+        UserName = "딸천재 ";
         Level = 1;
         FullExp = 100;
         CurrentExp = 0;
