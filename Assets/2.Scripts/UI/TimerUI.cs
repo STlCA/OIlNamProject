@@ -48,13 +48,13 @@ public class TimerUI : MonoBehaviour
         {
             StopCoroutine(coTimer);
         }
-        coTimer = StartCoroutine(CoRunTimer());
+        coTimer = StartCoroutine(CoRunTimer(seconds));
     }
 
-    // 30초동안 돌릴 타이머
-    private IEnumerator CoRunTimer()
+    // nn초동안 돌릴 타이머
+    private IEnumerator CoRunTimer(int seconds)
     {
-        curTime = time;
+        curTime = seconds;
 
         while (curTime > 0)
         {
