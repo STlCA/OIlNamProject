@@ -163,7 +163,15 @@ public class EnemySpawn : MonoBehaviour
         // 해당 Wave에 소환된 마물이 다 죽었을 때
         if (currentCount >= maxPerWave && enemyList.Count == 0)
         {
-            waveUI.NextWave();
+            // 보스까지 다 잡았을 경우
+            if(isBossDead)
+            {
+                GameClear();
+            }
+            else
+            {
+                waveUI.NextWave();
+            }
         }
     }
 
