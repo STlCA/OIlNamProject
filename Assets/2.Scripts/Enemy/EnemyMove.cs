@@ -64,7 +64,7 @@ public class EnemyMove : MonoBehaviour
 
         while (true)
         {
-            if (Vector3.Distance(this.transform.position, wayPoints[currentIndex].position) < 0.05f * speed)
+            if (Vector3.Distance(this.transform.position, wayPoints[currentIndex].position) < speed * Time.deltaTime * 2)
             {
                 NextWayPoint();
             }
