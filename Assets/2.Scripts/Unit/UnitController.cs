@@ -93,6 +93,7 @@ public class UnitController : MonoBehaviour
     [Header("UI")]
     public GameObject infoGO;
     private TMP_Text infoTxt;
+    public List<GameObject> effectIcons = new();
 
     public Dictionary<Vector3, SpawnData> spawnData = new();
     public Dictionary<int, CanUpgrade> canUpgrade = new();
