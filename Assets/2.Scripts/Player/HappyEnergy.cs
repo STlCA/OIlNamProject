@@ -54,6 +54,8 @@ public class HappyEnergy : MonoBehaviour
 
             if (energy >= totalEnergy)
                 energy = totalEnergy;
+            else if (energy < 0)
+                energy = 0;
 
             energySlider.value = (float)energy / totalEnergy;
             PercentChange();

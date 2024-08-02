@@ -31,6 +31,8 @@ public class LethalEnergy : MonoBehaviour
 
             if (energy >= 200)
                 energy = 200;
+            else if (energy < 0)
+                energy = 0;
 
             percent = energy / 200 * 100;
             energySlider.value = energy / 200;
