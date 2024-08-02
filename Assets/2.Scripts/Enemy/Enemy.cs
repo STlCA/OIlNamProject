@@ -149,14 +149,18 @@ public class Enemy : MonoBehaviour
         {
             hp = bossData.hp;
             ruby = bossData.bossData.PlayGoods;
+            hp -= damage;
+            bossData.hp = (int)hp;
         }
         // 일반 마물일 경우
         else
         {
             hp = enemyData.hp;
             ruby = enemyData.enemyData.PlayGoods;
+            hp -= damage;
+            enemyData.hp = (int)hp;
         }
-        hp -= damage;
+        //hp -= damage;
 
         // 적이 죽었을 때
         if (hp <= 0)
@@ -168,5 +172,18 @@ public class Enemy : MonoBehaviour
             gameSceneManager.ChangeRuby(ruby);//수정
             enemySpawn.EnemyDie(this, gameObject);
         }
+    }
+
+    // 마물이 필살기에 맞았을 때 (보스 제외)
+    public void SpecialAttacked()
+    {
+        // 보스일 경우 리턴
+        if (isBoss)
+        {
+            return;
+        }
+
+        enemyData.hp = 0;
+        enemySpawn.EnemyDie(this, gameObject);
     }
 }
