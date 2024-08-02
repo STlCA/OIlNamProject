@@ -119,18 +119,29 @@ public class Unit : MonoBehaviour, IPointerClickHandler
                 myData.speed = 0;
             }
         }
-
-        Debug.Log(enemyList.Count);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (controller.onUnitPopUP.Count != 0)
         {
-            controller.onUnitPopUP[0].SetActive(false);
-            controller.onUnitPopUP[1].SetActive(false);
-            controller.onUnitPopUP.Clear();
+            if (controller.onUnitPopUP[0] != btnUI)
+            {
+                controller.onUnitPopUP[0].SetActive(false);
+                controller.onUnitPopUP[1].SetActive(false);
+
+                controller.onUnitPopUP.Clear();
+
+                controller.onUnitPopUP.Add(btnUI);
+                controller.onUnitPopUP.Add(rangeGO);
+            }
         }
+        else
+        {
+            controller.onUnitPopUP.Add(btnUI);
+            controller.onUnitPopUP.Add(rangeGO);
+        }
+
 
         if (myData.step == 2)
             return;
@@ -140,18 +151,20 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     public void UIOnOff()
     {
-        Debug.Log("¿©±äµé¾î¿È");
-
         if (btnUI == null)
             return;
 
-/*        controller.onUnitPopUP.Add(btnUI);
-        controller.onUnitPopUP.Add(rangeGO);*/
 
-        if (btnUI.activeSelf == true)
+        Debug.Log(controller.onUnitPopUP.Count);
+        Debug.Log(controller.onUnitPopUP[0].activeSelf);
+        Debug.Log(controller.onUnitPopUP[1].activeSelf);
+
+        if (controller.onUnitPopUP[0].activeSelf == true)
         {
-            btnUI.SetActive(false);
-            rangeGO.SetActive(false);
+            controller.onUnitPopUP[0].SetActive(false);
+            controller.onUnitPopUP[1].SetActive(false);
+
+            controller.onUnitPopUP.Clear();
         }
         else
         {
@@ -160,15 +173,22 @@ public class Unit : MonoBehaviour, IPointerClickHandler
             else
                 nonClickImage.gameObject.SetActive(true);
 
-            btnUI.SetActive(true);
-            rangeGO.SetActive(true);
+            controller.onUnitPopUP[0].SetActive(true);
+            controller.onUnitPopUP[1].SetActive(true);
+
+            Debug.Log(controller.onUnitPopUP[0].activeSelf);
+            Debug.Log(controller.onUnitPopUP[1].activeSelf);
         }
     }
 
     public void UIOff()
     {
-        btnUI.gameObject.SetActive(false);
-        rangeGO.SetActive(false);
+        controller.onUnitPopUP[0].SetActive(false);
+        controller.onUnitPopUP[1].SetActive(false);
+
+        controller.onUnitPopUP.Clear();
+/*        btnUI.gameObject.SetActive(false);
+        rangeGO.SetActive(false);*/
     }
 
     public void UnitUpgrade()
