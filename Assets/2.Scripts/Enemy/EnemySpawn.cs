@@ -201,10 +201,11 @@ public class EnemySpawn : MonoBehaviour
 
     public void LethalAttack()
     {
-        for (int i = 0; i < enemyList.Count; i++)
+        for (int i = 0; i < enemyList.Count; i++) // 버그찾음 제거하면서 인덱스 땅겨져서 그럼
         {
             Enemy enemy = enemyList[i];
             enemy.SpecialAttacked();
+            Debug.Log("필살기 쥬금 " + i);
         }        
     }
 }

@@ -145,9 +145,9 @@ public class HappyEnergy : MonoBehaviour
             this.tryCount = tryCount;
             this.percent = percent;
             tryTime = 60 / tryCount;
-        }*/
+        }
 
-    /*    private void CallTry()
+        private void CallTry()
         {
             Debug.Log("계산 돌아가는중");
 
@@ -261,8 +261,8 @@ public class HappyEnergy : MonoBehaviour
                 }
                 gameSceneManager.ChangeRuby(currentMessage.Price1);
                 ChangeHappyEnergy(currentMessage.Energy1);
-                gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange,false);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
+                gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange,false);
                 popUp.gameObject.SetActive(false);
                 onPopup = false;
                 break;

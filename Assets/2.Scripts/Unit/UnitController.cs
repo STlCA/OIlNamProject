@@ -70,7 +70,9 @@ public struct PlusValue
     public int lethalTempAtk;// 대기중이지만 사실 지금은 필살기 즉발
 
     public int deleteSpeed;
+    public bool canDeleteNormalSpeed;
     public int deleteAtk;
+    public bool canDeleteNormalAtk;
 }
 
 public class UnitController : MonoBehaviour
@@ -120,6 +122,9 @@ public class UnitController : MonoBehaviour
         }
 
         infoTxt = infoGO.GetComponentInChildren<TMP_Text>();
+
+        plusValue.canDeleteNormalSpeed = false;
+        plusValue.canDeleteNormalAtk = false;
     }
 
     public void UnitRecall()
@@ -267,6 +272,7 @@ public class UnitController : MonoBehaviour
                     SpeedChange(type, plusValue.speed + plusValue.tempSpeed);
                     plusValue.speed += plusValue.tempSpeed;
                     plusValue.tempSpeed = 0;
+                    plusValue.canDeleteNormalSpeed = true;
                 }
                 break;
             case PlusChangeType.LethalChange:
@@ -279,11 +285,12 @@ public class UnitController : MonoBehaviour
                 }
                 break;
             case PlusChangeType.DeleteChange:
-                if (plusValue.deleteSpeed != 0)
+                if (plusValue.deleteSpeed != 0 && plusValue.canDeleteNormalSpeed == true)
                 {
                     plusValue.speed -= plusValue.deleteSpeed;
                     SpeedChange(type, plusValue.speed);
                     plusValue.deleteSpeed = 0;
+                    plusValue.canDeleteNormalSpeed = false;
                 }
                 break;
         }
@@ -337,11 +344,16 @@ public class UnitController : MonoBehaviour
             case PlusChangeType.NormalChange:
                 plusValue.deleteAtk += changeVal;
                 plusValue.tempAtk += changeVal;
+                Debug.Log(changeVal);
+                Debug.Log(plusValue.deleteAtk);
+                Debug.Log(plusValue.tempAtk);
                 if (nowChange)
                 {
+                    Debug.Log("나우체인지들옴");
                     ATKChange(type, plusValue.atk + plusValue.tempAtk);
                     plusValue.atk += plusValue.tempAtk;
                     plusValue.tempAtk = 0;
+                    plusValue.canDeleteNormalAtk = true;
                 }
                 break;
             case PlusChangeType.LethalChange:
@@ -354,11 +366,14 @@ public class UnitController : MonoBehaviour
                 }
                 break;
             case PlusChangeType.DeleteChange:
-                if (plusValue.deleteAtk != 0)
+                Debug.Log("딜리트체인지들어가기실패");
+                if (plusValue.deleteAtk != 0 && plusValue.canDeleteNormalAtk == true)
                 {
+                    Debug.Log("딜리트체인지들어가기성공");
                     plusValue.atk -= plusValue.deleteAtk;
                     SpeedChange(type, plusValue.atk);
                     plusValue.deleteAtk = 0;
+                    plusValue.canDeleteNormalAtk = false;
                 }
                 break;
         }

@@ -57,6 +57,14 @@ public class WaveUI : MonoBehaviour
         int ruby = chapterDatabase.GetByKey(currentWave).Gold;
 
         enemySpawn.gameSceneManager.unitController.PlusSpeed(0, Constants.PlusChangeType.DeleteChange);
+        enemySpawn.gameSceneManager.unitController.PlusATK(0, Constants.PlusChangeType.DeleteChange);
+
+        enemySpawn.gameSceneManager.unitController.PlusSpeed(0, Constants.PlusChangeType.FixChange,true);
+        enemySpawn.gameSceneManager.unitController.PlusSpeed(0, Constants.PlusChangeType.NormalChange,true);
+
+        enemySpawn.gameSceneManager.unitController.PlusATK(0, Constants.PlusChangeType.FixChange, true);
+        enemySpawn.gameSceneManager.unitController.PlusATK(0, Constants.PlusChangeType.NormalChange, true);
+
         enemySpawn.gameSceneManager.happyEnergy.HappyEnergyCheck();//속도, 공격력 nowChange true여서 바꾸는것중에 제일 아래로와야함
 
         currentWave++;
