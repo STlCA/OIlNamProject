@@ -147,6 +147,13 @@ public class EnemySpawn : MonoBehaviour
         if(enemy.isBoss)
         {
             isBossDead = true;
+
+            // 50 Wave일 때 일반 마물들도 다 죽었다면
+            if (enemyList.Count == 0 && waveUI.currentWave == 50)
+            {
+                GameClear();
+            }
+
             exp = enemy.bossData.bossData.Exp;
             waveUI.NextWave();
         }
