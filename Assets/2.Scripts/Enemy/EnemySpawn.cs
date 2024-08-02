@@ -24,7 +24,7 @@ public class EnemySpawn : MonoBehaviour
     private List<Enemy> enemyList;
     //private int maxPerWave = 40;    // wave 당 최대 마물 수
     private int currentCount = 0;
-    public int deadEnemyCount = 0;  // 처리한 마물 수
+    //public int deadEnemyCount = 0;  // 처리한 마물 수
     private float waitSeconds = 0.7f;
     public bool isBossDead = false;
 
@@ -148,6 +148,7 @@ public class EnemySpawn : MonoBehaviour
         {
             isBossDead = true;
             exp = enemy.bossData.bossData.Exp;
+            waveUI.NextWave();
         }
         else
         {
