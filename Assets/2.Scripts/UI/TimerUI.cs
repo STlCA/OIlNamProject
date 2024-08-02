@@ -67,6 +67,7 @@ public class TimerUI : MonoBehaviour
         if (curTime <= 0)
         {
             //SetTimer();
+            // 보스 Wave인 경우
             if (waveUI.isBossWave)
             {
                 // 보스 Wave에서 보스가 죽었을 경우 다음 웨이브로 넘어감
@@ -79,7 +80,11 @@ public class TimerUI : MonoBehaviour
                     enemySpawn.GameOver();
                 }
             }
-            waveUI.NextWave();
+            // 일반 Wave인 경우
+            else
+            {
+                waveUI.NextWave();
+            }
         }
     }
 
