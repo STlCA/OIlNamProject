@@ -21030,7 +21030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &823243142074273885
 GameObject:
   m_ObjectHideFlags: 0
@@ -23485,7 +23485,7 @@ MonoBehaviour:
     type: 3}
   enemyCountText: {fileID: 4733318104465039277}
   gameoverPopup: {fileID: 5358217934899356554}
-  clearUIPopup: {fileID: 0}
+  clearUIPopup: {fileID: 8824717407842299380}
   gameManager: {fileID: 0}
   player: {fileID: 0}
   dataManager: {fileID: 8211429596669660521}
@@ -23897,7 +23897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2345988028623024314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24502,7 +24502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2572975742723424341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25154,7 +25154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2851741572809269137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34775,7 +34775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &5358217934899356555
 MonoBehaviour:
   m_ObjectHideFlags: 0
