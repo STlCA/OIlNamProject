@@ -141,19 +141,24 @@ public class EnemySpawn : MonoBehaviour
     {
         // ***** TODO : 마물 죽었을 때 처리 방법 수정하기 *****
         //currentCount--;
+        int exp;
 
         // 처리한 마물이 보스인지, 마물인지 확인
         if(enemy.isBoss)
         {
             isBossDead = true;
+            exp = enemy.bossData.bossData.Exp;
         }
         else
         {
-            deadEnemyCount++;
-            player.ExpUp(deadEnemyCount);
+            //deadEnemyCount++;
+            //player.ExpUp(deadEnemyCount);
+            exp = enemy.enemyData.enemyData.Exp;
             enemyList.Remove(enemy);
             UpdateEnemyCountUI();
         }
+        player.ExpUp(exp);
+
         Destroy(gameObject);
         lethalEnergy.ChangeEnergy(1);
 
