@@ -149,14 +149,18 @@ public class Enemy : MonoBehaviour
         {
             hp = bossData.hp;
             ruby = bossData.bossData.PlayGoods;
+            hp -= damage;
+            bossData.hp = (int)hp;
         }
         // 일반 마물일 경우
         else
         {
             hp = enemyData.hp;
             ruby = enemyData.enemyData.PlayGoods;
+            hp -= damage;
+            enemyData.hp = (int)hp;
         }
-        hp -= damage;
+        //hp -= damage;
 
         // 적이 죽었을 때
         if (hp <= 0)
@@ -179,6 +183,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+        enemyData.hp = 0;
         enemySpawn.EnemyDie(this, gameObject);
     }
 }
