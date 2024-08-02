@@ -23,26 +23,29 @@ public class GameResultUI : MonoBehaviour
         
     }
 
+    // 게임 재시작
     public void GameStart(GameObject ui)
     {
         if (StartCheck())
         {
             GameManager.Instance.MoneyChange(Constants.MoneyType.KEY, -1);
             SceneManager.LoadScene("GameScene");
-            //GameManager.Instance.SceneEffect.MainToGame();
             Time.timeScale = 1f;
         }
         else
             GameManager.Instance.PopUpController.UIOn(ui);
     }
+
+    // 재화 확인
     private bool StartCheck()
     {
         return GameManager.Instance.Key > 0;
     }
+
+    // 메인 화면으로 이동
     public void GoHome()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainScene");
-        //GameManager.Instance.SceneEffect.GameToMain();
     }
 }
