@@ -8,29 +8,34 @@ public class UnitData
 {
     public int id;
     public float range;
-    public float speed;
+    public float deltaSpeed;
     public int step;
 
     public float fixSpeedData;//바꾸지x
     public float fixSpeed;
-    public float currentSpeed;
+    public float speed;
 
+    public float fixAtkData;
     public float fixAtk;
-    public float currentAtk;
+    public float atk;
 
     public void Init(int id, float range, float speed, float atk, int step = 0)
     {
         this.id = id;
         this.range = range;
         fixSpeedData = speed;
+        fixSpeed = speed;
         this.speed = speed;
+
+        fixAtkData = atk;
         fixAtk = atk;
+        this.atk = atk;
 
         if (step == 0)
             step = 0;
         this.step += step;
 
-        currentAtk = fixAtk;
+        deltaSpeed = speed;
     }
 
     public void SpeedChange(int changeVal, bool isFixChange = false)//value는 총 계산된 퍼센트
@@ -54,12 +59,19 @@ public class UnitData
     public void ATKChange(int changeVal, bool isFixChange = false)
     {
         if (changeVal == 0)
+        {
+            if (isFixChange)
+                fixAtk = fixAtkData;
+            else
+                atk = fixAtk;
+
             return;
+        }
 
         if (isFixChange)
-            fixAtk += fixAtk / 100 * changeVal;
+            fixAtk = fixAtkData + fixAtkData / 100 * changeVal;
         else
-            currentAtk += currentAtk / 100 * changeVal;
+            atk = fixAtk + fixAtk / 100 * changeVal;
     }
 
 }
@@ -104,10 +116,10 @@ public class Unit : MonoBehaviour, IPointerClickHandler
 
     private void Update()
     {
-        myData.speed += Time.deltaTime;
+        myData.deltaSpeed += Time.deltaTime;
 
 
-        if (myData.speed >= myData.currentSpeed)
+        if (myData.speed <= myData.deltaSpeed)
         {
 
             findEnemy = FindEnemy();
@@ -116,7 +128,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
                 Debug.Log("몹");
 
                 unitAnimation.AttackEffect();
-                myData.speed = 0;
+                myData.deltaSpeed = 0;
             }
         }
     }
@@ -222,7 +234,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         skillGO.transform.position = findEnemy.transform.position;
         unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
         Debug.Log("Attack호출됨");
-        findEnemy.EnemyAttacked(myData.currentAtk);
+        findEnemy.EnemyAttacked(myData.atk);
     }
 
     private Enemy FindEnemy()

@@ -46,7 +46,7 @@ public class LethalEnergy : MonoBehaviour
     private void TextChange()
     {
         text = "";
-        for (int i = 0; i < percent.ToString().Length; i++)
+        for (int i = 0; i < percent.ToString("F0").Length; i++)
         {
             text += percent.ToString()[i];
             text += "\n";
@@ -74,6 +74,8 @@ public class LethalEnergy : MonoBehaviour
         ChangeEnergy(-200);
         gameSceneManager.unitController.PlusSpeed(-20, PlusChangeType.LethalChange, true);
         gameSceneManager.unitController.PlusATK(20, PlusChangeType.LethalChange, true);
+
+        GameManager.Instance.EnemySpawn.LethalAttack();
 
         StartCoroutine("CoCancelLethal");
     }

@@ -198,4 +198,13 @@ public class EnemySpawn : MonoBehaviour
     {
         GameManager.Instance.PopUpController.PauseUIOn(clearUIPopup);
     }
+
+    public void LethalAttack()
+    {
+        for (int i = 0; i < enemyList.Count; i++)
+        {
+            Enemy enemy = enemyList[i];
+            enemy.SpecialAttacked();
+        }        
+    }
 }
