@@ -28,7 +28,7 @@ public class GameResultUI : MonoBehaviour
     {
         if (StartCheck())
         {
-            GameManager.Instance.MoneyChange(Constants.MoneyType.KEY, -1);
+            GameManager.Instance.MoneyChange(Constants.MoneyType.KEY, -5);
             SceneManager.LoadScene("GameScene");
             Time.timeScale = 1f;
         }

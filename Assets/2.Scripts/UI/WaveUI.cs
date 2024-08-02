@@ -60,7 +60,7 @@ public class WaveUI : MonoBehaviour
         currentWave++;
 
         // 넘어갈 다음 Wave가 있을 때
-        if(currentWave <= maxWave)
+        if (currentWave <= maxWave)
         {
             int tmpWave = currentWave % 10;
             int setTime = chapterDatabase.GetByKey(currentWave).Time;
@@ -69,7 +69,7 @@ public class WaveUI : MonoBehaviour
             UpdateWaveUI();
 
             // 딸 팝업 호출
-            if(daughterWave > 0)
+            if (daughterWave > 0)
             {
                 happyEnergy.SetPopUp();
             }
@@ -80,14 +80,18 @@ public class WaveUI : MonoBehaviour
             // 다음이 일반 Wave일 때
             if (tmpWave != 0)
             {
+                isBossWave = false;
+
                 int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
 
                 timerUI.SetTimer(setTime);
                 enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
             }
             // 다음이 보스 Wave일 때
-            else if(tmpWave == 0 && currentWave != 50)
+            else if (tmpWave == 0 && currentWave != 50)
             {
+                isBossWave = true;
+
                 int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
 
                 timerUI.SetTimer(setTime);
@@ -96,6 +100,8 @@ public class WaveUI : MonoBehaviour
             // 다음이 50 Wave일 때
             else
             {
+                isBossWave = true;
+
                 int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
                 int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
 

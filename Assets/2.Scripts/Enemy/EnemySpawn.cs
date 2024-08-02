@@ -111,7 +111,6 @@ public class EnemySpawn : MonoBehaviour
             {
                 enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
                 currentCount++;
-                waveUI.isBossWave = true;
                 isBossDead = false;
             }
         }
@@ -163,12 +162,12 @@ public class EnemySpawn : MonoBehaviour
         // 해당 Wave에 소환된 마물이 다 죽었을 때
         if (currentCount >= maxPerWave && enemyList.Count == 0)
         {
-            // 보스까지 다 잡았을 경우
-            if(isBossDead)
+            // 마지막 스테이지의 보스까지 다 잡았을 경우
+            if(isBossDead && waveUI.currentWave == 50)
             {
                 GameClear();
             }
-            else
+            else if (waveUI.isBossWave == false)
             {
                 waveUI.NextWave();
             }
