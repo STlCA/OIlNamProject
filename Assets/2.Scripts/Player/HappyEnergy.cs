@@ -233,17 +233,17 @@ public class HappyEnergy : MonoBehaviour
         {
             //¸¶¹°
             onBad = true;
-            gameSceneManager.unitController.PlusSpeed(5, PlusChangeType.NormalChange, true);
+            gameSceneManager.unitController.PlusSpeed(5, PlusChangeType.NormalChange, false);
         }
         else if (75 <= currentEnergyPercent && currentEnergyPercent > 100)
         {
             onHappy = true;
-            gameSceneManager.unitController.PlusATK(10, PlusChangeType.NormalChange, true);
+            gameSceneManager.unitController.PlusATK(10, PlusChangeType.NormalChange, false);
         }
         else if (currentEnergyPercent >= 100)
         {
             onLove = true;
-            gameSceneManager.unitController.PlusATK(30, PlusChangeType.NormalChange, true);
+            gameSceneManager.unitController.PlusATK(30, PlusChangeType.NormalChange, false);
         }
         
     }
