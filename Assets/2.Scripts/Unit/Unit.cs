@@ -154,11 +154,6 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         if (btnUI == null)
             return;
 
-
-        Debug.Log(controller.onUnitPopUP.Count);
-        Debug.Log(controller.onUnitPopUP[0].activeSelf);
-        Debug.Log(controller.onUnitPopUP[1].activeSelf);
-
         if (controller.onUnitPopUP[0].activeSelf == true)
         {
             controller.onUnitPopUP[0].SetActive(false);

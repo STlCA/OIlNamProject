@@ -62,9 +62,9 @@ public class Player : Manager
         //TODO : SaveSystem에 저장
     }
 
-    public void ExpUp(int monster)
+    public void ExpUp(int exp)
     {
-        CurrentExp = monster * 0.02f;//TODO : 나중에 기획팀수치조절
+        CurrentExp += exp;
 
         while (CurrentExp >= FullExp)
         {

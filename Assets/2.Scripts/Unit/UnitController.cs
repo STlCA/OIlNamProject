@@ -123,7 +123,7 @@ public class UnitController : MonoBehaviour
 
     public void UnitRecall()
     {
-        if (!gameSceneManager.CanUseGold())
+        if (!gameSceneManager.CanUseRuby())
             return;
 
         GameObject unitGo = Instantiate(UnitPrefab);
@@ -133,7 +133,7 @@ public class UnitController : MonoBehaviour
         {
             unitGo.transform.position = canSpawn.pos;
 
-            gameSceneManager.ChangeGold(-gameSceneManager.ChangeUseGold());
+            gameSceneManager.ChangeRuby(-gameSceneManager.ChangeUseRuby());
 
 
         }

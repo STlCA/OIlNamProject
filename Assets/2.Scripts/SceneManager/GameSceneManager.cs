@@ -14,36 +14,36 @@ public class GameSceneManager : MonoBehaviour
     public AudioSource effectSource;
 
     [Header("UI")]
-    public TMP_Text goldTxt;
-    public TMP_Text useGoldTxt;
+    public TMP_Text rubyTxt;
+    public TMP_Text useRubyTxt;
 
     private float time = 1;
-    public int Gold
+    public int Ruby
     {
-        get { return gold; }
+        get { return ruby; }
         private set
         {
-            gold += value;
-            goldTxt.text = gold.ToString("N0");
+            ruby += value;
+            rubyTxt.text = ruby.ToString("N0");
         }
     }
-    private int gold;
+    private int ruby;
 
-    public int UseGold
+    public int UseRuby
     {
-        get { return useGold; }
+        get { return useRuby; }
         private set
         {
-            useGold += value;
-            useGoldTxt.text = useGold.ToString("N0");
+            useRuby += value;
+            useRubyTxt.text = useRuby.ToString("N0");
         }
     }
-    private int useGold;
+    private int useRuby;
 
     private void Start()
     {
         SoundInit();
-        GoldInit();
+        RubyInit();
 
         happyEnergy = GetComponent<HappyEnergy>();
     }
@@ -69,27 +69,27 @@ public class GameSceneManager : MonoBehaviour
         Time.timeScale = time;
     }
 
-    public void GoldInit()
+    public void RubyInit()
     {
-        Gold = 25;
-        UseGold = 5;
+        Ruby = 25;
+        UseRuby = 5;
     }
 
-    public void ChangeGold(int val)
+    public void ChangeRuby(int val)
     {
-        Gold = val;
+        Ruby = val;
     }
 
-    public bool CanUseGold()
+    public bool CanUseRuby()
     {
-        bool canUse = Gold >= UseGold;                
+        bool canUse = Ruby >= UseRuby;                
 
         return canUse;
     }
-    public int ChangeUseGold()
+    public int ChangeUseRuby()
     {
-        int val = UseGold;
-        UseGold = 2;
+        int val = UseRuby;
+        UseRuby = 2;
 
         return val;
     }

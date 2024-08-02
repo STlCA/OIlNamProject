@@ -251,13 +251,13 @@ public class HappyEnergy : MonoBehaviour
         switch (num)
         {
             case 1:
-                if (gameSceneManager.Gold < (currentMessage.Price1 * -1))
+                if (gameSceneManager.Ruby < (currentMessage.Price1 * -1))
                 {
                     StopCoroutine("CoClickFalse");
                     StartCoroutine("CoClickFalse");
                     return;
                 }
-                gameSceneManager.ChangeGold(currentMessage.Price1);
+                gameSceneManager.ChangeRuby(currentMessage.Price1);
                 ChangeHappyEnergy(currentMessage.Energy1);
                 gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange,false);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
@@ -265,13 +265,13 @@ public class HappyEnergy : MonoBehaviour
                 onPopup = false;
                 break;
             case 2:
-                if (gameSceneManager.Gold < (currentMessage.Price2 * -1))
+                if (gameSceneManager.Ruby < (currentMessage.Price2 * -1))
                 {
                     StopCoroutine("CoClickFalse");
                     StartCoroutine("CoClickFalse");
                     return;
                 }
-                gameSceneManager.ChangeGold(currentMessage.Price2);
+                gameSceneManager.ChangeRuby(currentMessage.Price2);
                 ChangeHappyEnergy(currentMessage.Energy2);
                 gameSceneManager.unitController.PlusATK(2, PlusChangeType.FixChange, false);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
@@ -279,7 +279,7 @@ public class HappyEnergy : MonoBehaviour
                 onPopup = false;
                 break;
             case 3:
-                gameSceneManager.ChangeGold(currentMessage.Price3);
+                gameSceneManager.ChangeRuby(currentMessage.Price3);
                 ChangeHappyEnergy(currentMessage.Energy3);
                 popUp.gameObject.SetActive(false);
                 onPopup = false;
