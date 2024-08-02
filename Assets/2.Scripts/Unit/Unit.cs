@@ -142,10 +142,6 @@ public class Unit : MonoBehaviour, IPointerClickHandler
             controller.onUnitPopUP.Add(rangeGO);
         }
 
-
-        if (myData.step == 2)
-            return;
-
         UIOnOff();
     }
 
@@ -163,16 +159,13 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            if (controller.CanUpgradeCheck(myData.id))
+            if (controller.CanUpgradeCheck(myData.id) && myData.step < 2)
                 nonClickImage.gameObject.SetActive(false);
             else
                 nonClickImage.gameObject.SetActive(true);
 
             controller.onUnitPopUP[0].SetActive(true);
             controller.onUnitPopUP[1].SetActive(true);
-
-            Debug.Log(controller.onUnitPopUP[0].activeSelf);
-            Debug.Log(controller.onUnitPopUP[1].activeSelf);
         }
     }
 
