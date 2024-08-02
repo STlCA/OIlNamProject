@@ -221,18 +221,17 @@ public class UnitController : MonoBehaviour
         spawnData[pos].UnitDataUpdate(newUnit);
         spawnData[pos].upgradeStep++;
         spawnData[pos].id++;
-        //spawnData[pos].spriteRenderer.sprite = unitDataBase.GetUnitByKey(id + 1).Sprite;----------지금스프라이트준비안댐
+
+/*        //spawnData[pos].spriteRenderer.sprite = unitDataBase.GetUnitByKey(id + 1).Sprite;----------지금스프라이트준비안댐
         //아마 atk speed도 필요할듯
 
 
         //얕은복사로 인해 실패.
-        /*        spawnData[pos].unitInstance.unitInfo = null;
+                spawnData[pos].unitInstance.unitInfo = null;
                 spawnData[pos].unitInstance.unitInfo = new();
                 UnitInfo info = new();
                 info = unitDataBase.GetUnitByKey(id + 1);
                 spawnData[pos].unitInstance.unitInfo = info;*/
-
-
 
         if (canUpgrade.ContainsKey(id + 1) == true)
         {

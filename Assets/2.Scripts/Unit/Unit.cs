@@ -48,7 +48,7 @@ public class UnitData
         if (isFixChange)
             fixSpeed = fixSpeedData + fixSpeedData / 100 * changeVal;
         else
-            speed = fixSpeed + fixSpeed / 100 * changeVal;        
+            speed = fixSpeed + fixSpeed / 100 * changeVal;
     }
 
     public void ATKChange(int changeVal, bool isFixChange = false)
@@ -182,13 +182,17 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         controller.onUnitPopUP[1].SetActive(false);
 
         controller.onUnitPopUP.Clear();
-/*        btnUI.gameObject.SetActive(false);
-        rangeGO.SetActive(false);*/
+        /*        btnUI.gameObject.SetActive(false);
+                rangeGO.SetActive(false);*/
     }
 
     public void UnitUpgrade()
     {
         controller.UnitUpgrade(myData.id, transform.position);
+
+        if (myData.step - 2 >= 0)
+            iconImage[myData.step - 2].gameObject.SetActive(false);
+
         iconImage[myData.step - 1].gameObject.SetActive(true);
     }
 
