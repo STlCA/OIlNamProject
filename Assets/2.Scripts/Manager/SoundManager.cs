@@ -8,6 +8,7 @@ public class SoundManager : Manager
     [Header("AudioSource")]
     public AudioSource BGMSource;
     public AudioSource EffectSource;
+    public AudioSource GameSource;
 
     [Header("VolumeSlider")]
     public Slider BGMSlider;
@@ -18,6 +19,9 @@ public class SoundManager : Manager
 
     [Header("EffectAudioClip")]
     public List<AudioClip> effectAudioList;
+
+    [Header("GameAudioClip")]
+    public List<AudioClip> gameAudioList;
 
 /*    private float bgmVolume = 1;
     private float effectVolume = 1;
@@ -71,14 +75,27 @@ public class SoundManager : Manager
         }
     }*/
 
-    public void SourceSet(AudioSource bgm, AudioSource effect)
+    public void SourceSet(AudioSource bgm, AudioSource effect, AudioSource gameSource)
     {
         BGMSource = bgm;
         EffectSource = effect;
+        GameSource = gameSource;
+    }
+
+    public void BGMChange(int index)
+    {
+        BGMSource.Stop();
+        BGMSource.clip = bgmList[index];
+        BGMSource.Play();
     }
 
     public void EffectAudioClipPlay(int index)
     {
         EffectSource.PlayOneShot(effectAudioList[index], 1);
+    }
+
+    public void GameAudioClipPlay(int index)
+    {
+        GameSource.PlayOneShot(gameAudioList[index], 1);
     }
 }

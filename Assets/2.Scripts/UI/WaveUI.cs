@@ -122,6 +122,8 @@ public class WaveUI : MonoBehaviour
                 timerUI.SetTimer(setTime);
                 enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
                 enemySpawn.RestartSpawnEnemy(bossCount, currentWave, true);
+
+                GameManager.Instance.SoundManager.BGMChange(2);
             }
         }
     }

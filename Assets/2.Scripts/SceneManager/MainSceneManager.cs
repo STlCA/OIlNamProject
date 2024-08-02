@@ -25,6 +25,7 @@ public class MainSceneManager : MonoBehaviour
     [Header("Sound")]
     public AudioSource bgmSource;
     public AudioSource effectSource;
+    public AudioSource gameSource;
 
     [Header("Scene")]
     public Image fadeImage;
@@ -59,7 +60,8 @@ public class MainSceneManager : MonoBehaviour
 
         gameManager.Player.PlayerUIUpdate(player, nameInputField);
 
-        gameManager.SoundManager.SourceSet(bgmSource, effectSource);
+        gameManager.SoundManager.SourceSet(bgmSource, effectSource, gameSource);
+        gameManager.SoundManager.BGMChange(1);
     }
 
     public void GameStart(GameObject ui)

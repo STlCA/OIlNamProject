@@ -12,6 +12,7 @@ public class GameSceneManager : MonoBehaviour
     [Header("Sound")]
     public AudioSource bgmSource;
     public AudioSource effectSource;
+    public AudioSource gameSource;
 
     [Header("UI")]
     public TMP_Text rubyTxt;
@@ -51,7 +52,11 @@ public class GameSceneManager : MonoBehaviour
     private void SoundInit()
     {
         if (GameManager.Instance != null)
-            GameManager.Instance.SoundManager.SourceSet(bgmSource, effectSource);
+        {
+            GameManager.Instance.SoundManager.SourceSet(bgmSource, effectSource, gameSource);
+            GameManager.Instance.SoundManager.BGMChange(3);
+        }
+
     }
 
     public void TimeChange()

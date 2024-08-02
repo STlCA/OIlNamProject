@@ -2052,12 +2052,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6a94a6761be94254ea9f550d8b4a7c1d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 061f865eb7f71b243b95d52636a33894, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

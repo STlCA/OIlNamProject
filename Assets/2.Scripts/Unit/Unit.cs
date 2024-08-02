@@ -127,6 +127,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
             {
                 Debug.Log("Έχ");
 
+                GameManager.Instance.SoundManager.GameAudioClipPlay(0);
                 unitAnimation.AttackEffect();
                 myData.deltaSpeed = 0;
             }
