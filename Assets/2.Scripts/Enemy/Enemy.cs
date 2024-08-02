@@ -169,4 +169,16 @@ public class Enemy : MonoBehaviour
             enemySpawn.EnemyDie(this, gameObject);
         }
     }
+
+    // 마물이 필살기에 맞았을 때 (보스 제외)
+    public void SpecialAttacked()
+    {
+        // 보스일 경우 리턴
+        if (isBoss)
+        {
+            return;
+        }
+
+        enemySpawn.EnemyDie(this, gameObject);
+    }
 }
