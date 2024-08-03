@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 99ae42b668bdc4d499840521c99df047
+guid: e306495a547da914c8e7a2f7ce1896a5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,30 +132,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Manananggal_0
+      name: 4~_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 6
         y: 72
-        width: 22
-        height: 20
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,62 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a23b7f0a17f722448d138e39a68ffee
-      internalID: 1456501290
+      spriteID: c6a500037d13ea74a99bb7c7b274d73f
+      internalID: 951977882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_1
+      name: 4~_1
       rect:
         serializedVersion: 2
-        x: 25
-        y: 78
-        width: 22
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8326296ca37d57439189c74a7aa5282
-      internalID: -677084022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Manananggal_2
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 79
-        width: 22
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9dfde4174d7609d47a8d77d5bc7ae6fd
-      internalID: 1960986937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Manananggal_3
-      rect:
-        serializedVersion: 2
-        x: 32
+        x: 30
         y: 72
-        width: 8
-        height: 5
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c45664cde9994f74b8de1feec61d3fbf
-      internalID: -1585256079
+      spriteID: f44a1ade92530fc419c5af037bb34cb4
+      internalID: 197106336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_4
+      name: 4~_2
       rect:
         serializedVersion: 2
-        x: 56
+        x: 54
         y: 72
-        width: 8
-        height: 5
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5bb7554dfd9b064f86f1172ce261d47
-      internalID: 490833437
+      spriteID: 577e653c0c95ef7408b7dc239a24dd9d
+      internalID: 518616816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_5
+      name: 4~_3
       rect:
         serializedVersion: 2
         x: 7
         y: 48
-        width: 13
-        height: 20
+        width: 10
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06428bdb5dd3c5b4a80d6bbc53880b15
-      internalID: -1654165302
+      spriteID: f436f5cc7b660fd40b02bc67752a8465
+      internalID: -1977324461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_6
+      name: 4~_4
       rect:
         serializedVersion: 2
         x: 31
-        y: 54
-        width: 13
-        height: 15
+        y: 48
+        width: 10
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,41 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 168d47bbbdc54534faa9d03bf1d0ff54
-      internalID: 1674685378
+      spriteID: 72a3780254eb0e6499f692381ec146d9
+      internalID: 1476126674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_7
+      name: 4~_5
       rect:
         serializedVersion: 2
         x: 55
-        y: 55
-        width: 13
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3eaf2622dfbfb94fbf87231cfa4def4
-      internalID: -2124396458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Manananggal_8
-      rect:
-        serializedVersion: 2
-        x: 32
         y: 48
-        width: 8
-        height: 5
+        width: 10
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,41 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e6ff13600541774b9bcac4ad07cef31
-      internalID: -595521639
+      spriteID: 1b7e3654fb0b5114788aed9956deec57
+      internalID: -626346916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_9
+      name: 4~_6
       rect:
         serializedVersion: 2
-        x: 56
-        y: 48
-        width: 8
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e19069fa38a2ba49ace39ba45f6715f
-      internalID: 1978118311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Manananggal_10
-      rect:
-        serializedVersion: 2
-        x: 4
+        x: 7
         y: 24
-        width: 13
-        height: 20
+        width: 10
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,62 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf9f833b13f21ef42a804b6faa00164b
-      internalID: -241900114
+      spriteID: c67342197e12a044e8230c6f99a28fa7
+      internalID: 1314717572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_11
+      name: 4~_7
       rect:
         serializedVersion: 2
-        x: 28
-        y: 30
-        width: 13
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23ebd0e4216cb83409044acdc1075b7b
-      internalID: 589339156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Manananggal_12
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 31
-        width: 13
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5260af894ca394646aefafa312aa95cf
-      internalID: 977188410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Manananggal_13
-      rect:
-        serializedVersion: 2
-        x: 32
+        x: 31
         y: 24
-        width: 8
-        height: 5
+        width: 10
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,20 +297,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 432b5c18beb71c94587f92c4402195ee
-      internalID: 1772362
+      spriteID: d01c9829974e1194a85cb8f7d543eb5a
+      internalID: 1707422351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_14
+      name: 4~_8
       rect:
         serializedVersion: 2
-        x: 56
+        x: 55
         y: 24
-        width: 8
-        height: 5
+        width: 10
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,20 +318,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee4707a3be1cd044f9bd2d4b480d3297
-      internalID: 1518620298
+      spriteID: 4c44c663360603c43bbd1afa90555340
+      internalID: 1890039985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_15
+      name: 4~_9
       rect:
         serializedVersion: 2
-        x: 1
+        x: 6
         y: 0
-        width: 22
-        height: 20
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,62 +339,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d961581e950789a47b897c0d5748672b
-      internalID: 832370142
+      spriteID: 149b950a6a3a0f341a6109840f9c1925
+      internalID: -377119738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_16
+      name: 4~_10
       rect:
         serializedVersion: 2
-        x: 25
-        y: 6
-        width: 22
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a4701c5b748f7942834e7d945f25a0e
-      internalID: -1008260360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Manananggal_17
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 7
-        width: 22
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0f08d931b4f6c249ae5c837a3230296
-      internalID: -1951128473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Manananggal_18
-      rect:
-        serializedVersion: 2
-        x: 32
+        x: 30
         y: 0
-        width: 8
-        height: 5
+        width: 12
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,20 +360,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 229517da6326ec54eb3b8491f89ea863
-      internalID: 1765647285
+      spriteID: ce0ab9c34034c9948b9b2457699d27c0
+      internalID: 1527409974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Manananggal_19
+      name: 4~_11
       rect:
         serializedVersion: 2
-        x: 56
+        x: 54
         y: 0
-        width: 8
-        height: 5
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,8 +381,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d78e55166bdac94b958b81437e38448
-      internalID: -714654553
+      spriteID: 12a119ea5f5a6e142abdb271d1140187
+      internalID: -1456669297
       vertices: []
       indices: 
       edges: []
@@ -579,26 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Manananggal_0: 1456501290
-      Manananggal_1: -677084022
-      Manananggal_10: -241900114
-      Manananggal_11: 589339156
-      Manananggal_12: 977188410
-      Manananggal_13: 1772362
-      Manananggal_14: 1518620298
-      Manananggal_15: 832370142
-      Manananggal_16: -1008260360
-      Manananggal_17: -1951128473
-      Manananggal_18: 1765647285
-      Manananggal_19: -714654553
-      Manananggal_2: 1960986937
-      Manananggal_3: -1585256079
-      Manananggal_4: 490833437
-      Manananggal_5: -1654165302
-      Manananggal_6: 1674685378
-      Manananggal_7: -2124396458
-      Manananggal_8: -595521639
-      Manananggal_9: 1978118311
+      4~_0: 951977882
+      4~_1: 197106336
+      4~_10: 1527409974
+      4~_11: -1456669297
+      4~_2: 518616816
+      4~_3: -1977324461
+      4~_4: 1476126674
+      4~_5: -626346916
+      4~_6: 1314717572
+      4~_7: 1707422351
+      4~_8: 1890039985
+      4~_9: -377119738
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
