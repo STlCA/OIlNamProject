@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb83826bcf60ea84cb8ed7e48fd832bd
+guid: ea7bf9a3376863e4881bf705242c1bf4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,143 +132,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boar2_0
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 72
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c174d5fdaf75fc438512090a3ad40c3
-      internalID: 1978902866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_1
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 72
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9af178b6a0730be42b760f5a701125be
-      internalID: 1467414442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_2
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 72
-        width: 12
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e82cf22f53e969048a459ce3502f666b
-      internalID: 1651473734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 48
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be0ce7c991cb70e4d8bb74c4538c7c69
-      internalID: 374145890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_4
-      rect:
-        serializedVersion: 2
-        x: 27
-        y: 48
-        width: 17
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96c99f4c33eba8b4d8113f4cffbc76cc
-      internalID: 421231800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_5
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 48
-        width: 17
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f1e4e8714c6aac4c8368f1735130c11
-      internalID: 508358841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boar2_6
+      name: Buwaya_0
       rect:
         serializedVersion: 2
         x: 4
-        y: 24
-        width: 17
-        height: 14
+        y: 72
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39eab9bbb32703c419c62b7f9c9c6408
-      internalID: -1753403104
+      spriteID: d0023d2fdfdb57940a3589024e8078ef
+      internalID: 1585199600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_7
+      name: Buwaya_1
       rect:
         serializedVersion: 2
         x: 28
-        y: 24
-        width: 17
-        height: 15
+        y: 72
+        width: 16
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +184,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b2065d5536ad1f49a934ca08c81fcb4
-      internalID: -1329528769
+      spriteID: baaa08c506c10a94d9399d06e8f7d155
+      internalID: 1941467912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_8
+      name: Buwaya_2
       rect:
         serializedVersion: 2
         x: 52
+        y: 72
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9288646945383a4d9da288e7f1b28e6
+      internalID: -1112341634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buwaya_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 48
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8b0644133a6cc46996e8d24f12f899
+      internalID: -614414795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buwaya_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 48
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907d4803464b82d45bcd05b101964ca7
+      internalID: -1674418088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buwaya_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 48
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0c70ac88a0c7e43b9e1c6ec69f8f5a
+      internalID: -266658276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buwaya_6
+      rect:
+        serializedVersion: 2
+        x: 5
         y: 24
         width: 17
-        height: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00bbfae321d46be459292e42161bcb4c
-      internalID: -539738478
+      spriteID: a534ed6921b0eb8408539e6851c244ad
+      internalID: -663295467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_9
+      name: Buwaya_7
       rect:
         serializedVersion: 2
-        x: 6
-        y: 0
-        width: 12
-        height: 14
+        x: 29
+        y: 24
+        width: 17
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,20 +310,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3e985a171f868e45bcd367f560b0708
-      internalID: 205332104
+      spriteID: 0ebd9fcdac4b97e479dcd141269bc628
+      internalID: 1110604627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_10
+      name: Buwaya_8
       rect:
         serializedVersion: 2
-        x: 30
-        y: 0
-        width: 12
-        height: 15
+        x: 53
+        y: 24
+        width: 17
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,20 +331,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad18505a64a59784cbe84f1a933f56fb
-      internalID: 1217108641
+      spriteID: 37ce33fb67c452f4992c21e9fbf2e3a4
+      internalID: 1024923035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar2_11
+      name: Buwaya_9
       rect:
         serializedVersion: 2
-        x: 54
+        x: 4
         y: 0
-        width: 12
-        height: 14
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,8 +352,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea77635b80591b14393ef7898151c6d7
-      internalID: 1059672393
+      spriteID: df55b330110d8e34c9a3a9995cae698b
+      internalID: 126647393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buwaya_10
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb8bc16336b6bc47976341470607037
+      internalID: -49435272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Buwaya_11
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26858458ed0593049a3a831ab8f2f984
+      internalID: 1043888466
       vertices: []
       indices: 
       edges: []
@@ -398,18 +411,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boar2_0: 1978902866
-      Boar2_1: 1467414442
-      Boar2_10: 1217108641
-      Boar2_11: 1059672393
-      Boar2_2: 1651473734
-      Boar2_3: 374145890
-      Boar2_4: 421231800
-      Boar2_5: 508358841
-      Boar2_6: -1753403104
-      Boar2_7: -1329528769
-      Boar2_8: -539738478
-      Boar2_9: 205332104
+      Buwaya_0: 1585199600
+      Buwaya_1: 1941467912
+      Buwaya_10: -49435272
+      Buwaya_11: 1043888466
+      Buwaya_2: -1112341634
+      Buwaya_3: -614414795
+      Buwaya_4: -1674418088
+      Buwaya_5: -266658276
+      Buwaya_6: -663295467
+      Buwaya_7: 1110604627
+      Buwaya_8: 1024923035
+      Buwaya_9: 126647393
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

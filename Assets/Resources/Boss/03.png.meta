@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a14c918d023d69842bb1fc0167db2704
+guid: ea19178e7f0497f4991c0cb0dc8b0924
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Yeti_0
+      name: Mammoth_0
       rect:
         serializedVersion: 2
         x: 0
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25ec3afe29c845f40a0f0c313f61fba1
-      internalID: 327294059
+      spriteID: b8bd80b68c2c0b641b2e3e7d2090bbac
+      internalID: 1812315808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_1
+      name: Mammoth_1
       rect:
         serializedVersion: 2
         x: 16
@@ -184,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a3a2226df19bba479c33e809463c73a
-      internalID: 360616310
+      spriteID: f9affa0958b33214496ddc8fc57162f9
+      internalID: -1644900770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_2
+      name: Mammoth_2
       rect:
         serializedVersion: 2
         x: 32
@@ -205,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 560a48e6d4cd41a4ea20f36307484888
-      internalID: 1880917594
+      spriteID: d4de64cfffa9607409cc919b991095c8
+      internalID: 937693743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_3
+      name: Mammoth_3
       rect:
         serializedVersion: 2
         x: 48
@@ -226,35 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b91a2b959cb0c8646a3a863a78b719ee
-      internalID: -1517302689
+      spriteID: 09a59490cc4c262498f94e0357f2e406
+      internalID: -1814226220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b884db4031593148bd83aa5381de742
-      internalID: 288239922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_5
+      name: Mammoth_4
       rect:
         serializedVersion: 2
         x: 0
@@ -268,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46a1f7bd63383c94287e1d342f2a5809
-      internalID: 1092140330
+      spriteID: 64d5af872b781f1479f472c4ba0ed42c
+      internalID: -994735884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_6
+      name: Mammoth_5
       rect:
         serializedVersion: 2
         x: 16
@@ -289,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36d17e9d55fabb34b9c9c9fbe270a551
-      internalID: -1431133485
+      spriteID: 6bcad55a09caced4c8fea83fc350b4ce
+      internalID: 1624514222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_7
+      name: Mammoth_6
       rect:
         serializedVersion: 2
         x: 32
@@ -310,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79c1e1f18a30cfd4289061415a51f9c6
-      internalID: 1509623108
+      spriteID: 953bfae48279fba4c9fc1e5fddadaa83
+      internalID: 1635878156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_8
+      name: Mammoth_7
       rect:
         serializedVersion: 2
         x: 48
@@ -331,35 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf2ba305d7f960d44a34409284a6e4d6
-      internalID: 1788740813
+      spriteID: 0ceb1093379a970459a8ab07119be0ac
+      internalID: -909180661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_9
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79dac86596a26544481a6a9a1a472824
-      internalID: 1054944999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_10
+      name: Mammoth_8
       rect:
         serializedVersion: 2
         x: 0
@@ -373,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba686eee1b395d546978901401459345
-      internalID: 586719552
+      spriteID: c428dc7fb25c8cd449c137bece62138a
+      internalID: -1486321281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_11
+      name: Mammoth_9
       rect:
         serializedVersion: 2
         x: 16
@@ -394,14 +352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e19d759ad6c6dce4cba65b156e87aff9
-      internalID: -1543806767
+      spriteID: 181d025192db0bb4ca56cfd74b913a9a
+      internalID: 1594549676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_12
+      name: Mammoth_10
       rect:
         serializedVersion: 2
         x: 32
@@ -415,14 +373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44c7f7341868c8140a347d848723a440
-      internalID: 356690149
+      spriteID: c42d6df43e05550469de5de593eb3e18
+      internalID: -991195048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_13
+      name: Mammoth_11
       rect:
         serializedVersion: 2
         x: 48
@@ -436,35 +394,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57377dec7e629d34b8160b583d5afbfb
-      internalID: -1810847166
+      spriteID: 1a3743030c8328145908926d60d5235f
+      internalID: 897414122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_14
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f70e096ff428a2439f4836690c7ecf5
-      internalID: 559455746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_15
+      name: Mammoth_12
       rect:
         serializedVersion: 2
         x: 0
@@ -478,14 +415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 260e9fec351364744b101ebcc01551f6
-      internalID: 922606497
+      spriteID: 30d34e642deaada439563cf3f6f5fe48
+      internalID: 40119317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_16
+      name: Mammoth_13
       rect:
         serializedVersion: 2
         x: 16
@@ -499,14 +436,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 392c08820f1f9204cb9c344722047587
-      internalID: 1090306713
+      spriteID: 375a9af8150359647845485f9cb3a25d
+      internalID: 1246744700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_17
+      name: Mammoth_14
       rect:
         serializedVersion: 2
         x: 32
@@ -520,14 +457,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 332e78e54fdfc3848974f7735672ec43
-      internalID: 2007694070
+      spriteID: d2c5a52ec865fb541935b9e0198939f1
+      internalID: -1141929791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_18
+      name: Mammoth_15
       rect:
         serializedVersion: 2
         x: 48
@@ -541,35 +478,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e50c5fbf1ab686f4c9962c1e7b642f21
-      internalID: -383413556
+      spriteID: 44dad3f77b180744bb26bee8fb9dd803
+      internalID: 275909011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_19
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6fb92e316dd386e47aa957b8759b779f
-      internalID: 429166260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_20
+      name: Mammoth_16
       rect:
         serializedVersion: 2
         x: 0
@@ -583,14 +499,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e2deb34c26d5a44499dbc7c3d4872da
-      internalID: 868984721
+      spriteID: fe5726de961bcc74cb25d404c645f821
+      internalID: -1932143990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_21
+      name: Mammoth_17
       rect:
         serializedVersion: 2
         x: 16
@@ -604,14 +520,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d88e5c40b5f5a541a24ac53d62a5ee3
-      internalID: -1893412678
+      spriteID: 81375a3689af99149ab5bc2d1ea825aa
+      internalID: -529807468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_22
+      name: Mammoth_18
       rect:
         serializedVersion: 2
         x: 32
@@ -625,77 +541,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28ff16e83c398334599bbbef9364a7bd
-      internalID: -1983617687
+      spriteID: 41d67360961e66d458210d85aa62d931
+      internalID: 1306366902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_23
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f131aab796cae34493120f1aa540850
-      internalID: -1989289629
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_24
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bce6d5c92e5bd684a854863263077ec7
-      internalID: 843407057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_25
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0765470341cd0d408d870aad0526573
-      internalID: 598171021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_26
+      name: Mammoth_19
       rect:
         serializedVersion: 2
         x: 0
@@ -709,14 +562,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ab19bcfa6f91234eb3c055894a4ed74
-      internalID: 63078987
+      spriteID: 76a6b8012aeac02479955ee70e8d4421
+      internalID: 219797450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_27
+      name: Mammoth_20
       rect:
         serializedVersion: 2
         x: 16
@@ -730,14 +583,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c62124c8fd1ccfe4da0e0c7019705d5f
-      internalID: -1351309325
+      spriteID: 5c49dd2c5756d5941b9bd0072c660953
+      internalID: -383940717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_28
+      name: Mammoth_21
       rect:
         serializedVersion: 2
         x: 32
@@ -751,77 +604,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54dc1d046049718449e69457f6918fbf
-      internalID: -64825364
+      spriteID: d919a1d578045ff47b88e27f0020853b
+      internalID: -1973020515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_29
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9277b8865165acb478c00229b05b4f1f
-      internalID: 1792083408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_30
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61213d5c1f8bf3c48ad4d708c5288821
-      internalID: -2078264749
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_31
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cade94b7f0ea5e4798241b5eaf98313
-      internalID: 1834229378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_32
+      name: Mammoth_22
       rect:
         serializedVersion: 2
         x: 0
@@ -835,14 +625,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1a4a8ca96cbfa446afbb833da5e79ce
-      internalID: -1681745130
+      spriteID: 6c6248871caac7e448d6140abe987556
+      internalID: -578722896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_33
+      name: Mammoth_23
       rect:
         serializedVersion: 2
         x: 16
@@ -856,14 +646,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3d69db742df80e4c87670468fafd67d
-      internalID: 539520527
+      spriteID: 2e0c19c548d939343b299dbe28f1bdf0
+      internalID: 2074354259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_34
+      name: Mammoth_24
       rect:
         serializedVersion: 2
         x: 32
@@ -877,77 +667,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 743d34ab26cffa440a09d11ace6c884a
-      internalID: 754372909
+      spriteID: 956834af6f97a894299244b784c5ede6
+      internalID: 93379401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_35
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c377c468b279c5849aa7b9ef44efc394
-      internalID: -1161828114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_36
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11a2c834334a9124f9058c671604b8db
-      internalID: 1935595412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_37
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7a813264abf29c43b203d74b311328b
-      internalID: 509892679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_38
+      name: Mammoth_25
       rect:
         serializedVersion: 2
         x: 0
@@ -961,14 +688,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 644db2b623b5aa54a8d4d9f8c7724e6c
-      internalID: 1904966450
+      spriteID: 75e4c6e5fecdbbc44b3d94ff60923f41
+      internalID: 495230598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_39
+      name: Mammoth_26
       rect:
         serializedVersion: 2
         x: 16
@@ -982,14 +709,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eabec9af9cffa024890b7a4aff92fe94
-      internalID: 992426864
+      spriteID: 27aa12d802cdf3f4c902a07f793a7c5d
+      internalID: -127934223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_40
+      name: Mammoth_27
       rect:
         serializedVersion: 2
         x: 32
@@ -1003,71 +730,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1df7d632eb6a7c1428abbdb99c372840
-      internalID: 1149338056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_41
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1f7d68258018264086471ef1d29495f
-      internalID: -1131052713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_42
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ec2146aa137ea647b3d53d8eeb8c7d4
-      internalID: -158228932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_43
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 993abaa4f3e3b46428fcd37001fa605a
-      internalID: 1231843296
+      spriteID: d1589785e3487d64385747db1003eb0e
+      internalID: -25771719
       vertices: []
       indices: 
       edges: []
@@ -1083,50 +747,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Yeti_0: 327294059
-      Yeti_1: 360616310
-      Yeti_10: 586719552
-      Yeti_11: -1543806767
-      Yeti_12: 356690149
-      Yeti_13: -1810847166
-      Yeti_14: 559455746
-      Yeti_15: 922606497
-      Yeti_16: 1090306713
-      Yeti_17: 2007694070
-      Yeti_18: -383413556
-      Yeti_19: 429166260
-      Yeti_2: 1880917594
-      Yeti_20: 868984721
-      Yeti_21: -1893412678
-      Yeti_22: -1983617687
-      Yeti_23: -1989289629
-      Yeti_24: 843407057
-      Yeti_25: 598171021
-      Yeti_26: 63078987
-      Yeti_27: -1351309325
-      Yeti_28: -64825364
-      Yeti_29: 1792083408
-      Yeti_3: -1517302689
-      Yeti_30: -2078264749
-      Yeti_31: 1834229378
-      Yeti_32: -1681745130
-      Yeti_33: 539520527
-      Yeti_34: 754372909
-      Yeti_35: -1161828114
-      Yeti_36: 1935595412
-      Yeti_37: 509892679
-      Yeti_38: 1904966450
-      Yeti_39: 992426864
-      Yeti_4: 288239922
-      Yeti_40: 1149338056
-      Yeti_41: -1131052713
-      Yeti_42: -158228932
-      Yeti_43: 1231843296
-      Yeti_5: 1092140330
-      Yeti_6: -1431133485
-      Yeti_7: 1509623108
-      Yeti_8: 1788740813
-      Yeti_9: 1054944999
+      Mammoth_0: 1812315808
+      Mammoth_1: -1644900770
+      Mammoth_10: -991195048
+      Mammoth_11: 897414122
+      Mammoth_12: 40119317
+      Mammoth_13: 1246744700
+      Mammoth_14: -1141929791
+      Mammoth_15: 275909011
+      Mammoth_16: -1932143990
+      Mammoth_17: -529807468
+      Mammoth_18: 1306366902
+      Mammoth_19: 219797450
+      Mammoth_2: 937693743
+      Mammoth_20: -383940717
+      Mammoth_21: -1973020515
+      Mammoth_22: -578722896
+      Mammoth_23: 2074354259
+      Mammoth_24: 93379401
+      Mammoth_25: 495230598
+      Mammoth_26: -127934223
+      Mammoth_27: -25771719
+      Mammoth_3: -1814226220
+      Mammoth_4: -994735884
+      Mammoth_5: 1624514222
+      Mammoth_6: 1635878156
+      Mammoth_7: -909180661
+      Mammoth_8: -1486321281
+      Mammoth_9: 1594549676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

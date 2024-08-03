@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58f224d3958390144b5636222e613ab2
+guid: 229dad1ddd1cd4d48afc59205ed30de0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,17 +132,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boar_0
+      name: Witch_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 5
         y: 72
-        width: 12
-        height: 16
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6860dc8cef6fdc49a60fa53432cd300
-      internalID: 739353195
+      spriteID: f446f309acb47234d961a18cc72b2bdc
+      internalID: -1938019596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_1
+      name: Witch_1
       rect:
         serializedVersion: 2
-        x: 30
+        x: 29
         y: 72
-        width: 12
-        height: 17
+        width: 14
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bc55c34414dbc74da75916cf11d4808
-      internalID: 1386401657
+      spriteID: 58a7f414462bdd84d93f73249601255c
+      internalID: 370108069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_2
+      name: Witch_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 53
         y: 72
-        width: 12
-        height: 16
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93edbb30e72457944a282ec3161ee123
-      internalID: -271988514
+      spriteID: f448721203c7c2a4faec5d46a11b0ec1
+      internalID: -1516002622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_3
+      name: Witch_3
       rect:
         serializedVersion: 2
-        x: 3
+        x: 5
         y: 48
-        width: 17
-        height: 14
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f88d54abc5b09994dbdbf8def07aee68
-      internalID: -1153698983
+      spriteID: 90f12d337bf5e274ea0169cf96117670
+      internalID: -1849508339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_4
+      name: Witch_4
       rect:
         serializedVersion: 2
-        x: 27
+        x: 29
         y: 48
-        width: 17
-        height: 15
+        width: 14
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4f33793561301b439f6c73314846c3f
-      internalID: -1626875432
+      spriteID: 395f7c9129978bf44b87efef9eba4dae
+      internalID: -922471816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_5
+      name: Witch_5
       rect:
         serializedVersion: 2
-        x: 51
+        x: 53
         y: 48
-        width: 17
-        height: 14
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad68d0c900667b14cb965f5ace1fa383
-      internalID: 670086322
+      spriteID: d34e51357801c7841a2b7ca6ebc0bd2c
+      internalID: 1493467845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_6
+      name: Witch_6
       rect:
         serializedVersion: 2
-        x: 4
+        x: 5
         y: 24
-        width: 17
-        height: 14
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aeedd3a907074e4f927bc93348eb1df
-      internalID: -1033775476
+      spriteID: 8eee600c5e024554eb560614b860c11a
+      internalID: -585985792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_7
+      name: Witch_7
       rect:
         serializedVersion: 2
-        x: 28
+        x: 29
         y: 24
-        width: 17
-        height: 15
+        width: 14
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +310,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da8c1ef5b37b0e349bfc180ceefc84ff
-      internalID: 755180985
+      spriteID: 998a635c31f98114abd6d491b2c5304f
+      internalID: -634863681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_8
+      name: Witch_8
       rect:
         serializedVersion: 2
-        x: 52
+        x: 53
         y: 24
-        width: 17
-        height: 14
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +331,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d0a08e7333499342b471a833bfc6567
-      internalID: 1905729986
+      spriteID: 37ceb1d6fd38eb24c9d5621daafb1220
+      internalID: -929857970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_9
+      name: Witch_9
       rect:
         serializedVersion: 2
-        x: 6
+        x: 5
         y: 0
-        width: 12
-        height: 14
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,20 +352,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1696ce4b95ebce49a239a09f8121c3c
-      internalID: -428379489
+      spriteID: 9a25ef3c67c210d4c8872eba424eadd9
+      internalID: 358092331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_10
+      name: Witch_10
       rect:
         serializedVersion: 2
-        x: 30
+        x: 29
         y: 0
-        width: 12
-        height: 15
+        width: 14
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,20 +373,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae80e5cd927f3dc4caab81b8cd74a94d
-      internalID: 645366107
+      spriteID: ec4effc6f890bdb4da0a0e07786bda19
+      internalID: 235651183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boar_11
+      name: Witch_11
       rect:
         serializedVersion: 2
-        x: 54
+        x: 53
         y: 0
-        width: 12
-        height: 14
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,8 +394,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b8d5c6577b29704b9003a09d61a9f22
-      internalID: -1979453067
+      spriteID: 5c9ec13505e730b4c85532cf05c6bcbe
+      internalID: -1302775411
       vertices: []
       indices: 
       edges: []
@@ -398,18 +411,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boar_0: 739353195
-      Boar_1: 1386401657
-      Boar_10: 645366107
-      Boar_11: -1979453067
-      Boar_2: -271988514
-      Boar_3: -1153698983
-      Boar_4: -1626875432
-      Boar_5: 670086322
-      Boar_6: -1033775476
-      Boar_7: 755180985
-      Boar_8: 1905729986
-      Boar_9: -428379489
+      Witch_0: -1938019596
+      Witch_1: 370108069
+      Witch_10: 235651183
+      Witch_11: -1302775411
+      Witch_2: -1516002622
+      Witch_3: -1849508339
+      Witch_4: -922471816
+      Witch_5: 1493467845
+      Witch_6: -585985792
+      Witch_7: -634863681
+      Witch_8: -929857970
+      Witch_9: 358092331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
