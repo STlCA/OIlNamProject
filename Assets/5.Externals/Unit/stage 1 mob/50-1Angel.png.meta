@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a9876fa71ee796f44a95673ae0acb7ed
+guid: 97aac25960432344bb975b64c640e7e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,30 +132,143 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sirena_0
+      name: 50-1Angel_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 168
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9610c5146ac130438e978f8c1fa680d
+      internalID: -962147323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50-1Angel_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 168
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed5a9faca0e77e47adc17c928036555
+      internalID: -2042948072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50-1Angel_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 168
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea21fdd8d9dcf034c906078e6bae602b
+      internalID: 1263173505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50-1Angel_3
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 144
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cccff061538b24a9d382290d1e4930
+      internalID: 2050309367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50-1Angel_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 144
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3981a0816baafe946a68bfa88b7f0e34
+      internalID: -325150889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50-1Angel_5
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 144
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415bc760e8699424ebc65ce2ed4119e4
+      internalID: -881483950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 50-1Angel_6
       rect:
         serializedVersion: 2
         x: 4
-        y: 72
-        width: 16
-        height: 16
+        y: 120
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2439261fe9f74284fb108f2339a9ca7a
-      internalID: -2133350692
+      spriteID: 297a58afccdb5674dabb5e590137847b
+      internalID: -1236290697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sirena_1
+      name: 50-1Angel_7
       rect:
         serializedVersion: 2
         x: 28
-        y: 72
-        width: 16
-        height: 17
+        y: 120
+        width: 14
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +297,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7fd616b68628664f913c1c875405e00
-      internalID: -1186530293
+      spriteID: c5785882abfc68e4a8217ee6ee9811e2
+      internalID: -764774806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sirena_2
+      name: 50-1Angel_8
       rect:
         serializedVersion: 2
         x: 52
-        y: 72
-        width: 16
-        height: 16
+        y: 120
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +318,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd967547c0f20904ab3054d1501cdec0
-      internalID: 1629508874
+      spriteID: 6e4b3b5176afea547bb04ef1b2a1cc81
+      internalID: -1033724111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sirena_3
+      name: 50-1Angel_9
       rect:
         serializedVersion: 2
-        x: 5
-        y: 48
-        width: 15
-        height: 16
+        x: 3
+        y: 96
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +339,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d011b0f14eb8b5b4fa9f0c4cb6c0521d
-      internalID: -394426651
+      spriteID: 3f2aeca85b40a28408b64004312901c8
+      internalID: -1261047519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sirena_4
+      name: 50-1Angel_10
       rect:
         serializedVersion: 2
-        x: 29
-        y: 48
-        width: 15
-        height: 17
+        x: 27
+        y: 96
+        width: 18
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +360,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87a75b32aa9dfd543b8c8ee867fd17a6
-      internalID: -624813933
+      spriteID: 0aac722cab85a104288c5770eeb651be
+      internalID: -562202626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sirena_5
+      name: 50-1Angel_11
       rect:
         serializedVersion: 2
-        x: 53
-        y: 48
-        width: 15
-        height: 16
+        x: 51
+        y: 96
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,134 +381,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d305479714bfdf448a40acee83ea4da
-      internalID: 1887402904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sirena_6
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 24
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8209fb669853d946a57c127b0c23b0c
-      internalID: 2092794752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sirena_7
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 24
-        width: 15
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d164b5c156499644e9e8cf1e594fe2f6
-      internalID: -1871670945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sirena_8
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 24
-        width: 15
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9194ae69226c44488f6d61817ae815f
-      internalID: 919676867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sirena_9
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f266d28a2d4e1f44e889eb1c9e80d95d
-      internalID: 1475441598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sirena_10
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 0
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c651879afb7eae547b2f70d9c5ab16c3
-      internalID: 1877648332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sirena_11
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3c6542415173d24982d15b4e78d3eeb
-      internalID: -1063400275
+      spriteID: c7cbca0489940e341a4750a6e586dcb0
+      internalID: 647175679
       vertices: []
       indices: 
       edges: []
@@ -411,18 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sirena_0: -2133350692
-      Sirena_1: -1186530293
-      Sirena_10: 1877648332
-      Sirena_11: -1063400275
-      Sirena_2: 1629508874
-      Sirena_3: -394426651
-      Sirena_4: -624813933
-      Sirena_5: 1887402904
-      Sirena_6: 2092794752
-      Sirena_7: -1871670945
-      Sirena_8: 919676867
-      Sirena_9: 1475441598
+      50-1Angel_0: -962147323
+      50-1Angel_1: -2042948072
+      50-1Angel_10: -562202626
+      50-1Angel_11: 647175679
+      50-1Angel_2: 1263173505
+      50-1Angel_3: 2050309367
+      50-1Angel_4: -325150889
+      50-1Angel_5: -881483950
+      50-1Angel_6: -1236290697
+      50-1Angel_7: -764774806
+      50-1Angel_8: -1033724111
+      50-1Angel_9: -1261047519
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
