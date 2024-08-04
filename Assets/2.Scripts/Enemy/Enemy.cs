@@ -109,9 +109,10 @@ public class Enemy : MonoBehaviour
             bossData = new BossData(bossDatabase.GetByKey(enemyID), chapterDatabase.GetByKey(chapterID));
             image.sprite = bossData.sprite;
             // 보스 몬스터 크기 조절
-            transform.localScale = new Vector3(0.65f, 0.65f);
+            //transform.localScale = new Vector3(0.65f, 0.65f);
+            transform.localScale *= 1.2f;
             // 보스 몬스터가 일반 몬스터보다 앞에 보이게
-            image.sortingOrder++;
+            image.sortingOrder += 5;
             isBoss = true;
         }
         // 일반 마물인 경우
@@ -119,6 +120,7 @@ public class Enemy : MonoBehaviour
         {
             enemyData = new EnemyData(enemyDatabase.GetByKey(enemyID), chapterDatabase.GetByKey(chapterID));
             image.sprite = enemyData.sprite;
+            transform.localScale *= 0.8f;
         }
     }
 
