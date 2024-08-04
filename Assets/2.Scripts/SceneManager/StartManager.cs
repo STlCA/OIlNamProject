@@ -13,6 +13,12 @@ public class StartManager : MonoBehaviour
 
     private float time = 0f;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+    }
+
     public void SceneChange()
     {
         topFadeImage.gameObject.SetActive(true);
