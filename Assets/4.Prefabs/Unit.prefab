@@ -190,13 +190,14 @@ MonoBehaviour:
   myData:
     id: 0
     range: 0
-    speed: 0
+    deltaSpeed: 0
     step: 0
     fixSpeedData: 0
     fixSpeed: 0
-    currentSpeed: 0
+    speed: 0
+    fixAtkData: 0
     fixAtk: 0
-    currentAtk: 0
+    atk: 0
 --- !u!114 &872343158618553066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8480501481550206517
 Transform:
   m_ObjectHideFlags: 0
