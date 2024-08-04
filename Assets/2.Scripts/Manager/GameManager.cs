@@ -107,6 +107,12 @@ public class GameManager : MonoBehaviour
         MoneyInit();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+            GameExit();
+    }
+
     private void MoneyInit()
     {
         Point = 10;
