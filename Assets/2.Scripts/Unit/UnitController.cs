@@ -129,6 +129,8 @@ public class UnitController : MonoBehaviour
 
     public void UnitRecall()
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Recall);
+
         if (!gameSceneManager.CanUseRuby())
             return;
 

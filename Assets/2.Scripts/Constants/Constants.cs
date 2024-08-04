@@ -37,4 +37,10 @@ namespace Constants
         DeleteChange,
     }
 
+    public enum EffectList
+    {
+        Intro,
+        Recall,
+    }
+
 }
