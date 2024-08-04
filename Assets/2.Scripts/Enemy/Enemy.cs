@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour
         {
             enemyData = new EnemyData(enemyDatabase.GetByKey(enemyID), chapterDatabase.GetByKey(chapterID));
             image.sprite = enemyData.sprite;
-            transform.localScale *= 0.8f;
+            transform.localScale *= 0.7f;
         }
     }
 
