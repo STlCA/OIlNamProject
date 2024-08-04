@@ -60,9 +60,9 @@ public class HappyEnergy : MonoBehaviour
             energySlider.value = (float)energy / totalEnergy;
             PercentChange();
 
-            text = currentEnergyPercent.ToString("F0") + "%";
+            //text = currentEnergyPercent.ToString("F0") + "%";
 
-/*            TextChange();*/
+            TextChange();
             /*EnergyCheck();*/
         }
     }
@@ -79,12 +79,13 @@ public class HappyEnergy : MonoBehaviour
 
     private void TextChange()
     {
-        text = "";
-        for (int i = 0; i < currentEnergyPercent.ToString().Length; i++)
-        {
-            text += currentEnergyPercent.ToString()[i];
-            text += "\n";
-        }
+        //text = "";
+        //for (int i = 0; i < currentEnergyPercent.ToString().Length; i++)
+        //{
+        //    text += currentEnergyPercent.ToString()[i];
+        //    text += "\n";
+        //}
+        text = currentEnergyPercent.ToString();
         text += "%";
 
         energyText.text = text;

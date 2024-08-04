@@ -37,9 +37,9 @@ public class LethalEnergy : MonoBehaviour
             percent = energy / 200 * 100;
             energySlider.value = energy / 200;
 
-            text = percent.ToString("F0") + "%";
+            //text = percent.ToString("F0") + "%";
 
-/*            TextChange();*/
+            TextChange();
         }
     }
     private float energy = 0;
@@ -47,12 +47,13 @@ public class LethalEnergy : MonoBehaviour
 
     private void TextChange()
     {
-        text = "";
-        for (int i = 0; i < percent.ToString("F0").Length; i++)
-        {
-            text += percent.ToString()[i];
-            text += "\n";
-        }
+        //text = "";
+        //for (int i = 0; i < percent.ToString("F0").Length; i++)
+        //{
+        //    text += percent.ToString()[i];
+        //    text += "\n";
+        //}
+        text = percent.ToString();
         text += "%";
 
         energyText.text = text;
