@@ -42,6 +42,11 @@ public class DataTable_Message
     public int Price1;
 
     /// <summary>
+    /// Text
+    /// </summary>
+    public string Text1;
+
+    /// <summary>
     /// Info2
     /// </summary>
     public string Info2;
@@ -62,6 +67,11 @@ public class DataTable_Message
     public int Energy2;
 
     /// <summary>
+    /// Text
+    /// </summary>
+    public string Text2;
+
+    /// <summary>
     /// Info3
     /// </summary>
     public string Info3;
@@ -80,6 +90,11 @@ public class DataTable_Message
     /// Energy3
     /// </summary>
     public int Energy3;
+
+    /// <summary>
+    /// Text
+    /// </summary>
+    public string Text3;
 
 }
 public class DataTable_MessageLoader

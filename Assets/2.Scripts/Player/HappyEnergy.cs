@@ -40,10 +40,11 @@ public class HappyEnergy : MonoBehaviour
         private float tryTime;
         private float percent;*/
 
-    private bool onPopup = false;
     private bool onBad = false;
     private bool onHappy = false;
     private bool onLove = false;
+
+    private float currentSpeed;
 
     public int Energy
     {
@@ -166,16 +167,11 @@ public class HappyEnergy : MonoBehaviour
 
     public void SetPopUp()//웨이브체크해서부르기 TODO
     {
-        if (onPopup)
-            return;
-        else
-        {
-            Debug.Log("켜짐");
-            SetMessage();
-            popUp.gameObject.SetActive(true);
-            onPopup = true;
-        }
+        SetMessage();
+        popUp.gameObject.SetActive(true);
 
+        currentSpeed = Time.timeScale;
+        Time.timeScale = 0;
     }
 
     private void SetMessage()
@@ -254,6 +250,8 @@ public class HappyEnergy : MonoBehaviour
 
     public void ClickMessage(int num)
     {
+        Time.timeScale = currentSpeed;
+
         switch (num)
         {
             case 1:
@@ -268,7 +266,6 @@ public class HappyEnergy : MonoBehaviour
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
                 gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange,false);
                 popUp.gameObject.SetActive(false);
-                onPopup = false;
                 break;
             case 2:
                 if (gameSceneManager.Ruby < (currentMessage.Price2 * -1))
@@ -282,13 +279,11 @@ public class HappyEnergy : MonoBehaviour
                 gameSceneManager.unitController.PlusATK(2, PlusChangeType.FixChange, false);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
                 popUp.gameObject.SetActive(false);
-                onPopup = false;
                 break;
             case 3:
                 gameSceneManager.ChangeRuby(currentMessage.Price3);
                 ChangeHappyEnergy(currentMessage.Energy3);
                 popUp.gameObject.SetActive(false);
-                onPopup = false;
                 break;
             default:
                 Debug.Log("버튼 메세지 번호 설정 안됨");
