@@ -10,7 +10,8 @@ public class DataManager : Manager
     public DataTable_ChapterLoader dataTable_ChapterLoader;
     public DataTable_BossLoader dataTable_BossLoader;
     public DataTable_MessageLoader dataTable_MessageLoader;
-    public StoryDataBase storyDataBase;
+    public DataTable_StoryLoader dataTable_StoryLoader;
+    //public StoryDataBase storyDataBase;
     public UnitDataBase unitDataBase;
 
     private void Awake()
@@ -62,18 +63,20 @@ public class DataManager : Manager
     
     private void StoryAwake()
     {
-        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Story_Data");
-        if (jsonFile != null)
-        {
-            string json = jsonFile.text;
+        /*        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Story_Data");
+                if (jsonFile != null)
+                {
+                    string json = jsonFile.text;
 
-            storyDataBase = JsonUtility.FromJson<StoryDataBase>(json);
-            storyDataBase.Initialize();
-        }
-        else
-        {
-            Debug.LogError("Failed to load storyDataBase.json");
-        }
+                    storyDataBase = JsonUtility.FromJson<StoryDataBase>(json);
+                    storyDataBase.Initialize();
+                }
+                else
+                {
+                    Debug.LogError("Failed to load storyDataBase.json");
+                }*/
+
+        dataTable_StoryLoader = new DataTable_StoryLoader();
     }
 
     private void UnitAwake()
