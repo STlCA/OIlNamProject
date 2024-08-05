@@ -206,7 +206,7 @@ public class EnemySpawn : MonoBehaviour
         GameManager.Instance.PopUpController.PauseUIOn(clearUIPopup);
     }
 
-    public void LethalAttack()
+    public void LethalAttack()// 다죽이기
     {
         int temp = enemyList.Count;
         for (int i = 0; i < temp; i++) // 버그찾음 제거하면서 인덱스 땅겨져서 그럼
