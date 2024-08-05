@@ -33,7 +33,7 @@ public class Player : Manager
 
         UserName = "5ÆÀ°¡ÀÚ ";
         Level = 1;
-        FullExp = 100;
+        FullExp = 2000;
         CurrentExp = 0;
     }
 
@@ -63,7 +63,7 @@ public class Player : Manager
 
         while (CurrentExp >= FullExp)
         {
-            CurrentExp -= 100;
+            CurrentExp -= FullExp;
             Level += 1;
         }
     }
