@@ -1,3 +1,5 @@
+using Cainos.PixelArtTopDown_Basic;
+using Constants;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +22,7 @@ public class MainSceneManager : MonoBehaviour
     public TMP_Text nameTxt;
     //public TMP_Text levelTxt;
     public TMP_Text expTxt;
+    public TMP_Text setUIName;
     public TMP_InputField nameInputField;
 
     [Header("Sound")]
@@ -30,6 +33,7 @@ public class MainSceneManager : MonoBehaviour
     [Header("Scene")]
     public Image fadeImage;
     public Slider slider;
+    public GameObject nameFalse;
 
     private void Start()
     {
@@ -52,13 +56,13 @@ public class MainSceneManager : MonoBehaviour
         List<TMP_Text> player = new()
         {
             nameTxt,
-            //levelTxt,
             expTxt,
+            setUIName,
         };
 
         uiManager.MainUIUpdate(golds);
 
-        gameManager.Player.PlayerUIUpdate(player, nameInputField);
+        gameManager.Player.PlayerUIInit(player, nameInputField);
 
         gameManager.SoundManager.SourceSet(bgmSource, effectSource, gameSource);
         gameManager.SoundManager.BGMChange(1);
@@ -66,9 +70,11 @@ public class MainSceneManager : MonoBehaviour
 
     public void GameStart(GameObject ui)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Lobby);
+
         if (StartCheck())
         {
-            gameManager.MoneyChange(Constants.MoneyType.KEY, -5);
+            gameManager.MoneyChange(MoneyType.KEY, -5);
             gameManager.SceneEffect.MainToGame();
         }
         else
@@ -78,4 +84,25 @@ public class MainSceneManager : MonoBehaviour
     {
         return gameManager.Key > 0;
     }
+    public void Click()
+    {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Intro);
+    }
+
+    public void ChangeName(GameObject closeUI)
+    {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Intro);
+
+        if (nameInputField.text.Length <= 0 || nameInputField.text.Length > 10)
+        {
+            nameFalse.SetActive(true);
+            return;
+        }
+
+        setUIName.text = nameInputField.text;
+        gameManager.Player.SetUserName(nameInputField.text);
+        nameInputField.text = "";
+        closeUI.SetActive(false);
+    }
+
 }

@@ -8,6 +8,7 @@ public class Player : Manager
     [SerializeField] private TMP_Text nameTxt;
     //[SerializeField] private TMP_Text levelTxt;
     [SerializeField] private TMP_Text expTxt;
+    [SerializeField] private TMP_Text setUINameTxt;
     [SerializeField] private TMP_InputField nameInputField;
 
     public string UserName { get; private set; }
@@ -30,34 +31,28 @@ public class Player : Manager
     {
         base.Init(gm);
 
-        UserName = "µþÃµÀç ";
+        UserName = "5ÆÀ°¡ÀÚ ";
         Level = 1;
         FullExp = 100;
         CurrentExp = 0;
     }
 
-    public void PlayerUIUpdate(List<TMP_Text> player, TMP_InputField input)
+    public void PlayerUIInit(List<TMP_Text> player, TMP_InputField input)
     {
         nameTxt = player[0];
-        //levelTxt = player[2];
         expTxt = player[1];
+        setUINameTxt = player[2];
 
         nameInputField = input;
 
-        nameTxt.text = UserName + "Lv." + Level;
-        //levelTxt.text = Level.ToString();
-        expTxt.text = ExpPercent.ToString("00.00") + "%";
+        SetUserName(UserName);
     }
 
-    public void SetUserName()
+    public void SetUserName(string name)
     {
-        if (nameInputField.text.Length > 0)
-        {
-            nameTxt.text = nameInputField.text;
-            nameInputField.text = "";
-        }
-        else
-            return;
+        nameTxt.text = name + " Lv." + Level;
+        setUINameTxt.text = name;        
+        expTxt.text = ExpPercent.ToString("00.00") + "%";
 
         //TODO : SaveSystem¿¡ ÀúÀå
     }

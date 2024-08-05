@@ -19,7 +19,7 @@ namespace Constants
     {
         TEXT,
         IMAGE,
-        //OBJECT,
+        OBJECT,
     }
 
     public enum MoneyType
@@ -41,6 +41,7 @@ namespace Constants
     {
         Intro,
         Recall,
+        Lobby,
     }
 
 }

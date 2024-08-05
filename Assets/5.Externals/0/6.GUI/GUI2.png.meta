@@ -221,7 +221,7 @@ TextureImporter:
         height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 7, y: 26, z: 8, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -400,6 +400,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GUI2_12
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 119
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af221ef50669b44788580b2f37bafb8
+      internalID: -1863152997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -415,6 +436,7 @@ TextureImporter:
       GUI2_1: 1831242585
       GUI2_10: -140486799
       GUI2_11: -2001286833
+      GUI2_12: -1863152997
       GUI2_2: -646816091
       GUI2_3: 1624751693
       GUI2_4: 157922916
