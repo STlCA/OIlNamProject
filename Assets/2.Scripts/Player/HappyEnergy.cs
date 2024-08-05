@@ -19,7 +19,7 @@ public class HappyEnergy : MonoBehaviour
     public Slider energySlider;
     public TMP_Text energyText;
 
-    [Header("PopUP")]
+    [Header("DaughterPopUP")]
     public GameObject popUp;
     public GameObject clickFalse;
     public TMP_Text message;
@@ -29,7 +29,11 @@ public class HappyEnergy : MonoBehaviour
     private TMP_Text[] text2;
     public GameObject slot3;
     private TMP_Text[] text3;
+    public List<Image> icons;
+    private List<Sprite> sprites = new();
 
+    private TMP_Text[][] texts;
+    private int[] turn;
 
     private string text;
 
@@ -114,6 +118,12 @@ public class HappyEnergy : MonoBehaviour
         text1 = slot1.GetComponentsInChildren<TMP_Text>();
         text2 = slot2.GetComponentsInChildren<TMP_Text>();
         text3 = slot3.GetComponentsInChildren<TMP_Text>();
+
+        texts = new TMP_Text[3][] { text1, text2, text3 };
+
+        sprites.Add(Resources.Load<Sprite>("PopUpIcon/Message1"));
+        sprites.Add(Resources.Load<Sprite>("PopUpIcon/Message2"));
+        sprites.Add(Resources.Load<Sprite>("PopUpIcon/Message3"));
     }
 
     private void Update()
@@ -185,27 +195,53 @@ public class HappyEnergy : MonoBehaviour
 
         int temp = Random.Range(0, list.Count);
 
-
         currentMessage = messageDatabase.GetByKey(list[temp]);
-
         message.text = currentMessage.Message;
 
-        text1[0].text = currentMessage.Info1_1;
-        text1[1].text = currentMessage.Info1_2;        
-        text1[2].text = currentMessage.Answer1;
-        text1[3].text = currentMessage.Energy1.ToString();
-        text1[4].text = currentMessage.Price1.ToString();
+        List<int> slot = new() { 0, 1, 2 };
 
-        text2[0].text = currentMessage.Info2;
-        text2[1].text = currentMessage.Answer2;
-        text2[2].text = currentMessage.Energy2.ToString();
-        text2[3].text = currentMessage.Price2.ToString();
+        turn = new int[slot.Count];
 
-        text3[0].text = currentMessage.Info3;
-        text3[1].text = currentMessage.Answer3;
-        text3[2].text = currentMessage.Energy3.ToString();
-        text3[3].text = "+" + currentMessage.Price3.ToString();
+        temp = Random.Range(0, slot.Count);
+        turn[slot[temp]] = 0;//0번효과
 
+        texts[slot[temp]][0].text = currentMessage.Info1_1;
+        texts[slot[temp]][0].fontSize = 30;
+        texts[slot[temp]][1].text = currentMessage.Info1_2;
+        texts[slot[temp]][1].fontSize = 20;
+        texts[slot[temp]][2].text = currentMessage.Answer1;
+        texts[slot[temp]][3].text = currentMessage.Energy1.ToString();
+        texts[slot[temp]][4].text = currentMessage.Price1.ToString();
+        texts[slot[temp]][5].text = "답장하기";
+        icons[slot[temp]].sprite = sprites[0];
+
+        slot.Remove(slot[temp]);
+
+        temp = Random.Range(0, slot.Count);
+        turn[slot[temp]] = 1;
+
+        texts[slot[temp]][0].text = currentMessage.Info2;
+        texts[slot[temp]][0].fontSize = 22;
+        texts[slot[temp]][1].text = "";
+        texts[slot[temp]][2].text = currentMessage.Answer2;
+        texts[slot[temp]][3].text = currentMessage.Energy2.ToString();
+        texts[slot[temp]][4].text = currentMessage.Price2.ToString();
+        texts[slot[temp]][5].text = "답장하기";
+        icons[slot[temp]].sprite = sprites[1];
+
+        slot.Remove(slot[temp]);
+
+        temp = Random.Range(0, slot.Count);
+        turn[slot[temp]] = 2;
+
+        texts[slot[temp]][0].text = currentMessage.Info3;
+        texts[slot[temp]][0].fontSize = 40;
+        texts[slot[temp]][1].text = "";
+        texts[slot[temp]][2].text = currentMessage.Answer3;
+        texts[slot[temp]][3].text = currentMessage.Energy3.ToString();
+        texts[slot[temp]][4].text = "+" + currentMessage.Price3.ToString();
+        texts[slot[temp]][5].text = "무시하기";
+        icons[slot[temp]].sprite = sprites[2];
     }
 
     public void HappyEnergyCheck()//20미만일때 마물이동속도+5%
@@ -214,7 +250,7 @@ public class HappyEnergy : MonoBehaviour
         {
             onBad = false;
             gameSceneManager.unitController.PlusSpeed(-5, PlusChangeType.NormalChange, false);
-        }            
+        }
         else if (onHappy)
         {
             onHappy = false;
@@ -245,7 +281,7 @@ public class HappyEnergy : MonoBehaviour
             onLove = true;
             gameSceneManager.unitController.PlusATK(30, PlusChangeType.NormalChange, false);
         }
-        
+
     }
 
     public void ClickMessage(int num)
@@ -255,6 +291,25 @@ public class HappyEnergy : MonoBehaviour
         switch (num)
         {
             case 1:
+                CallEffect(0);
+                break;
+            case 2:
+                CallEffect(1);
+                break;
+            case 3:
+                CallEffect(2);
+                break;
+            default:
+                Debug.Log("버튼 메세지 번호 설정 안됨");
+                break;
+        }
+    }
+
+    private void CallEffect(int num)
+    {
+        switch (turn[num])
+        {
+            case 0:
                 if (gameSceneManager.Ruby < (currentMessage.Price1 * -1))
                 {
                     StopCoroutine("CoClickFalse");
@@ -264,10 +319,10 @@ public class HappyEnergy : MonoBehaviour
                 gameSceneManager.ChangeRuby(currentMessage.Price1);
                 ChangeHappyEnergy(currentMessage.Energy1);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
-                gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange,false);
+                gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
                 popUp.gameObject.SetActive(false);
                 break;
-            case 2:
+            case 1:
                 if (gameSceneManager.Ruby < (currentMessage.Price2 * -1))
                 {
                     StopCoroutine("CoClickFalse");
@@ -280,7 +335,7 @@ public class HappyEnergy : MonoBehaviour
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
                 popUp.gameObject.SetActive(false);
                 break;
-            case 3:
+            case 2:
                 gameSceneManager.ChangeRuby(currentMessage.Price3);
                 ChangeHappyEnergy(currentMessage.Energy3);
                 popUp.gameObject.SetActive(false);
@@ -288,6 +343,22 @@ public class HappyEnergy : MonoBehaviour
             default:
                 Debug.Log("버튼 메세지 번호 설정 안됨");
                 break;
+
+        }
+
+        if (turn[num] == 0)
+        {
+            if (gameSceneManager.Ruby < (currentMessage.Price1 * -1))
+            {
+                StopCoroutine("CoClickFalse");
+                StartCoroutine("CoClickFalse");
+                return;
+            }
+            gameSceneManager.ChangeRuby(currentMessage.Price1);
+            ChangeHappyEnergy(currentMessage.Energy1);
+            Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
+            gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
+            popUp.gameObject.SetActive(false);
         }
     }
 
