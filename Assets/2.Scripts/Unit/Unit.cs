@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class UnitData
+public class tempUnitsData
 {
     public int id;
     public float range;
@@ -90,7 +90,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     public GameObject skillGO;
     public GameObject rangeGO;
 
-    public UnitData myData;
+    public tempUnitsData myData;
     /*    public int id;
         public float range = 0;
         public float speed = 0;
