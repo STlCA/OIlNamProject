@@ -156,7 +156,7 @@ public class UnitController : MonoBehaviour
         }
 
         UnitInstance newUnit = new();
-        newUnit = unitManager.GetRandomUnit();
+        //newUnit = unitManager.GetRandomUnit();
 
 
 
@@ -224,7 +224,7 @@ public class UnitController : MonoBehaviour
 
         UnitInstance newUnit = new();
         newUnit.id = id + 1;
-        newUnit.unitInfo = unitManager.unitDataBase.GetUnitByKey(id + 1);
+        //newUnit.unitInfo = unitManager.unitLoader.GetUnitByKey(id + 1);
         spawnData[pos].UnitDataUpdate(newUnit);
         spawnData[pos].upgradeStep++;
         spawnData[pos].id++;

@@ -1,0 +1,235 @@
+{
+  "Items": [
+    {
+      "key": 201,
+      "Name": "가브리엘",
+      "Tier": 1,
+      "Description": "세계를 구한 7대 영웅 중 1명입니다.",
+      "ATK": 43,
+      "Speed": 9500,
+      "Range": 280,
+      "Open": false,
+      "Path": "SS1_gif"
+    },
+    {
+      "key": 202,
+      "Name": "잉그리드",
+      "Tier": 1,
+      "Description": "세계를 구한 7대 영웅 중 1명입니다.",
+      "ATK": 37,
+      "Speed": 8700,
+      "Range": 280,
+      "Open": false,
+      "Path": "SS2_gif"
+    },
+    {
+      "key": 203,
+      "Name": "제이드",
+      "Tier": 2,
+      "Description": "실력이 뛰어난 검사입니다.",
+      "ATK": 32,
+      "Speed": 10600,
+      "Range": 260,
+      "Open": false,
+      "Path": "SA3_gif"
+    },
+    {
+      "key": 204,
+      "Name": "리",
+      "Tier": 2,
+      "Description": "실력이 뛰어난 검사입니다.",
+      "ATK": 26,
+      "Speed": 9800,
+      "Range": 260,
+      "Open": true,
+      "Path": "SA4_gif"
+    },
+    {
+      "key": 205,
+      "Name": "잭슨",
+      "Tier": 3,
+      "Description": "견습 검사입니다.",
+      "ATK": 20,
+      "Speed": 13000,
+      "Range": 240,
+      "Open": true,
+      "Path": "SB5_gif"
+    },
+    {
+      "key": 206,
+      "Name": "잭",
+      "Tier": 3,
+      "Description": "견습 검사입니다.",
+      "ATK": 14,
+      "Speed": 12000,
+      "Range": 240,
+      "Open": true,
+      "Path": "SB6_gif"
+    },
+    {
+      "key": 207,
+      "Name": "칼리",
+      "Tier": 1,
+      "Description": "세계를 구한 7대 영웅 중 1명입니다.",
+      "ATK": 22,
+      "Speed": 5200,
+      "Range": 350,
+      "Open": true,
+      "Path": "AS1_gif"
+    },
+    {
+      "key": 208,
+      "Name": "엘린",
+      "Tier": 1,
+      "Description": "세계를 구한 7대 영웅 중 1명입니다.",
+      "ATK": 18,
+      "Speed": 4300,
+      "Range": 350,
+      "Open": true,
+      "Path": "AS2_gif"
+    },
+    {
+      "key": 209,
+      "Name": "체이스",
+      "Tier": 2,
+      "Description": "실력이 뛰어난 궁수입니다.",
+      "ATK": 18,
+      "Speed": 6300,
+      "Range": 320,
+      "Open": true,
+      "Path": "AA3_gif"
+    },
+    {
+      "key": 210,
+      "Name": "파벨",
+      "Tier": 2,
+      "Description": "실력이 뛰어난 궁수입니다.",
+      "ATK": 15,
+      "Speed": 5600,
+      "Range": 320,
+      "Open": true,
+      "Path": "AA4_gif"
+    },
+    {
+      "key": 211,
+      "Name": "매기",
+      "Tier": 3,
+      "Description": "견습 궁수입니다.",
+      "ATK": 17,
+      "Speed": 7200,
+      "Range": 300,
+      "Open": true,
+      "Path": "AB5_gif"
+    },
+    {
+      "key": 212,
+      "Name": "마돈나",
+      "Tier": 3,
+      "Description": "견습 궁수입니다.",
+      "ATK": 14,
+      "Speed": 7800,
+      "Range": 300,
+      "Open": true,
+      "Path": "AB6_gif"
+    },
+    {
+      "key": 213,
+      "Name": "에반",
+      "Tier": 1,
+      "Description": "세계를 구한 7대 영웅 중 1명입니다.",
+      "ATK": 45,
+      "Speed": 10300,
+      "Range": 410,
+      "Open": true,
+      "Path": "WS1_gif"
+    },
+    {
+      "key": 214,
+      "Name": "밤비",
+      "Tier": 1,
+      "Description": "세계를 구한 7대 영웅 중 1명입니다.",
+      "ATK": 40,
+      "Speed": 9900,
+      "Range": 400,
+      "Open": true,
+      "Path": "WS2_gif"
+    },
+    {
+      "key": 215,
+      "Name": "오로라",
+      "Tier": 1,
+      "Description": "세계를 구한 7대 영웅 중 1명입니다.",
+      "ATK": 48,
+      "Speed": 12400,
+      "Range": 430,
+      "Open": true,
+      "Path": "WS3_gif"
+    },
+    {
+      "key": 216,
+      "Name": "데이브",
+      "Tier": 2,
+      "Description": "실력이 뛰어난 마법사입니다.",
+      "ATK": 33,
+      "Speed": 11200,
+      "Range": 370,
+      "Open": true,
+      "Path": "WA4_gif"
+    },
+    {
+      "key": 217,
+      "Name": "데이지",
+      "Tier": 2,
+      "Description": "실력이 뛰어난 마법사입니다.",
+      "ATK": 28,
+      "Speed": 10800,
+      "Range": 360,
+      "Open": true,
+      "Path": "WA5_gif"
+    },
+    {
+      "key": 218,
+      "Name": "콜린",
+      "Tier": 2,
+      "Description": "실력이 뛰어난 마법사입니다.",
+      "ATK": 36,
+      "Speed": 12300,
+      "Range": 390,
+      "Open": true,
+      "Path": "WA6_gif"
+    },
+    {
+      "key": 219,
+      "Name": "아만다",
+      "Tier": 3,
+      "Description": "견습 마법사입니다.",
+      "ATK": 27,
+      "Speed": 12600,
+      "Range": 360,
+      "Open": true,
+      "Path": "WB7_gif"
+    },
+    {
+      "key": 220,
+      "Name": "오스카",
+      "Tier": 3,
+      "Description": "견습 마법사입니다.",
+      "ATK": 22,
+      "Speed": 13600,
+      "Range": 350,
+      "Open": true,
+      "Path": "WB8_gif"
+    },
+    {
+      "key": 221,
+      "Name": "헤스티아",
+      "Tier": 3,
+      "Description": "견습 마법사입니다.",
+      "ATK": 30,
+      "Speed": 14600,
+      "Range": 380,
+      "Open": true,
+      "Path": "WB9_gif"
+    }
+  ]
+}
