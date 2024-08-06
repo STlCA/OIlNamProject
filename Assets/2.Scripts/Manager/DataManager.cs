@@ -9,10 +9,15 @@ public class DataManager : Manager
     public DataTable_EnemyLoader dataTable_EnemyLoader;
     public DataTable_ChapterLoader dataTable_ChapterLoader;
     public DataTable_BossLoader dataTable_BossLoader;
+
+    //¼öÁ¤
     public DataTable_MessageLoader dataTable_MessageLoader;
     public DataTable_StoryLoader dataTable_StoryLoader;
-    //public StoryDataBase storyDataBase;
-    public UnitDataBase unitDataBase;
+
+    //Unit
+    public DataTable_UnitLoader dataTable_UnitLoader;
+    public DataTable_UpgradeLoader dataTable_UpgradeLoader;
+
 
     private void Awake()
     {
@@ -20,19 +25,9 @@ public class DataManager : Manager
         ChapterAwake();
         BossAwake();
         MessageAwake();
-
         StoryAwake();
-        UnitAwake();
+        UnitAwake();        
     }
-
-    //public override void Init(GameManager gm)
-    //{
-    //    base.Init(gm);
-    //
-    //    EnemyAwake();
-    //    StoryAwake();
-    //    UnitAwake();
-    //}
 
     private void EnemyAwake()
     {
@@ -63,40 +58,16 @@ public class DataManager : Manager
     
     private void StoryAwake()
     {
-        /*        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Story_Data");
-                if (jsonFile != null)
-                {
-                    string json = jsonFile.text;
-
-                    storyDataBase = JsonUtility.FromJson<StoryDataBase>(json);
-                    storyDataBase.Initialize();
-                }
-                else
-                {
-                    Debug.LogError("Failed to load storyDataBase.json");
-                }*/
-
         dataTable_StoryLoader = new DataTable_StoryLoader();
+    }
+    private void MessageAwake()
+    {
+        dataTable_MessageLoader = new DataTable_MessageLoader();
     }
 
     private void UnitAwake()
     {
-        TextAsset jsonFile = Resources.Load<TextAsset>("JSON/Unit_Data");
-        if (jsonFile != null)
-        {
-            string json = jsonFile.text;
-
-            unitDataBase = JsonUtility.FromJson<UnitDataBase>(json);
-            unitDataBase.Initialize();
-        }
-        else
-        {
-            Debug.LogError("Failed to load unitDataBase.json");
-        }
-    }
-
-    private void MessageAwake()
-    {
-        dataTable_MessageLoader = new DataTable_MessageLoader();
+        dataTable_UnitLoader = new DataTable_UnitLoader();
+        dataTable_UpgradeLoader = new DataTable_UpgradeLoader();
     }
 }

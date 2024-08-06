@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public SceneEffect SceneEffect { get { return sceneEffect; } }
     private SceneEffect sceneEffect;
 
+    public PlayerEvent PlayerEvent { get { return playerEvent; } }
+    private PlayerEvent playerEvent;
+
     //====================== Enemy, UI
     public EnemySpawn EnemySpawn;
     public WaveUI WaveUI;
@@ -86,6 +89,7 @@ public class GameManager : MonoBehaviour
         #endregion
 
         //Find
+        playerEvent = GetManager<PlayerEvent>();
         dataManager = GetManager<DataManager>();
         popUpController = GetFind<PopUpController>();
         soundManager = GetManager<SoundManager>();
@@ -96,12 +100,13 @@ public class GameManager : MonoBehaviour
 
 
         //Init
+        playerEvent.Init(this);
         dataManager.Init(this);
         soundManager.Init(this);
         uiMnager.Init(this);
         player.Init(this);
         sceneEffect.Init(this);
-        unitManager.Init(this);
+        unitManager.Init(this);//datamanager보다 아래
 
         //Gold
         MoneyInit();
@@ -109,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
             GameExit();
     }
 
