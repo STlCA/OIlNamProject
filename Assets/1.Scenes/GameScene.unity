@@ -15169,7 +15169,7 @@ MonoBehaviour:
   - {fileID: 646414389}
   - {fileID: 1433140432}
   - {fileID: 955685953}
-  enemyPrefab: {fileID: 8948626663979057521, guid: c16095440e3555f48a713c971dd6d8d1,
+  enemyPrefab: {fileID: 7716784584950809418, guid: 8d4f89bd71d54ca4fbc3136f5dd939ea,
     type: 3}
   enemyCountText: {fileID: 4733318104465039277}
   gameoverPopup: {fileID: 5358217934899356554}
@@ -20284,8 +20284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DataManager: {fileID: 8211429596669660521}
-  unitDataBase:
-    UnitData: []
 --- !u!224 &1648856711405080065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21068,7 +21066,7 @@ MonoBehaviour:
   - {fileID: 6306102971952333574}
   - {fileID: 7061605704746408147}
   - {fileID: 2793064763655227123}
-  enemyPrefab: {fileID: 8948626663979057521, guid: c16095440e3555f48a713c971dd6d8d1,
+  enemyPrefab: {fileID: 7716784584950809418, guid: 8d4f89bd71d54ca4fbc3136f5dd939ea,
     type: 3}
   enemyCountText: {fileID: 4733318104465039277}
   gameoverPopup: {fileID: 5358217934899356554}
@@ -38668,8 +38666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c694bedd2c4401b4f872537908c0361c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitDataBase:
-    UnitData: []
 --- !u!1 &8235738354335713369
 GameObject:
   m_ObjectHideFlags: 0
