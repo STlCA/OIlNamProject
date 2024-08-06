@@ -8,6 +8,7 @@ public class EnemyData
 {
     public DataTable_Enemy enemyData;
     public DataTable_Chapter chapterData;
+    public int maxHP;
     public int hp;
     public Sprite sprite;
 
@@ -17,6 +18,7 @@ public class EnemyData
         chapterData = dataC;
 
         hp = chapterData.EnemyHP;
+        maxHP = chapterData.EnemyHP;
         sprite = Resources.Load<Sprite>(dataE.Path);
     }
 }
@@ -25,6 +27,7 @@ public class BossData
 {
     public DataTable_Boss bossData;
     public DataTable_Chapter chapterData;
+    public int maxHP;
     public int hp;
     public Sprite sprite;
 
@@ -34,6 +37,7 @@ public class BossData
         chapterData = dataC;
 
         hp = chapterData.BossHP;
+        maxHP = chapterData.BossHP;
         sprite = Resources.Load<Sprite>(data.Path);
     }
 }
@@ -48,7 +52,8 @@ public class Enemy : MonoBehaviour
     private DataTable_BossLoader bossDatabase;
     private DataTable_ChapterLoader chapterDatabase;
     private GameSceneManager gameSceneManager;//수정
-    private EnemySpawn enemySpawn;    
+    private EnemySpawn enemySpawn;   
+    //private EnemyHPBar enemyHPBar;
 
     // 마물 정보
     //public DataTable_Enemy enemyData;
@@ -57,6 +62,9 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer image;
     private bool isDead;
     public bool isBoss = false;
+    [SerializeField] private Slider enemyHpSlider;
+    //[SerializeField] private GameObject enemyHpSliderUI;
+    //private Slider enemyHpSlider;
 
     //private void Start()
     //{
@@ -96,6 +104,7 @@ public class Enemy : MonoBehaviour
         // Script
         enemyMove = GetComponent<EnemyMove>();
         image = GetComponent<SpriteRenderer>();
+        //enemyHPBar = enemyHpSliderUI.GetComponent<EnemyHPBar>();
         //gameManager = GameManager.Instance;
         //dataManager = gameManager.DataManager;
         //this.enemyDatabase = dataManager.dataTable_EnemyLoader;
@@ -144,12 +153,14 @@ public class Enemy : MonoBehaviour
     public void EnemyAttacked(float damage)
     {
         float hp;
+        float maxHP;
         int ruby;
 
         // 보스인 경우
         if (isBoss)
         {
             hp = bossData.hp;
+            maxHP = bossData.maxHP;
             ruby = bossData.bossData.PlayGoods;
             hp -= damage;
             bossData.hp = (int)hp;
@@ -158,11 +169,16 @@ public class Enemy : MonoBehaviour
         else
         {
             hp = enemyData.hp;
+            maxHP = enemyData.maxHP;
             ruby = enemyData.enemyData.PlayGoods;
             hp -= damage;
             enemyData.hp = (int)hp;
         }
         //hp -= damage;
+
+        // 마물 hp바
+        enemyHpSlider.value = hp / maxHP;
+        //enemyHPBar.UpdateHPBar();
 
         // 적이 죽었을 때
         if (hp <= 0)
