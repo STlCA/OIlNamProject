@@ -92,17 +92,13 @@ public class UnitManager : Manager
     private DataTable_UnitLoader unitLoader; // 가지고만옴
     private DataTable_UpgradeLoader upgradeLoader; //가지고만옴
 
-    public Dictionary<int, UnitData> unitDataBase = new();
+    //public List<UnitData> unitDataBase = new();
+    public Dictionary<int, UnitData> unitDataDic = new();
 
     //CanSpawnUnit //id만 들고있음
     private List<int> sTierUnitID = new();
     private List<int> aTierUnitID = new();
     private List<int> bTierUnitID = new();
-
-    //UpgradeSlot
-    public GameObject slots;
-    private UnitUpgradeSlot[] upgradeSlots;
-
 
     public List<UnitInstance> canSpawnUnit = new();
 
@@ -112,8 +108,6 @@ public class UnitManager : Manager
 
         unitLoader = GameManager.Instance.DataManager.dataTable_UnitLoader;
         upgradeLoader = GameManager.Instance.DataManager.dataTable_UpgradeLoader;
-
-        upgradeSlots = slots.GetComponentsInChildren<UnitUpgradeSlot>();
     }
 
     private void Start()
@@ -124,7 +118,7 @@ public class UnitManager : Manager
             upgradeLoader = DataManager.dataTable_UpgradeLoader;
         }
 
-        if (unitDataBase == null)
+        if (unitDataDic == null)
         {
             FirstInit();
         }
@@ -139,13 +133,14 @@ public class UnitManager : Manager
             UnitData newData = new();
             newData.Init(item);
 
-            unitDataBase.Add(newData.key, newData);
+            //unitDataBase.Add(newData);
+            unitDataDic.Add(newData.key, newData);
         }
     }
 
     private void InitTierID()
     {
-        foreach (var (key, item) in unitDataBase)
+        foreach (var (key, item) in unitDataDic)
         {
             if (!item.open)
                 return;
@@ -181,6 +176,11 @@ public class UnitManager : Manager
         }
     }
 
+    public UnitData GetByKey(int key)
+    {
+        return unitDataDic[key];
+    }    
+
     public void GachaNewUnit(int count)
     {
         int keyCount = 0;
@@ -202,14 +202,14 @@ public class UnitManager : Manager
 
         foreach (var (key, num) in newUnit)
         {
-            if (!unitDataBase[key].open)
+            if (!unitDataDic[key].open)
             {
-                unitDataBase[key].open = true;
-                unitDataBase[key].piece += (num - 1);
-                AddTierID(key, unitDataBase[key].tier);
+                unitDataDic[key].open = true;
+                unitDataDic[key].piece += (num - 1);
+                AddTierID(key, unitDataDic[key].tier);
             }
             else
-                unitDataBase[key].piece += num;
+                unitDataDic[key].piece += num;
         }
 
         //TODO :: Save하기
@@ -232,7 +232,7 @@ public class UnitManager : Manager
 
             if (random <= 0)
             {
-                return unitDataBase[item.key];
+                return unitDataDic[item.key];
             }
         }
 
@@ -249,15 +249,15 @@ public class UnitManager : Manager
         {
             case 1:
                 index = Random.Range(0, sTierUnitID.Count);
-                unit = unitDataBase[sTierUnitID[index]];
+                unit = unitDataDic[sTierUnitID[index]];
                 break;
             case 2:
                 index = Random.Range(0, aTierUnitID.Count);
-                unit = unitDataBase[aTierUnitID[index]];
+                unit = unitDataDic[aTierUnitID[index]];
                 break;
             case 3:
                 index = Random.Range(0, bTierUnitID.Count);
-                unit = unitDataBase[bTierUnitID[index]];
+                unit = unitDataDic[bTierUnitID[index]];
                 break;
             default:
                 Debug.Log("유닛가져오기 실패");
@@ -266,12 +266,6 @@ public class UnitManager : Manager
 
         return unit;
     }
-
-    public void UpgradeSlotSetting()
-    {
-        upgradeSlots
-    }
-
 
 
 
@@ -307,7 +301,7 @@ public class UnitManager : Manager
         data.unitSaveDatas.Clear();
         data.unitSaveDatas = new();
 
-        foreach (var (key, item) in unitDataBase)
+        foreach (var (key, item) in unitDataDic)
         {
             UnitSaveData newData = new();
             item.Save(ref newData);
@@ -325,7 +319,7 @@ public class UnitManager : Manager
             unit.Init(unitLoader.GetByKey(item.Key));
             unit.Load(item, upgradeLoader.GetByKey(item.Key));
 
-            unitDataBase.Add(item.Key, unit);
+            unitDataDic.Add(item.Key, unit);
         }
     }
 }

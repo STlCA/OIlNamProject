@@ -17,7 +17,7 @@ public class DataTable_Upgrade
     public int UnitID;
 
     /// <summary>
-    /// 1
+    /// Enforce
     /// </summary>
     public List<int> ATK;
 
@@ -30,6 +30,11 @@ public class DataTable_Upgrade
     /// 3
     /// </summary>
     public List<int> Range;
+
+    /// <summary>
+    /// Enforce_Gold
+    /// </summary>
+    public List<int> UseGold;
 
     /// <summary>
     /// Drop

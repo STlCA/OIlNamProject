@@ -11,18 +11,18 @@ public class UIManager : Manager
 {
     //test
     [SerializeField] private TMP_Text pointTxt;
-    [SerializeField] private TMP_Text keyTxt1;
-    [SerializeField] private TMP_Text rubyTxt;
+    [SerializeField] private TMP_Text keyTxt;
+    [SerializeField] private TMP_Text goldTxt;
 
     public void MainUIUpdate(List<TMP_Text> money)
     {
         pointTxt = money[0];
-        keyTxt1 = money[1];
-        rubyTxt = money[2];
+        keyTxt = money[1];
+        goldTxt = money[2];
 
         MoneyTypeUpdate(MoneyType.Point, gameManager.Point);
         MoneyTypeUpdate(MoneyType.KEY, gameManager.Key);
-        MoneyTypeUpdate(MoneyType.Ruby, gameManager.Ruby);
+        MoneyTypeUpdate(MoneyType.Gold, gameManager.Gold);
     }
 
     public void MoneyTypeUpdate(MoneyType type, int val)
@@ -51,10 +51,10 @@ public class UIManager : Manager
                 pointTxt.text = val.ToString("N0");
                 break;
             case MoneyType.KEY:
-                keyTxt1.text = val.ToString("00") + " / 20";
+                keyTxt.text = val.ToString("00") + " / 20";
                 break;
-            case MoneyType.Ruby:
-                rubyTxt.text = val.ToString("N0");
+            case MoneyType.Gold:
+                goldTxt.text = val.ToString("N0");
                 break;
         }
     }
