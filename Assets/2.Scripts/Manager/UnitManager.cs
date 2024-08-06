@@ -7,6 +7,7 @@ using System;
 using Random = UnityEngine.Random;
 using UnityEditor.UIElements;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 [Serializable]
 public struct Save_UnitData
@@ -98,6 +99,11 @@ public class UnitManager : Manager
     private List<int> aTierUnitID = new();
     private List<int> bTierUnitID = new();
 
+    //UpgradeSlot
+    public GameObject slots;
+    private UnitUpgradeSlot[] upgradeSlots;
+
+
     public List<UnitInstance> canSpawnUnit = new();
 
     public override void Init(GameManager gm)
@@ -106,6 +112,8 @@ public class UnitManager : Manager
 
         unitLoader = GameManager.Instance.DataManager.dataTable_UnitLoader;
         upgradeLoader = GameManager.Instance.DataManager.dataTable_UpgradeLoader;
+
+        upgradeSlots = slots.GetComponentsInChildren<UnitUpgradeSlot>();
     }
 
     private void Start()
@@ -259,13 +267,11 @@ public class UnitManager : Manager
         return unit;
     }
 
-/*    public void OnOffUpgradeUI(GameObject go)
+    public void UpgradeSlotSetting()
     {
-        UnitUpgradeSlot slot = go.GetComponentInChildren<UnitUpgradeSlot>();
-
-        slot.Image
+        upgradeSlots
     }
-*/
+
 
 
 
