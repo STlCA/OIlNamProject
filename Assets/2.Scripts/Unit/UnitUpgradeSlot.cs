@@ -1,4 +1,5 @@
 using Constants;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,55 +8,31 @@ using UnityEngine.UI;
 
 public class UnitUpgradeSlot : MonoBehaviour
 {
-    public UnitData unitData;
+    public UnitData myUnitData;
+    public DataTable_Upgrade myUpgradeData;
 
     public Image unitImage;
-    public Image tierImage;
-    public Image btnFalseImage;
-
-    public TMP_Text nameTxt;
-    public TMP_Text tierTxt;
+    public Image canUpgradeIcon;
     public TMP_Text levelTxt;
     public TMP_Text pieceTxt;
-    public TMP_Text atkTxt;
-    public TMP_Text plusAtkTxt;
-    public TMP_Text speedTxt;
-    //public TMP_Text plusSpeedTxt;
-    public TMP_Text upgradeGoldTxt;
+    public TMP_Text nameTxt;
 
-    public void Init(UnitData unitData, DataTable_Upgrade upgradeData)
+    public void Init(UnitData item, DataTable_Upgrade dataTable_Upgrade)
     {
-        this.unitData = null;
-        this.unitData = unitData;
+        myUnitData = item;
 
-        unitImage.sprite = unitData.sprite;
+        UpdateText();
+    }
 
-        switch (unitData.tier)
-        {
-            case 1:
-                tierImage.color = Color.red;
-                break;
-            case 2:
-                tierImage.color = Color.blue;
-                break;
-            case 3:
-                tierImage.color = Color.black;
-                break;
-        }
+    public void UpdateText()
+    {
+        nameTxt.text = myUnitData.name;
+        levelTxt.text = "Lv. " + myUnitData.level.ToString();
+        pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
 
-        if (unitData.piece >= upgradeData.NeedPiece[unitData.level] && upgradeData.UseGold[unitData.level] <= GameManager.Instance.Gold)
-            btnFalseImage.gameObject.SetActive(false);
+        if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level])
+            canUpgradeIcon.gameObject.SetActive(true);
         else
-            btnFalseImage.gameObject.SetActive(true);
-
-            nameTxt.text = unitData.name;
-        tierTxt.text = unitData.tier.ToString();
-        levelTxt.text = "Lv. " + unitData.level.ToString();
-        pieceTxt.text = unitData.piece.ToString() + " / " + upgradeData.NeedPiece[unitData.level].ToString();
-        atkTxt.text = "°ø°Ý·Â\n" + unitData.atk.ToString();
-        plusAtkTxt.text = "+" + upgradeData.ATK[unitData.level].ToString();
-        speedTxt.text = unitData.speed.ToString();
-        //plusSpeedTxt.text = "+" + upgradeData.Speed[unitData.level].ToString();
-        upgradeGoldTxt.text = upgradeData.UseGold[unitData.level].ToString();
+            canUpgradeIcon.gameObject.SetActive(false);
     }
 }

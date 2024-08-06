@@ -43,6 +43,9 @@ public class UnitData
     //Sprite
     public Sprite sprite;
 
+    //업그레이드 정보
+    private DataTable_Upgrade upgradeData;
+
     public void Init(DataTable_Unit unit)
     {
         key = unit.key;
@@ -61,19 +64,24 @@ public class UnitData
 
     public void Load(UnitSaveData data, DataTable_Upgrade upgradeData)
     {
+        this.upgradeData = upgradeData;
+
         key = data.Key;
         level = data.Level;
         piece = data.Piece;
         open = data.Open;
 
-        SetStatus(upgradeData);
+        SetStatus();
     }
 
-    private void SetStatus(DataTable_Upgrade upgradeData)
+    private void SetStatus()
     {
-        atk += upgradeData.ATK[level];
-        speed += upgradeData.Speed[level];
-        range += upgradeData.Range[level];
+        for (int i = 0; i < level; i++)
+        {
+            atk += upgradeData.ATK[i];
+            speed += upgradeData.Speed[i];
+            range += upgradeData.Range[i];
+        }
     }
 
     public void Save(ref UnitSaveData data)
@@ -82,6 +90,15 @@ public class UnitData
         data.Level = level;
         data.Piece = piece;
         data.Open = open;
+    }
+
+    public void Upgrade()
+    {
+        piece -= upgradeData.NeedPiece[level];
+        atk += upgradeData.ATK[level];
+        speed += upgradeData.Speed[level];
+        range += upgradeData.Range[level];
+        level++;
     }
 }
 
