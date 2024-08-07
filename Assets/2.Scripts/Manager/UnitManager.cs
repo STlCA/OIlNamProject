@@ -101,8 +101,10 @@ public class UnitData
     //업그레이드 정보
     private DataTable_Upgrade upgradeData;
 
-    public void Init(DataTable_Unit unit)
+    public void Init(DataTable_Unit unit, DataTable_Upgrade upgradeData)
     {
+        this.upgradeData = upgradeData;
+
         key = unit.key;
         upgradeKey = unit.UpgradeKey;
         name = unit.Name;
@@ -243,7 +245,7 @@ public class UnitManager : Manager
         foreach (var item in unitLoader.ItemsList)
         {
             UnitData newData = new();
-            newData.Init(item);
+            newData.Init(item, upgradeLoader.GetByKey(item.UpgradeKey));
 
             //unitDataBase.Add(newData);
             unitDataDic.Add(newData.key, newData);
@@ -525,8 +527,8 @@ public class UnitManager : Manager
         foreach (var item in data.unitSaveDatas)
         {
             UnitData unit = new();
-            unit.Init(unitLoader.GetByKey(item.Key));
-            unit.Load(item, upgradeLoader.GetByKey(item.Key));
+            unit.Init(unitLoader.GetByKey(item.Key), upgradeLoader.GetByKey(unitLoader.GetByKey(item.Key).UpgradeKey));
+            unit.Load(item, upgradeLoader.GetByKey(unitLoader.GetByKey(item.Key).UpgradeKey));
 
             unitDataDic.Add(item.Key, unit);
         }

@@ -24,9 +24,9 @@ namespace Constants
 
     public enum MoneyType
     {
-        Point,
+        Gold,
         KEY,
-        Ruby,
+        Diamond,
     }
 
     public enum PlusChangeType

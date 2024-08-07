@@ -42,16 +42,16 @@ public class GameManager : MonoBehaviour
     public UnitController UnitController;
 
     //====================== Money
-    public int Point
+    public int Gold
     {
-        get { return point; }
+        get { return gold; }
         set
         {
-            point += value;
-            uiMnager.MoneyTypeUpdate(MoneyType.Point, point);
+            gold += value;
+            uiMnager.MoneyTypeUpdate(MoneyType.Gold, gold);
         }
     }
-    private int point;
+    private int gold;
 
     public int Key
     {
@@ -64,16 +64,16 @@ public class GameManager : MonoBehaviour
     }
     private int key;
 
-    public int Gold
+    public int Diamond
     {
-        get { return ruby; }
+        get { return diamond; }
         set
         {
-            ruby += value;
-            uiMnager.MoneyTypeUpdate(MoneyType.Ruby, ruby);
+            diamond += value;
+            uiMnager.MoneyTypeUpdate(MoneyType.Diamond, diamond);
         }
     }
-    private int ruby;
+    private int diamond;
 
     //================================================
 
@@ -120,21 +120,21 @@ public class GameManager : MonoBehaviour
 
     private void MoneyInit()
     {
-        Point = 10;
+        Gold = 10;
         Key = 999;
-        Gold = 100;
+        Diamond = 100;
     }
 
     public void MoneyChange(MoneyType type, int val)
     {
         switch (type)
         {
-            case MoneyType.Point:
-                Point = val; break;
+            case MoneyType.Gold:
+                Gold = val; break;
             case MoneyType.KEY:
                 Key = val; break;
-            case MoneyType.Ruby:
-                Gold = val; break;
+            case MoneyType.Diamond:
+                Diamond = val; break;
         }
     }
 

@@ -62,7 +62,7 @@ public class UnitUpgradeUI : MonoBehaviour
 
     public void UpdateText()
     {
-        if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level] && myUpgradeData.UseGold[myUnitData.level] <= GameManager.Instance.Gold)
+        if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level] && myUpgradeData.UseGold[myUnitData.level] <= GameManager.Instance.Diamond)
             btnFalseImage.gameObject.SetActive(false);
         else
             btnFalseImage.gameObject.SetActive(true);

@@ -10,24 +10,24 @@ using UnityEngine.SceneManagement;
 public class UIManager : Manager
 {
     //test
-    [SerializeField] private TMP_Text pointTxt;
+    [SerializeField] private TMP_Text goldTxt;
     [SerializeField] private TMP_Text keyTxt1;
-    [SerializeField] private TMP_Text rubyTxt;
+    [SerializeField] private TMP_Text diamondTxt;
 
     public void MainUIUpdate(List<TMP_Text> money)
     {
-        pointTxt = money[0];
+        goldTxt = money[0];
         keyTxt1 = money[1];
-        rubyTxt = money[2];
+        diamondTxt = money[2];
 
-        MoneyTypeUpdate(MoneyType.Point, gameManager.Point);
+        MoneyTypeUpdate(MoneyType.Gold, gameManager.Gold);
         MoneyTypeUpdate(MoneyType.KEY, gameManager.Key);
-        MoneyTypeUpdate(MoneyType.Ruby, gameManager.Gold);
+        MoneyTypeUpdate(MoneyType.Diamond, gameManager.Diamond);
     }
 
     public void MoneyTypeUpdate(MoneyType type, int val)
     {
-        if (pointTxt == null)
+        if (goldTxt == null)
             return;
 
         /*        string valStr = val.ToString();
@@ -47,14 +47,14 @@ public class UIManager : Manager
 
         switch (type)
         {
-            case MoneyType.Point:
-                pointTxt.text = val.ToString("N0");
+            case MoneyType.Gold:
+                goldTxt.text = val.ToString("N0");
                 break;
             case MoneyType.KEY:
                 keyTxt1.text = val.ToString("00") + " / 20";
                 break;
-            case MoneyType.Ruby:
-                rubyTxt.text = val.ToString("N0");
+            case MoneyType.Diamond:
+                diamondTxt.text = val.ToString("N0");
                 break;
         }
     }
