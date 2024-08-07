@@ -366,9 +366,9 @@ public class UnitManager : Manager
     }
 
     //¿µ¿õÁ¶°¢ »ç¿ë ¼¼Æ® ¹­À½
-    public void UsePiece(int val)
+    public void UsePiece(PieceType type,int val)
     {
-        pieceData.UsePiece(PieceType.Unit, -val);
+        pieceData.UsePiece(type, -val);
         ChangeAllUnitPiece();
     }
 

@@ -65,10 +65,10 @@ public class UnitUpgradeController : MonoBehaviour
     }
 
     //슬롯 업데이트
-    public void UpdateSlot(int slotNum)
+    public void UpdateSlot(int tier,int slotNum)
     {
         //순서바뀌면안됨 1.슬롯속 유닛값바뀌기 2.슬롯텍스트바뀌기
-        unitManager.UsePiece(slotDic[slotNum].Upgrade());//나중엔 unitManager.UsePiece 필요없을지도
+        unitManager.UsePiece((PieceType)tier, slotDic[slotNum].Upgrade());//나중엔 unitManager.UsePiece 필요없을지도
         upgradeSlots[slotNum].UpdateText();
     }
 

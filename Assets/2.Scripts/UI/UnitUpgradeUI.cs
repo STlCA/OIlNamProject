@@ -92,7 +92,7 @@ public class UnitUpgradeUI : MonoBehaviour
     //강화버튼 눌렀을때 //BTN
     public void ClickUnitUpgrade()
     {
-        upgradeController.UpdateSlot(slotNum);
+        upgradeController.UpdateSlot(myUnitData.tier,slotNum);
         UpdateText();
     }
 }
