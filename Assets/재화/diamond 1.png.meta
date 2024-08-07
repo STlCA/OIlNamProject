@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d0c51e57222d2eb4a8f294a5f8fd6771
+guid: bf625bfdcce265941879ed0149695800
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uBCF4\uC11D\uAFB8\uB7EC\uBBF8_0"
+      name: diamond 1_0
       rect:
         serializedVersion: 2
-        x: 186
-        y: 294
-        width: 34
-        height: 27
+        x: 28
+        y: 106
+        width: 42
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a3bdac5405093b43b9bec0dfcd566cb
-      internalID: 222964958
+      spriteID: c938ba3bcd85a5740bff07a2208d0a15
+      internalID: -113884478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uBCF4\uC11D\uAFB8\uB7EC\uBBF8_1"
+      name: diamond 1_1
       rect:
         serializedVersion: 2
-        x: 263
-        y: 294
-        width: 57
-        height: 32
+        x: 119
+        y: 106
+        width: 67
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1605cbc0a0c01554885d14c15ac2ed74
-      internalID: 1092616114
+      spriteID: ec22ca2261b864047bbb5fef31df9e29
+      internalID: -1187947784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uBCF4\uC11D\uAFB8\uB7EC\uBBF8_2"
+      name: diamond 1_2
       rect:
         serializedVersion: 2
-        x: 358
-        y: 293
-        width: 57
-        height: 64
+        x: 216
+        y: 100
+        width: 67
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65694ef095c303442b7778a627c03104
-      internalID: -1523054425
+      spriteID: a0c47c2c8d0114f48a4e51e05c08a37f
+      internalID: 631779127
       vertices: []
       indices: 
       edges: []
@@ -209,9 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\uBCF4\uC11D\uAFB8\uB7EC\uBBF8_0": 222964958
-      "\uBCF4\uC11D\uAFB8\uB7EC\uBBF8_1": 1092616114
-      "\uBCF4\uC11D\uAFB8\uB7EC\uBBF8_2": -1523054425
+      diamond 1_0: -113884478
+      diamond 1_1: -1187947784
+      diamond 1_2: 631779127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
