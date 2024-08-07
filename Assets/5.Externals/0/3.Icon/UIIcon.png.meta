@@ -359,7 +359,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_16
+      name: Upgrade2
       rect:
         serializedVersion: 2
         x: 1
@@ -380,7 +380,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_17
+      name: Upgrade1
       rect:
         serializedVersion: 2
         x: 33
@@ -401,7 +401,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_18
+      name: Upgrade0
       rect:
         serializedVersion: 2
         x: 65
@@ -443,7 +443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coin
+      name: Gacha0
       rect:
         serializedVersion: 2
         x: 129
@@ -464,7 +464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIIcon_21
+      name: Gacha1
       rect:
         serializedVersion: 2
         x: 163
@@ -579,7 +579,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Coin: 254255707
+      Gacha0: 254255707
+      Gacha1: 178323029
       Gold: 526328236
       Luby: -1986064669
       UIIcon_0: -1791157585
@@ -589,12 +590,8 @@ TextureImporter:
       UIIcon_13: -985496071
       UIIcon_14: -1345399978
       UIIcon_15: 753051083
-      UIIcon_16: -2066459537
-      UIIcon_17: -633333396
-      UIIcon_18: -1509786758
       UIIcon_19: -405188996
       UIIcon_2: 1281170023
-      UIIcon_21: 178323029
       UIIcon_22: -1617283047
       UIIcon_23: 2080020676
       UIIcon_24: 835130582
@@ -606,6 +603,9 @@ TextureImporter:
       UIIcon_6: 200447297
       UIIcon_7: -1464213927
       UIIcon_8: -275656153
+      Upgrade0: -1509786758
+      Upgrade1: -633333396
+      Upgrade2: -2066459537
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

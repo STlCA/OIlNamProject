@@ -12,6 +12,11 @@ public class MainSceneManager : MonoBehaviour
 {
     private GameManager gameManager;
     private UIManager uiManager;
+    private UnitUpgradeController unitUpgradeController;
+
+    [Header("UI")]    
+    public List<GameObject> tabUI;
+    public List<GameObject> btnUI;
 
     [Header("GoldUI")]
     public TMP_Text goldTxt;
@@ -39,6 +44,8 @@ public class MainSceneManager : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         uiManager = GameManager.Instance.UIManager;
+
+        unitUpgradeController = GetComponent<UnitUpgradeController>();
 
         if (goldTxt != null)
             Init();
@@ -105,4 +112,42 @@ public class MainSceneManager : MonoBehaviour
         closeUI.SetActive(false);
     }
 
+    public void TabChange(int tabType)
+    {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(EffectList.Intro);
+
+        for (int i = 0; i < tabUI.Count; i++)
+        {
+            tabUI[i].SetActive(false);
+            btnUI[i].SetActive(false);
+        }
+
+        switch (tabType)
+        {
+            case (int)TabType.Shop://Çò°¥·Á¼­enum
+                btnUI[tabType].SetActive(true);
+                tabUI[tabType].SetActive(true);
+                break;
+
+            case (int)TabType.Home:
+                btnUI[tabType].SetActive(true);
+                tabUI[tabType].SetActive(true);
+                break;
+
+            case (int)TabType.Gacha:
+                btnUI[tabType].SetActive(true);
+                tabUI[tabType].SetActive(true);
+                break;
+
+            case (int)TabType.Unit:
+                btnUI[tabType].SetActive(true);
+                unitUpgradeController.OnUnitTab();
+                tabUI[tabType].SetActive(true);
+                break;
+
+            default:
+                Debug.Log("ÅÇ¹öÆ°¼³Á¤¾ÈµÊ");
+                return;
+        }
+    }
 }

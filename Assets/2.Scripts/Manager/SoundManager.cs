@@ -1,3 +1,4 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -92,6 +93,10 @@ public class SoundManager : Manager
     public void EffectAudioClipPlay(int index)
     {
         EffectSource.PlayOneShot(effectAudioList[index], 1);
+    }
+    public void EffectAudioClipPlay(EffectList index)
+    {
+        EffectSource.PlayOneShot(effectAudioList[(int)index], 1);
     }
 
     public void GameAudioClipPlay(int index)

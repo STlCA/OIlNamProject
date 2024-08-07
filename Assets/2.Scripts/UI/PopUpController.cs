@@ -1,11 +1,12 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PopUpController : MonoBehaviour
 {
-    public SoundManager soundManager;//나중에private
-    private float currentTimeScale;
+    private SoundManager soundManager;//나중에private
+    private float currentTimeScale;    
 
     private void Start()
     {

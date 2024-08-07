@@ -11,7 +11,7 @@ public class UnitUpgradeController : MonoBehaviour
     private DataTable_UpgradeLoader upgradeLoader;
 
     [Header("UpgradeSlot")]
-    public GameObject slots;
+    public GameObject slots;//켜져있어야함
     private UnitUpgradeSlot[] upgradeSlots;
     private Dictionary<int, UnitData> slotDic;
 
@@ -31,13 +31,11 @@ public class UnitUpgradeController : MonoBehaviour
     }
 
     //강화탭 이동할때//BTN
-    public void OnUnitUpgradeTab()
+    public void OnUnitTab()
     {
         GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Intro);
 
         NormalSetUpgradeSlots();
-
-        slots.SetActive(true);
     }
 
     private void NormalSetUpgradeSlots()

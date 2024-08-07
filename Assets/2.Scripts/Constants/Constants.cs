@@ -59,4 +59,11 @@ namespace Constants
         BTier,
     }
 
+    public enum TabType
+    {
+        Shop,
+        Home,
+        Gacha,
+        Unit,
+    }
 }
