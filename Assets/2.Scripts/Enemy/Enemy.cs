@@ -121,7 +121,7 @@ public class Enemy : MonoBehaviour
             //transform.localScale = new Vector3(0.65f, 0.65f);
             transform.localScale *= 1.2f;
             // 보스 몬스터가 일반 몬스터보다 앞에 보이게
-            image.sortingOrder += 5;
+            image.sortingOrder++;
             isBoss = true;
         }
         // 일반 마물인 경우

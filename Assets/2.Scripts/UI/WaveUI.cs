@@ -102,7 +102,7 @@ public class WaveUI : MonoBehaviour
                 enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
             }
             // 다음이 보스 Wave일 때
-            else if (tmpWave == 0 && currentWave != 50)
+            else if (tmpWave == 0/* && currentWave != 50*/)
             {
                 isBossWave = true;
 
@@ -112,19 +112,19 @@ public class WaveUI : MonoBehaviour
                 enemySpawn.RestartSpawnEnemy(bossCount, currentWave, true);
             }
             // 다음이 50 Wave일 때
-            else
-            {
-                isBossWave = true;
+            //else
+            //{
+            //    isBossWave = true;
 
-                int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
-                int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
+            //    int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
+            //    int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
 
-                timerUI.SetTimer(setTime);
-                enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
-                enemySpawn.RestartSpawnEnemy(bossCount, currentWave, true);
+            //    timerUI.SetTimer(setTime);
+            //    enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
+            //    enemySpawn.RestartSpawnEnemy(bossCount, currentWave, true);
 
-                GameManager.Instance.SoundManager.BGMChange(2);
-            }
+            //    GameManager.Instance.SoundManager.BGMChange(2);
+            //}
         }
     }
 
