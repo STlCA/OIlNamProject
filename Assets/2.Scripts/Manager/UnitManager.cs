@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 using Unity.VisualScripting;
 using JetBrains.Annotations;
 using Constants;
+using TMPro;
 
 [Serializable]
 public struct Save_UnitData
@@ -30,7 +31,7 @@ public struct PieceSaveData
 [Serializable]
 public class PieceData
 {
-    public int unitPiece = 0;
+    public int unitPiece = 30;    
 
     public int sPiece = 0;
     public int aPiece = 0;
@@ -166,6 +167,9 @@ public class UnitManager : Manager
     private DataTable_UnitLoader unitLoader; // °¡Áö°í¸¸¿È
     private DataTable_UpgradeLoader upgradeLoader; //°¡Áö°í¸¸¿È
 
+    [Header("UI")]
+    public TMP_Text tabPieceTxt; 
+    //[HideInInspector]
     public PieceData pieceData = new();
 
     //public List<UnitData> unitDataBase = new();
@@ -200,6 +204,10 @@ public class UnitManager : Manager
         }
 
         InitTierID();
+        ChangeAllUnitPiece();
+
+        //Temp
+        pieceData.unitPiece = 30;
     }
 
     private void FirstInit()
@@ -291,6 +299,13 @@ public class UnitManager : Manager
                     unit.piece = pieceData.bPiece; break;
             }
         }
+
+        tabPieceTxt.text = pieceData.unitPiece.ToString() + " / 30";
+
+        if (pieceData.unitPiece >= 30)
+            tabPieceTxt.color = Color.cyan;
+        else
+            tabPieceTxt.color = Color.gray;
     }
 
     //¿µ¿õÁ¶°¢ »ç¿ë ¼¼Æ® ¹­À½
