@@ -71,7 +71,7 @@ public class UnitUpgradeController : MonoBehaviour
         upgradeSlots[slotNum].UpdateText();
     }
 
-    //°¡Ã­ÅÇBTN
+    //°¡Ã­BTN
     public void GachaUnitPieceBtn(int count)
     {
         unitManager.GachaUnitPiece(count);

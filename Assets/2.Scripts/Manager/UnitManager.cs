@@ -171,8 +171,17 @@ public class UnitManager : Manager
     public TMP_Text tabPieceTxt;
     public TMP_Text gachaTabPieceTxt;
     public GameObject falseGacha;
+    public GameObject resultUI;
+    public TMP_Text resultPieceTxt;
+    public List<TMP_Text> resultTierPiece;
+    public List<GameObject> tierAnim;
+    public GameObject gachaAnim;
+
     //[HideInInspector]
     public PieceData pieceData = new();
+    private int tempSPiece;
+    private int tempAPiece;
+    private int tempBPiece;
 
     //public List<UnitData> unitDataBase = new();
     public Dictionary<int, UnitData> unitDataDic = new();
@@ -206,17 +215,25 @@ public class UnitManager : Manager
         }
 
         InitTierID();
-        ChangeAllUnitPiece();
 
         //Temp
         //pieceData.unitPiece = 30;
     }
 
-    public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt,GameObject falseGacha)
+    public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt, GameObject falseGacha, 
+        GameObject resultUI, TMP_Text resultPieceTxt, List<TMP_Text> resultTierPiece,
+        List<GameObject> tierAnim,GameObject gachaAnim)
     {
         tabPieceTxt = tabTxt;
         gachaTabPieceTxt = gachaTabTxt;
         this.falseGacha = falseGacha;
+        this.resultUI = resultUI;
+        this.resultPieceTxt = resultPieceTxt;
+        this.resultTierPiece = resultTierPiece;
+        this.tierAnim = tierAnim;
+        this.gachaAnim = gachaAnim;
+
+        ChangeAllUnitPiece();
     }
 
     private void FirstInit()
@@ -289,9 +306,30 @@ public class UnitManager : Manager
         for (int i = 0; i < count; i++)
         {
             type = Random.Range(1, 4);//0번은 유닛모집권
+
+            switch (type)
+            {
+                case 1:
+                    tempSPiece++; break;
+                case 2:
+                    tempAPiece++; break;
+                case 3:
+                    tempBPiece++; break;
+            }
+
             pieceData.UsePiece((PieceType)type, 1);
             pieceData.UsePiece(PieceType.Unit, -30);
         }
+
+        gachaAnim.SetActive(true);
+
+        if (tempSPiece>=1)
+            tierAnim[0].SetActive(true);
+        else if(tempAPiece>=1)
+            tierAnim[1].SetActive(true);
+        else if(tempBPiece>=1)
+            tierAnim[2].SetActive(true);
+
 
         ChangeAllUnitPiece();
     }
@@ -310,7 +348,7 @@ public class UnitManager : Manager
                 case (int)UnitTier.BTier:
                     unit.piece = pieceData.bPiece; break;
             }
-        }        
+        }
 
         tabPieceTxt.text = pieceData.unitPiece.ToString() + " / 30";
 
@@ -320,6 +358,7 @@ public class UnitManager : Manager
             tabPieceTxt.color = Color.gray;
 
         gachaTabPieceTxt.text = pieceData.unitPiece.ToString();
+        resultPieceTxt.text = pieceData.unitPiece.ToString();
     }
 
     //영웅조각 사용 세트 묶음
@@ -419,7 +458,20 @@ public class UnitManager : Manager
         return unit;
     }
 
+    public void ResultSetting(GameObject go)
+    {
+        resultTierPiece[0].text = tempBPiece.ToString();
+        resultTierPiece[1].text = tempAPiece.ToString();
+        resultTierPiece[2].text = tempSPiece.ToString();
 
+        tempBPiece = 0;
+        tempAPiece = 0;
+        tempSPiece = 0;
+
+        resultUI.SetActive(true);
+        go.SetActive(false);
+        gachaAnim.SetActive(false);
+    }
 
 
 
@@ -458,7 +510,7 @@ public class UnitManager : Manager
             item.Save(ref newData);
 
             data.unitSaveDatas.Add(newData);
-        }        
+        }
 
         PieceSaveData newPiece = new();
         pieceData.Save(ref newPiece);

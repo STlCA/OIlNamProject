@@ -15,14 +15,19 @@ public class MainSceneManager : MonoBehaviour
     private UnitManager unitManager;
     private UnitUpgradeController unitUpgradeController;
 
-    [Header("UI : SHOP / HOME / GACHA / UNIT")]    
+    [Header("UI : SHOP / HOME / GACHA / UNIT")]
     public List<GameObject> tabUI;
     public List<GameObject> btnUI;
 
-    [Header("UI")]
+    [Header("UI")]//UnitManager·Î
     public TMP_Text tabPieceTxt;
     public TMP_Text gachaTabPieceTxt;
     public GameObject falseGacha;
+    public GameObject resultUI;
+    public TMP_Text resultPieceTxt;
+    public List<TMP_Text> resultTierPiece;
+    public List<GameObject> tierAnim;
+    public GameObject gachaAnim;
 
     [Header("GoldUI")]
     public TMP_Text goldTxt;
@@ -81,10 +86,10 @@ public class MainSceneManager : MonoBehaviour
         gameManager.SoundManager.SourceSet(bgmSource, effectSource, gameSource);
         gameManager.SoundManager.BGMChange(1);
 
-        unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha);
-}
+        unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim);
+    }
 
-public void GameStart(GameObject ui)
+    public void GameStart(GameObject ui)
     {
         GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Lobby);
 
