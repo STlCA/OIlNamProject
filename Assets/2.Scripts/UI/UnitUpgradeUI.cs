@@ -83,7 +83,6 @@ public class UnitUpgradeUI : MonoBehaviour
     public void ClickUnitUpgrade()
     {
         upgradeController.UpdateSlot(slotNum);
-
         UpdateText();
     }
 }

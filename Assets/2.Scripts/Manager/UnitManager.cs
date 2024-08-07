@@ -8,11 +8,64 @@ using Random = UnityEngine.Random;
 using UnityEditor.UIElements;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
+using JetBrains.Annotations;
+using Constants;
 
 [Serializable]
 public struct Save_UnitData
 {
     public List<UnitSaveData> unitSaveDatas;
+    public PieceSaveData pieceData;
+}
+[Serializable]
+public struct PieceSaveData
+{
+    public int unitPiece;
+
+    public int sPiece;
+    public int aPiece;
+    public int bPiece;
+}
+
+[Serializable]
+public class PieceData
+{
+    public int unitPiece = 0;
+
+    public int sPiece = 0;
+    public int aPiece = 0;
+    public int bPiece = 0;
+
+    public void UsePiece(PieceType type, int value)
+    {
+        switch (type)
+        {
+            case PieceType.Unit:
+                unitPiece += value; break;
+            case PieceType.STier:
+                sPiece += value; break;
+            case PieceType.ATier:
+                aPiece += value; break;
+            case PieceType.BTier:
+                bPiece += value; break;
+        }
+    }
+
+    public void Save(ref PieceSaveData data)
+    {
+        data.unitPiece = unitPiece;
+        data.sPiece = sPiece;
+        data.aPiece = aPiece;
+        data.bPiece = bPiece;
+    }
+
+    public void Load(PieceSaveData data)
+    {
+        unitPiece = data.unitPiece;
+        sPiece = data.sPiece;
+        aPiece = data.aPiece;
+        bPiece = data.bPiece;
+    }
 }
 
 [Serializable]
@@ -92,13 +145,17 @@ public class UnitData
         data.Open = open;
     }
 
-    public void Upgrade()
+    //필요한 업그레이드 조각 개수 리턴 --> 나중엔 필요없을지도
+    public int Upgrade()
     {
-        piece -= upgradeData.NeedPiece[level];
+        //나중에 캐릭별 조각으로 바뀌면 필요
+        //piece -= upgradeData.NeedPiece[level];
         atk += upgradeData.ATK[level];
         speed += upgradeData.Speed[level];
         range += upgradeData.Range[level];
         level++;
+
+        return upgradeData.NeedPiece[level - 1];
     }
 }
 
@@ -108,6 +165,8 @@ public class UnitManager : Manager
     public DataManager DataManager;
     private DataTable_UnitLoader unitLoader; // 가지고만옴
     private DataTable_UpgradeLoader upgradeLoader; //가지고만옴
+
+    public PieceData pieceData = new();
 
     //public List<UnitData> unitDataBase = new();
     public Dictionary<int, UnitData> unitDataDic = new();
@@ -196,8 +255,53 @@ public class UnitManager : Manager
     public UnitData GetByKey(int key)
     {
         return unitDataDic[key];
-    }    
+    }
 
+    // 영웅 뽑기할때
+    // 티어별 모집권뽑기
+    public void GachaUnitPiece(int count)
+    {
+        if (count * 30 > pieceData.unitPiece)
+            return;
+
+        int type = 0;
+
+        for (int i = 0; i < count; i++)
+        {
+            type = Random.Range(1, 4);//0번은 유닛모집권
+            pieceData.UsePiece((PieceType)type, 1);
+            pieceData.UsePiece(PieceType.Unit, -30);
+        }
+
+        ChangeAllUnitPiece();
+    }
+
+    //캐릭별 조각으로 짜놔서 필요
+    public void ChangeAllUnitPiece()
+    {
+        foreach (var (key, unit) in unitDataDic)
+        {
+            switch (unit.tier)
+            {
+                case (int)UnitTier.STier:
+                    unit.piece = pieceData.sPiece; break;
+                case (int)UnitTier.ATier:
+                    unit.piece = pieceData.aPiece; break;
+                case (int)UnitTier.BTier:
+                    unit.piece = pieceData.bPiece; break;
+            }
+        }
+    }
+
+    //영웅조각 사용 세트 묶음
+    public void UsePiece(int val)
+    {
+        pieceData.UsePiece(PieceType.Unit, -val);
+        ChangeAllUnitPiece();
+    }
+
+    //영웅 뽑기할때
+    //영웅을 직접뽑기
     public void GachaNewUnit(int count)
     {
         int keyCount = 0;
@@ -257,6 +361,8 @@ public class UnitManager : Manager
         return null;
     }
 
+    //인게임 유닛 뽑기
+    //티어랜덤으로 정하면 그 티어중 랜덤으로 유닛 뽑아짐
     public UnitData GetRandomUnit(int tier)
     {
         int index;
@@ -324,7 +430,11 @@ public class UnitManager : Manager
             item.Save(ref newData);
 
             data.unitSaveDatas.Add(newData);
-        }
+        }        
+
+        PieceSaveData newPiece = new();
+        pieceData.Save(ref newPiece);
+        data.pieceData = newPiece;
     }
 
     //Start보다 전
@@ -338,5 +448,7 @@ public class UnitManager : Manager
 
             unitDataDic.Add(item.Key, unit);
         }
+
+        pieceData.Load(data.pieceData);
     }
 }
