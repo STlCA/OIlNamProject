@@ -24,9 +24,9 @@ public class UnitUpgradeController : MonoBehaviour
         unitManager = GameManager.Instance.UnitManager;
         upgradeLoader = GameManager.Instance.DataManager.dataTable_UpgradeLoader;
 
-        upgradeSlots = slots.GetComponentsInChildren<UnitUpgradeSlot>();
+        //upgradeSlots = slots.GetComponentsInChildren<UnitUpgradeSlot>();
 
-        if (upgradeSlots.Length == 0)
+        if (upgradeSlots == null || upgradeSlots.Length == 0)
             Debug.Log("getcomponenets ¸øÇÏ´ÂÁß");
     }
 
@@ -69,5 +69,11 @@ public class UnitUpgradeController : MonoBehaviour
         //¼ø¼­¹Ù²î¸é¾ÈµÊ 1.½½·Ô¼Ó À¯´Ö°ª¹Ù²î±â 2.½½·ÔÅØ½ºÆ®¹Ù²î±â
         unitManager.UsePiece(slotDic[slotNum].Upgrade());//³ªÁß¿£ unitManager.UsePiece ÇÊ¿ä¾øÀ»Áöµµ
         upgradeSlots[slotNum].UpdateText();
+    }
+
+    //°¡Ã­ÅÇBTN
+    public void GachaUnitPieceBtn(int count)
+    {
+        unitManager.GachaUnitPiece(count);
     }
 }

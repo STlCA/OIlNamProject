@@ -31,7 +31,7 @@ public struct PieceSaveData
 [Serializable]
 public class PieceData
 {
-    public int unitPiece = 30;    
+    public int unitPiece = 0;
 
     public int sPiece = 0;
     public int aPiece = 0;
@@ -168,7 +168,9 @@ public class UnitManager : Manager
     private DataTable_UpgradeLoader upgradeLoader; //°¡Áö°í¸¸¿È
 
     [Header("UI")]
-    public TMP_Text tabPieceTxt; 
+    public TMP_Text tabPieceTxt;
+    public TMP_Text gachaTabPieceTxt;
+    public GameObject falseGacha;
     //[HideInInspector]
     public PieceData pieceData = new();
 
@@ -207,7 +209,14 @@ public class UnitManager : Manager
         ChangeAllUnitPiece();
 
         //Temp
-        pieceData.unitPiece = 30;
+        //pieceData.unitPiece = 30;
+    }
+
+    public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt,GameObject falseGacha)
+    {
+        tabPieceTxt = tabTxt;
+        gachaTabPieceTxt = gachaTabTxt;
+        this.falseGacha = falseGacha;
     }
 
     private void FirstInit()
@@ -270,7 +279,10 @@ public class UnitManager : Manager
     public void GachaUnitPiece(int count)
     {
         if (count * 30 > pieceData.unitPiece)
+        {
+            falseGacha.SetActive(true);
             return;
+        }
 
         int type = 0;
 
@@ -298,7 +310,7 @@ public class UnitManager : Manager
                 case (int)UnitTier.BTier:
                     unit.piece = pieceData.bPiece; break;
             }
-        }
+        }        
 
         tabPieceTxt.text = pieceData.unitPiece.ToString() + " / 30";
 
@@ -306,6 +318,8 @@ public class UnitManager : Manager
             tabPieceTxt.color = Color.cyan;
         else
             tabPieceTxt.color = Color.gray;
+
+        gachaTabPieceTxt.text = pieceData.unitPiece.ToString();
     }
 
     //¿µ¿õÁ¶°¢ »ç¿ë ¼¼Æ® ¹­À½
@@ -404,7 +418,6 @@ public class UnitManager : Manager
 
         return unit;
     }
-
 
 
 
