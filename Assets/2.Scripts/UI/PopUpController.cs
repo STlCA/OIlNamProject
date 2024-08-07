@@ -6,14 +6,12 @@ using UnityEngine;
 public class PopUpController : MonoBehaviour
 {
     private SoundManager soundManager;//³ªÁß¿¡private
-    private float currentTimeScale;
-
-    public GameObject text1;
+    private float currentTimeScale;    
 
     private void Start()
     {
-        if (GameManager.Instance != null)
-            soundManager = GameManager.Instance.SoundManager;
+        if(GameManager.Instance != null)
+            soundManager = GameManager.Instance.SoundManager;     
     }
 
     //ON OFF Change
@@ -54,7 +52,7 @@ public class PopUpController : MonoBehaviour
     public void PauseUIOn(GameObject ui)
     {
         soundManager.EffectAudioClipPlay(0);
-
+        
         if (ui == null)
             return;
 
