@@ -24,7 +24,8 @@ public class UnitUpgradeController : MonoBehaviour
         unitManager = GameManager.Instance.UnitManager;
         upgradeLoader = GameManager.Instance.DataManager.dataTable_UpgradeLoader;
 
-        //upgradeSlots = slots.GetComponentsInChildren<UnitUpgradeSlot>();
+        if(slots != null )
+            upgradeSlots = slots.GetComponentsInChildren<UnitUpgradeSlot>();
 
         if (upgradeSlots == null || upgradeSlots.Length == 0)
             Debug.Log("getcomponenets 못하는중");
