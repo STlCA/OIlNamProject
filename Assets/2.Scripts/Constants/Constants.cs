@@ -44,4 +44,19 @@ namespace Constants
         Lobby,
     }
 
+    public enum PieceType
+    {
+        Unit,
+        STier,
+        ATier,
+        BTier,
+    }
+
+    public enum UnitTier
+    {
+        STier = 1,
+        ATier,
+        BTier,
+    }
+
 }
