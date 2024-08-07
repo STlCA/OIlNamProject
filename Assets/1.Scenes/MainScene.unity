@@ -21845,7 +21845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slots: {fileID: 1312330351}
-  unitUpgradeUI: {fileID: 0}
+  unitUpgradeUI: {fileID: 1411279063}
 --- !u!1 &827398383
 GameObject:
   m_ObjectHideFlags: 0
@@ -38054,7 +38054,7 @@ GameObject:
   - component: {fileID: 1411279062}
   - component: {fileID: 1411279063}
   m_Layer: 5
-  m_Name: <UnitUpgrade>
+  m_Name: <UnitUpgradeUI>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
