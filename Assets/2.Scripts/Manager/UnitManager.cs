@@ -83,6 +83,7 @@ public class UnitData
 {
     //기본정보
     public int key;
+    public int upgradeKey;
     public string name;
     public int tier;
     public int atk;
@@ -103,6 +104,7 @@ public class UnitData
     public void Init(DataTable_Unit unit)
     {
         key = unit.key;
+        upgradeKey = unit.UpgradeKey;
         name = unit.Name;
         tier = unit.Tier;
         atk = unit.ATK;
@@ -173,8 +175,8 @@ public class UnitManager : Manager
     public GameObject falseGacha;
     public GameObject resultUI;
     public TMP_Text resultPieceTxt;
-    public List<TMP_Text> resultTierPiece;
-    public List<GameObject> tierAnim;
+    public List<TMP_Text> resultTierPiece = new();
+    public List<GameObject> tierAnim = new();
     public GameObject gachaAnim;
 
     //[HideInInspector]
@@ -209,7 +211,7 @@ public class UnitManager : Manager
             upgradeLoader = DataManager.dataTable_UpgradeLoader;
         }
 
-        if (unitDataDic == null)
+        if (unitDataDic.Count == 0)
         {
             FirstInit();
         }

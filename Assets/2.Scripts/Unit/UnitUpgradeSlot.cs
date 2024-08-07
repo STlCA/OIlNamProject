@@ -20,6 +20,7 @@ public class UnitUpgradeSlot : MonoBehaviour
     public void Init(UnitData item, DataTable_Upgrade dataTable_Upgrade)
     {
         myUnitData = item;
+        myUpgradeData = dataTable_Upgrade;
 
         UpdateText();
     }

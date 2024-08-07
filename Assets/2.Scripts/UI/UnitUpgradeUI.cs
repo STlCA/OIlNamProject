@@ -29,7 +29,7 @@ public class UnitUpgradeUI : MonoBehaviour
     //public TMP_Text plusSpeedTxt;
     public TMP_Text upgradeGoldTxt;
 
-    public void Init(UnitUpgradeController controller,int slot, UnitData unitData, DataTable_Upgrade upgradeData)
+    public void Init(UnitUpgradeController controller, int slot, UnitData unitData, DataTable_Upgrade upgradeData)
     {
         upgradeController = controller;
         slotNum = slot;
@@ -68,10 +68,20 @@ public class UnitUpgradeUI : MonoBehaviour
             btnFalseImage.gameObject.SetActive(true);
 
         nameTxt.text = myUnitData.name;
-        tierTxt.text = myUnitData.tier.ToString();
+
+        switch (myUnitData.tier)
+        {
+            case 1:
+                tierTxt.text = "S 티어"; break;
+            case 2:
+                tierTxt.text = "A 티어"; break;
+            case 3:
+                tierTxt.text = "B 티어"; break;
+        }
+
         levelTxt.text = "Lv. " + myUnitData.level.ToString();
         pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
-        atkTxt.text = "공격력\n" + myUnitData.atk.ToString();
+        atkTxt.text = "공격력 " + myUnitData.atk.ToString();
         plusAtkTxt.text = "+" + myUpgradeData.ATK[myUnitData.level].ToString();
         speedTxt.text = myUnitData.speed.ToString();
         //plusSpeedTxt.text = "+" + upgradeData.Speed[unitData.level].ToString();

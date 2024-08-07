@@ -13,7 +13,7 @@ public class UnitUpgradeController : MonoBehaviour
     [Header("UpgradeSlot")]
     public GameObject slots;//켜져있어야함
     private UnitUpgradeSlot[] upgradeSlots;
-    private Dictionary<int, UnitData> slotDic;
+    private Dictionary<int, UnitData> slotDic = new();
 
     [Header("UpgradeUI")]
     public UnitUpgradeUI unitUpgradeUI;
@@ -48,7 +48,7 @@ public class UnitUpgradeController : MonoBehaviour
         foreach (var (key, item) in unitManager.unitDataDic)
         {
             slotDic.Add(index, item);
-            upgradeSlots[index].Init(item, upgradeLoader.GetByKey(key));
+            upgradeSlots[index].Init(item, upgradeLoader.GetByKey(item.upgradeKey));
 
             index++;
         }
@@ -60,7 +60,7 @@ public class UnitUpgradeController : MonoBehaviour
         //매개변수에 go를 받아서
         //UnitUpgradeSlot slot = go.GetComponentInChildren<UnitUpgradeSlot>();
 
-        unitUpgradeUI.Init(this, slotNum, slotDic[slotNum], upgradeLoader.GetByKey(slotDic[slotNum].key));
+        unitUpgradeUI.Init(this, slotNum, slotDic[slotNum], upgradeLoader.GetByKey(slotDic[slotNum].upgradeKey));
         unitUpgradeUI.gameObject.SetActive(true);
     }
 

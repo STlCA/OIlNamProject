@@ -51,6 +51,11 @@ public class DataTable_Unit
     /// </summary>
     public string Path;
 
+    /// <summary>
+    /// UpgradeKey
+    /// </summary>
+    public int UpgradeKey;
+
 }
 public class DataTable_UnitLoader
 {
