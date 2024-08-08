@@ -69,7 +69,13 @@ public class UnitUpgradeController : MonoBehaviour
     {
         //순서바뀌면안됨 1.슬롯속 유닛값바뀌기 2.슬롯텍스트바뀌기
         unitManager.UsePiece((PieceType)tier, slotDic[slotNum].Upgrade());//나중엔 unitManager.UsePiece 필요없을지도
-        upgradeSlots[slotNum].UpdateText();
+        //^ 티어별 피스 바꾸기 , 몇개의 needPiece인지 반환, 피스바꾸기
+
+        foreach(var slot in upgradeSlots)
+        {
+            if (slot.myUnitData.tier == tier)
+                slot.UpdateText();
+        }
     }
 
     //가챠BTN

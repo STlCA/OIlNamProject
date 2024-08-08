@@ -62,7 +62,7 @@ public class UnitUpgradeUI : MonoBehaviour
 
     public void UpdateText()
     {
-        if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level] && myUpgradeData.UseGold[myUnitData.level] <= GameManager.Instance.Diamond)
+        if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level] && myUpgradeData.UseGold[myUnitData.level] <= GameManager.Instance.Gold)
             btnFalseImage.gameObject.SetActive(false);
         else
             btnFalseImage.gameObject.SetActive(true);
@@ -92,7 +92,8 @@ public class UnitUpgradeUI : MonoBehaviour
     //강화버튼 눌렀을때 //BTN
     public void ClickUnitUpgrade()
     {
-        upgradeController.UpdateSlot(myUnitData.tier,slotNum);
-        UpdateText();
+        GameManager.Instance.Gold = -myUpgradeData.UseGold[myUnitData.level];//골드 빠져나가고
+        upgradeController.UpdateSlot(myUnitData.tier,slotNum);//모든슬롯 업데이트해야하고
+        UpdateText();//강화창 업데이트
     }
 }
