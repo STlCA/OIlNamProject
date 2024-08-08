@@ -26,7 +26,7 @@ public class DataManager : Manager
         BossAwake();
         MessageAwake();
         StoryAwake();
-        UnitAwake();        
+        UnitAwake();
     }
 
     private void EnemyAwake()

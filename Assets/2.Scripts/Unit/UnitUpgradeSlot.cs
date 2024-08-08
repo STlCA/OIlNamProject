@@ -29,7 +29,8 @@ public class UnitUpgradeSlot : MonoBehaviour
 
     public void UpdateText()
     {
-        unitImage.sprite = myUnitData.sprite;
+        unitImage.sprite = myUnitData.profile;
+        unitImage.SetNativeSize();
 
         nameTxt.text = myUnitData.name;
         levelTxt.text = "Lv. " + myUnitData.level.ToString();

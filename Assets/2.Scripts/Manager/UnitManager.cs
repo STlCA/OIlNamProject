@@ -96,6 +96,7 @@ public class UnitData
     public int piece;
 
     //Sprite
+    public Sprite profile;
     public Sprite sprite;
 
     //업그레이드 정보
@@ -117,7 +118,8 @@ public class UnitData
         level = 0;
         piece = 0;
 
-        sprite = Resources.Load<Sprite>("Unit/" + unit.Path);
+        profile = Resources.Load<Sprite>("Unit/Profile/" + unit.Profile);
+        sprite = Resources.Load<Sprite>("Unit" + unit.Sprite);
     }
 
     public void Load(UnitSaveData data, DataTable_Upgrade upgradeData)
@@ -208,7 +210,7 @@ public class UnitManager : Manager
 
     private void Start()
     {
-        if (GameManager.Instance == null)
+        if (GameManager.Instance == null || unitLoader == null)
         {
             unitLoader = DataManager.dataTable_UnitLoader;
             upgradeLoader = DataManager.dataTable_UpgradeLoader;

@@ -42,7 +42,7 @@ public class UnitUpgradeUI : MonoBehaviour
 
         key = unitData.key;
 
-        unitImage.sprite = unitData.sprite;
+        unitImage.sprite = unitData.profile;
 
         switch (unitData.tier)
         {
