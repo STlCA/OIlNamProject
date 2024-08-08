@@ -36,6 +36,11 @@ public class DataTable_Enemy
     /// </summary>
     public string Path;
 
+    /// <summary>
+    /// Monster_Animatior
+    /// </summary>
+    public string Anim;
+
 }
 public class DataTable_EnemyLoader
 {
