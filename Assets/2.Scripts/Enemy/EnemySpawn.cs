@@ -111,7 +111,9 @@ public class EnemySpawn : MonoBehaviour
         {
             if (bossID > -1)
             {
+                // 보스 등장 팝업
                 StartCoroutine(wavePopUp.PopUp("보스 등장", Color.red));
+
                 enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
                 currentCount++;
                 isBossDead = false;
@@ -150,6 +152,9 @@ public class EnemySpawn : MonoBehaviour
         if(enemy.isBoss)
         {
             isBossDead = true;
+
+            // 보스 클리어 팝업
+            StartCoroutine(wavePopUp.PopUp("보스 클리어", Color.yellow));
 
             // 50 Wave일 때 일반 마물들도 다 죽었다면
             if (enemyList.Count == 0 && waveUI.currentWave == 50)
