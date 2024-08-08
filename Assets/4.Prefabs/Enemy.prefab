@@ -484,6 +484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMove: {fileID: 0}
+  damagePrefab: {fileID: 7568666017246621499, guid: b4cf97d47444cf9429f43bf7984f9c29,
+    type: 3}
   isBoss: 0
   enemyHpSlider: {fileID: 635976974407261022}
 --- !u!114 &1334607384761096248

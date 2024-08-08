@@ -1,3 +1,4 @@
+using DamageNumbersPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,8 +53,10 @@ public class Enemy : MonoBehaviour
     private DataTable_BossLoader bossDatabase;
     private DataTable_ChapterLoader chapterDatabase;
     private GameSceneManager gameSceneManager;//수정
-    private EnemySpawn enemySpawn;   
+    private EnemySpawn enemySpawn;
     //private EnemyHPBar enemyHPBar;
+
+    [SerializeField] DamageNumber damagePrefab;
 
     // 마물 정보
     //public DataTable_Enemy enemyData;
@@ -179,6 +182,9 @@ public class Enemy : MonoBehaviour
         // 마물 hp바
         enemyHpSlider.value = hp / maxHP;
         //enemyHPBar.UpdateHPBar();
+
+        // 데미지
+        DamageNumber damageNumber = damagePrefab.Spawn(transform.position, damage);
 
         // 적이 죽었을 때
         if (hp <= 0)
