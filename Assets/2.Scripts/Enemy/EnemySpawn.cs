@@ -124,9 +124,15 @@ public class EnemySpawn : MonoBehaviour
 
         enemyMove.Init(enemyID, bossID, wayPoints, isBoss);
 
+        // 마물이 100마리 이상일 시 게임 오버
         if (enemyList.Count >= 100)
         {
             GameOver();
+        }
+        // 마물이 70마리 이상일 시 경고창 팝업
+        else if(enemyList.Count >= 70)
+        {
+            StartCoroutine(wavePopUp.PopUp("마물의 수가 너무 많습니다!!", Color.red));
         }
 
         UpdateEnemyCountUI();
