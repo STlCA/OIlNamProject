@@ -8,4 +8,8 @@ public class ResultUI : MonoBehaviour
     {
         GameManager.Instance.UnitManager.ResultSetting(gameObject);        
     }
+    public void OnResultSkip()
+    {
+        GameManager.Instance.UnitManager.ResultSetting();
+    }
 }
