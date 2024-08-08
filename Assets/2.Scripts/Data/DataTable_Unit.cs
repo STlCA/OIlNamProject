@@ -61,6 +61,11 @@ public class DataTable_Unit
     /// </summary>
     public int UpgradeKey;
 
+    /// <summary>
+    /// StepKey
+    /// </summary>
+    public int StepKey;
+
 }
 public class DataTable_UnitLoader
 {

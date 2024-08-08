@@ -17,7 +17,7 @@ public class DataManager : Manager
     //Unit
     public DataTable_UnitLoader dataTable_UnitLoader;
     public DataTable_UpgradeLoader dataTable_UpgradeLoader;
-
+    public DataTable_UnitStepLoader dataTable_UnitStepLoader;
 
     private void Awake()
     {
@@ -69,5 +69,6 @@ public class DataManager : Manager
     {
         dataTable_UnitLoader = new DataTable_UnitLoader();
         dataTable_UpgradeLoader = new DataTable_UpgradeLoader();
+        dataTable_UnitStepLoader = new DataTable_UnitStepLoader();
     }
 }
