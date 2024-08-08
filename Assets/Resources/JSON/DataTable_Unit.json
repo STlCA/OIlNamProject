@@ -8,10 +8,12 @@
       "ATK": 43,
       "Speed": 9500,
       "Range": 280,
-      "Open": false,
+      "Open": true,
       "Profile": "SS1",
       "Sprite": "SS1",
-      "UpgradeKey": 701
+      "UpgradeKey": 701,
+      "StepKey": 601,
+      "UnitType": "Sword"
     },
     {
       "key": 202,
@@ -21,10 +23,12 @@
       "ATK": 37,
       "Speed": 8700,
       "Range": 280,
-      "Open": false,
+      "Open": true,
       "Profile": "SS2",
       "Sprite": "SS2",
-      "UpgradeKey": 702
+      "UpgradeKey": 702,
+      "StepKey": 602,
+      "UnitType": "Sword"
     },
     {
       "key": 203,
@@ -34,10 +38,12 @@
       "ATK": 32,
       "Speed": 10600,
       "Range": 260,
-      "Open": false,
+      "Open": true,
       "Profile": "SA1",
       "Sprite": "SA1",
-      "UpgradeKey": 703
+      "UpgradeKey": 703,
+      "StepKey": 603,
+      "UnitType": "Sword"
     },
     {
       "key": 204,
@@ -50,7 +56,9 @@
       "Open": true,
       "Profile": "SA2",
       "Sprite": "SA2",
-      "UpgradeKey": 704
+      "UpgradeKey": 704,
+      "StepKey": 604,
+      "UnitType": "Sword"
     },
     {
       "key": 205,
@@ -63,7 +71,9 @@
       "Open": true,
       "Profile": "SB1",
       "Sprite": "SB1",
-      "UpgradeKey": 705
+      "UpgradeKey": 705,
+      "StepKey": 605,
+      "UnitType": "Sword"
     },
     {
       "key": 206,
@@ -76,7 +86,9 @@
       "Open": true,
       "Profile": "SB2",
       "Sprite": "SB2",
-      "UpgradeKey": 706
+      "UpgradeKey": 706,
+      "StepKey": 606,
+      "UnitType": "Sword"
     },
     {
       "key": 207,
@@ -89,7 +101,9 @@
       "Open": true,
       "Profile": "AS1",
       "Sprite": "AS1",
-      "UpgradeKey": 707
+      "UpgradeKey": 707,
+      "StepKey": 607,
+      "UnitType": "Archer"
     },
     {
       "key": 208,
@@ -102,7 +116,9 @@
       "Open": true,
       "Profile": "AS2",
       "Sprite": "AS2",
-      "UpgradeKey": 708
+      "UpgradeKey": 708,
+      "StepKey": 608,
+      "UnitType": "Archer"
     },
     {
       "key": 209,
@@ -115,7 +131,9 @@
       "Open": true,
       "Profile": "AA1",
       "Sprite": "AA1",
-      "UpgradeKey": 709
+      "UpgradeKey": 709,
+      "StepKey": 609,
+      "UnitType": "Archer"
     },
     {
       "key": 210,
@@ -128,7 +146,9 @@
       "Open": true,
       "Profile": "AA2",
       "Sprite": "AA2",
-      "UpgradeKey": 710
+      "UpgradeKey": 710,
+      "StepKey": 610,
+      "UnitType": "Archer"
     },
     {
       "key": 211,
@@ -141,7 +161,9 @@
       "Open": true,
       "Profile": "AB1",
       "Sprite": "AB1",
-      "UpgradeKey": 711
+      "UpgradeKey": 711,
+      "StepKey": 611,
+      "UnitType": "Archer"
     },
     {
       "key": 212,
@@ -154,7 +176,9 @@
       "Open": true,
       "Profile": "AB2",
       "Sprite": "AB2",
-      "UpgradeKey": 712
+      "UpgradeKey": 712,
+      "StepKey": 612,
+      "UnitType": "Archer"
     },
     {
       "key": 213,
@@ -167,7 +191,9 @@
       "Open": true,
       "Profile": "WS1",
       "Sprite": "WS1",
-      "UpgradeKey": 713
+      "UpgradeKey": 713,
+      "StepKey": 613,
+      "UnitType": "Wizard"
     },
     {
       "key": 214,
@@ -180,7 +206,9 @@
       "Open": true,
       "Profile": "WS2",
       "Sprite": "WS2",
-      "UpgradeKey": 714
+      "UpgradeKey": 714,
+      "StepKey": 614,
+      "UnitType": "Wizard"
     },
     {
       "key": 215,
@@ -193,7 +221,9 @@
       "Open": true,
       "Profile": "WS3",
       "Sprite": "WS3",
-      "UpgradeKey": 715
+      "UpgradeKey": 715,
+      "StepKey": 615,
+      "UnitType": "Wizard"
     },
     {
       "key": 216,
@@ -206,7 +236,9 @@
       "Open": true,
       "Profile": "WA1",
       "Sprite": "WA1",
-      "UpgradeKey": 716
+      "UpgradeKey": 716,
+      "StepKey": 616,
+      "UnitType": "Wizard"
     },
     {
       "key": 217,
@@ -219,7 +251,9 @@
       "Open": true,
       "Profile": "WA2",
       "Sprite": "WA2",
-      "UpgradeKey": 717
+      "UpgradeKey": 717,
+      "StepKey": 617,
+      "UnitType": "Wizard"
     },
     {
       "key": 218,
@@ -232,7 +266,9 @@
       "Open": true,
       "Profile": "WA3",
       "Sprite": "WA3",
-      "UpgradeKey": 718
+      "UpgradeKey": 718,
+      "StepKey": 618,
+      "UnitType": "Wizard"
     },
     {
       "key": 219,
@@ -245,7 +281,9 @@
       "Open": true,
       "Profile": "WB1",
       "Sprite": "WB1",
-      "UpgradeKey": 719
+      "UpgradeKey": 719,
+      "StepKey": 619,
+      "UnitType": "Wizard"
     },
     {
       "key": 220,
@@ -258,7 +296,9 @@
       "Open": true,
       "Profile": "WB2",
       "Sprite": "WB2",
-      "UpgradeKey": 720
+      "UpgradeKey": 720,
+      "StepKey": 620,
+      "UnitType": "Wizard"
     },
     {
       "key": 221,
@@ -271,7 +311,9 @@
       "Open": true,
       "Profile": "WB3",
       "Sprite": "WB3",
-      "UpgradeKey": 721
+      "UpgradeKey": 721,
+      "StepKey": 621,
+      "UnitType": "Wizard"
     }
   ]
 }

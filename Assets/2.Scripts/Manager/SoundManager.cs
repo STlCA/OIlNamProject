@@ -101,6 +101,7 @@ public class SoundManager : Manager
 
     public void GameAudioClipPlay(int index)
     {
+        GameSource.Stop();
         GameSource.PlayOneShot(gameAudioList[index], 1);
     }
 }

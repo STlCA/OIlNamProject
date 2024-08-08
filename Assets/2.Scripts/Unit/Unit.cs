@@ -235,7 +235,7 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         skillGO.transform.position = findEnemy.transform.position;
         unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
         Debug.Log("Attack호출됨");
-        findEnemy.EnemyAttacked(myData.atk);
+        //findEnemy.EnemyAttacked(myData.atk); 공격력보내기
     }
 
     private Enemy FindEnemy()

@@ -84,12 +84,14 @@ public class UnitData
     //기본정보
     public int key;
     public int upgradeKey;
+    public int stepKey;
     public string name;
     public int tier;
-    public int atk;
-    public int speed;
+    public float atk;
+    public float speed;
     public int range;
     public bool open;
+    public string type;
 
     //강화용정보
     public int level;
@@ -97,7 +99,7 @@ public class UnitData
 
     //Sprite
     public Sprite profile;
-    public Sprite sprite;
+    public GameObject prefabs;
 
     //업그레이드 정보
     private DataTable_Upgrade upgradeData;
@@ -108,18 +110,20 @@ public class UnitData
 
         key = unit.key;
         upgradeKey = unit.UpgradeKey;
+        stepKey = unit.StepKey;
         name = unit.Name;
         tier = unit.Tier;
         atk = unit.ATK;
-        speed = unit.Speed;
+        speed = unit.Speed / 10000f;
         range = unit.Range;
         open = unit.Open;
+        type = unit.UnitType;
 
         level = 0;
         piece = 0;
 
         profile = Resources.Load<Sprite>("Unit/Profile/" + unit.Profile);
-        sprite = Resources.Load<Sprite>("Unit" + unit.Sprite);
+        prefabs = Resources.Load<GameObject>("Unit/Prefabs/" + unit.Sprite);
     }
 
     public void Load(UnitSaveData data, DataTable_Upgrade upgradeData)
@@ -229,7 +233,7 @@ public class UnitManager : Manager
 
     public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt, GameObject falseGacha,
         GameObject resultUI, TMP_Text resultPieceTxt, List<TMP_Text> resultTierPiece,
-        List<GameObject> tierAnim, GameObject gachaAnim,List<TMP_Text> unitTabTierPiece)
+        List<GameObject> tierAnim, GameObject gachaAnim, List<TMP_Text> unitTabTierPiece)
     {
         tabPieceTxt = tabTxt;
         gachaTabPieceTxt = gachaTabTxt;
@@ -309,7 +313,7 @@ public class UnitManager : Manager
             return;
         }
 
-        if(resultUI.activeSelf)
+        if (resultUI.activeSelf)
             resultUI.SetActive(false);
 
         int type = 0;
