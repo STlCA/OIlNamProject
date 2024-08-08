@@ -1,14 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-using static UnityEditor.Progress;
 using System;
 using Random = UnityEngine.Random;
-using UnityEditor.UIElements;
-using UnityEngine.InputSystem;
-using Unity.VisualScripting;
-using JetBrains.Annotations;
 using Constants;
 using TMPro;
 

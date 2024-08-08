@@ -108,25 +108,25 @@ public class EnemyMove : MonoBehaviour
         //direction = _direction;
         direction = (wayPoints[currentIndex].position - this.transform.position).normalized;
 
-        // 오른쪽
-        if (direction.x > 0)
-        {
-            animator.SetInteger("AnimState", (int)MoveStates.Right);
-        }
-        // 왼쪽
-        else if (direction.x < 0)
-        {
-            animator.SetInteger("AnimState", (int)MoveStates.Left);
-        }
-        // 위
-        else if (direction.y > 0)
-        {
-            animator.SetInteger("AnimState", (int)MoveStates.Up);
-        }
-        //아래
-        else if (direction.y < 0)
-        {
-            animator.SetInteger("AnimState", (int)MoveStates.Down);
-        }
+        //// 오른쪽
+        //if (direction.x > 0)
+        //{
+        //    animator.SetInteger("AnimState", (int)MoveStates.Right);
+        //}
+        //// 왼쪽
+        //else if (direction.x < 0)
+        //{
+        //    animator.SetInteger("AnimState", (int)MoveStates.Left);
+        //}
+        //// 위
+        //else if (direction.y > 0)
+        //{
+        //    animator.SetInteger("AnimState", (int)MoveStates.Up);
+        //}
+        ////아래
+        //else if (direction.y < 0)
+        //{
+        //    animator.SetInteger("AnimState", (int)MoveStates.Down);
+        //}
     }
 }

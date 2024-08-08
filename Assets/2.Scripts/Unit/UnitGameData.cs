@@ -1,12 +1,6 @@
-using Constants;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.UI;
 
 public class UnitGameData : MonoBehaviour, IPointerClickHandler
 {
