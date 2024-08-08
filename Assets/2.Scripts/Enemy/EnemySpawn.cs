@@ -19,6 +19,7 @@ public class EnemySpawn : MonoBehaviour
     private WaveUI waveUI;
     private LethalEnergy lethalEnergy;//수정
     public DataTable_ChapterLoader chapterDatabase;
+    private WavePopUp wavePopUp;
     //private PopUpController popUpController;
 
     private List<Enemy> enemyList;
@@ -56,6 +57,7 @@ public class EnemySpawn : MonoBehaviour
         
         //popUpController = gameManager.GetComponent<PopUpController>();
         chapterDatabase = dataManager.dataTable_ChapterLoader;
+        wavePopUp = GetComponent<WavePopUp>();
 
         waveUI.Init();
 
@@ -109,6 +111,7 @@ public class EnemySpawn : MonoBehaviour
         {
             if (bossID > -1)
             {
+                StartCoroutine(wavePopUp.PopUp("보스 등장", Color.red));
                 enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
                 currentCount++;
                 isBossDead = false;
