@@ -305,6 +305,9 @@ public class UnitManager : Manager
             return;
         }
 
+        if(resultUI.activeSelf)
+            resultUI.SetActive(false);
+
         int type = 0;
 
         for (int i = 0; i < count; i++)

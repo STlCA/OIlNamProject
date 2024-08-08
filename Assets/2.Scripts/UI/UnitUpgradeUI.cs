@@ -53,7 +53,7 @@ public class UnitUpgradeUI : MonoBehaviour
                 tierImage.color = Color.blue;
                 break;
             case 3:
-                tierImage.color = Color.black;
+                tierImage.color = Color.gray;
                 break;
         }
 
