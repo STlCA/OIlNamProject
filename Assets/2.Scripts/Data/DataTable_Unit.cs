@@ -47,9 +47,14 @@ public class DataTable_Unit
     public bool Open;
 
     /// <summary>
+    /// Unit_Profile
+    /// </summary>
+    public string Profile;
+
+    /// <summary>
     /// Unit_Modeling
     /// </summary>
-    public string Path;
+    public string Sprite;
 
     /// <summary>
     /// UpgradeKey

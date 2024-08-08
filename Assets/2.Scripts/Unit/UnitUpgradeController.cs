@@ -52,11 +52,15 @@ public class UnitUpgradeController : MonoBehaviour
 
             index++;
         }
+
+        unitManager.UnitPieceTextUpdate();
     }
 
     //강화창 켤때//BTN
-    public void OnUpgradeUI(int slotNum)//슬롯에 달아서 버튼클릭할때 스스로를 주기
+    public void OnUpgradeUI(GameObject go)//슬롯에 달아서 버튼클릭할때 스스로를 주기
     {
+        int slotNum = int.Parse(go.name.ToString());
+
         //매개변수에 go를 받아서
         //UnitUpgradeSlot slot = go.GetComponentInChildren<UnitUpgradeSlot>();
 

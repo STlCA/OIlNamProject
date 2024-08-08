@@ -96,6 +96,7 @@ public class UnitData
     public int piece;
 
     //Sprite
+    public Sprite profile;
     public Sprite sprite;
 
     //업그레이드 정보
@@ -117,7 +118,8 @@ public class UnitData
         level = 0;
         piece = 0;
 
-        sprite = Resources.Load<Sprite>("Unit/" + unit.Path);
+        profile = Resources.Load<Sprite>("Unit/Profile/" + unit.Profile);
+        sprite = Resources.Load<Sprite>("Unit" + unit.Sprite);
     }
 
     public void Load(UnitSaveData data, DataTable_Upgrade upgradeData)
@@ -178,6 +180,7 @@ public class UnitManager : Manager
     public GameObject resultUI;
     public TMP_Text resultPieceTxt;
     public List<TMP_Text> resultTierPiece = new();
+    public List<TMP_Text> unitTabTierPiece = new();
     public List<GameObject> tierAnim = new();
     public GameObject gachaAnim;
 
@@ -207,7 +210,7 @@ public class UnitManager : Manager
 
     private void Start()
     {
-        if (GameManager.Instance == null)
+        if (GameManager.Instance == null || unitLoader == null)
         {
             unitLoader = DataManager.dataTable_UnitLoader;
             upgradeLoader = DataManager.dataTable_UpgradeLoader;
@@ -226,7 +229,7 @@ public class UnitManager : Manager
 
     public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt, GameObject falseGacha,
         GameObject resultUI, TMP_Text resultPieceTxt, List<TMP_Text> resultTierPiece,
-        List<GameObject> tierAnim, GameObject gachaAnim)
+        List<GameObject> tierAnim, GameObject gachaAnim,List<TMP_Text> unitTabTierPiece)
     {
         tabPieceTxt = tabTxt;
         gachaTabPieceTxt = gachaTabTxt;
@@ -236,6 +239,7 @@ public class UnitManager : Manager
         this.resultTierPiece = resultTierPiece;
         this.tierAnim = tierAnim;
         this.gachaAnim = gachaAnim;
+        this.unitTabTierPiece = unitTabTierPiece;
 
         ChangeAllUnitPiece();
     }
@@ -304,6 +308,9 @@ public class UnitManager : Manager
             falseGacha.SetActive(true);
             return;
         }
+
+        if(resultUI.activeSelf)
+            resultUI.SetActive(false);
 
         int type = 0;
 
@@ -376,6 +383,7 @@ public class UnitManager : Manager
     {
         pieceData.UsePiece(type, -val);
         ChangeAllUnitPiece();
+        UnitPieceTextUpdate();
     }
 
     //영웅 뽑기할때
@@ -481,8 +489,17 @@ public class UnitManager : Manager
         resultUI.SetActive(true);
         gachaAnim.SetActive(false);
 
+        UnitPieceTextUpdate();
+
         if (go != null)
             go.SetActive(false);
+    }
+
+    public void UnitPieceTextUpdate()
+    {
+        unitTabTierPiece[0].text = "B 티어\n영웅 강화 주문서 " + pieceData.bPiece.ToString() + "개";
+        unitTabTierPiece[1].text = "A 티어\n영웅 강화 주문서 " + pieceData.aPiece.ToString() + "개";
+        unitTabTierPiece[2].text = "S 티어\n영웅 강화 주문서 " + pieceData.sPiece.ToString() + "개";
     }
 
 

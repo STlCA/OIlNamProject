@@ -11,6 +11,8 @@ public class UnitUpgradeSlot : MonoBehaviour
     public UnitData myUnitData;
     public DataTable_Upgrade myUpgradeData;
 
+    public Image slotImage;
+    public Image borderImage;
     public Image unitImage;
     public Image canUpgradeIcon;
     public TMP_Text levelTxt;
@@ -27,6 +29,9 @@ public class UnitUpgradeSlot : MonoBehaviour
 
     public void UpdateText()
     {
+        unitImage.sprite = myUnitData.profile;
+        unitImage.SetNativeSize();
+
         nameTxt.text = myUnitData.name;
         levelTxt.text = "Lv. " + myUnitData.level.ToString();
         pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
@@ -35,5 +40,21 @@ public class UnitUpgradeSlot : MonoBehaviour
             canUpgradeIcon.gameObject.SetActive(true);
         else
             canUpgradeIcon.gameObject.SetActive(false);
+
+        switch (myUnitData.tier)
+        {
+            case 1:
+                slotImage.color = new Color(0.9019608f, 0.5294118f, 0.5294118f);
+                borderImage.color = Color.red;
+                break;
+            case 2:
+                slotImage.color = new Color(0.5843138f, 0.627451f, 0.9019608f);
+                borderImage.color = Color.blue;
+                break;
+            case 3:
+                slotImage.color = Color.white;
+                borderImage.color = Color.white;
+                break;
+        }
     }
 }

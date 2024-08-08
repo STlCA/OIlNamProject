@@ -42,7 +42,7 @@ public class UnitUpgradeUI : MonoBehaviour
 
         key = unitData.key;
 
-        unitImage.sprite = unitData.sprite;
+        unitImage.sprite = unitData.profile;
 
         switch (unitData.tier)
         {
@@ -53,7 +53,7 @@ public class UnitUpgradeUI : MonoBehaviour
                 tierImage.color = Color.blue;
                 break;
             case 3:
-                tierImage.color = Color.black;
+                tierImage.color = Color.gray;
                 break;
         }
 
