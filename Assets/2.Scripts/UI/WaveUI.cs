@@ -15,6 +15,7 @@ public class WaveUI : MonoBehaviour
     private DataTable_ChapterLoader chapterDatabase;
     private HappyEnergy happyEnergy;
     [SerializeField] private GameSceneManager gameSceneManager;
+    private WavePopUp wavePopUp;
 
     //private void Start()
     //{
@@ -40,6 +41,7 @@ public class WaveUI : MonoBehaviour
         enemySpawn = GetComponent<EnemySpawn>();
         chapterDatabase = enemySpawn.chapterDatabase;
         happyEnergy = gameSceneManager.GetComponent<HappyEnergy>();
+        wavePopUp = GetComponent<WavePopUp>();
 
         StartWave();
     }
@@ -104,6 +106,9 @@ public class WaveUI : MonoBehaviour
                 }
 
                 isBossWave = false;
+
+                // wave 안내 팝업
+                StartCoroutine(wavePopUp.PopUp(currentWave.ToString() + " WAVE 시작!", Color.yellow));
 
                 int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
 

@@ -46,7 +46,7 @@ public class PopUpController : MonoBehaviour
             return;
 
         ui.SetActive(false);
-        Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f; // 현재 상황에서는 팝업이 제거되었을 때 타임스케일을 1로 할 필요가 없어서 주석처리함. 만약 타임 스케일이 1로 바뀌는 기능이 필요하다면 메서드를 추가로 작성하길 바람
     }
     public void UIOffStopTime(GameObject ui)
     {

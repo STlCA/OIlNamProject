@@ -19,6 +19,7 @@ public class EnemySpawn : MonoBehaviour
     private WaveUI waveUI;
     private LethalEnergy lethalEnergy;//수정
     public DataTable_ChapterLoader chapterDatabase;
+    private WavePopUp wavePopUp;
     //private PopUpController popUpController;
 
     private List<Enemy> enemyList;
@@ -56,6 +57,7 @@ public class EnemySpawn : MonoBehaviour
         
         //popUpController = gameManager.GetComponent<PopUpController>();
         chapterDatabase = dataManager.dataTable_ChapterLoader;
+        wavePopUp = GetComponent<WavePopUp>();
 
         waveUI.Init();
 
@@ -109,6 +111,9 @@ public class EnemySpawn : MonoBehaviour
         {
             if (bossID > -1)
             {
+                // 보스 등장 팝업
+                StartCoroutine(wavePopUp.PopUp("보스 등장", Color.red));
+
                 enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
                 currentCount++;
                 isBossDead = false;
@@ -119,9 +124,15 @@ public class EnemySpawn : MonoBehaviour
 
         enemyMove.Init(enemyID, bossID, wayPoints, isBoss);
 
+        // 마물이 100마리 이상일 시 게임 오버
         if (enemyList.Count >= 100)
         {
             GameOver();
+        }
+        // 마물이 70마리 이상일 시 경고창 팝업
+        else if(enemyList.Count >= 70)
+        {
+            StartCoroutine(wavePopUp.PopUp("마물의 수가 너무 많습니다!!", Color.red));
         }
 
         UpdateEnemyCountUI();
@@ -147,6 +158,9 @@ public class EnemySpawn : MonoBehaviour
         if(enemy.isBoss)
         {
             isBossDead = true;
+
+            // 보스 클리어 팝업
+            StartCoroutine(wavePopUp.PopUp("보스 클리어", Color.yellow));
 
             // 50 Wave일 때 일반 마물들도 다 죽었다면
             if (enemyList.Count == 0 && waveUI.currentWave == 50)
