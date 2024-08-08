@@ -17,6 +17,8 @@ public class GameSceneManager : MonoBehaviour
     [Header("UI")]
     public TMP_Text rubyTxt;
     public TMP_Text useRubyTxt;
+    public GameObject speed1x;
+    public GameObject speed2x;
 
     private float time = 1;
     public int Ruby
@@ -65,11 +67,22 @@ public class GameSceneManager : MonoBehaviour
             GameManager.Instance.SoundManager.EffectAudioClipPlay(0);
 
         if (time == 1)
+        {
+            // 2배속
             time = 2;
+            speed1x.SetActive(false);
+            speed2x.SetActive(true);
+        }
         else if (time == 2)
+            // 3배속
             time = 3;
         else if (time == 3)
+        {
+            // 1배속
             time = 1;
+            speed1x.SetActive(true);
+            speed2x.SetActive(false);
+        }
 
         Time.timeScale = time;
     }
