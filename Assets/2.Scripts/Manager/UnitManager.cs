@@ -224,9 +224,9 @@ public class UnitManager : Manager
         //pieceData.unitPiece = 30;
     }
 
-    public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt, GameObject falseGacha, 
+    public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt, GameObject falseGacha,
         GameObject resultUI, TMP_Text resultPieceTxt, List<TMP_Text> resultTierPiece,
-        List<GameObject> tierAnim,GameObject gachaAnim)
+        List<GameObject> tierAnim, GameObject gachaAnim)
     {
         tabPieceTxt = tabTxt;
         gachaTabPieceTxt = gachaTabTxt;
@@ -327,11 +327,17 @@ public class UnitManager : Manager
 
         gachaAnim.SetActive(true);
 
-        if (tempSPiece>=1)
+        foreach (var t in tierAnim)
+        {
+            if (t.activeSelf)
+                t.SetActive(false);
+        }
+
+        if (tempSPiece >= 1)
             tierAnim[0].SetActive(true);
-        else if(tempAPiece>=1)
+        else if (tempAPiece >= 1)
             tierAnim[1].SetActive(true);
-        else if(tempBPiece>=1)
+        else if (tempBPiece >= 1)
             tierAnim[2].SetActive(true);
 
 
@@ -366,7 +372,7 @@ public class UnitManager : Manager
     }
 
     //¿µ¿õÁ¶°¢ »ç¿ë ¼¼Æ® ¹­À½
-    public void UsePiece(PieceType type,int val)
+    public void UsePiece(PieceType type, int val)
     {
         pieceData.UsePiece(type, -val);
         ChangeAllUnitPiece();
@@ -462,7 +468,7 @@ public class UnitManager : Manager
         return unit;
     }
 
-    public void ResultSetting(GameObject go)
+    public void ResultSetting(GameObject go = null)
     {
         resultTierPiece[0].text = tempBPiece.ToString();
         resultTierPiece[1].text = tempAPiece.ToString();
@@ -473,8 +479,10 @@ public class UnitManager : Manager
         tempSPiece = 0;
 
         resultUI.SetActive(true);
-        go.SetActive(false);
         gachaAnim.SetActive(false);
+
+        if (go != null)
+            go.SetActive(false);
     }
 
 
