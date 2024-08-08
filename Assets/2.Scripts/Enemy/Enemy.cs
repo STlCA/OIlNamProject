@@ -12,6 +12,7 @@ public class EnemyData
     public int maxHP;
     public int hp;
     public Sprite sprite;
+    public RuntimeAnimatorController animator;
 
     public EnemyData(DataTable_Enemy dataE, DataTable_Chapter dataC)
     {
@@ -21,6 +22,7 @@ public class EnemyData
         hp = chapterData.EnemyHP;
         maxHP = chapterData.EnemyHP;
         sprite = Resources.Load<Sprite>(dataE.Path);
+        animator = Resources.Load<RuntimeAnimatorController>(dataE.Anim);
     }
 }
 
@@ -31,6 +33,7 @@ public class BossData
     public int maxHP;
     public int hp;
     public Sprite sprite;
+    public RuntimeAnimatorController animator;
 
     public BossData(DataTable_Boss data, DataTable_Chapter dataC)
     {
@@ -40,6 +43,7 @@ public class BossData
         hp = chapterData.BossHP;
         maxHP = chapterData.BossHP;
         sprite = Resources.Load<Sprite>(data.Path);
+        animator = Resources.Load<RuntimeAnimatorController>(data.Anim);
     }
 }
 

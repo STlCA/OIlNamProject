@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
+    enum MoveStates
+    {
+        Left = 1,
+        Right = 2, 
+        Up = 3,
+        Down = 4
+    }
+
     [SerializeField] private float speed;
     private Vector3 direction;
 
@@ -12,26 +20,26 @@ public class EnemyMove : MonoBehaviour
     private int currentIndex;
 
     private Enemy enemy;
-
-    private void Awake()
-    {
-
-    }
+    private Animator animator;
 
     // 마물 초기화
     public void Init(int enemyID, int bossID, Transform[] _wayPoints, bool isBoss = false)
     {
         enemy = GetComponent<Enemy>();
+        animator = GetComponent<Animator>();
+
         if (!isBoss)
         {
             if (enemyID > -1)
             {
                 speed = enemy.enemyData.enemyData.Speed;
+                animator.runtimeAnimatorController = enemy.enemyData.animator;
             }
         }
         else
         {
             speed = enemy.bossData.bossData.Speed;
+            animator.runtimeAnimatorController = enemy.bossData.animator;
         }
         
         currentIndex = 0;
@@ -89,13 +97,36 @@ public class EnemyMove : MonoBehaviour
             currentIndex = 0;
         }
 
-        direction = (wayPoints[currentIndex].position - this.transform.position).normalized;
-        MoveDirection(direction);
+        //direction = (wayPoints[currentIndex].position - this.transform.position).normalized;
+        //MoveDirection(direction);
+        MoveDirection();
     }
 
-    // 마물의 움직임 방향 설정
-    private void MoveDirection(Vector3 _direction)
+    // 마물의 움직임 애니메이션 방향 설정
+    private void MoveDirection(/*Vector3 _direction*/)
     {
-        direction = _direction;
+        //direction = _direction;
+        direction = (wayPoints[currentIndex].position - this.transform.position).normalized;
+
+        // 오른쪽
+        if (direction.x > 0)
+        {
+            animator.SetInteger("AnimState", (int)MoveStates.Right);
+        }
+        // 왼쪽
+        else if (direction.x < 0)
+        {
+            animator.SetInteger("AnimState", (int)MoveStates.Left);
+        }
+        // 위
+        else if (direction.y > 0)
+        {
+            animator.SetInteger("AnimState", (int)MoveStates.Up);
+        }
+        //아래
+        else if (direction.y < 0)
+        {
+            animator.SetInteger("AnimState", (int)MoveStates.Down);
+        }
     }
 }
