@@ -178,6 +178,7 @@ public class UnitManager : Manager
     public GameObject resultUI;
     public TMP_Text resultPieceTxt;
     public List<TMP_Text> resultTierPiece = new();
+    public List<TMP_Text> unitTabTierPiece = new();
     public List<GameObject> tierAnim = new();
     public GameObject gachaAnim;
 
@@ -226,7 +227,7 @@ public class UnitManager : Manager
 
     public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt, GameObject falseGacha,
         GameObject resultUI, TMP_Text resultPieceTxt, List<TMP_Text> resultTierPiece,
-        List<GameObject> tierAnim, GameObject gachaAnim)
+        List<GameObject> tierAnim, GameObject gachaAnim,List<TMP_Text> unitTabTierPiece)
     {
         tabPieceTxt = tabTxt;
         gachaTabPieceTxt = gachaTabTxt;
@@ -236,6 +237,7 @@ public class UnitManager : Manager
         this.resultTierPiece = resultTierPiece;
         this.tierAnim = tierAnim;
         this.gachaAnim = gachaAnim;
+        this.unitTabTierPiece = unitTabTierPiece;
 
         ChangeAllUnitPiece();
     }
@@ -379,6 +381,7 @@ public class UnitManager : Manager
     {
         pieceData.UsePiece(type, -val);
         ChangeAllUnitPiece();
+        UnitPieceTextUpdate();
     }
 
     //영웅 뽑기할때
@@ -484,8 +487,17 @@ public class UnitManager : Manager
         resultUI.SetActive(true);
         gachaAnim.SetActive(false);
 
+        UnitPieceTextUpdate();
+
         if (go != null)
             go.SetActive(false);
+    }
+
+    public void UnitPieceTextUpdate()
+    {
+        unitTabTierPiece[0].text = "B 티어\n영웅 강화 주문서 " + pieceData.bPiece.ToString() + "개";
+        unitTabTierPiece[1].text = "A 티어\n영웅 강화 주문서 " + pieceData.aPiece.ToString() + "개";
+        unitTabTierPiece[2].text = "S 티어\n영웅 강화 주문서 " + pieceData.sPiece.ToString() + "개";
     }
 
 

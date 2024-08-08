@@ -28,6 +28,7 @@ public class MainSceneManager : MonoBehaviour
     public List<TMP_Text> resultTierPiece;
     public List<GameObject> tierAnim;
     public GameObject gachaAnim;
+    public List<TMP_Text> unitTabTierPiece = new();
 
     [Header("GoldUI")]
     public TMP_Text goldTxt;
@@ -86,7 +87,7 @@ public class MainSceneManager : MonoBehaviour
         gameManager.SoundManager.SourceSet(bgmSource, effectSource, gameSource);
         gameManager.SoundManager.BGMChange(1);
 
-        unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim);
+        unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim, unitTabTierPiece);
     }
 
     public void GameStart(GameObject ui)

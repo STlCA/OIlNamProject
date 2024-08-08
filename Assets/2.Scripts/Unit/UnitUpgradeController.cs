@@ -52,6 +52,8 @@ public class UnitUpgradeController : MonoBehaviour
 
             index++;
         }
+
+        unitManager.UnitPieceTextUpdate();
     }
 
     //강화창 켤때//BTN
