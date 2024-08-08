@@ -94,6 +94,15 @@ public class WaveUI : MonoBehaviour
             // 다음이 일반 Wave일 때
             if (tmpWave != 0)
             {
+                if (isBossWave && currentWave < 30)
+                {
+                    GameManager.Instance.SoundManager.BGMChange(2);
+                }
+                else if (isBossWave && currentWave > 30)
+                {
+                    GameManager.Instance.SoundManager.BGMChange(3);
+                }
+
                 isBossWave = false;
 
                 int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
@@ -104,6 +113,16 @@ public class WaveUI : MonoBehaviour
             // 다음이 보스 Wave일 때
             else if (tmpWave == 0/* && currentWave != 50*/)
             {
+                // 보스 BGM 재생
+                if (currentWave != 50)
+                {
+                    GameManager.Instance.SoundManager.BGMChange(4);
+                }
+                else
+                {
+                    GameManager.Instance.SoundManager.BGMChange(5);
+                }
+
                 isBossWave = true;
 
                 int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
