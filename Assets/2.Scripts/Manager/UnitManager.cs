@@ -91,6 +91,7 @@ public class UnitData
     public float speed;
     public int range;
     public bool open;
+    public string type;
 
     //강화용정보
     public int level;
@@ -113,9 +114,10 @@ public class UnitData
         name = unit.Name;
         tier = unit.Tier;
         atk = unit.ATK;
-        speed = unit.Speed / 10000;
+        speed = unit.Speed / 10000f;
         range = unit.Range;
         open = unit.Open;
+        type = unit.UnitType;
 
         level = 0;
         piece = 0;

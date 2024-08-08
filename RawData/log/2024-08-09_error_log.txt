@@ -1,0 +1,8 @@
+2024-08-09 오전 4:14:03: Error processing sheet Unit in file excel_files\DataTable.xlsx: Enum type 'UnitType' not found in Enum definitions.
+   at ExcelToJsonWizard.Program.GenerateClassAndJsonFromExcel(String excelPath, String loaderDir, String jsonDir, String logFilePath, Boolean allowMultipleSheets, Boolean useResources, String resourcesInternalPath)
+2024-08-09 오전 4:14:54: Error processing sheet Unit in file excel_files\DataTable.xlsx: Enum type 'UnitType' not found in Enum definitions.
+   at ExcelToJsonWizard.Program.GenerateClassAndJsonFromExcel(String excelPath, String loaderDir, String jsonDir, String logFilePath, Boolean allowMultipleSheets, Boolean useResources, String resourcesInternalPath)
+2024-08-09 오전 4:15:03: Error processing sheet Unit in file excel_files\DataTable.xlsx: Enum type 'UnitType' not found in Enum definitions.
+   at ExcelToJsonWizard.Program.GenerateClassAndJsonFromExcel(String excelPath, String loaderDir, String jsonDir, String logFilePath, Boolean allowMultipleSheets, Boolean useResources, String resourcesInternalPath)
+2024-08-09 오전 4:15:20: Error processing sheet Unit in file excel_files\DataTable.xlsx: Enum type 'UnitType' not found in Enum definitions.
+   at ExcelToJsonWizard.Program.GenerateClassAndJsonFromExcel(String excelPath, String loaderDir, String jsonDir, String logFilePath, Boolean allowMultipleSheets, Boolean useResources, String resourcesInternalPath)

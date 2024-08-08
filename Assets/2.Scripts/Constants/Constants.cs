@@ -66,4 +66,11 @@ namespace Constants
         Gacha,
         Unit,
     }
+
+    public enum UnitType
+    {
+        Sword,
+        Archer,
+        Wizard,
+    }
 }

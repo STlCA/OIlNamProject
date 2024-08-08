@@ -1,3 +1,4 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -53,25 +54,25 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     public int SellGold { get; private set; }
 
     //------------speed
-    private float speedData;//메인에서 강화된 유닛공격력
-    private float stepSpeed;//스탭별 공격력이 합쳐진 공격력 (250% = 2.5)
+    public float speedData;//메인에서 강화된 유닛공격력--
+    public float stepSpeed;//스탭별 공격력이 합쳐진 공격력 (250% = 2.5)--
 
-    private float fixSpeedStack; // 누적공격력 증가량 (2% = 2)
+    public float fixSpeedStack; // 누적공격력 증가량 (2% = 2)--
     public float fixSpeed; //누적공격력스택이 포함된 공격력
 
-    private float speedStack; // 버프 공격력 증가량 (40% = 40)
+    public float speedStack; // 버프 공격력 증가량 (40% = 40)--
     public float speed; //버프 공격력스택이 포함된 공격력
 
-    private float deltaSpeed;//delta더해서 speed와 비교하는용
+    public float deltaSpeed;//delta더해서 speed와 비교하는용--
 
     //----------------atk
-    private float atkData;//메인에서 강화된 유닛공격력
-    private float stepAtk;//스탭별 공격력이 합쳐진 공격력 (250% = 2.5)
+    public float atkData;//메인에서 강화된 유닛공격력--
+    public float stepAtk;//스탭별 공격력이 합쳐진 공격력 (250% = 2.5)--
 
-    private float fixAtkStack; // 누적공격력 증가량 (2% = 2)
+    public float fixAtkStack; // 누적공격력 증가량 (2% = 2)--
     public float fixAtk; //누적공격력스택이 포함된 공격력
 
-    private float atkStack; // 버프 공격력 증가량 (40% = 40)
+    public float atkStack; // 버프 공격력 증가량 (40% = 40)--
     public float atk; //버프 공격력스택이 포함된 공격력
 
     //------------------------------------------------------------------------
@@ -90,13 +91,16 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         speedData = unitData.speed;
         fixSpeedStack = 0;
         speedStack = 0;
-        deltaSpeed = 0;
         SpeedChange();
+        deltaSpeed = speed;
 
         atkData = unitData.atk;
         fixAtkStack = 0;
         atkStack = 0;
         ATKChange();
+
+        unitAnimation = GetComponentInChildren<UnitAnimation>();
+        unitAnimation.TypeSet(unitData.type);
     }
 
     //스피드 스택 쌓을곳에서 부르기 = 버프
@@ -147,7 +151,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("마물 인식중");
+        //Debug.Log("마물 인식중");
 
         Enemy monster = collision.GetComponent<Enemy>();
 
@@ -174,7 +178,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
             findEnemy = FindEnemy();
 
             if (findEnemy != null)
-            {   
+            {
+                Debug.Log("소리남");
                 GameManager.Instance.SoundManager.GameAudioClipPlay(0);//공격사운드
                 unitAnimation.AttackEffect();//마물이 맞은 이펙트
                 deltaSpeed = 0;
@@ -215,8 +220,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         Debug.Log("Attack호출됨");
 
-        skillGO.transform.position = findEnemy.transform.position;
-        unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
+        //skillGO.transform.position = findEnemy.transform.position;
+        //unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
         findEnemy.EnemyAttacked(atk);
     }
 
