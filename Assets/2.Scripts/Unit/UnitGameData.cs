@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UnitGameData : MonoBehaviour, IPointerClickHandler
 {
-    private UnitSpawnController controller;
+    public UnitSpawnController controller;
     private UnitAnimation unitAnimation;
 
     [Header("RangeCollider")]
@@ -13,6 +14,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     [Header("UI")]
     public GameObject unitCanvas;
+    public Button upgradeBtn;
+    public Button sellBtn;
 
     [Header("Self")]
     public GameObject skillGO;
@@ -23,7 +26,11 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     //----------------------------------------------------------------Data
 
-    private UnitData myUnitData;
+    public Vector3 pos;
+    public int key;
+    public GameObject myGO;
+
+    public UnitData myUnitData;
     private DataTable_UnitStep myStepData;
 
     public float Range
@@ -73,9 +80,12 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     //------------------------------------------------------------------------
 
-    public void Init(UnitData unitData, DataTable_UnitStep stepData, UnitSpawnController controller)
+    public void Init(UnitData unitData, DataTable_UnitStep stepData, UnitSpawnController controller, Vector3 pos,GameObject go)
     {
         this.controller = controller;
+        this.pos = pos;
+        key = unitData.key;
+        myGO = go;
 
         myUnitData = unitData;
         myStepData = stepData;
@@ -99,6 +109,12 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         unitAnimation.TypeSet(unitData.type);
 
         unitCanvas = transform.parent.GetChild(1).gameObject;
+        //rangeGO = transform.GetChild(3).gameObject;
+
+        unitCanvas.GetComponent<UnitButton>().Init(controller, pos);
+        Button[] btns = unitCanvas.GetComponentsInChildren<Button>();
+        sellBtn = btns[0];
+        upgradeBtn = btns[1];
     }
 
     //스피드 스택 쌓을곳에서 부르기 = 버프
@@ -226,32 +242,42 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("클릭됨");
-        //controller.spriteCanvas.SetActive(true);
+        controller.spriteCanvas.SetActive(true);
 
-        gameObject.layer = 6;
+        //gameObject.layer = 6;
         unitCanvas.SetActive(true);
-        //끌떄는 0
 
-        /*        if (controller.onUnitPopUP.Count != 0)
-                {
-                    if (controller.onUnitPopUP[0] != btnUI)
-                    {
-                        controller.onUnitPopUP[0].SetActive(false);
-                        controller.onUnitPopUP[1].SetActive(false);
+        if (controller.onUnitPopUP.Count != 0)
+        {
+            if (controller.onUnitPopUP[0] != sellBtn)
+            {
+                controller.onUnitPopUP[0].SetActive(false);
+                controller.onUnitPopUP[1].SetActive(false);
+                //controller.onUnitPopUP[2].SetActive(false);
 
-                        controller.onUnitPopUP.Clear();
+                controller.onUnitPopUP.Clear();
 
-                        controller.onUnitPopUP.Add(btnUI);
-                        controller.onUnitPopUP.Add(rangeGO);
-                    }
-                }
-                else
-                {
-                    controller.onUnitPopUP.Add(btnUI);
-                    controller.onUnitPopUP.Add(rangeGO);
-                }
+                controller.onUnitPopUP.Add(sellBtn.gameObject);
+                controller.onUnitPopUP.Add(upgradeBtn.gameObject);
+                //controller.onUnitPopUP.Add(rangeGO);
 
-                UIOnOff();*/
+                controller.onUnitPopUP[0].SetActive(true);
+                controller.onUnitPopUP[1].SetActive(true);
+                //controller.onUnitPopUP[2].SetActive(true);
+            }
+        }
+        else
+        {
+            controller.onUnitPopUP.Add(sellBtn.gameObject);
+            controller.onUnitPopUP.Add(upgradeBtn.gameObject);
+            //controller.onUnitPopUP.Add(rangeGO);
+
+            controller.onUnitPopUP[0].SetActive(true);
+            controller.onUnitPopUP[1].SetActive(true);
+            //controller.onUnitPopUP[2].SetActive(true);
+        }
+
+        //UIOnOff();
     }
 /*
     public void UIOnOff()
@@ -277,17 +303,20 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
             controller.onUnitPopUP[1].SetActive(true);
         }
 
-    mySprite.layer = 0;
-    }
+        gameObject.layer = 0;
+    }*/
 
     public void UIOff()
     {
         controller.onUnitPopUP[0].SetActive(false);
         controller.onUnitPopUP[1].SetActive(false);
+        controller.onUnitPopUP[2].SetActive(false);
 
         controller.onUnitPopUP.Clear();
-    mySprite.layer = 0;
-        *//*        btnUI.gameObject.SetActive(false);
-                rangeGO.SetActive(false);*//*
-    }*/
+        gameObject.layer = 0;
+
+/*        *//*        btnUI.gameObject.SetActive(false);
+                rangeGO.SetActive(false); *//**/
+        }
 }
+

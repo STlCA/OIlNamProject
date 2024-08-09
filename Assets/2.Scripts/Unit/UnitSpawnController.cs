@@ -1,9 +1,19 @@
 using Constants;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
+[Serializable]
+public class CanUpgradeClass
+{
+    public int count;
+    public List<Vector3> keys;
+}
 
 public class UnitSpawnController : MonoBehaviour
 {
@@ -23,7 +33,10 @@ public class UnitSpawnController : MonoBehaviour
     public GameObject spriteCanvas;
 
     public Dictionary<Vector3, UnitGameData> spawnData = new();
-    //public List<GameObject> onUnitPopUP = new();
+    public List<GameObject> onUnitPopUP = new();
+
+    public Dictionary<int, CanUpgradeClass> step0 = new();
+    public Dictionary<int, CanUpgradeClass> step1 = new();
 
     private float[] percents;
     private float totalPercent;
@@ -131,10 +144,128 @@ public class UnitSpawnController : MonoBehaviour
         go.transform.position = point;
 
         UnitGameData unitGameData = go.GetComponentInChildren<UnitGameData>();
-        unitGameData.Init(newUnit, unitStepLoader.GetByKey(newUnit.stepKey), this);
+        unitGameData.Init(newUnit, unitStepLoader.GetByKey(newUnit.stepKey), this, point, go);
 
         spawnData.Add(point, unitGameData);
 
+        if (step0.ContainsKey(newUnit.key))
+        {
+            step0[newUnit.key].count++;
+            step0[newUnit.key].keys.Add(point);
+        }
+        else
+        {
+            CanUpgradeClass newClass = new CanUpgradeClass();
+            newClass.count = 1;
+            newClass.keys.Add(point);
+            step0.Add(newUnit.key, newClass);
+        }
+
         infoTxt.text = newUnit.name + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.";
+    }
+
+    public void Upgrade(Vector3 key)
+    {
+        int id = spawnData[key].key;
+
+        if (spawnData[key].Step == 0)
+        {
+            if(step0[id].count >= 3)
+            {
+                step0[id].count -= 3;
+
+                List<Vector3> temp = new();
+
+                for (int i = 0; i < 3; i++)
+                {
+                    temp.Add(step0[id].keys[i]);
+                }
+
+                foreach(var t in temp)
+                {
+                    if(t != key)
+                    {
+                        Destroy(spawnData[t].myGO);
+                        spawnData.Remove(t);
+                        canSpawnPoints.Add(t);
+                        step0[id].keys.Remove(t);
+                    }
+                    else
+                        step0[id].keys.Remove(t);
+                }
+
+                if (step1.ContainsKey(id))
+                {
+                    step1[id].count++;
+                    step1[id].keys.Add(key);
+                }
+                else
+                {
+                    CanUpgradeClass newClass = new CanUpgradeClass();
+                    newClass.count = 1;
+                    newClass.keys.Add(key);
+                    step1.Add(id, newClass);
+                }
+
+                spawnData[key].UpgradeData();
+            }      
+
+        }
+        else if (spawnData[key].Step == 1)
+        {
+            if (step1[id].count >= 3)
+            {
+                step1[id].count -= 3;
+
+                List<Vector3> temp = new();
+
+                for (int i = 0; i < 3; i++)
+                {
+                    temp.Add(step1[id].keys[i]);
+                }
+
+                foreach (var t in temp)
+                {
+                    if (t != key)
+                    {
+                        Destroy(spawnData[t].myGO);
+                        spawnData.Remove(t);
+                        canSpawnPoints.Add(t);
+                        step1[id].keys.Remove(t);
+                    }
+                    else
+                        step1[id].keys.Remove(t);
+                }
+
+                spawnData[key].UpgradeData();
+            }
+        }
+        else
+        {
+            Debug.Log("¾÷±×·¹ÀÌµå ½ºÅÇ2´Ü°èÀÓ");
+        }
+    }
+
+    public void UnitSell(Vector3 key)
+    {
+        canSpawnPoints.Add(key);
+        gameSceneManager.ChangeRuby(spawnData[key].SellGold);
+        Destroy(spawnData[key].myGO);
+        spawnData.Remove(key);
+    }
+
+    public void SpeedChange(int val, bool isFixChange = false)
+    {
+        foreach(var (key, data) in spawnData)
+        {
+            data.SpeedStackChange(val, isFixChange);
+        }
+    }
+    public void ATKChange(int val, bool isFixChange = false)
+    {
+        foreach (var (key, data) in spawnData)
+        {
+            data.ATKStackChange(val, isFixChange);
+        }
     }
 }

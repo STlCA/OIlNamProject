@@ -319,7 +319,7 @@ public class HappyEnergy : MonoBehaviour
                 gameSceneManager.ChangeRuby(currentMessage.Price1);
                 ChangeHappyEnergy(currentMessage.Energy1);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
-                gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
+                //gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
                 popUp.gameObject.SetActive(false);
                 break;
             case 1:
@@ -331,7 +331,7 @@ public class HappyEnergy : MonoBehaviour
                 }
                 gameSceneManager.ChangeRuby(currentMessage.Price2);
                 ChangeHappyEnergy(currentMessage.Energy2);
-                gameSceneManager.unitController.PlusATK(2, PlusChangeType.FixChange, false);
+                //gameSceneManager.unitController.PlusATK(2, PlusChangeType.FixChange, false);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
                 popUp.gameObject.SetActive(false);
                 break;
@@ -357,7 +357,7 @@ public class HappyEnergy : MonoBehaviour
             gameSceneManager.ChangeRuby(currentMessage.Price1);
             ChangeHappyEnergy(currentMessage.Energy1);
             Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
-            gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
+            //gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
             popUp.gameObject.SetActive(false);
         }
     }

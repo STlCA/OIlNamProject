@@ -75,8 +75,9 @@ public class LethalEnergy : MonoBehaviour
             return;
 
         ChangeEnergy(-200);
-        gameSceneManager.unitController.PlusSpeed(-20, PlusChangeType.LethalChange, true);
-        gameSceneManager.unitController.PlusATK(20, PlusChangeType.LethalChange, true);
+
+        gameSceneManager.unitSpawnController.SpeedChange(-20, false);
+        gameSceneManager.unitSpawnController.SpeedChange(20, false);
 
         GameManager.Instance.EnemySpawn.LethalAttack();
 
@@ -86,8 +87,7 @@ public class LethalEnergy : MonoBehaviour
     public IEnumerator CoCancelLethal()
     {
         yield return new WaitForSeconds(20);
-
-        gameSceneManager.unitController.PlusSpeed(20, PlusChangeType.LethalChange, true);
-        gameSceneManager.unitController.PlusATK(-20, PlusChangeType.LethalChange, true);
+        gameSceneManager.unitSpawnController.SpeedChange(20, false);
+        gameSceneManager.unitSpawnController.SpeedChange(-20, false);
     }
 }
