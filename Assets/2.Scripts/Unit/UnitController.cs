@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class SpawnData
 {
-    public GameObject unitGo;
+/*    public GameObject unitGo;
     public Unit unitData;
     public SpriteRenderer spriteRenderer;
     public Vector3 pos;
@@ -29,7 +29,7 @@ public class SpawnData
     public void UnitDataUpdate(UnitInstance unit)
     {
         unitData.myData.Init(unit.id, unit.unitInfo.Range, unit.unitInfo.Range, unit.unitInfo.ATK, 1);
-    }
+    }*/
 }
 
 public class CanUpgrade
@@ -77,7 +77,7 @@ public struct PlusValue
 
 public class UnitController : MonoBehaviour
 {
-    //unit = 강화 도감
+/*    //unit = 강화 도감
     //controller = 공격,호출,검사
     // spawn = 스폰
 
@@ -85,7 +85,7 @@ public class UnitController : MonoBehaviour
     public GameSceneManager gameSceneManager;
 
     [Header("Unit")]
-    public UnitSpawn unitSpawnGo;
+    //public UnitSpawn unitSpawnGo;
     public UnitManager unitManager;// 나중에 private
     public List<RuntimeAnimatorController> animators = new();
 
@@ -135,7 +135,7 @@ public class UnitController : MonoBehaviour
             return;
 
         GameObject unitGo = Instantiate(UnitPrefab);
-        CanSpawn canSpawn = unitSpawnGo.RandomUnitSpawn();
+        //CanSpawn canSpawn = unitSpawnGo.RandomUnitSpawn();
 
         if (canSpawn.canSpawn == true)
         {
@@ -229,7 +229,7 @@ public class UnitController : MonoBehaviour
         spawnData[pos].upgradeStep++;
         spawnData[pos].id++;
 
-/*        //spawnData[pos].spriteRenderer.sprite = unitDataBase.GetUnitByKey(id + 1).Sprite;----------지금스프라이트준비안댐
+*//*        //spawnData[pos].spriteRenderer.sprite = unitDataBase.GetUnitByKey(id + 1).Sprite;----------지금스프라이트준비안댐
         //아마 atk speed도 필요할듯
 
 
@@ -238,7 +238,7 @@ public class UnitController : MonoBehaviour
                 spawnData[pos].unitInstance.unitInfo = new();
                 UnitInfo info = new();
                 info = unitDataBase.GetUnitByKey(id + 1);
-                spawnData[pos].unitInstance.unitInfo = info;*/
+                spawnData[pos].unitInstance.unitInfo = info;*//*
 
         if (canUpgrade.ContainsKey(id + 1) == true)
         {
@@ -412,5 +412,5 @@ public class UnitController : MonoBehaviour
                 break;
 
         }
-    }
+    }*/
 }

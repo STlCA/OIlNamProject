@@ -76,9 +76,9 @@ public class tempUnitsData
 
 }
 
-public class Unit : MonoBehaviour, IPointerClickHandler
+public class Unit : MonoBehaviour//, IPointerClickHandler
 {
-    public UnitController controller; // 나중에private
+/*    public UnitController controller; // 나중에private
     private UnitAnimation unitAnimation;
 
     [Header("Upgrade")]
@@ -91,11 +91,11 @@ public class Unit : MonoBehaviour, IPointerClickHandler
     public GameObject rangeGO;
 
     public tempUnitsData myData;
-    /*    public int id;
+    *//*    public int id;
         public float range = 0;
         public float speed = 0;
         public float time = 0;
-        private int step = 0;*/
+        private int step = 0;*//*
     private CircleCollider2D rangeCollider;
 
     private List<Enemy> enemyList = new();
@@ -188,8 +188,8 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         controller.onUnitPopUP[1].SetActive(false);
 
         controller.onUnitPopUP.Clear();
-        /*        btnUI.gameObject.SetActive(false);
-                rangeGO.SetActive(false);*/
+        *//*        btnUI.gameObject.SetActive(false);
+                rangeGO.SetActive(false);*//*
     }
 
     public void UnitUpgrade()
@@ -262,5 +262,5 @@ public class Unit : MonoBehaviour, IPointerClickHandler
         }
 
         return enemy;
-    }
+    }*/
 }

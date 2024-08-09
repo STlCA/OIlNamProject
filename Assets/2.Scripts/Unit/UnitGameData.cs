@@ -16,6 +16,9 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     public GameObject unitCanvas;
     public Button upgradeBtn;
     public Button sellBtn;
+    public GameObject star1;
+    public GameObject star2;
+
 
     [Header("Self")]
     public GameObject skillGO;
@@ -51,6 +54,11 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         {
             step = value;
             SellGold = myStepData.SellGold[step];
+
+            if (step == 1)
+                star1.SetActive(true);
+            else if (step == 2)
+                star2.SetActive(true);
         }
     }
     private int step;
@@ -80,7 +88,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     //------------------------------------------------------------------------
 
-    public void Init(UnitData unitData, DataTable_UnitStep stepData, UnitSpawnController controller, Vector3 pos,GameObject go)
+    public void Init(UnitData unitData, DataTable_UnitStep stepData, UnitSpawnController controller, Vector3 pos, GameObject go)
     {
         this.controller = controller;
         this.pos = pos;
@@ -115,6 +123,9 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         Button[] btns = unitCanvas.GetComponentsInChildren<Button>();
         sellBtn = btns[0];
         upgradeBtn = btns[1];
+
+        star1 = unitCanvas.transform.GetChild(3).gameObject;
+        star2 = unitCanvas.transform.GetChild(4).gameObject;
     }
 
     //스피드 스택 쌓을곳에서 부르기 = 버프
@@ -279,32 +290,32 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         //UIOnOff();
     }
-/*
-    public void UIOnOff()
-    {
-        if (btnUI == null)
-            return;
-
-        if (controller.onUnitPopUP[0].activeSelf == true)
+    /*
+        public void UIOnOff()
         {
-            controller.onUnitPopUP[0].SetActive(false);
-            controller.onUnitPopUP[1].SetActive(false);
+            if (btnUI == null)
+                return;
 
-            controller.onUnitPopUP.Clear();
-        }
-        else
-        {
-            if (controller.CanUpgradeCheck(myData.id) && myData.step < 2)
-                nonClickImage.gameObject.SetActive(false);
+            if (controller.onUnitPopUP[0].activeSelf == true)
+            {
+                controller.onUnitPopUP[0].SetActive(false);
+                controller.onUnitPopUP[1].SetActive(false);
+
+                controller.onUnitPopUP.Clear();
+            }
             else
-                nonClickImage.gameObject.SetActive(true);
+            {
+                if (controller.CanUpgradeCheck(myData.id) && myData.step < 2)
+                    nonClickImage.gameObject.SetActive(false);
+                else
+                    nonClickImage.gameObject.SetActive(true);
 
-            controller.onUnitPopUP[0].SetActive(true);
-            controller.onUnitPopUP[1].SetActive(true);
-        }
+                controller.onUnitPopUP[0].SetActive(true);
+                controller.onUnitPopUP[1].SetActive(true);
+            }
 
-        gameObject.layer = 0;
-    }*/
+            gameObject.layer = 0;
+        }*/
 
     public void UIOff()
     {
@@ -315,8 +326,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         controller.onUnitPopUP.Clear();
         gameObject.layer = 0;
 
-/*        *//*        btnUI.gameObject.SetActive(false);
-                rangeGO.SetActive(false); *//**/
-        }
+        /*        *//*        btnUI.gameObject.SetActive(false);
+                        rangeGO.SetActive(false); *//**/
+    }
 }
 
