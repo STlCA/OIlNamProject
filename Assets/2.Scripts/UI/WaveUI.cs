@@ -62,6 +62,7 @@ public class WaveUI : MonoBehaviour
         if(plus > 0)
         {
             gameSceneManager.unitSpawnController.ATKChange(-plus);
+            plus = 0;
         }
 
         if (gameSceneManager.happyEnergy.isAnswer)

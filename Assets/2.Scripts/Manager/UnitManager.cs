@@ -376,9 +376,9 @@ public class UnitManager : Manager
     }
 
     //영웅조각 사용 세트 묶음
-    public void UsePiece(PieceType type, int val)
+    public void ChangePiece(PieceType type, int val)
     {
-        pieceData.UsePiece(type, -val);
+        pieceData.UsePiece(type, val);
         ChangeAllUnitPiece();
         UnitPieceTextUpdate();
     }
@@ -497,6 +497,11 @@ public class UnitManager : Manager
         unitTabTierPiece[0].text = "B 티어\n영웅 강화 주문서 " + pieceData.bPiece.ToString() + "개";
         unitTabTierPiece[1].text = "A 티어\n영웅 강화 주문서 " + pieceData.aPiece.ToString() + "개";
         unitTabTierPiece[2].text = "S 티어\n영웅 강화 주문서 " + pieceData.sPiece.ToString() + "개";
+    }
+
+    public void ChangeUnitPiece(int value)
+    {
+        ChangePiece(PieceType.Unit, value);
     }
 
 

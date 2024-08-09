@@ -50,6 +50,8 @@ public class Player : Manager
 
     public void SetUserName(string name)
     {
+        UserName = name;
+
         nameTxt.text = name + " Lv." + Level;
         setUINameTxt.text = name;        
         expTxt.text = ExpPercent.ToString("00.00") + "%";
