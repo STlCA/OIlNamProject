@@ -20,6 +20,7 @@ public class UnitSpawnController : MonoBehaviour
     public GameObject spawnFalse;
     public GameObject rubyFalse;
     public TMP_Text infoTxt;
+    public GameObject spriteCanvas;
 
     public Dictionary<Vector3, UnitGameData> spawnData = new();
     //public List<GameObject> onUnitPopUP = new();
@@ -27,11 +28,12 @@ public class UnitSpawnController : MonoBehaviour
     private float[] percents;
     private float totalPercent;
 
-
-    private void Start()
+    public void Init(GameObject spawn)
     {
         unitManager = GameManager.Instance.UnitManager;
         unitStepLoader = GameManager.Instance.DataManager.dataTable_UnitStepLoader;
+
+        spawnGO = spawn;
 
         PointsInit();
         PercentInit();

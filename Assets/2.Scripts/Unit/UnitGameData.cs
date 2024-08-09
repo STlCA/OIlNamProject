@@ -12,9 +12,11 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     public GameObject rangeGO;
 
     [Header("UI")]
+    public GameObject unitCanvas;
 
     [Header("Self")]
     public GameObject skillGO;
+
 
     private List<Enemy> enemyList = new();
     private Enemy findEnemy;
@@ -95,6 +97,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         unitAnimation = GetComponentInChildren<UnitAnimation>();
         unitAnimation.TypeSet(unitData.type);
+
+        unitCanvas = transform.parent.GetChild(1).gameObject;
     }
 
     //스피드 스택 쌓을곳에서 부르기 = 버프
@@ -118,7 +122,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     }
 
     //합성 업그레이드
-    public void Upgrade()
+    public void UpgradeData()
     {
         step++;
 
@@ -221,26 +225,33 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-/*        if (controller.onUnitPopUP.Count != 0)
-        {
-            if (controller.onUnitPopUP[0] != btnUI)
-            {
-                controller.onUnitPopUP[0].SetActive(false);
-                controller.onUnitPopUP[1].SetActive(false);
+        Debug.Log("클릭됨");
+        //controller.spriteCanvas.SetActive(true);
 
-                controller.onUnitPopUP.Clear();
+        gameObject.layer = 6;
+        unitCanvas.SetActive(true);
+        //끌떄는 0
 
-                controller.onUnitPopUP.Add(btnUI);
-                controller.onUnitPopUP.Add(rangeGO);
-            }
-        }
-        else
-        {
-            controller.onUnitPopUP.Add(btnUI);
-            controller.onUnitPopUP.Add(rangeGO);
-        }
+        /*        if (controller.onUnitPopUP.Count != 0)
+                {
+                    if (controller.onUnitPopUP[0] != btnUI)
+                    {
+                        controller.onUnitPopUP[0].SetActive(false);
+                        controller.onUnitPopUP[1].SetActive(false);
 
-        UIOnOff();*/
+                        controller.onUnitPopUP.Clear();
+
+                        controller.onUnitPopUP.Add(btnUI);
+                        controller.onUnitPopUP.Add(rangeGO);
+                    }
+                }
+                else
+                {
+                    controller.onUnitPopUP.Add(btnUI);
+                    controller.onUnitPopUP.Add(rangeGO);
+                }
+
+                UIOnOff();*/
     }
 /*
     public void UIOnOff()
@@ -265,6 +276,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
             controller.onUnitPopUP[0].SetActive(true);
             controller.onUnitPopUP[1].SetActive(true);
         }
+
+    mySprite.layer = 0;
     }
 
     public void UIOff()
@@ -273,6 +286,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         controller.onUnitPopUP[1].SetActive(false);
 
         controller.onUnitPopUP.Clear();
+    mySprite.layer = 0;
         *//*        btnUI.gameObject.SetActive(false);
                 rangeGO.SetActive(false);*//*
     }*/

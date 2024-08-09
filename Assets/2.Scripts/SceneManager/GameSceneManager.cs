@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameSceneManager : MonoBehaviour
 {
+    public UnitSpawnController unitSpawnController;
     public UnitController unitController;
     public HappyEnergy happyEnergy;
+
+    [Header("Stage : Tile / Spirte / Way / Spawn")]
+    public List<GameObject> stage1;
+    public List<GameObject> stage2;
 
     [Header("Sound")]
     public AudioSource bgmSource;
@@ -49,6 +55,34 @@ public class GameSceneManager : MonoBehaviour
         RubyInit();
 
         happyEnergy = GetComponent<HappyEnergy>();
+
+        MapInit(GameManager.Instance.Stage);
+    }
+
+    private void MapInit(int stage)
+    {
+        if (stage == 1)
+        {
+            for (int i = 0; i < stage1.Count; ++i)
+            {
+                stage1[i].SetActive(true);
+                stage2[i].SetActive(false);
+            }
+
+            unitSpawnController.Init(stage1[3]);
+        }
+        else if (stage == 2)
+        {
+            for (int i = 0; i < stage1.Count; ++i)
+            {
+                stage2[i].SetActive(true);
+                stage1[i].SetActive(false);
+            }
+
+            unitSpawnController.Init(stage2[3]);
+        }
+        else
+            Debug.Log("Stage¼³Á¤¾ÈµÊ");
     }
 
     private void SoundInit()

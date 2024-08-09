@@ -77,6 +77,8 @@ public class GameManager : MonoBehaviour
 
     //================================================
 
+    public int Stage { get; private set; }
+
     private void Awake()
     {
         #region ΩÃ±€≈Ê
@@ -149,6 +151,11 @@ public class GameManager : MonoBehaviour
     {
         T t = FindObjectOfType<T>();
         return t;
+    }    
+
+    public void SetStage(int stage)
+    {
+        Stage = stage;
     }
 
     public void GameExit()

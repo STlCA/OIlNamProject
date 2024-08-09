@@ -94,6 +94,8 @@ public class MainSceneManager : MonoBehaviour
     {
         GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Lobby);
 
+        SetStage(1);//---------임시 스테이지 셋팅
+
         if (StartCheck())
         {
             gameManager.MoneyChange(MoneyType.KEY, -5);
@@ -164,5 +166,11 @@ public class MainSceneManager : MonoBehaviour
                 Debug.Log("탭버튼설정안됨");
                 return;
         }
+    }
+
+    //BTN Stage //임시로 호출
+    public void SetStage(int stage)
+    {
+        GameManager.Instance.SetStage(stage);
     }
 }
