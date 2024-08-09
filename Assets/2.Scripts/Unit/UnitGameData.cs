@@ -258,37 +258,38 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         Debug.Log("Å¬¸¯µÊ");
         controller.spriteCanvas.SetActive(true);
 
-        //gameObject.layer = 6;
         unitCanvas.SetActive(true);
 
         if (controller.onUnitPopUP.Count != 0)
         {
             if (controller.onUnitPopUP[0] != sellBtn)
             {
-                controller.onUnitPopUP[0].SetActive(false);
+                controller.onUnitPopUP[0].layer = 0;
                 controller.onUnitPopUP[1].SetActive(false);
-                //controller.onUnitPopUP[2].SetActive(false);
+                controller.onUnitPopUP[2].SetActive(false);
 
                 controller.onUnitPopUP.Clear();
 
+                controller.onUnitPopUP.Add(gameObject);
                 controller.onUnitPopUP.Add(sellBtn.gameObject);
                 controller.onUnitPopUP.Add(upgradeBtn.gameObject);
                 //controller.onUnitPopUP.Add(rangeGO);
 
-                controller.onUnitPopUP[0].SetActive(true);
+                controller.onUnitPopUP[0].layer = 6;
                 controller.onUnitPopUP[1].SetActive(true);
-                //controller.onUnitPopUP[2].SetActive(true);
+                controller.onUnitPopUP[2].SetActive(true);
             }
         }
         else
         {
+            controller.onUnitPopUP.Add(gameObject);
             controller.onUnitPopUP.Add(sellBtn.gameObject);
             controller.onUnitPopUP.Add(upgradeBtn.gameObject);
             //controller.onUnitPopUP.Add(rangeGO);
 
-            controller.onUnitPopUP[0].SetActive(true);
+            controller.onUnitPopUP[0].layer = 6;
             controller.onUnitPopUP[1].SetActive(true);
-            //controller.onUnitPopUP[2].SetActive(true);
+            controller.onUnitPopUP[2].SetActive(true);
         }
 
         //UIOnOff();

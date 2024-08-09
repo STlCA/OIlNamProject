@@ -13,9 +13,9 @@ public class GameUIRay : MonoBehaviour, IPointerClickHandler
 
         if (controller.onUnitPopUP.Count != 0)
         {
-            controller.onUnitPopUP[0].SetActive(false);
+            controller.onUnitPopUP[0].layer = 0;
             controller.onUnitPopUP[1].SetActive(false);
-            //controller.onUnitPopUP[2].SetActive(false);
+            controller.onUnitPopUP[2].SetActive(false);
 
             controller.onUnitPopUP.Clear();
         }
