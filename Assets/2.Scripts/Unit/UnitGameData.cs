@@ -124,8 +124,11 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         sellBtn = btns[0];
         upgradeBtn = btns[1];
 
-        star1 = unitCanvas.transform.GetChild(3).gameObject;
-        star2 = unitCanvas.transform.GetChild(4).gameObject;
+        star1 = unitCanvas.transform.GetChild(2).gameObject;
+        star2 = unitCanvas.transform.GetChild(3).gameObject;
+
+        star1.SetActive(false);
+        star2.SetActive(false);
     }
 
     //스피드 스택 쌓을곳에서 부르기 = 버프
