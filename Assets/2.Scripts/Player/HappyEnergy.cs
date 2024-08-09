@@ -45,10 +45,14 @@ public class HappyEnergy : MonoBehaviour
         private float percent;*/
 
     private bool onBad = false;
+    private bool onSad = false;
     private bool onHappy = false;
     private bool onLove = false;
 
     private float currentSpeed;
+
+    public bool isAnswer = false;
+    public int value;
 
     public int Energy
     {
@@ -249,37 +253,60 @@ public class HappyEnergy : MonoBehaviour
         if (onBad)
         {
             onBad = false;
-            gameSceneManager.unitController.PlusSpeed(-5, PlusChangeType.NormalChange, false);
+            gameSceneManager.unitSpawnController.ATKChange(5);
+            gameSceneManager.unitSpawnController.SpeedChange(-10);
+            //gameSceneManager.unitController.PlusSpeed(-5, PlusChangeType.NormalChange, false);
+        }
+        else if (onSad)
+        {
+            onBad = false;
+            gameSceneManager.unitSpawnController.SpeedChange(-5);
+            //gameSceneManager.unitController.PlusSpeed(-5, PlusChangeType.NormalChange, false);
         }
         else if (onHappy)
         {
             onHappy = false;
-            gameSceneManager.unitController.PlusATK(-10, PlusChangeType.NormalChange, false);
+            gameSceneManager.unitSpawnController.ATKChange(-10);
+            //gameSceneManager.unitController.PlusATK(-10, PlusChangeType.NormalChange, false);
 
         }
         else if (onLove)
         {
             onLove = false;
-            gameSceneManager.unitController.PlusATK(-30, PlusChangeType.NormalChange, false);
+            gameSceneManager.unitSpawnController.ATKChange(-20);
+            gameSceneManager.unitSpawnController.SpeedChange(10);
+            //gameSceneManager.unitController.PlusATK(-30, PlusChangeType.NormalChange, false);
         }
 
 
         //이걸부르는곳에서 gameSceneManager.unitController.BadEnergy(5);쓰기
-        if (currentEnergyPercent <= 20)
+        if (currentEnergyPercent <= 15)
         {
             //마물
             onBad = true;
-            gameSceneManager.unitController.PlusSpeed(5, PlusChangeType.NormalChange, false);
+            gameSceneManager.unitSpawnController.ATKChange(-5);
+            gameSceneManager.unitSpawnController.SpeedChange(10);
+            //gameSceneManager.unitController.PlusSpeed(5, PlusChangeType.NormalChange, false);
         }
-        else if (75 <= currentEnergyPercent && currentEnergyPercent > 100)
+        else if (currentEnergyPercent <= 30)
+        {
+            //마물
+            onSad = true;
+            gameSceneManager.unitSpawnController.SpeedChange(5);
+            //gameSceneManager.unitController.PlusSpeed(5, PlusChangeType.NormalChange, false);
+        }
+        else if (75 <= currentEnergyPercent && currentEnergyPercent < 100)
         {
             onHappy = true;
-            gameSceneManager.unitController.PlusATK(10, PlusChangeType.NormalChange, false);
+            gameSceneManager.unitSpawnController.ATKChange(10);
+            //gameSceneManager.unitController.PlusATK(10, PlusChangeType.NormalChange, false);
         }
         else if (currentEnergyPercent >= 100)
         {
             onLove = true;
-            gameSceneManager.unitController.PlusATK(30, PlusChangeType.NormalChange, false);
+            gameSceneManager.unitSpawnController.ATKChange(20);
+            gameSceneManager.unitSpawnController.SpeedChange(-10);
+            //gameSceneManager.unitController.PlusATK(30, PlusChangeType.NormalChange, false);
         }
 
     }
@@ -319,6 +346,9 @@ public class HappyEnergy : MonoBehaviour
                 gameSceneManager.ChangeRuby(currentMessage.Price1);
                 ChangeHappyEnergy(currentMessage.Energy1);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
+                isAnswer = true;
+                value = 20;
+                //gameSceneManager.unitSpawnController.ATKChange(20);
                 //gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
                 popUp.gameObject.SetActive(false);
                 break;
@@ -331,6 +361,9 @@ public class HappyEnergy : MonoBehaviour
                 }
                 gameSceneManager.ChangeRuby(currentMessage.Price2);
                 ChangeHappyEnergy(currentMessage.Energy2);
+                isAnswer = true;
+                value = 2;
+                //gameSceneManager.unitSpawnController.ATKChange(2,true);
                 //gameSceneManager.unitController.PlusATK(2, PlusChangeType.FixChange, false);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
                 popUp.gameObject.SetActive(false);
@@ -346,7 +379,7 @@ public class HappyEnergy : MonoBehaviour
 
         }
 
-        if (turn[num] == 0)
+/*        if (turn[num] == 0)
         {
             if (gameSceneManager.Ruby < (currentMessage.Price1 * -1))
             {
@@ -359,7 +392,7 @@ public class HappyEnergy : MonoBehaviour
             Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
             //gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
             popUp.gameObject.SetActive(false);
-        }
+        }*/
     }
 
     private IEnumerator CoClickFalse()

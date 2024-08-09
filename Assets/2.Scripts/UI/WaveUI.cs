@@ -17,6 +17,7 @@ public class WaveUI : MonoBehaviour
     [SerializeField] private GameSceneManager gameSceneManager;
     private WavePopUp wavePopUp;
 
+    private int plus;//¼öÁ¤
     //private void Start()
     //{
     //    if (GameManager.Instance != null)
@@ -57,6 +58,29 @@ public class WaveUI : MonoBehaviour
     public void NextWave()
     {
         int ruby = chapterDatabase.GetByKey(currentWave).Gold;
+
+        if(plus > 0)
+        {
+            gameSceneManager.unitSpawnController.ATKChange(-plus);
+        }
+
+        if (gameSceneManager.happyEnergy.isAnswer)
+        {
+            gameSceneManager.happyEnergy.isAnswer = false;
+            plus = gameSceneManager.happyEnergy.value;
+
+            if (plus == 2)
+            {
+                gameSceneManager.unitSpawnController.ATKChange(plus, true);
+                plus = 0;
+            }
+            else
+            {
+                gameSceneManager.unitSpawnController.ATKChange(plus);
+            }
+        }
+
+        gameSceneManager.happyEnergy.HappyEnergyCheck();
 
         //gameSceneManager.unitController.PlusSpeed(0, Constants.PlusChangeType.DeleteChange);
         //gameSceneManager.unitController.PlusATK(0, Constants.PlusChangeType.DeleteChange);

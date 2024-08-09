@@ -6,13 +6,14 @@ using System.Drawing;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using Random = UnityEngine.Random;
 
 [Serializable]
 public class CanUpgradeClass
 {
     public int count;
-    public List<Vector3> keys;
+    public List<Vector3> keys = new();
 }
 
 public class UnitSpawnController : MonoBehaviour
@@ -252,20 +253,23 @@ public class UnitSpawnController : MonoBehaviour
         gameSceneManager.ChangeRuby(spawnData[key].SellGold);
         Destroy(spawnData[key].myGO);
         spawnData.Remove(key);
+
+        onUnitPopUP.Clear();
+        spriteCanvas.SetActive(false);
     }
 
-    public void SpeedChange(int val, bool isFixChange = false)
+    public void SpeedChange(int val, bool isFixChange = false, bool isnow = false)
     {
         foreach(var (key, data) in spawnData)
         {
-            data.SpeedStackChange(val, isFixChange);
+            data.SpeedStackChange(val, isFixChange, isnow);
         }
     }
-    public void ATKChange(int val, bool isFixChange = false)
+    public void ATKChange(int val, bool isFixChange = false, bool isnow = false)
     {
         foreach (var (key, data) in spawnData)
         {
-            data.ATKStackChange(val, isFixChange);
+            data.ATKStackChange(val, isFixChange, isnow);
         }
     }
 }

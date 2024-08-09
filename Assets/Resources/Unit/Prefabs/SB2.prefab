@@ -4000,12 +4000,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b391ea8fbba694ea0414cff61c8a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   rangeCollider: {fileID: 1898587182622828403}
   rangeGO: {fileID: 0}
   unitCanvas: {fileID: 0}
   upgradeBtn: {fileID: 0}
   sellBtn: {fileID: 0}
   skillGO: {fileID: 0}
+  pos: {x: 0, y: 0, z: 0}
+  key: 0
+  myGO: {fileID: 0}
+  myUnitData:
+    key: 0
+    upgradeKey: 0
+    stepKey: 0
+    name: 
+    tier: 0
+    atk: 0
+    speed: 0
+    range: 0
+    open: 0
+    type: 
+    level: 0
+    piece: 0
+    profile: {fileID: 0}
+    prefabs: {fileID: 0}
   range: 0
   speedData: 0
   stepSpeed: 0

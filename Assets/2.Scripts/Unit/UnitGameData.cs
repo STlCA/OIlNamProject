@@ -118,7 +118,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     }
 
     //스피드 스택 쌓을곳에서 부르기 = 버프
-    public void SpeedStackChange(int changeVal, bool isFixChange = false)
+    public void SpeedStackChange(int changeVal, bool isFixChange = false, bool isNow = false)
     {
         if (isFixChange)
             fixSpeedStack += changeVal;
@@ -127,7 +127,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         SpeedChange();
     }
-    public void ATKStackChange(int changeVal, bool isFixChange = false)
+    public void ATKStackChange(int changeVal, bool isFixChange = false, bool isNow = false)
     {
         if (isFixChange)
             fixAtkStack += changeVal;
@@ -195,7 +195,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
             {
                 Debug.Log("소리남");
                 GameManager.Instance.SoundManager.GameAudioClipPlay(0);//공격사운드
-                unitAnimation.AttackEffect();//마물이 맞은 이펙트
+                unitAnimation.AttackEffect();
                 deltaSpeed = 0;
             }
         }
