@@ -197,6 +197,8 @@ public class UnitManager : Manager
 
     public List<UnitInstance> canSpawnUnit = new();
 
+    private float[] percents;
+
     public override void Init(GameManager gm)
     {
         base.Init(gm);
@@ -251,6 +253,14 @@ public class UnitManager : Manager
             //unitDataBase.Add(newData);
             unitDataDic.Add(newData.key, newData);
         }
+    }
+
+    private void PercentInit()
+    {
+        percents = new float[3];
+        percents[0] = 3f;
+        percents[1] = 25f;
+        percents[2] = 72f;
     }
 
     private void InitTierID()
@@ -309,23 +319,45 @@ public class UnitManager : Manager
         if (resultUI.activeSelf)
             resultUI.SetActive(false);
 
-        int type = 0;
+        float total = 0;
+        int index = 0;
+        float random;
+
+        foreach (var t in percents)
+        {
+            total += t;
+        }
 
         for (int i = 0; i < count; i++)
         {
-            type = Random.Range(1, 4);//0¹øÀº À¯´Ö¸ðÁý±Ç
+            random = Random.value * total;
 
-            switch (type)
+            for (int j = 0; j < percents.Length; ++i)
             {
+                random -= percents[j];
+
+                if (random <= 0)
+                    index = j + 1;
+            }
+
+            //0¹øÀº À¯´Ö¸ðÁý±Ç
+
+            switch (index)
+            {
+                case 0:
+                    return;
                 case 1:
                     tempSPiece++; break;
                 case 2:
                     tempAPiece++; break;
                 case 3:
                     tempBPiece++; break;
+                default:
+                    Debug.Log("¾Ï°Íµµ ¾È»Ì¾ÆÁü");
+                    return;
             }
 
-            pieceData.UsePiece((PieceType)type, 1);
+            pieceData.UsePiece((PieceType)index, 1);
             pieceData.UsePiece(PieceType.Unit, -30);
         }
 

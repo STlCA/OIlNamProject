@@ -44,7 +44,7 @@ namespace Constants
         Lobby,
     }
 
-    public enum PieceType
+    public enum PieceType//Unit S A B
     {
         Unit,
         STier,

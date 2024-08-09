@@ -154,7 +154,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     //합성 업그레이드
     public void UpgradeData()
     {
-        step++;
+        Step++;
 
         SpeedChange();
         ATKChange();
