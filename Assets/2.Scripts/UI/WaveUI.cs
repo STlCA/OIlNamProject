@@ -62,6 +62,7 @@ public class WaveUI : MonoBehaviour
         if(plus > 0)
         {
             gameSceneManager.unitSpawnController.ATKChange(-plus,false,true);
+            gameSceneManager.unitSpawnController.wavePlus.SetActive(false);
             plus = 0;
         }
 

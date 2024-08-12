@@ -10,6 +10,7 @@ public class ClickSpriteBtn : MonoBehaviour, IPointerClickHandler
 {
     public UnitSpawnController controller;
     public UnitButtonType type;
+    public GameObject ui = null;
 
     private Vector3 pos;
 
@@ -23,7 +24,14 @@ public class ClickSpriteBtn : MonoBehaviour, IPointerClickHandler
     {
         switch(type)
         {
-            case UnitButtonType.Open:
+            case UnitButtonType.EffectOpen:
+                if(controller.effectList.Count != 0)
+                {
+                    controller.effectList[0].SetActive(false);
+                    controller.effectList.Clear();
+                }
+                ui.SetActive(true);
+                controller.effectList.Add(ui);
                 break;
             case UnitButtonType.Close:
                 if (controller.onUnitPopUP.Count != 0)
@@ -37,24 +45,14 @@ public class ClickSpriteBtn : MonoBehaviour, IPointerClickHandler
                 controller.unitBG.SetActive(false);
                 break;
             case UnitButtonType.Sell:
-                UnitSell();
+                controller.UnitSell(pos);
                 break;
             case UnitButtonType.Upgrade:
-                Upgrade();
+                controller.Upgrade(pos);
                 break;
             default:
                 Debug.Log("타입설정안됨");
                 break;
         }
-    }
-    public void Upgrade()
-    {
-        controller.Upgrade(pos);
-    }
-
-    //BTN
-    public void UnitSell()//컨트롤러부르기
-    {
-        controller.UnitSell(pos);
     }
 }

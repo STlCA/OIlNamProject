@@ -76,7 +76,7 @@ namespace Constants
 
     public enum UnitButtonType
     {
-        Open,
+        EffectOpen,
         Close,
         Sell,
         Upgrade,

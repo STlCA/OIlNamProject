@@ -13,7 +13,7 @@ using Random = UnityEngine.Random;
 public class CanUpgradeClass
 {
     public int count;
-    public List<Vector3> keys = new();
+    public List<Vector3> pos = new();
 }
 
 public class UnitSpawnController : MonoBehaviour
@@ -22,14 +22,27 @@ public class UnitSpawnController : MonoBehaviour
     private UnitManager unitManager;
     private DataTable_UnitStepLoader unitStepLoader;
 
+    [Header("EffectIcon")]
+    public GameObject wavePlus;
+    public GameObject fixPlus;
+    public TMP_Text fixTxt;
+    public TMP_Text fixTxt2;
+    public GameObject monsterMinus;
+
+    public List<GameObject> effectList = new();//clickspritebtn스크립트에서 씀
+    private int fixStack=0;
+
     [Header("SpawnPoint")]
     public GameObject spawnGO;
     private Transform[] spawnArray;
     private List<Vector3> canSpawnPoints;
 
-    [Header("UI")]
+    [Header("FalseUI")]
     public GameObject spawnFalse;
     public GameObject rubyFalse;
+    public GameObject upgradeFalse;
+
+    [Header("UI")]
     public TMP_Text infoTxt;
     public GameObject spriteCanvas;
     public GameObject unitBG;
@@ -153,13 +166,13 @@ public class UnitSpawnController : MonoBehaviour
         if (step0.ContainsKey(newUnit.key))
         {
             step0[newUnit.key].count++;
-            step0[newUnit.key].keys.Add(point);
+            step0[newUnit.key].pos.Add(point);
         }
         else
         {
             CanUpgradeClass newClass = new CanUpgradeClass();
             newClass.count = 1;
-            newClass.keys.Add(point);
+            newClass.pos.Add(point);
             step0.Add(newUnit.key, newClass);
         }
 
@@ -178,93 +191,116 @@ public class UnitSpawnController : MonoBehaviour
     {
         int id = spawnData[key].key;
 
-        if (spawnData[key].Step == 0)
+        switch (spawnData[key].Step)
         {
-            if (step0[id].count >= 3)
-            {
-                step0[id].count -= 3;
-
-                List<Vector3> temp = new();
-
-                for (int i = 0; i < 3; i++)
+            case 0:
+                if (step0[id].count >= 3)
                 {
-                    temp.Add(step0[id].keys[i]);
-                }
+                    step0[id].count -= 3;
 
-                foreach (var t in temp)
-                {
-                    if (t != key)
+                    List<Vector3> temp = new();
+
+                    for (int i = 0; i < 3; i++)
                     {
-                        Destroy(spawnData[t].myGO);
-                        spawnData.Remove(t);
-                        canSpawnPoints.Add(t);
-                        step0[id].keys.Remove(t);
+                        temp.Add(step0[id].pos[i]);
+                    }
+
+                    foreach (var t in temp)
+                    {
+                        if (t != key)
+                        {
+                            Destroy(spawnData[t].myGO);
+                            spawnData.Remove(t);
+                            canSpawnPoints.Add(t);
+                            step0[id].pos.Remove(t);
+                        }
+                        else//삭제안하고 1단계로 옮기기
+                            step0[id].pos.Remove(t);
+                    }
+
+                    if (step1.ContainsKey(id))
+                    {
+                        step1[id].count++;
+                        step1[id].pos.Add(key);
                     }
                     else
-                        step0[id].keys.Remove(t);
-                }
-
-                if (step1.ContainsKey(id))
-                {
-                    step1[id].count++;
-                    step1[id].keys.Add(key);
-                }
-                else
-                {
-                    CanUpgradeClass newClass = new CanUpgradeClass();
-                    newClass.count = 1;
-                    newClass.keys.Add(key);
-                    step1.Add(id, newClass);
-                }
-
-                spawnData[key].UpgradeData();
-            }
-
-        }
-        else if (spawnData[key].Step == 1)
-        {
-            if (step1[id].count >= 3)
-            {
-                step1[id].count -= 3;
-
-                List<Vector3> temp = new();
-
-                for (int i = 0; i < 3; i++)
-                {
-                    temp.Add(step1[id].keys[i]);
-                }
-
-                foreach (var t in temp)
-                {
-                    if (t != key)
                     {
-                        Destroy(spawnData[t].myGO);
-                        spawnData.Remove(t);
-                        canSpawnPoints.Add(t);
-                        step1[id].keys.Remove(t);
+                        CanUpgradeClass newClass = new CanUpgradeClass();
+                        newClass.count = 1;
+                        newClass.pos.Add(key);
+                        step1.Add(id, newClass);
                     }
-                    else
-                        step1[id].keys.Remove(t);
-                }
 
-                spawnData[key].UpgradeData();
-            }
-        }
-        else
-        {
-            Debug.Log("업그레이드 스탭2단계임");
+                    spawnData[key].UpgradeData();
+                }
+                    break;
+            case 1:
+                if (step1[id].count >= 3)
+                {
+                    step1[id].count -= 3;
+
+                    List<Vector3> temp = new(3);
+
+                    for (int i = 0; i < 3; i++)
+                    {
+                        temp.Add(step1[id].pos[i]);
+                    }
+
+                    foreach (var t in temp)
+                    {
+                        if (t != key)
+                        {
+                            Destroy(spawnData[t].myGO);
+                            spawnData.Remove(t);
+                            canSpawnPoints.Add(t);
+                            step1[id].pos.Remove(t);
+                        }
+                        else
+                            step1[id].pos.Remove(t);
+                    }
+
+                    spawnData[key].UpgradeData();
+                }
+                break;
+            case 2:
+                upgradeFalse.SetActive(true);
+                Debug.Log("업그레이드 스탭2단계임");
+                break;
         }
     }
 
     public void UnitSell(Vector3 key)
     {
+        //스폰포인트
+        //스폰데이터
+        //스탭별카운트
+
         canSpawnPoints.Add(key);
         gameSceneManager.ChangeRuby(spawnData[key].SellGold);
+
+        switch (spawnData[key].Step)
+        {
+            case 0:
+                step0[spawnData[key].key].count--;
+                step0[spawnData[key].key].pos.Remove(key);
+                break;
+            case 1:
+                step1[spawnData[key].key].count--;
+                step1[spawnData[key].key].pos.Remove(key);
+                break;
+        }
+
         Destroy(spawnData[key].myGO);
         spawnData.Remove(key);
 
+        UnitUIClear();
+    }
+
+    private void UnitUIClear()
+    {
         onUnitPopUP.Clear();
         spriteCanvas.SetActive(false);
+        unitBG.SetActive(false);
     }
 
     public void SpeedChange(int val, bool isFixChange = false, bool isWave = false)
@@ -277,17 +313,16 @@ public class UnitSpawnController : MonoBehaviour
 
     public void ATKChange(int val, bool isFixChange = false, bool isWave = false)
     {
-        //TODO아이콘중첩
-        /*        if (isWave)
-                    gameObject.SetActive(true);
-                if (isFixChange && val > 0)
-                {
-                    gameObject.SetActive(true);
-                    int stack = 0;
-                    stack++;
-                    string text = "x"+stack.ToString();
-                }*/
-
+        if (isWave)
+            wavePlus.SetActive(true);
+        if (isFixChange && val > 0)
+        {
+            fixPlus.SetActive(true);
+            monsterMinus.SetActive(true);
+            fixStack++;
+            fixTxt.text = "+" + fixStack.ToString();
+            fixTxt2.text = fixStack.ToString();
+        }
 
         foreach (var (key, data) in spawnData)
         {

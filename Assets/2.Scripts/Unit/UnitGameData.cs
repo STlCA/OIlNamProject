@@ -105,6 +105,9 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         star1 = spriteGO.transform.GetChild(4).gameObject;
         star2 = spriteGO.transform.GetChild(5).gameObject;
 
+        sellBtn.GetComponent<ClickSpriteBtn>().Init(controller, pos);
+        upgradeBtn.GetComponent<ClickSpriteBtn>().Init(controller, pos);
+
         star1.SetActive(false);
         star2.SetActive(false);
     }
@@ -173,14 +176,14 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     private void SpeedChange()
     {
-        stepSpeed = speedData * (myStepData.StepSpeed[step] / 100f);
+        stepSpeed = speedData * (myStepData.StepSpeed[Step] / 100f);
         fixSpeed = stepSpeed + ((stepSpeed / 100) * fixSpeedStack);
         speed = fixSpeed + ((fixSpeed / 100) * speedStack);
     }
 
     private void ATKChange()
     {
-        stepAtk = atkData * (myStepData.StepATK[step] / 100f);
+        stepAtk = atkData * (myStepData.StepATK[Step] / 100f);
         fixAtk = stepAtk + ((stepAtk / 100) * fixAtkStack);
         atk = fixAtk + ((fixAtk / 100) * atkStack);
     }
