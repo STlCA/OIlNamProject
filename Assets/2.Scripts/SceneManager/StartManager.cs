@@ -9,7 +9,12 @@ using UnityEngine.UI;
 public class StartManager : MonoBehaviour
 {
     public Image topFadeImage;
+    public Image whiteImage;
     public Slider loadingSlider;
+    public TMP_Text tipTxt;
+    public DataManager dataManager;
+
+    private DataTable_TIPLoader tipBase;
 
     private float time = 0f;
 
@@ -17,31 +22,51 @@ public class StartManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
+
+        tipBase = dataManager.dataTable_TIPLoader;
+    }
+
+    private void TipTextSet()
+    {
+        int random = Random.Range(0, tipBase.ItemsList.Count);
+
+        tipTxt.text = tipBase.ItemsList[random].Tip;
     }
 
     public void SceneChange()
     {
         topFadeImage.gameObject.SetActive(true);
         loadingSlider.gameObject.SetActive(true);
+        TipTextSet();
 
         StartCoroutine("LoadingScene");
     }
 
     private IEnumerator LoadingScene()
     {
+        float timer = 0.0f;
         AsyncOperation loading = SceneManager.LoadSceneAsync("MainScene");
+
+        loading.allowSceneActivation = false;
 
         while (!loading.isDone) //씬 로딩 완료시 while문이 나가짐
         {
+            timer += Time.deltaTime;
+
             if (loading.progress >= 0.9f)
                 loadingSlider.value = 1f;
             else
-                loadingSlider.value = loading.progress;
+                loadingSlider.value = Mathf.Lerp(loadingSlider.value, loading.progress, timer);
 
-            yield return new WaitForSecondsRealtime(0.1f);
+            if (loading.progress >= 0.9f && timer > 2f)
+            {
+                //whiteImage.gameObject.SetActive(true);
+                //yield return StartCoroutine("SceneChangeFadeOut");
+                loading.allowSceneActivation = true;
+            }
+
+            yield return null;
         }
-
-        yield return StartCoroutine("SceneChangeFadeOut");
     }
 
     public IEnumerator SceneChangeFadeOut()
