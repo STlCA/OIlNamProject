@@ -21,10 +21,11 @@ public class EnemySpawn : MonoBehaviour
     public DataTable_ChapterLoader chapterDatabase;
     private WavePopUp wavePopUp;
     //private PopUpController popUpController;
+    private SoundManager soundManager;
 
     private List<Enemy> enemyList;
     //private int maxPerWave = 40;    // wave 당 최대 마물 수
-    private int currentCount = 0;
+    private int currentCount = 0;     // 현재 wqve에 소환된 마물 수
     //public int deadEnemyCount = 0;  // 처리한 마물 수
     private float waitSeconds = 0.3f;
     public bool isBossDead = false;
@@ -59,6 +60,7 @@ public class EnemySpawn : MonoBehaviour
         //popUpController = gameManager.GetComponent<PopUpController>();
         chapterDatabase = dataManager.dataTable_ChapterLoader;
         wavePopUp = GetComponent<WavePopUp>();
+        soundManager = GameManager.Instance.SoundManager;
 
         waveUI.Init();
 
@@ -117,6 +119,10 @@ public class EnemySpawn : MonoBehaviour
 
                 enemy.Init(bossID, chapterID, gameSceneManager, dataManager);
                 currentCount++;
+
+                // 보스 등장 사운드 이펙트
+                soundManager.EffectAudioClipPlay(3);
+
                 isBossDead = false;
             }
         }
@@ -224,6 +230,9 @@ public class EnemySpawn : MonoBehaviour
     // 게임 클리어
     private void GameClear()
     {
+        // 보스전 클리어 사운드 이펙트
+        soundManager.EffectAudioClipPlay(4);
+
         GameManager.Instance.PopUpController.PauseUIOn(clearUIPopup);
     }
 
