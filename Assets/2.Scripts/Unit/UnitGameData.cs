@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class UnitGameData : MonoBehaviour, IPointerClickHandler
@@ -8,21 +9,22 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     public UnitSpawnController controller;
     private UnitAnimation unitAnimation;
 
-    [Header("RangeCollider")]
-    public CircleCollider2D rangeCollider;//직접스스로를 넣어주기
-    public GameObject rangeGO;
-
-    [Header("UI")]
-    public GameObject unitCanvas;
-    public Button upgradeBtn;
-    public Button sellBtn;
-    public GameObject star1;
-    public GameObject star2;
-
-
     [Header("Self")]
-    public GameObject skillGO;
+    public GameObject myGO;//Init에서 받아오기
+    private GameObject unitRootGO;//내스스로
+    private CircleCollider2D rangeCollider;
+    private SpriteRenderer shadowSR;
 
+    private GameObject spriteGO;
+    private GameObject rangeGO;
+    private GameObject skillGO;
+    private GameObject sellBtn;
+    private GameObject upgradeBtn;
+    private GameObject star1;
+    private GameObject star2;
+
+
+    //----------------------------------------------------------------Enemy
 
     private List<Enemy> enemyList = new();
     private Enemy findEnemy;
@@ -31,7 +33,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     public Vector3 pos;
     public int key;
-    public GameObject myGO;
+
 
     public UnitData myUnitData;
     private DataTable_UnitStep myStepData;
@@ -43,6 +45,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         {
             range = value;
             rangeCollider.radius = range;
+            rangeGO.transform.localScale = new Vector3(range, range);//되는지확인
         }
     }
     public float range;
@@ -88,6 +91,24 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     //------------------------------------------------------------------------
 
+    private void ChildInit()
+    {
+        unitRootGO = gameObject; //15와 25를 왔다갔다
+        spriteGO = myGO.transform.GetChild(1).gameObject;
+        rangeCollider = GetComponent<CircleCollider2D>();
+        shadowSR = transform.GetChild(1).GetComponentInChildren<SpriteRenderer>();
+
+        rangeGO = spriteGO.transform.GetChild(0).gameObject;
+        skillGO = spriteGO.transform.GetChild(1).gameObject;
+        sellBtn = spriteGO.transform.GetChild(2).gameObject;
+        upgradeBtn = spriteGO.transform.GetChild(3).gameObject;
+        star1 = spriteGO.transform.GetChild(4).gameObject;
+        star2 = spriteGO.transform.GetChild(5).gameObject;
+
+        star1.SetActive(false);
+        star2.SetActive(false);
+    }
+
     public void Init(UnitData unitData, DataTable_UnitStep stepData, UnitSpawnController controller, Vector3 pos, GameObject go)
     {
         this.controller = controller;
@@ -97,6 +118,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         myUnitData = unitData;
         myStepData = stepData;
+
+        ChildInit();
 
         //대문자가맞음
         Range = unitData.range / 100;
@@ -116,23 +139,10 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         unitAnimation = GetComponentInChildren<UnitAnimation>();
         unitAnimation.TypeSet(unitData.type);
 
-        unitCanvas = transform.parent.GetChild(1).gameObject;
-        //rangeGO = transform.GetChild(3).gameObject;
-
-        unitCanvas.GetComponent<UnitButton>().Init(controller, pos);
-        Button[] btns = unitCanvas.GetComponentsInChildren<Button>();
-        sellBtn = btns[0];
-        upgradeBtn = btns[1];
-
-        star1 = unitCanvas.transform.GetChild(2).gameObject;
-        star2 = unitCanvas.transform.GetChild(3).gameObject;
-
-        star1.SetActive(false);
-        star2.SetActive(false);
+        spriteGO.SetActive(false);
     }
 
-    //스피드 스택 쌓을곳에서 부르기 = 버프
-    public void SpeedStackChange(int changeVal, bool isFixChange = false, bool isNow = false)
+    public void SpeedStackChange(int changeVal, bool isFixChange = false)
     {
         if (isFixChange)
             fixSpeedStack += changeVal;
@@ -141,7 +151,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         SpeedChange();
     }
-    public void ATKStackChange(int changeVal, bool isFixChange = false, bool isNow = false)
+
+    public void ATKStackChange(int changeVal, bool isFixChange = false)
     {
         if (isFixChange)
             fixAtkStack += changeVal;
@@ -158,8 +169,6 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         SpeedChange();
         ATKChange();
-
-        //TODO : 아이콘바꾸기
     }
 
     private void SpeedChange()
@@ -207,7 +216,6 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
             if (findEnemy != null)
             {
-                Debug.Log("소리남");
                 GameManager.Instance.SoundManager.GameAudioClipPlay(0);//공격사운드
                 unitAnimation.AttackEffect();
                 deltaSpeed = 0;
@@ -246,8 +254,6 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         if (findEnemy == null)
             return;
 
-        Debug.Log("Attack호출됨");
-
         //skillGO.transform.position = findEnemy.transform.position;
         //unitAnimation.AttackSkillEffect();//타이밍해결할수있으면 공격끝나고 호출
         findEnemy.EnemyAttacked(atk);
@@ -255,83 +261,33 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("클릭됨");
-        controller.spriteCanvas.SetActive(true);
-
-        unitCanvas.SetActive(true);
+        controller.spriteCanvas.SetActive(true);        
+        controller.unitBG.SetActive(true);
 
         if (controller.onUnitPopUP.Count != 0)
         {
-            if (controller.onUnitPopUP[0] != sellBtn)
+            if (controller.onUnitPopUP[0] != spriteGO)
             {
-                controller.onUnitPopUP[0].layer = 0;
-                controller.onUnitPopUP[1].SetActive(false);
-                controller.onUnitPopUP[2].SetActive(false);
+                controller.onUnitPopUP[1].GetComponent<SortingGroup>().sortingOrder = 15;
+                controller.onUnitPopUP[0].SetActive(false);
 
                 controller.onUnitPopUP.Clear();
 
-                controller.onUnitPopUP.Add(gameObject);
-                controller.onUnitPopUP.Add(sellBtn.gameObject);
-                controller.onUnitPopUP.Add(upgradeBtn.gameObject);
-                //controller.onUnitPopUP.Add(rangeGO);
+                controller.onUnitPopUP.Add(spriteGO);
+                controller.onUnitPopUP.Add(unitRootGO);
 
-                controller.onUnitPopUP[0].layer = 6;
-                controller.onUnitPopUP[1].SetActive(true);
-                controller.onUnitPopUP[2].SetActive(true);
+                controller.onUnitPopUP[0].SetActive(true);
+                controller.onUnitPopUP[1].GetComponent<SortingGroup>().sortingOrder = 25;
             }
         }
         else
         {
-            controller.onUnitPopUP.Add(gameObject);
-            controller.onUnitPopUP.Add(sellBtn.gameObject);
-            controller.onUnitPopUP.Add(upgradeBtn.gameObject);
-            //controller.onUnitPopUP.Add(rangeGO);
+            controller.onUnitPopUP.Add(spriteGO);
+            controller.onUnitPopUP.Add(unitRootGO);
 
-            controller.onUnitPopUP[0].layer = 6;
-            controller.onUnitPopUP[1].SetActive(true);
-            controller.onUnitPopUP[2].SetActive(true);
+            controller.onUnitPopUP[0].SetActive(true);
+            controller.onUnitPopUP[1].GetComponent<SortingGroup>().sortingOrder = 25;
         }
-
-        //UIOnOff();
-    }
-    /*
-        public void UIOnOff()
-        {
-            if (btnUI == null)
-                return;
-
-            if (controller.onUnitPopUP[0].activeSelf == true)
-            {
-                controller.onUnitPopUP[0].SetActive(false);
-                controller.onUnitPopUP[1].SetActive(false);
-
-                controller.onUnitPopUP.Clear();
-            }
-            else
-            {
-                if (controller.CanUpgradeCheck(myData.id) && myData.step < 2)
-                    nonClickImage.gameObject.SetActive(false);
-                else
-                    nonClickImage.gameObject.SetActive(true);
-
-                controller.onUnitPopUP[0].SetActive(true);
-                controller.onUnitPopUP[1].SetActive(true);
-            }
-
-            gameObject.layer = 0;
-        }*/
-
-    public void UIOff()
-    {
-        controller.onUnitPopUP[0].SetActive(false);
-        controller.onUnitPopUP[1].SetActive(false);
-        controller.onUnitPopUP[2].SetActive(false);
-
-        controller.onUnitPopUP.Clear();
-        gameObject.layer = 0;
-
-        /*        *//*        btnUI.gameObject.SetActive(false);
-                        rangeGO.SetActive(false); *//**/
     }
 }
 

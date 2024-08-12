@@ -61,7 +61,7 @@ public class WaveUI : MonoBehaviour
 
         if(plus > 0)
         {
-            gameSceneManager.unitSpawnController.ATKChange(-plus);
+            gameSceneManager.unitSpawnController.ATKChange(-plus,false,true);
             plus = 0;
         }
 
@@ -72,12 +72,12 @@ public class WaveUI : MonoBehaviour
 
             if (plus == 2)
             {
-                gameSceneManager.unitSpawnController.ATKChange(plus, true);
+                gameSceneManager.unitSpawnController.ATKChange(plus, true,true);
                 plus = 0;
             }
             else
             {
-                gameSceneManager.unitSpawnController.ATKChange(plus);
+                gameSceneManager.unitSpawnController.ATKChange(plus,false,true);
             }
         }
 

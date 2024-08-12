@@ -73,4 +73,12 @@ namespace Constants
         Archer,
         Wizard,
     }
+
+    public enum UnitButtonType
+    {
+        Open,
+        Close,
+        Sell,
+        Upgrade,
+    }
 }

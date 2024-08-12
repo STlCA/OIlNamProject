@@ -21,7 +21,7 @@ public class UnitSpawnController : MonoBehaviour
     public GameSceneManager gameSceneManager;
     private UnitManager unitManager;
     private DataTable_UnitStepLoader unitStepLoader;
-    
+
     [Header("SpawnPoint")]
     public GameObject spawnGO;
     private Transform[] spawnArray;
@@ -32,6 +32,7 @@ public class UnitSpawnController : MonoBehaviour
     public GameObject rubyFalse;
     public TMP_Text infoTxt;
     public GameObject spriteCanvas;
+    public GameObject unitBG;
 
     public Dictionary<Vector3, UnitGameData> spawnData = new();
     public List<GameObject> onUnitPopUP = new();
@@ -76,12 +77,12 @@ public class UnitSpawnController : MonoBehaviour
         percents[1] = 24.85f;
         percents[2] = 65.35f;
 
-        TotalPercent();        
+        TotalPercent();
     }
 
     private void TotalPercent()
     {
-        foreach( var t in percents )
+        foreach (var t in percents)
         {
             totalPercent += t;
         }
@@ -91,7 +92,7 @@ public class UnitSpawnController : MonoBehaviour
     {
         float random = Random.value * totalPercent;
 
-        for( int i = 0; i < percents.Length; i++ )
+        for (int i = 0; i < percents.Length; i++)
         {
             random -= percents[i];
 
@@ -102,7 +103,7 @@ public class UnitSpawnController : MonoBehaviour
         return 0;
     }
 
-    public void PercentChange(float s,float a, float b)
+    public void PercentChange(float s, float a, float b)
     {
         percents[0] += s;
         percents[1] += a;
@@ -162,10 +163,10 @@ public class UnitSpawnController : MonoBehaviour
             step0.Add(newUnit.key, newClass);
         }
 
-        switch(newUnit.tier)
+        switch (newUnit.tier)
         {
             case 1:
-                infoTxt.text = "<color=red>SÆ¼¾î "+newUnit.name + "</color>" + "<color=black>" + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.</color>"; break;
+                infoTxt.text = "<color=red>SÆ¼¾î " + newUnit.name + "</color>" + "<color=black>" + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.</color>"; break;
             case 2:
                 infoTxt.text = "<color=blue>AÆ¼¾î " + newUnit.name + "</color>" + "<color=black>" + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.</color>"; break;
             case 3:
@@ -179,7 +180,7 @@ public class UnitSpawnController : MonoBehaviour
 
         if (spawnData[key].Step == 0)
         {
-            if(step0[id].count >= 3)
+            if (step0[id].count >= 3)
             {
                 step0[id].count -= 3;
 
@@ -190,9 +191,9 @@ public class UnitSpawnController : MonoBehaviour
                     temp.Add(step0[id].keys[i]);
                 }
 
-                foreach(var t in temp)
+                foreach (var t in temp)
                 {
-                    if(t != key)
+                    if (t != key)
                     {
                         Destroy(spawnData[t].myGO);
                         spawnData.Remove(t);
@@ -217,7 +218,7 @@ public class UnitSpawnController : MonoBehaviour
                 }
 
                 spawnData[key].UpgradeData();
-            }      
+            }
 
         }
         else if (spawnData[key].Step == 1)
@@ -266,18 +267,31 @@ public class UnitSpawnController : MonoBehaviour
         spriteCanvas.SetActive(false);
     }
 
-    public void SpeedChange(int val, bool isFixChange = false, bool isnow = false)
-    {
-        foreach(var (key, data) in spawnData)
-        {
-            data.SpeedStackChange(val, isFixChange, isnow);
-        }
-    }
-    public void ATKChange(int val, bool isFixChange = false, bool isnow = false)
+    public void SpeedChange(int val, bool isFixChange = false, bool isWave = false)
     {
         foreach (var (key, data) in spawnData)
         {
-            data.ATKStackChange(val, isFixChange, isnow);
+            data.SpeedStackChange(val, isFixChange);
+        }
+    }
+
+    public void ATKChange(int val, bool isFixChange = false, bool isWave = false)
+    {
+        //TODO¾ÆÀÌÄÜÁßÃ¸
+        /*        if (isWave)
+                    gameObject.SetActive(true);
+                if (isFixChange && val > 0)
+                {
+                    gameObject.SetActive(true);
+                    int stack = 0;
+                    stack++;
+                    string text = "x"+stack.ToString();
+                }*/
+
+
+        foreach (var (key, data) in spawnData)
+        {
+            data.ATKStackChange(val, isFixChange);
         }
     }
 }
