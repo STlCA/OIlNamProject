@@ -6,13 +6,15 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class SceneEffect : Manager
 {
     private StoryUI storyUI = null;
     private StartManager startManager = null;
-
+    private DataTable_TIPLoader tipBase;
 
     //GameManager children이 아니면 fadeImage공용프리팹으로?
 
@@ -28,6 +30,7 @@ public class SceneEffect : Manager
     public GameObject myCanvas;
     private Image myfadeImage = null;
     private Slider mySlider = null;
+    private TMP_Text tipText = null;
 
     private float fadeTime = 1f;
     private float waitTime = 1f;
@@ -46,6 +49,9 @@ public class SceneEffect : Manager
 
             CanvasInit();
         }
+
+        if (GameManager.Instance != null)
+            tipBase = GameManager.Instance.DataManager.dataTable_TIPLoader;
     }
 
     public override void Init(GameManager gm)
@@ -54,6 +60,7 @@ public class SceneEffect : Manager
 
         myfadeImage = myCanvas.GetComponentInChildren<Image>();
         mySlider = myCanvas.GetComponentInChildren<Slider>();
+        tipText = mySlider.GetComponentInChildren<TMP_Text>();
 
         myfadeImage.gameObject.SetActive(false);
         mySlider.gameObject.SetActive(false);
@@ -65,6 +72,7 @@ public class SceneEffect : Manager
 
         myfadeImage = go.GetComponentInChildren<Image>();
         mySlider = go.GetComponentInChildren<Slider>();
+        tipText = mySlider.GetComponentInChildren<TMP_Text>();
 
         myfadeImage.gameObject.SetActive(false);
         mySlider.gameObject.SetActive(false);
@@ -203,22 +211,39 @@ public class SceneEffect : Manager
         }
 
         mySlider.gameObject.SetActive(true);
+
+        int random = Random.Range(0,tipBase.ItemsList.Count);
+
+        tipText.text = tipBase.ItemsList[random].Tip;
     }
 
     public IEnumerator CoLoadingScene(string scnenName, bool gameScene)
     {
         yield return StartCoroutine("SceneChangeFadeIn");
 
+        float timer = 0.0f;
+
         AsyncOperation loading = SceneManager.LoadSceneAsync(scnenName);
+        loading.allowSceneActivation = false;
 
         while (!loading.isDone) //씬 로딩 완료시 while문이 나가짐
         {
-            if (loading.progress >= 0.9f)
-                mySlider.value = 1f;
-            else
-                mySlider.value = loading.progress;
+            timer += Time.deltaTime;
 
-            yield return new WaitForSecondsRealtime(0.1f);
+            if (loading.progress >= 0.9f)
+                mySlider.value = 0.7f;
+            else
+                mySlider.value = Mathf.Lerp(mySlider.value, loading.progress, timer);
+
+            if (loading.progress >= 0.9f && timer > 2f)
+            {
+                mySlider.value = 1f;
+                //whiteImage.gameObject.SetActive(true);
+                //yield return StartCoroutine("SceneChangeFadeOut");
+                loading.allowSceneActivation = true;
+            }
+
+            yield return null;
         }
 
         mySlider.gameObject.SetActive(false);

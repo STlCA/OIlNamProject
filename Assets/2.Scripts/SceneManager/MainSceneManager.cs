@@ -94,7 +94,7 @@ public class MainSceneManager : MonoBehaviour
     {
         GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Lobby);
 
-        SetStage(2);//---------임시 스테이지 셋팅
+        SetStage(1);//---------임시 스테이지 셋팅
 
         if (StartCheck())
         {
