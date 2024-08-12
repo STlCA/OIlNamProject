@@ -20,6 +20,7 @@ public class SceneEffect : Manager
     public Image startfadeImage = null;
     public Image fadeImage = null;
     public Image crackingImage = null;
+    public RawImage startVideoImage = null;
     public Image textBackImage = null;
     public Image skipImage = null;
 
@@ -96,7 +97,8 @@ public class SceneEffect : Manager
 
         yield return new WaitForSeconds(1);
 
-        crackingImage.gameObject.SetActive(true);
+        //crackingImage.gameObject.SetActive(true);
+        startVideoImage.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1);
 
@@ -109,7 +111,7 @@ public class SceneEffect : Manager
         StopCoroutine("StartFadeFlow");
 
         skipImage.gameObject.SetActive(true);
-        textBackImage.gameObject.SetActive(true);
+        //textBackImage.gameObject.SetActive(true);
 
         storyText.text = string.Empty;
 
