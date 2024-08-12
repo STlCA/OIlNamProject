@@ -19,7 +19,7 @@ public class EnemySpawn : MonoBehaviour
     private WaveUI waveUI;
     private LethalEnergy lethalEnergy;//수정
     public DataTable_ChapterLoader chapterDatabase;
-    //private WavePopUp wavePopUp;
+    private WavePopUp wavePopUp;
     //private PopUpController popUpController;
 
     private List<Enemy> enemyList;
@@ -28,6 +28,7 @@ public class EnemySpawn : MonoBehaviour
     //public int deadEnemyCount = 0;  // 처리한 마물 수
     private float waitSeconds = 0.3f;
     public bool isBossDead = false;
+    private bool tooManyEnemy = false;  // 마물 수 경고 창 체크
 
     EnemyMove enemyMove;
 
@@ -57,7 +58,7 @@ public class EnemySpawn : MonoBehaviour
         
         //popUpController = gameManager.GetComponent<PopUpController>();
         chapterDatabase = dataManager.dataTable_ChapterLoader;
-        //wavePopUp = GetComponent<WavePopUp>();
+        wavePopUp = GetComponent<WavePopUp>();
 
         waveUI.Init();
 
@@ -129,10 +130,16 @@ public class EnemySpawn : MonoBehaviour
         {
             GameOver();
         }
-        // 마물이 70마리 이상일 시 경고창 팝업
-        else if(enemyList.Count >= 70)
+        // 마물이 70마리 이상이 되었을 시 경고창 팝업
+        else if (enemyList.Count >= 70 && tooManyEnemy == false)
         {
-            //StartCoroutine(wavePopUp.PopUp("마물의 수가 너무 많습니다!!", Color.red));
+            tooManyEnemy = true;
+            StartCoroutine(wavePopUp.PopUp("마물의 수가 너무 많습니다!!", Color.red));
+        }
+        // 마물이 70마리 이하가 되면
+        else if (enemyList.Count < 70 && tooManyEnemy)
+        {
+            tooManyEnemy = false;
         }
 
         UpdateEnemyCountUI();
