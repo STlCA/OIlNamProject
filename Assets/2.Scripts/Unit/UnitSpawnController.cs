@@ -162,7 +162,15 @@ public class UnitSpawnController : MonoBehaviour
             step0.Add(newUnit.key, newClass);
         }
 
-        infoTxt.text = newUnit.name + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.";
+        switch(newUnit.tier)
+        {
+            case 1:
+                infoTxt.text = "<color=red>SÆ¼¾î "+newUnit.name + "</color>" + "<color=black>" + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.</color>"; break;
+            case 2:
+                infoTxt.text = "<color=blue>AÆ¼¾î " + newUnit.name + "</color>" + "<color=black>" + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.</color>"; break;
+            case 3:
+                infoTxt.text = "<#525252>BÆ¼¾î " + newUnit.name + "</color>" + "<color=black>" + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.</color>"; break;
+        }
     }
 
     public void Upgrade(Vector3 key)
