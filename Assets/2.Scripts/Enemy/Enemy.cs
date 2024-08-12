@@ -188,7 +188,9 @@ public class Enemy : MonoBehaviour
         //enemyHPBar.UpdateHPBar();
 
         // 데미지
-        DamageNumber damageNumber = damagePrefab.Spawn(transform.position, damage);
+        AttackedEffect(damage);
+        //DamageNumber damageNumber = damagePrefab.Spawn(transform.position, damage);
+        //image.color = Color.red;
 
         // 적이 죽었을 때
         if (hp <= 0)
@@ -200,6 +202,25 @@ public class Enemy : MonoBehaviour
             gameSceneManager.ChangeRuby(ruby);//수정
             enemySpawn.EnemyDie(this, gameObject);
         }
+    }
+
+    // 마물이 피격 애니메이션 및 효과
+    private void AttackedEffect(float damage)
+    {
+        DamageNumber damageNumber = damagePrefab.Spawn(transform.position, damage);
+        StartCoroutine(RedEffect());
+    }
+
+    // 마물 피격 효과
+    public IEnumerator RedEffect()
+    {
+        image.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        image.color = Color.white;
+        yield return new WaitForSeconds(0.3f);
+        image.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+        image.color = Color.white;
     }
 
     // 마물이 필살기에 맞았을 때 (보스 제외)
