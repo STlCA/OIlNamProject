@@ -43,6 +43,7 @@ public class UnitUpgradeUI : MonoBehaviour
         key = unitData.key;
 
         unitImage.sprite = unitData.profile;
+        unitImage.SetNativeSize();
 
         switch (unitData.tier)
         {
@@ -72,17 +73,24 @@ public class UnitUpgradeUI : MonoBehaviour
         switch (myUnitData.tier)
         {
             case 1:
-                tierTxt.text = "S 티어"; break;
+                tierTxt.text = "S 티어";
+                tierTxt.color = Color.black;
+                break;
             case 2:
-                tierTxt.text = "A 티어"; break;
+                tierTxt.text = "A 티어";
+                tierTxt.color = Color.white;
+                break;
             case 3:
-                tierTxt.text = "B 티어"; break;
+                tierTxt.text = "B 티어";                
+                tierTxt.color = Color.black;
+                break;
         }
 
         levelTxt.text = "Lv. " + myUnitData.level.ToString();
         pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
         atkTxt.text = "공격력 " + myUnitData.atk.ToString();
         plusAtkTxt.text = "+" + myUpgradeData.ATK[myUnitData.level].ToString();
+        plusAtkTxt.color = Color.cyan;
         speedTxt.text = myUnitData.speed.ToString();
         //plusSpeedTxt.text = "+" + upgradeData.Speed[unitData.level].ToString();
         upgradeGoldTxt.text = myUpgradeData.UseGold[myUnitData.level].ToString();
