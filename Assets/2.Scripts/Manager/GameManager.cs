@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
 
     private void MoneyInit()
     {
-        Gold = 10;
+        Gold = 100;
         Key = 999;
         Diamond = 100;
     }

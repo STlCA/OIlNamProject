@@ -221,6 +221,7 @@ public class UnitManager : Manager
         }
 
         InitTierID();
+        PercentInit();
 
         //Temp
         //pieceData.unitPiece = 30;
@@ -332,12 +333,15 @@ public class UnitManager : Manager
         {
             random = Random.value * total;
 
-            for (int j = 0; j < percents.Length; ++i)
+            for (int j = 0; j < percents.Length; ++j)
             {
                 random -= percents[j];
 
                 if (random <= 0)
+                {
                     index = j + 1;
+                    break;
+                }
             }
 
             //0번은 유닛모집권
