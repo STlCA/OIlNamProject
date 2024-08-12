@@ -31,7 +31,7 @@ public class Player : Manager
     {
         base.Init(gm);
 
-        UserName = "5得亜切 ";
+        UserName = "5得亜切";
         Level = 1;
         FullExp = 2000;
         CurrentExp = 0;
