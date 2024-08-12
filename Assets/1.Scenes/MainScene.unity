@@ -13425,6 +13425,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 35967e8a4dfb1664e9b066939272c0a4, type: 3}
   - {fileID: 8300000, guid: fc5af015011ea3745b7f78ea1dd1049f, type: 3}
   - {fileID: 8300000, guid: 51a4f1157b7ff1449b5e5cf064d584c7, type: 3}
+  - {fileID: 8300000, guid: c9a9a6a64322e504a91d8ef847fddac4, type: 3}
   effectAudioList:
   - {fileID: 8300000, guid: 691c85ca845ece644a0ba8cd1ebcf95d, type: 3}
   - {fileID: 8300000, guid: 6f805e337418de947815f294a373551b, type: 3}
@@ -14624,12 +14625,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1243054251}
-  m_Father: {fileID: 1155522381}
+  m_Father: {fileID: 721237117}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 200, y: 1225}
+  m_AnchoredPosition: {x: 180, y: -210}
   m_SizeDelta: {x: 66, y: 66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &596646741
@@ -17849,6 +17850,7 @@ RectTransform:
   m_Children:
   - {fileID: 827398384}
   - {fileID: 103404743}
+  - {fileID: 596646740}
   - {fileID: 1155522381}
   m_Father: {fileID: 1477818190}
   m_RootOrder: -1
@@ -29222,7 +29224,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -31849,7 +31851,6 @@ RectTransform:
   m_Children:
   - {fileID: 883829275}
   - {fileID: 1869995884}
-  - {fileID: 596646740}
   m_Father: {fileID: 721237117}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52205,7 +52206,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -55077,7 +55078,7 @@ AudioSource:
   m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

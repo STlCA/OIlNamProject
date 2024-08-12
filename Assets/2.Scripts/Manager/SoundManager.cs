@@ -1,4 +1,5 @@
 using Constants;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -81,6 +82,15 @@ public class SoundManager : Manager
         BGMSource = bgm;
         EffectSource = effect;
         GameSource = gameSource;
+    }
+
+    public void BGMCheck(int newIndex)
+    {
+        if (BGMSource.clip == bgmList[newIndex])
+            return;
+        else
+            BGMChange(newIndex);
+
     }
 
     public void BGMChange(int index)

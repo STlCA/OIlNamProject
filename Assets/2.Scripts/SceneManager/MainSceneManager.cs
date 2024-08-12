@@ -142,21 +142,25 @@ public class MainSceneManager : MonoBehaviour
         switch (tabType)
         {
             case (int)TabType.Shop://Çò°¥·Á¼­enum
+                GameManager.Instance.SoundManager.BGMCheck(1);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
                 break;
 
             case (int)TabType.Home:
+                GameManager.Instance.SoundManager.BGMCheck(1);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
                 break;
 
             case (int)TabType.Gacha:
+                GameManager.Instance.SoundManager.BGMCheck(8);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
                 break;
 
             case (int)TabType.Unit:
+                GameManager.Instance.SoundManager.BGMCheck(1);
                 btnUI[tabType].SetActive(true);
                 unitUpgradeController.OnUnitTab();
                 tabUI[tabType].SetActive(true);
