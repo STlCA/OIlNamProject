@@ -223,17 +223,18 @@ public class EnemySpawn : MonoBehaviour
     // 게임 오버
     public void GameOver()
     {
-        GameManager.Instance.PopUpController.PauseUIOn(gameoverPopup);
-
+        // 사운드 이펙트
+        soundManager.EffectAudioClipPlay(5);
+        GameManager.Instance.PopUpController.UIOnNPause(gameoverPopup);
     }
     
     // 게임 클리어
     private void GameClear()
     {
-        // 보스전 클리어 사운드 이펙트
+        // 사운드 이펙트
         soundManager.EffectAudioClipPlay(4);
 
-        GameManager.Instance.PopUpController.PauseUIOn(clearUIPopup);
+        GameManager.Instance.PopUpController.UIOnNPause(clearUIPopup);
     }
 
     public void LethalAttack()

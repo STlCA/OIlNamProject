@@ -56,6 +56,15 @@ public class PopUpController : MonoBehaviour
         ui.SetActive(false);
     }
     //
+    public void UIOnNPause(GameObject ui)
+    {
+        if (ui == null)
+            return;
+
+        ui.SetActive(true);
+        currentTimeScale = Time.timeScale;
+        Time.timeScale = 0f;
+    }
     public void PauseUIOn(GameObject ui)
     {
         soundManager.EffectAudioClipPlay(0);
