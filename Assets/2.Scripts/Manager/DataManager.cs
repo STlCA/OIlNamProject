@@ -19,6 +19,9 @@ public class DataManager : Manager
     public DataTable_UpgradeLoader dataTable_UpgradeLoader;
     public DataTable_UnitStepLoader dataTable_UnitStepLoader;
 
+    // º¸»ó
+    public DataTable_WaveRewardLoader dataTable_WaveRewardLoader;
+
     private void Awake()
     {
         EnemyAwake();
@@ -27,6 +30,7 @@ public class DataManager : Manager
         MessageAwake();
         StoryAwake();
         UnitAwake();
+        RewardAwake();
     }
 
     private void EnemyAwake()
@@ -70,5 +74,10 @@ public class DataManager : Manager
         dataTable_UnitLoader = new DataTable_UnitLoader();
         dataTable_UpgradeLoader = new DataTable_UpgradeLoader();
         dataTable_UnitStepLoader = new DataTable_UnitStepLoader();
+    }
+
+    private void RewardAwake()
+    {
+        dataTable_WaveRewardLoader = new DataTable_WaveRewardLoader();
     }
 }
