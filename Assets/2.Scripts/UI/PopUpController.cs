@@ -101,5 +101,10 @@ public class PopUpController : MonoBehaviour
         //GameManager.Instance.SceneEffect.GameToMain();
         GameManager.Instance.EnemySpawn.GameOver(false);
     }
+
+    public void SelfSetActive()
+    {
+        transform.parent.gameObject.SetActive(false);
+    }
 }
 
