@@ -27,6 +27,8 @@ public class Player : Manager
     public float FullExp { get; private set; }
     public float CurrentExp { get; private set; }
 
+    public bool IsLevelUp { get; private set; }
+
     public override void Init(GameManager gm)
     {
         base.Init(gm);
@@ -67,12 +69,19 @@ public class Player : Manager
         {
             CurrentExp -= FullExp;
             Level += 1;
+            IsLevelUp = true;
         }
 
-        if (Level >= 130)
+        if (Level > 130)
         {
             Level = 130;
             CurrentExp = FullExp;
+            IsLevelUp = false;
         }
+    }
+
+    public void LevelUpUIClear()
+    {
+        IsLevelUp = false;
     }
 }

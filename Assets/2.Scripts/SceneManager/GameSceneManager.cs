@@ -144,4 +144,9 @@ public class GameSceneManager : MonoBehaviour
 
         return val;
     }
+
+    public void PlayerExpUp()//ġƮŰ
+    {
+        GameManager.Instance.Player.ExpUp(2000);
+    }
 }

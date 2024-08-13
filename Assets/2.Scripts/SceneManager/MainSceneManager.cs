@@ -46,6 +46,8 @@ public class MainSceneManager : MonoBehaviour
     public TMP_Text setUIName;
     public TMP_InputField nameInputField;
     public TMP_InputField couponInputField;
+    public GameObject levelUpUI;
+    public TMP_Text levelUpText;
 
     [Header("Sound")]
     public AudioSource bgmSource;
@@ -106,6 +108,13 @@ public class MainSceneManager : MonoBehaviour
         playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon, canUseCoupon);
 
         gameManager.TimeManager.TextUIInit(offsetTxt);
+
+        if (gameManager.Player.IsLevelUp)
+        {
+            levelUpText.text = gameManager.Player.Level.ToString();
+            levelUpUI.SetActive(true);
+            gameManager.Player.LevelUpUIClear();
+        }
     }
 
     public void GameStart(GameObject ui)
