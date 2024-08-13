@@ -111,6 +111,19 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         star1.SetActive(false);
         star2.SetActive(false);
+
+        switch (myUnitData.tier)
+        {
+            case 1:
+                shadowSR.color = new Color(1f, 0f, 0f,0.5f);
+                break;
+            case 2:
+                shadowSR.color = new Color(0f, 0f, 1f, 0.5f);
+                break;
+            case 3:
+                shadowSR.color = new Color(1f, 1f, 1f, 0.7f);
+                break;
+        }
     }
 
     public void Init(UnitData unitData, DataTable_UnitStep stepData, UnitSpawnController controller, Vector3 pos, GameObject go)
