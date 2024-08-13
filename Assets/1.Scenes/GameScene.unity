@@ -21200,7 +21200,7 @@ MonoBehaviour:
   dataManager: {fileID: 8211429596669660521}
   gameSceneManager: {fileID: 2866201617070711164}
   isBossDead: 0
-  slider: {fileID: 1663905085}
+  slider: {fileID: 0}
 --- !u!4 &1742177587
 Transform:
   m_ObjectHideFlags: 0
@@ -28773,7 +28773,7 @@ MonoBehaviour:
   dataManager: {fileID: 8211429596669660521}
   gameSceneManager: {fileID: 2866201617070711164}
   isBossDead: 0
-  slider: {fileID: 1663905085}
+  slider: {fileID: 0}
 --- !u!222 &2115295545377681982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28856,14 +28856,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 254255707, guid: fb6a263fe135cb64a9d92e6952c5cbc1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29180,7 +29180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2357474410167429530
 GameObject:
   m_ObjectHideFlags: 0
@@ -29723,7 +29723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2572975742723424341
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39802,25 +39802,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneManager: {fileID: 2866201617070711164}
-  wavePlus: {fileID: 323971841}
-  fixPlus: {fileID: 758525636}
-  fixTxt: {fileID: 1989556944}
-  fixTxt2: {fileID: 842289028}
-  monsterMinus: {fileID: 645857942}
+  wavePlus: {fileID: 0}
+  fixPlus: {fileID: 0}
+  fixTxt: {fileID: 0}
+  fixTxt2: {fileID: 0}
+  monsterMinus: {fileID: 0}
   effectList: []
   spawnGO: {fileID: 5510975055949099931}
   spawnFalse: {fileID: 2031280573598326365}
   rubyFalse: {fileID: 476667193}
-  upgradeFalse: {fileID: 855459498}
+  upgradeFalse: {fileID: 0}
   infoTxt: {fileID: 6038714990028897770}
   spriteCanvas: {fileID: 1145602723}
-  unitBG: {fileID: 1896520047}
-  baseImage: {fileID: 2138141908}
-  unitImage: {fileID: 519944658}
-  borderImage: {fileID: 424916594}
-  nameText: {fileID: 1216931414}
-  atkTxt: {fileID: 1197628170}
-  speedTxt: {fileID: 1277109825}
+  unitBG: {fileID: 0}
+  baseImage: {fileID: 0}
+  unitImage: {fileID: 0}
+  borderImage: {fileID: 0}
+  nameText: {fileID: 0}
+  atkTxt: {fileID: 0}
+  speedTxt: {fileID: 0}
   onUnitPopUP: []
 --- !u!4 &4995632089477608578
 Transform:
@@ -40435,10 +40435,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf91613cdf5f3b34c92569684afb0e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameResultUI: {fileID: 0}
-  newRecord: {fileID: 0}
-  currentRecordText: {fileID: 0}
-  lastBestRecordText: {fileID: 0}
+  messageUI: {fileID: 2330865367603675211}
+  messageText: {fileID: 3162146783440732633}
+  currentRecordText: {fileID: 8162542151989655653}
+  lastBestRecordText: {fileID: 125904100650391071}
+  expText: {fileID: 4499903076941675865}
+  goldText: {fileID: 8984578451403864531}
+  eBook: {fileID: 1757551127505028208}
+  restartBtn: {fileID: 2629845093629931357}
 --- !u!1 &5377911659024285146
 GameObject:
   m_ObjectHideFlags: 0
@@ -42860,14 +42864,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -399073380, guid: 6c02a729162b4d44c9411aea0a15a3a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -47839,14 +47843,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 526328236, guid: fb6a263fe135cb64a9d92e6952c5cbc1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public TimerUI TimerUI;
 
     public BestRecord BestRecord;
+    public int BestScore1 { get; private set; } = 0;
+    public int BestScore2 { get; private set; } = 0;
 
     //====================== Player,Unit
     public Player Player { get { return player; } }
@@ -137,6 +139,19 @@ public class GameManager : MonoBehaviour
                 Key = val; break;
             case MoneyType.Diamond:
                 Diamond = val; break;
+        }
+    }
+
+    // 최고 기록 갱신
+    public void UpdateRecord(int currentWave, int stage)
+    {
+        if (stage == 1)
+        {
+            BestScore1 = currentWave;
+        }
+        else
+        {
+            BestScore2 = currentWave;
         }
     }
 

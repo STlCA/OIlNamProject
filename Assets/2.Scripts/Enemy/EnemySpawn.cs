@@ -11,7 +11,7 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private TMP_Text enemyCountText;
     [SerializeField] private GameObject gameoverPopup;  // 게임 오버 UI
-    [SerializeField] private GameObject clearUIPopup;   // 게임 클리어 UI
+    //[SerializeField] private GameObject clearUIPopup;   // 게임 클리어 UI
 
     public GameManager gameManager;
     public Player player;
@@ -23,10 +23,11 @@ public class EnemySpawn : MonoBehaviour
     private WavePopUp wavePopUp;
     //private PopUpController popUpController;
     private SoundManager soundManager;
+    private GameResultUI gameResultUI;
 
     private List<Enemy> enemyList;
     //private int maxPerWave = 40;    // wave 당 최대 마물 수
-    private int currentCount = 0;     // 현재 wqve에 소환된 마물 수
+    private int currentCount = 0;     // 현재 wave에 소환된 마물 수
     //public int deadEnemyCount = 0;  // 처리한 마물 수
     private float waitSeconds = 0.3f;
     public bool isBossDead = false;
@@ -64,6 +65,7 @@ public class EnemySpawn : MonoBehaviour
         chapterDatabase = dataManager.dataTable_ChapterLoader;
         wavePopUp = GetComponent<WavePopUp>();
         soundManager = GameManager.Instance.SoundManager;
+        gameResultUI = gameoverPopup.GetComponent<GameResultUI>();
 
         waveUI.Init();
 
@@ -221,15 +223,28 @@ public class EnemySpawn : MonoBehaviour
     private void UpdateEnemyCountUI()
     {
         enemyCountText.text = enemyList.Count.ToString() + " / 100";
-        slider.fillAmount = enemyList.Count / 100f;
+        //slider.fillAmount = enemyList.Count / 100f;
     }
 
     // 게임 오버
-    public void GameOver()
+    public void GameOver(bool isGameOver = true)
     {
         // 사운드 이펙트
         soundManager.EffectAudioClipPlay(5);
+
         GameManager.Instance.PopUpController.UIOnNPause(gameoverPopup);
+
+        // 게임 오버 팝업창 세팅
+        if (gameManager.Stage == 1)
+        {
+            gameResultUI.PrintRecord(waveUI.currentWave, gameManager.BestScore1);
+        }
+        else
+        {
+            gameResultUI.PrintRecord(waveUI.currentWave, gameManager.BestScore2);
+        }
+        gameResultUI.GetReward(waveUI.currentWave);
+        gameResultUI.RestartButtonActivation(isGameOver);
     }
     
     // 게임 클리어
@@ -238,7 +253,19 @@ public class EnemySpawn : MonoBehaviour
         // 사운드 이펙트
         soundManager.EffectAudioClipPlay(4);
 
-        GameManager.Instance.PopUpController.UIOnNPause(clearUIPopup);
+        GameManager.Instance.PopUpController.UIOnNPause(gameoverPopup);
+
+        // 클리어 팝업창 세팅
+        if(gameManager.Stage == 1)
+        {
+            gameResultUI.PrintRecord(waveUI.currentWave, gameManager.BestScore1, true);
+        }
+        else
+        {
+            gameResultUI.PrintRecord(waveUI.currentWave, gameManager.BestScore2, true);
+        }
+        gameResultUI.GetReward(waveUI.currentWave);
+        gameResultUI.RestartButtonActivation(false);
     }
 
     public void LethalAttack()

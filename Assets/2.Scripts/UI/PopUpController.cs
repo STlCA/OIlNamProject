@@ -98,7 +98,8 @@ public class PopUpController : MonoBehaviour
 
         Time.timeScale = 1f;
 
-        GameManager.Instance.SceneEffect.GameToMain();
+        //GameManager.Instance.SceneEffect.GameToMain();
+        GameManager.Instance.EnemySpawn.GameOver(false);
     }
 }
 

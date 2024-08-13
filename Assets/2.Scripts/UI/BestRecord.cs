@@ -20,16 +20,21 @@ public class BestRecord : MonoBehaviour
 
     public void Init()
     {
-        bestRecord = 0;
+        if (GameManager.Instance.Stage == 1)
+        {
+            bestRecord = GameManager.Instance.BestScore1;
+        }
+        else
+        {
+            bestRecord = GameManager.Instance.BestScore2;
+        }
+
         UpdateBestRecordUI(bestRecord);
     }
 
     // 최고 기록 UI 업데이트
     public void UpdateBestRecordUI(int waveNum)
     {
-        if (bestRecord < waveNum || waveNum == 0)
-        {
-            bestRecordText.text = "최고 기록 : " + bestRecord.ToString() + " WAVE";
-        }
+        bestRecordText.text = "최고 기록 : " + bestRecord.ToString() + " WAVE";
     }
 }
