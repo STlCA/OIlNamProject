@@ -11,6 +11,7 @@ public class PlayerEvent : Manager
     public GameObject falseUseCoupon;//이미사용
 
     public static bool UseStartCoupon { get; private set; } = false;
+    public static bool Stage1Clear { get; private set; } = false;
 
     public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2)
     {
@@ -43,5 +44,13 @@ public class PlayerEvent : Manager
         }
 
         UseStartCoupon = true;
+    }
+
+    public void StageClear()
+    {
+        if (Stage1Clear == true)
+            return;
+        else
+            Stage1Clear = true;      
     }
 }

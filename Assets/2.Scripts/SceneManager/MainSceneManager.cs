@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -30,6 +31,7 @@ public class MainSceneManager : MonoBehaviour
     public List<GameObject> tierAnim;
     public GameObject gachaAnim;
     public List<TMP_Text> unitTabTierPiece = new();
+    public Image stage2Icon;
 
     [Header("GoldUI")]
     public TMP_Text goldTxt;
@@ -57,6 +59,9 @@ public class MainSceneManager : MonoBehaviour
     [Header("FalseUI")]
     public GameObject falseCoupon;//번호틀림
     public GameObject falseUseCoupon;//이미사용
+    public GameObject falseStart;
+
+    private bool canStart = true;
 
     private void Start()
     {
@@ -103,7 +108,11 @@ public class MainSceneManager : MonoBehaviour
     {
         GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Lobby);
 
-        SetStage(1);//---------임시 스테이지 셋팅
+        if (canStart == false)
+        {
+            falseStart.SetActive(true);
+            return;
+        }
 
         if (StartCheck())
         {
@@ -184,6 +193,26 @@ public class MainSceneManager : MonoBehaviour
     //BTN Stage //임시로 호출
     public void SetStage(int stage)
     {
-        GameManager.Instance.SetStage(stage);
+        if (stage == 2)
+        {
+            if (PlayerEvent.Stage1Clear)
+            {
+                canStart = true;
+                stage2Icon.color = Color.white;
+                GameManager.Instance.SetStage(stage);
+            }
+            else
+            {
+                stage2Icon.color = Color.black;
+                canStart = false;
+                return;
+            }
+        }
+        else
+        {
+            canStart = true;
+            GameManager.Instance.SetStage(stage);
+        }
+
     }
 }
