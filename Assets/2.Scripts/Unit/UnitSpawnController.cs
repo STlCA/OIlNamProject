@@ -2,11 +2,11 @@ using Constants;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [Serializable]
@@ -30,7 +30,7 @@ public class UnitSpawnController : MonoBehaviour
     public GameObject monsterMinus;
 
     public List<GameObject> effectList = new();//clickspritebtn스크립트에서 씀
-    private int fixStack=0;
+    private int fixStack = 0;
 
     [Header("SpawnPoint")]
     public GameObject spawnGO;
@@ -46,6 +46,14 @@ public class UnitSpawnController : MonoBehaviour
     public TMP_Text infoTxt;
     public GameObject spriteCanvas;
     public GameObject unitBG;
+
+    [Header("UnitData")]
+    public Image baseImage;
+    public Image unitImage;
+    public Image borderImage;
+    public TMP_Text nameText;
+    public TMP_Text atkTxt;
+    public TMP_Text speedTxt;
 
     public Dictionary<Vector3, UnitGameData> spawnData = new();
     public List<GameObject> onUnitPopUP = new();
@@ -233,7 +241,7 @@ public class UnitSpawnController : MonoBehaviour
 
                     spawnData[key].UpgradeData();
                 }
-                    break;
+                break;
             case 1:
                 if (step1[id].count >= 3)
                 {
@@ -328,5 +336,33 @@ public class UnitSpawnController : MonoBehaviour
         {
             data.ATKStackChange(val, isFixChange);
         }
+    }
+
+    public void UnitInfoSet(Vector3 pos)
+    {
+        UnitData unitData = spawnData[pos].myUnitData;
+
+        switch (unitData.tier)
+        {
+            case 1:
+                baseImage.color = new Color(0.9019608f, 0.5294118f, 0.5294118f);
+                borderImage.color = Color.red;
+                nameText.text = "<color=red>S티어 </color>" + unitData.name;
+                break;
+            case 2:
+                baseImage.color = new Color(0.5843138f, 0.627451f, 0.9019608f);
+                borderImage.color = Color.blue;
+                nameText.text = "<color=blue>A티어 </color>" + unitData.name;
+                break;
+            case 3:
+                baseImage.color = Color.white;
+                borderImage.color = Color.white;
+                nameText.text = "<#525252>B티어 </color>" + unitData.name;
+                break;
+        }
+
+        unitImage.sprite = unitData.profile;
+        atkTxt.text = spawnData[pos].atkData.ToString();
+        speedTxt.text = spawnData[pos].speedData.ToString();
     }
 }

@@ -94,7 +94,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     private void ChildInit()
     {
         unitRootGO = gameObject; //15와 25를 왔다갔다
-        spriteGO = myGO.transform.GetChild(1).gameObject;
+        spriteGO = myGO.transform.GetChild(1).GetChild(0).gameObject;
         rangeCollider = GetComponent<CircleCollider2D>();
         shadowSR = transform.GetChild(1).GetComponentInChildren<SpriteRenderer>();
 
@@ -102,8 +102,9 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         skillGO = spriteGO.transform.GetChild(1).gameObject;
         sellBtn = spriteGO.transform.GetChild(2).gameObject;
         upgradeBtn = spriteGO.transform.GetChild(3).gameObject;
-        star1 = spriteGO.transform.GetChild(4).gameObject;
-        star2 = spriteGO.transform.GetChild(5).gameObject;
+
+        star1 = myGO.transform.GetChild(1).GetChild(1).gameObject;
+        star2 = myGO.transform.GetChild(1).GetChild(2).gameObject;
 
         sellBtn.GetComponent<ClickSpriteBtn>().Init(controller, pos);
         upgradeBtn.GetComponent<ClickSpriteBtn>().Init(controller, pos);
@@ -266,6 +267,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     {
         controller.spriteCanvas.SetActive(true);        
         controller.unitBG.SetActive(true);
+        controller.UnitInfoSet(pos);
 
         if (controller.onUnitPopUP.Count != 0)
         {

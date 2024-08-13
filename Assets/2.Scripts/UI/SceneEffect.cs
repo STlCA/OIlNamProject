@@ -231,7 +231,7 @@ public class SceneEffect : Manager
             timer += Time.deltaTime;
 
             if (loading.progress >= 0.9f)
-                mySlider.value = 0.7f;
+                mySlider.value = 0.8f;
             else
                 mySlider.value = Mathf.Lerp(mySlider.value, loading.progress, timer);
 

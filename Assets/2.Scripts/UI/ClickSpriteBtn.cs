@@ -46,9 +46,29 @@ public class ClickSpriteBtn : MonoBehaviour, IPointerClickHandler
                 break;
             case UnitButtonType.Sell:
                 controller.UnitSell(pos);
+
+                if (controller.onUnitPopUP.Count != 0)
+                {
+                    controller.onUnitPopUP[1].GetComponent<SortingGroup>().sortingOrder = 15;
+                    controller.onUnitPopUP[0].SetActive(false);
+                    controller.onUnitPopUP.Clear();
+                }
+
+                controller.spriteCanvas.SetActive(false);
+                controller.unitBG.SetActive(false);
                 break;
             case UnitButtonType.Upgrade:
                 controller.Upgrade(pos);
+
+                if (controller.onUnitPopUP.Count != 0)
+                {
+                    controller.onUnitPopUP[1].GetComponent<SortingGroup>().sortingOrder = 15;
+                    controller.onUnitPopUP[0].SetActive(false);
+                    controller.onUnitPopUP.Clear();
+                }
+
+                controller.spriteCanvas.SetActive(false);
+                controller.unitBG.SetActive(false);
                 break;
             default:
                 Debug.Log("타입설정안됨");
