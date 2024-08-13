@@ -223,7 +223,7 @@ public class EnemySpawn : MonoBehaviour
     private void UpdateEnemyCountUI()
     {
         enemyCountText.text = enemyList.Count.ToString() + " / 100";
-        //slider.fillAmount = enemyList.Count / 100f;
+        slider.fillAmount = enemyList.Count / 100f;
     }
 
     // 게임 오버

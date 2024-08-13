@@ -19602,7 +19602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21194,7 +21194,6 @@ MonoBehaviour:
     type: 3}
   enemyCountText: {fileID: 4733318104465039277}
   gameoverPopup: {fileID: 5358217934899356554}
-  clearUIPopup: {fileID: 8824717407842299380}
   gameManager: {fileID: 0}
   player: {fileID: 0}
   dataManager: {fileID: 8211429596669660521}
@@ -28767,13 +28766,12 @@ MonoBehaviour:
     type: 3}
   enemyCountText: {fileID: 4733318104465039277}
   gameoverPopup: {fileID: 5358217934899356554}
-  clearUIPopup: {fileID: 8824717407842299380}
   gameManager: {fileID: 0}
   player: {fileID: 0}
   dataManager: {fileID: 8211429596669660521}
   gameSceneManager: {fileID: 2866201617070711164}
   isBossDead: 0
-  slider: {fileID: 0}
+  slider: {fileID: 1663905085}
 --- !u!222 &2115295545377681982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -39273,8 +39271,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278255615
+  m_fontColor: {r: 1, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
