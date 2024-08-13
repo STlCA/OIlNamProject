@@ -106,10 +106,10 @@ public class GameSceneManager : MonoBehaviour
             speed1x.SetActive(false);
             speed2x.SetActive(true);
         }
+        //else if (time == 2)
+        //    // 3배속
+        //    time = 3;
         else if (time == 2)
-            // 3배속
-            time = 3;
-        else if (time == 3)
         {
             // 1배속
             time = 1;
