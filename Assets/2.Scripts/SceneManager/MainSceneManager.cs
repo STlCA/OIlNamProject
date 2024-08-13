@@ -60,6 +60,7 @@ public class MainSceneManager : MonoBehaviour
     public GameObject falseCoupon;//번호틀림
     public GameObject falseUseCoupon;//이미사용
     public GameObject falseStart;
+    public GameObject canUseCoupon;
 
     private bool canStart = true;
 
@@ -101,7 +102,7 @@ public class MainSceneManager : MonoBehaviour
 
         unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim, unitTabTierPiece);
 
-        playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon);
+        playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon, canUseCoupon);
     }
 
     public void GameStart(GameObject ui)
@@ -214,5 +215,10 @@ public class MainSceneManager : MonoBehaviour
             GameManager.Instance.SetStage(stage);
         }
 
+    }
+
+    public void CouponCheck()
+    {
+        playerEvent.CouponCheck();
     }
 }

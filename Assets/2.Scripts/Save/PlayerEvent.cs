@@ -1,3 +1,4 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,15 +10,17 @@ public class PlayerEvent : Manager
     public TMP_InputField couponInput;
     public GameObject falseCoupon;//번호틀림
     public GameObject falseUseCoupon;//이미사용
+    public GameObject canUseCoupon;//사용한UI
 
     public static bool UseStartCoupon { get; private set; } = false;
     public static bool Stage1Clear { get; private set; } = false;
 
-    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2)
+    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2,GameObject canUseCoupon)
     {
         couponInput = field;
         falseCoupon = false1;
         falseUseCoupon = false2;
+        this.canUseCoupon = canUseCoupon;
     }
 
     public void CouponCheck()
@@ -43,7 +46,9 @@ public class PlayerEvent : Manager
             return;
         }
 
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(EffectList.Recall);
         UseStartCoupon = true;
+        canUseCoupon.SetActive(true);
     }
 
     public void StageClear()
