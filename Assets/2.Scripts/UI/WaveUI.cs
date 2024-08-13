@@ -66,17 +66,17 @@ public class WaveUI : MonoBehaviour
             plus = 0;
         }
 
-        if (gameSceneManager.happyEnergy.isAnswer)
+        if (gameSceneManager.happyEnergy.isAnswer)//무시제외 버튼클릭
         {
             gameSceneManager.happyEnergy.isAnswer = false;
             plus = gameSceneManager.happyEnergy.value;
 
-            if (plus == 2)
+            if (plus == 2)//공증2퍼 = 누적
             {
-                gameSceneManager.unitSpawnController.ATKChange(plus, true,true);
+                gameSceneManager.unitSpawnController.ATKChange(plus, true,false);
                 plus = 0;
             }
-            else
+            else //일시적
             {
                 gameSceneManager.unitSpawnController.ATKChange(plus,false,true);
             }
