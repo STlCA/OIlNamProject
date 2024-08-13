@@ -34,6 +34,12 @@ public class ClickSpriteBtn : MonoBehaviour, IPointerClickHandler
                 controller.effectList.Add(ui);
                 break;
             case UnitButtonType.Close:
+                if (controller.effectList.Count != 0)
+                {
+                    controller.effectList[0].SetActive(false);
+                    controller.effectList.Clear();
+                }
+
                 if (controller.onUnitPopUP.Count != 0)
                 {
                     controller.onUnitPopUP[1].GetComponent<SortingGroup>().sortingOrder = 15;
