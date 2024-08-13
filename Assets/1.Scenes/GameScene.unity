@@ -14945,7 +14945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1145602724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39800,25 +39800,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneManager: {fileID: 2866201617070711164}
-  wavePlus: {fileID: 0}
-  fixPlus: {fileID: 0}
-  fixTxt: {fileID: 0}
-  fixTxt2: {fileID: 0}
-  monsterMinus: {fileID: 0}
+  wavePlus: {fileID: 323971841}
+  fixPlus: {fileID: 758525636}
+  fixTxt: {fileID: 1989556944}
+  fixTxt2: {fileID: 842289028}
+  monsterMinus: {fileID: 645857942}
   effectList: []
   spawnGO: {fileID: 5510975055949099931}
   spawnFalse: {fileID: 2031280573598326365}
   rubyFalse: {fileID: 476667193}
-  upgradeFalse: {fileID: 0}
+  upgradeFalse: {fileID: 855459498}
   infoTxt: {fileID: 6038714990028897770}
   spriteCanvas: {fileID: 1145602723}
   unitBG: {fileID: 0}
-  baseImage: {fileID: 0}
-  unitImage: {fileID: 0}
-  borderImage: {fileID: 0}
-  nameText: {fileID: 0}
-  atkTxt: {fileID: 0}
-  speedTxt: {fileID: 0}
+  baseImage: {fileID: 2138141908}
+  unitImage: {fileID: 2073411046}
+  borderImage: {fileID: 424916594}
+  nameText: {fileID: 1216931414}
+  atkTxt: {fileID: 1197628170}
+  speedTxt: {fileID: 1277109825}
   onUnitPopUP: []
 --- !u!4 &4995632089477608578
 Transform:
