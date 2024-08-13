@@ -14945,7 +14945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1145602724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39812,7 +39812,7 @@ MonoBehaviour:
   upgradeFalse: {fileID: 855459498}
   infoTxt: {fileID: 6038714990028897770}
   spriteCanvas: {fileID: 1145602723}
-  unitBG: {fileID: 0}
+  unitBG: {fileID: 1896520047}
   baseImage: {fileID: 2138141908}
   unitImage: {fileID: 2073411046}
   borderImage: {fileID: 424916594}
