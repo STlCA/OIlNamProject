@@ -64,6 +64,12 @@ public class UnitSpawnController : MonoBehaviour
     private float[] percents;
     private float totalPercent;
 
+    [Header("StackCheck")]
+    public float fixSpeedStack; // 누적공격력 증가량 (2% = 2)--
+    public float speedStack; // 버프 공격력 증가량 (40% = 40)--
+    public float fixAtkStack; // 누적공격력 증가량 (2% = 2)--
+    public float atkStack; // 버프 공격력 증가량 (40% = 40)--
+
     public void Init(GameObject spawn)
     {
         unitManager = GameManager.Instance.UnitManager;
@@ -168,10 +174,11 @@ public class UnitSpawnController : MonoBehaviour
 
         UnitGameData unitGameData = go.GetComponentInChildren<UnitGameData>();
         unitGameData.Init(newUnit, unitStepLoader.GetByKey(newUnit.stepKey), this, point, go);
+        unitGameData.FirstStackChange(fixSpeedStack, speedStack, fixAtkStack, atkStack);
 
         spawnData.Add(point, unitGameData);
 
-        if (step0.ContainsKey(newUnit.key))
+        if (step0.ContainsKey(newUnit.key))//업그레이드용
         {
             step0[newUnit.key].count++;
             step0[newUnit.key].pos.Add(point);
@@ -313,6 +320,12 @@ public class UnitSpawnController : MonoBehaviour
 
     public void SpeedChange(int val, bool isFixChange = false, bool isWave = false)
     {
+        //새로운 유닛도 알아야하니까
+        if (isFixChange)
+            fixSpeedStack += val;
+        else
+            speedStack += val;
+
         foreach (var (key, data) in spawnData)
         {
             data.SpeedStackChange(val, isFixChange);
@@ -321,6 +334,13 @@ public class UnitSpawnController : MonoBehaviour
 
     public void ATKChange(int val, bool isFixChange = false, bool isWave = false)
     {
+        //새로운 유닛도 알아야하니까
+        if (isFixChange)
+            fixAtkStack += val;
+        else
+            atkStack += val;
+
+        //아이콘변경
         if (isWave)
             wavePlus.SetActive(true);
         if (isFixChange && val > 0)

@@ -159,6 +159,18 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         spriteGO.SetActive(false);
     }
 
+    public void FirstStackChange(float speedfixVal, float speedVal, float atkFixVal, float atkVal)
+    {
+        fixSpeedStack += speedfixVal;
+        speedStack += speedVal;
+
+        fixAtkStack+= atkFixVal;
+        atkStack += atkVal;
+
+        SpeedChange();
+        ATKChange();
+    }
+
     public void SpeedStackChange(int changeVal, bool isFixChange = false)
     {
         if (isFixChange)
