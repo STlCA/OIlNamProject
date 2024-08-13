@@ -13,6 +13,10 @@ public class LethalEnergy : MonoBehaviour
     public Slider energySlider;
     public TMP_Text energyText;
 
+    [Header("Animation")]
+    public GameObject lethalBtnAnim;
+    public GameObject lethalAnim;
+
     private string text;
 
     private void Start()
@@ -30,7 +34,10 @@ public class LethalEnergy : MonoBehaviour
             energy += value;
 
             if (energy >= 200)
+            {
                 energy = 200;
+                lethalBtnAnim.SetActive(true);                
+            }
             else if (energy < 0)
                 energy = 0;
 
@@ -73,6 +80,9 @@ public class LethalEnergy : MonoBehaviour
     {
         if (Energy < 200)
             return;
+
+        lethalAnim.SetActive(true);
+        lethalBtnAnim.SetActive(false);
 
         ChangeEnergy(-200);
 
