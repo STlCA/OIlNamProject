@@ -67,7 +67,7 @@ public class TimeManager : Manager
         now = DateTime.Now;
         timeOffset = now - lastDate;//lastDate를 열쇠를 써서 열쇠가 30개보다 작아졌을떄 갱신
 
-        Debug.Log((int)timeOffset.TotalSeconds);
+/*        Debug.Log((int)timeOffset.TotalSeconds);*/
 
         offsetTxt.text = ((keyTime - (int)timeOffset.TotalSeconds) / 60).ToString("00") + " : " + ((keyTime - (int)timeOffset.TotalSeconds) % 60).ToString("00");
 

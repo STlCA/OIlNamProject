@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
@@ -245,6 +246,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
             if (findEnemy != null)
             {
+                //gameObject.AddComponent<AudioSource>().PlayOneShot(GameManager.Instance.SoundManager.gameAudioList[0]);
                 GameManager.Instance.SoundManager.GameAudioClipPlay(0);//공격사운드
                 unitAnimation.AttackEffect();
                 deltaSpeed = 0;
