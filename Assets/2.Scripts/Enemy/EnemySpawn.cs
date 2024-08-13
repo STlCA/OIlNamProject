@@ -12,6 +12,7 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private TMP_Text enemyCountText;
     [SerializeField] private GameObject gameoverPopup;  // 게임 오버 UI
     //[SerializeField] private GameObject clearUIPopup;   // 게임 클리어 UI
+    public GameObject monsterArea;//필살기를 위한 트리거
 
     public GameManager gameManager;
     public Player player;
@@ -268,7 +269,11 @@ public class EnemySpawn : MonoBehaviour
         gameResultUI.RestartButtonActivation(false);
     }
 
-    public void LethalAttack()
+    public void LethalAttack1()
+    {
+        monsterArea.SetActive(true);
+    }
+    public void LethalAttack2()
     {
         int temp = enemyList.Count;
         for (int i = 0; i < temp; i++) // 버그찾음 제거하면서 인덱스 땅겨져서 그럼

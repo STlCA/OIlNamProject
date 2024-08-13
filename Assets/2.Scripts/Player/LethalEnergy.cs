@@ -89,7 +89,7 @@ public class LethalEnergy : MonoBehaviour
         gameSceneManager.unitSpawnController.SpeedChange(-20, false);
         gameSceneManager.unitSpawnController.SpeedChange(20, false);
 
-        GameManager.Instance.EnemySpawn.LethalAttack();
+        GameManager.Instance.EnemySpawn.LethalAttack1();
 
         StartCoroutine("CoCancelLethal");
     }
