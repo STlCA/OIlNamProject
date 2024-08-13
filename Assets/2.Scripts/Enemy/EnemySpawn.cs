@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawn : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class EnemySpawn : MonoBehaviour
     private bool tooManyEnemy = false;  // 마물 수 경고 창 체크
 
     EnemyMove enemyMove;
+
+    public Image slider;
 
     private void Awake()
     {
@@ -218,6 +221,7 @@ public class EnemySpawn : MonoBehaviour
     private void UpdateEnemyCountUI()
     {
         enemyCountText.text = enemyList.Count.ToString() + " / 100";
+        slider.fillAmount = enemyList.Count / 100;
     }
 
     // 게임 오버

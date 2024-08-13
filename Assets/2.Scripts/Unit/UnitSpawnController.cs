@@ -328,7 +328,7 @@ public class UnitSpawnController : MonoBehaviour
             fixPlus.SetActive(true);
             monsterMinus.SetActive(true);
             fixStack++;
-            fixTxt.text = "+" + fixStack.ToString();
+            fixTxt.text = "x" + fixStack.ToString();
             fixTxt2.text = fixStack.ToString();
         }
 
