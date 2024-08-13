@@ -14,6 +14,7 @@ public class MainSceneManager : MonoBehaviour
     private UIManager uiManager;
     private UnitManager unitManager;
     private UnitUpgradeController unitUpgradeController;
+    private PlayerEvent playerEvent;
 
     [Header("UI : SHOP / HOME / GACHA / UNIT")]
     public List<GameObject> tabUI;
@@ -41,6 +42,7 @@ public class MainSceneManager : MonoBehaviour
     public TMP_Text expTxt;
     public TMP_Text setUIName;
     public TMP_InputField nameInputField;
+    public TMP_InputField couponInputField;
 
     [Header("Sound")]
     public AudioSource bgmSource;
@@ -52,11 +54,16 @@ public class MainSceneManager : MonoBehaviour
     public Slider slider;
     public GameObject nameFalse;
 
+    [Header("FalseUI")]
+    public GameObject falseCoupon;//번호틀림
+    public GameObject falseUseCoupon;//이미사용
+
     private void Start()
     {
         gameManager = GameManager.Instance;
         uiManager = GameManager.Instance.UIManager;
         unitManager = GameManager.Instance.UnitManager;
+        playerEvent = GameManager.Instance.PlayerEvent;
 
         unitUpgradeController = GetComponent<UnitUpgradeController>();
 
@@ -88,6 +95,8 @@ public class MainSceneManager : MonoBehaviour
         gameManager.SoundManager.BGMChange(1);
 
         unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim, unitTabTierPiece);
+
+        playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon);
     }
 
     public void GameStart(GameObject ui)
