@@ -1,4 +1,5 @@
 using Constants;
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -24,6 +25,9 @@ public class GameManager : MonoBehaviour
 
     public PlayerEvent PlayerEvent { get { return playerEvent; } }
     private PlayerEvent playerEvent;
+
+    public TimeManager TimeManager { get { return timeManager; } }
+    private TimeManager timeManager;
 
     //====================== Enemy, UI
     public EnemySpawn EnemySpawn;
@@ -60,7 +64,15 @@ public class GameManager : MonoBehaviour
         get { return key; }
         set
         {
+            if (key>=30 && value < 0)
+                TimeManager.lastDate = DateTime.Now;
+
             key += value;
+
+            if (key > 30)
+            {
+                key = 30;
+            }
             uiMnager.MoneyTypeUpdate(MoneyType.KEY, key);
         }
     }
@@ -101,6 +113,7 @@ public class GameManager : MonoBehaviour
         player = GetManager<Player>();
         sceneEffect = GetManager<SceneEffect>();
         unitManager = GetManager<UnitManager>();
+        timeManager = GetManager<TimeManager>();
 
 
         //Init
@@ -111,6 +124,7 @@ public class GameManager : MonoBehaviour
         player.Init(this);
         sceneEffect.Init(this);
         unitManager.Init(this);//datamanager보다 아래
+        timeManager.Init(this);
 
         //Gold
         MoneyInit();
@@ -125,7 +139,7 @@ public class GameManager : MonoBehaviour
     private void MoneyInit()
     {
         Gold = 100;
-        Key = 999;
+        Key = 30;
         Diamond = 100;
     }
 
@@ -166,7 +180,7 @@ public class GameManager : MonoBehaviour
     {
         T t = FindObjectOfType<T>();
         return t;
-    }    
+    }
 
     public void SetStage(int stage)
     {

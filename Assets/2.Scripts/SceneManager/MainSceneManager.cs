@@ -32,6 +32,7 @@ public class MainSceneManager : MonoBehaviour
     public GameObject gachaAnim;
     public List<TMP_Text> unitTabTierPiece = new();
     public Image stage2Icon;
+    public TMP_Text offsetTxt;
 
     [Header("GoldUI")]
     public TMP_Text goldTxt;
@@ -103,6 +104,8 @@ public class MainSceneManager : MonoBehaviour
         unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim, unitTabTierPiece);
 
         playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon, canUseCoupon);
+
+        gameManager.TimeManager.TextUIInit(offsetTxt);
     }
 
     public void GameStart(GameObject ui)

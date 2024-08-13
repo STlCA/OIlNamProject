@@ -51,7 +51,7 @@ public class UIManager : Manager
                 goldTxt.text = val.ToString("N0");
                 break;
             case MoneyType.KEY:
-                keyTxt1.text = val.ToString("00") + " / 20";
+                keyTxt1.text = val.ToString("00") + " / 30";
                 break;
             case MoneyType.Diamond:
                 diamondTxt.text = val.ToString("N0");
