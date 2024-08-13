@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     //================================================
 
-    public int Stage { get; private set; }
+    public int Stage { get; private set; } = 1;
 
     private void Awake()
     {

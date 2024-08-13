@@ -362,7 +362,7 @@ public class UnitSpawnController : MonoBehaviour
         }
 
         unitImage.sprite = unitData.profile;
-        atkTxt.text = spawnData[pos].atkData.ToString();
-        speedTxt.text = spawnData[pos].speedData.ToString();
+        atkTxt.text = spawnData[pos].fixAtk.ToString();
+        speedTxt.text = spawnData[pos].fixSpeed.ToString();
     }
 }
