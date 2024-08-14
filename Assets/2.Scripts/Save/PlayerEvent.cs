@@ -47,6 +47,7 @@ public class PlayerEvent : Manager
         }
 
         GameManager.Instance.SoundManager.EffectAudioClipPlay(EffectList.Recall);
+        GameManager.Instance.MoneyChange(MoneyType.Diamond, 50);
         UseStartCoupon = true;
         canUseCoupon.SetActive(true);
     }
