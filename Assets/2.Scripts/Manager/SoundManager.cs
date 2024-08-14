@@ -31,57 +31,66 @@ public class SoundManager : Manager
     public float game;
 
 
-/*    private float bgmVolume = 1;
-    private float effectVolume = 1;
+    /*    private float bgmVolume = 1;
+        private float effectVolume = 1;
 
-    public void BGMSoundSlider(Image image)
-    {
-        if (BGMSource.volume == 0)
-            image.color = Color.gray;
-        else
-            image.color = Color.white;
-    }
-    public void EffectSoundSlider(Image image)
-    {
-        if (EffectSource.volume == 0)
-            image.color = Color.gray;
-        else
-            image.color = Color.white;
-    }
+        public void BGMSoundSlider(Image image)
+        {
+            if (BGMSource.volume == 0)
+                image.color = Color.gray;
+            else
+                image.color = Color.white;
+        }
+        public void EffectSoundSlider(Image image)
+        {
+            if (EffectSource.volume == 0)
+                image.color = Color.gray;
+            else
+                image.color = Color.white;
+        }
 
-    public void BGMSoundOnOff(Image image)
-    {
-        if (BGMSource.volume == 0)
+        public void BGMSoundOnOff(Image image)
         {
-            image.color = Color.white;
-            BGMSource.volume = bgmVolume;
-            BGMSlider.value = bgmVolume;
+            if (BGMSource.volume == 0)
+            {
+                image.color = Color.white;
+                BGMSource.volume = bgmVolume;
+                BGMSlider.value = bgmVolume;
+            }
+            else
+            {
+                image.color = Color.gray;
+                bgmVolume = BGMSource.volume;
+                BGMSource.volume = 0;
+                BGMSlider.value = 0;
+            }
         }
-        else
-        {
-            image.color = Color.gray;
-            bgmVolume = BGMSource.volume;
-            BGMSource.volume = 0;
-            BGMSlider.value = 0;
-        }
-    }
 
-    public void EffectSoundOnOff(Image image)
+        public void EffectSoundOnOff(Image image)
+        {
+            if (EffectSource.volume == 0)
+            {
+                image.color = Color.white;
+                EffectSource.volume = effectVolume;
+                EffectSlider.value = effectVolume;
+            }
+            else
+            {
+                image.color = Color.gray;
+                effectVolume = EffectSource.volume;
+                EffectSource.volume = 0;
+                EffectSlider.value = 0;
+            }
+        }*/
+
+    public override void Init(GameManager gm)
     {
-        if (EffectSource.volume == 0)
-        {
-            image.color = Color.white;
-            EffectSource.volume = effectVolume;
-            EffectSlider.value = effectVolume;
-        }
-        else
-        {
-            image.color = Color.gray;
-            effectVolume = EffectSource.volume;
-            EffectSource.volume = 0;
-            EffectSlider.value = 0;
-        }
-    }*/
+        base.Init(gm);
+
+        bgm = -1f;
+        effect = -1f;
+        game = -1f;
+    }
 
     public void VolumeSave(float bgm, float effect, float game)
     {
@@ -104,9 +113,12 @@ public class SoundManager : Manager
 
     private void VoulumeSetting()
     {
-        BGMSource.volume = bgm;
-        EffectSource.volume = effect;
-        GameSource.volume = game;
+        if(bgm >= 0)
+        {
+            BGMSource.volume = bgm;
+            EffectSource.volume = effect;
+            GameSource.volume = game;
+        }
 
         if (BGMSlider != null)
         {

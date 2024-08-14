@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class GameSceneManager : MonoBehaviour
 {
     public UnitSpawnController unitSpawnController;
-    public UnitController unitController;
     public HappyEnergy happyEnergy;
 
     [Header("Stage : Tile / Spirte / Way / Spawn")]

@@ -38,14 +38,14 @@ public class GameManager : MonoBehaviour
     public int BestScore1 { get; private set; } = 0;
     public int BestScore2 { get; private set; } = 0;
 
+    public GameObject ExitGameUI;
+
     //====================== Player,Unit
     public Player Player { get { return player; } }
     private Player player;
 
     public UnitManager UnitManager { get { return unitManager; } }
     private UnitManager unitManager;
-
-    public UnitController UnitController;
 
     //====================== Money
     public int Gold
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         get { return key; }
         set
         {
-            if (key>=30 && value < 0)
+            if (key >= 30 && value < 0)
                 TimeManager.lastDate = DateTime.Now;
 
             key += value;
@@ -133,7 +133,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            GameExit();
+            ExitGameUI.SetActive(true);
     }
 
     private void MoneyInit()
