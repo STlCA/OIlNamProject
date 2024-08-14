@@ -97,6 +97,8 @@ public class GameResultUI : MonoBehaviour
 
         // ***** TODO : 모집권 변수 찾아서 업데이트 시켜줘야함 ***** ++테스트
         GameManager.Instance.UnitManager.ChangeUnitPiece(rewardData.GetByKey(rewardID).Enforcebook);
+
+        SaveSystem.Save();
     }
 
     // 메인 화면으로 이동

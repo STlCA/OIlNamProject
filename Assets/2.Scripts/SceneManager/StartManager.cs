@@ -54,6 +54,9 @@ public class StartManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
+            if (loading.progress < 0.8f)
+                loadingSlider.value = 0.2f;
+
             if (loading.progress >= 0.8f)
                 loadingSlider.value = 0.8f;
             else

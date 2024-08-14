@@ -11,6 +11,7 @@ public struct Save_PlayerEvenet
 {
     public bool UseStartCoupon;
     public bool Stage1Clear;
+    public bool FirstGacha;
 }
 
 public class PlayerEvent : Manager
@@ -22,8 +23,9 @@ public class PlayerEvent : Manager
 
     public static bool UseStartCoupon { get; private set; } = false;
     public static bool Stage1Clear { get; private set; } = false;
+    public static bool FirstGacha { get; private set; } = false;
 
-    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2,GameObject canUseCoupon)
+    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2, GameObject canUseCoupon)
     {
         couponInput = field;
         falseCoupon = false1;
@@ -41,12 +43,12 @@ public class PlayerEvent : Manager
             return;
         }
         else
-        { 
+        {
             falseCoupon.SetActive(true);
         }
     }
 
-    private  void CanUseStartCoupon()
+    private void CanUseStartCoupon()
     {
         if (UseStartCoupon == true)
         {
@@ -66,7 +68,15 @@ public class PlayerEvent : Manager
         if (Stage1Clear == true)
             return;
         else
-            Stage1Clear = true;      
+            Stage1Clear = true;
+    }
+
+    public void FirstGachaStart()
+    {
+        if (!FirstGacha)
+            FirstGacha = true;
+        else
+            return;
     }
 
 
@@ -76,11 +86,13 @@ public class PlayerEvent : Manager
     {
         saveData.UseStartCoupon = UseStartCoupon;
         saveData.Stage1Clear = Stage1Clear;
+        saveData.FirstGacha = FirstGacha;
     }
 
     public void Load(Save_PlayerEvenet saveData)
     {
         UseStartCoupon = saveData.UseStartCoupon;
         Stage1Clear = saveData.Stage1Clear;
+        FirstGacha = saveData.FirstGacha;
     }
 }

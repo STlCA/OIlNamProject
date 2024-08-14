@@ -72,14 +72,15 @@ public class GameManager : MonoBehaviour
         get { return key; }
         set
         {
-            if (key >= 30 && value < 0)
-                TimeManager.lastDate = DateTime.Now;
+            if (key >= 30 && value < 0)//키를 사용했을때 원래 키가 30~ 이라면
+                timeManager.KeyTimerStart(true);          
 
             key += value;
 
-            if (key > 30)
+            if (key >= 30)
             {
                 key = 30;
+                timeManager.KeyTimerStart(false);
             }
             uiMnager.MoneyTypeUpdate(MoneyType.KEY, key);
         }
