@@ -313,8 +313,6 @@ public class HappyEnergy : MonoBehaviour
 
     public void ClickMessage(int num)
     {
-        Time.timeScale = currentSpeed;
-
         switch (num)
         {
             case 1:
@@ -379,20 +377,7 @@ public class HappyEnergy : MonoBehaviour
 
         }
 
-/*        if (turn[num] == 0)
-        {
-            if (gameSceneManager.Ruby < (currentMessage.Price1 * -1))
-            {
-                StopCoroutine("CoClickFalse");
-                StartCoroutine("CoClickFalse");
-                return;
-            }
-            gameSceneManager.ChangeRuby(currentMessage.Price1);
-            ChangeHappyEnergy(currentMessage.Energy1);
-            Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
-            //gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
-            popUp.gameObject.SetActive(false);
-        }*/
+        Time.timeScale = currentSpeed;
     }
 
     private IEnumerator CoClickFalse()

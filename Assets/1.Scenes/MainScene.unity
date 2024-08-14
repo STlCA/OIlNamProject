@@ -7395,7 +7395,7 @@ MonoBehaviour:
   WaveUI: {fileID: 0}
   TimerUI: {fileID: 0}
   BestRecord: {fileID: 0}
-  ExitGameUI: {fileID: 0}
+  ExitGameUI: {fileID: 779605156}
   ShopUI: {fileID: 0}
   ShopSlotUI: {fileID: 0}
 --- !u!4 &301896061
@@ -42562,7 +42562,7 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 5c04afdd39a286547ae066b8aee6b802, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 452ae81375cacb941a8f177eea192a1f, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -42606,7 +42606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 5c04afdd39a286547ae066b8aee6b802, type: 2}
+  m_Texture: {fileID: 8400000, guid: 452ae81375cacb941a8f177eea192a1f, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
