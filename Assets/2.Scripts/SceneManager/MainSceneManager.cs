@@ -54,6 +54,10 @@ public class MainSceneManager : MonoBehaviour
     public AudioSource effectSource;
     public AudioSource gameSource;
 
+    [Header("VolumeSlider")]
+    public Slider bgmSlider;
+    public Slider effectSlider;
+
     [Header("Scene")]
     public Image fadeImage;
     public Slider slider;
@@ -100,7 +104,7 @@ public class MainSceneManager : MonoBehaviour
 
         gameManager.Player.PlayerUIInit(player, nameInputField);
 
-        gameManager.SoundManager.SourceSet(bgmSource, effectSource, gameSource);
+        gameManager.SoundManager.SourceSet(bgmSource, effectSource, gameSource, bgmSlider, effectSlider);
         gameManager.SoundManager.BGMChange(1);
 
         unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim, unitTabTierPiece);
@@ -120,6 +124,7 @@ public class MainSceneManager : MonoBehaviour
     public void GameStart(GameObject ui)
     {
         GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Lobby);
+        GameManager.Instance.SoundManager.VolumeSave(bgmSource.volume, effectSource.volume, gameSource.volume);
 
         if (canStart == false)
         {

@@ -25,6 +25,12 @@ public class SoundManager : Manager
     [Header("GameAudioClip")]
     public List<AudioClip> gameAudioList;
 
+    [Header("Volume")]
+    public float bgm;
+    public float effect;
+    public float game;
+
+
 /*    private float bgmVolume = 1;
     private float effectVolume = 1;
 
@@ -77,11 +83,36 @@ public class SoundManager : Manager
         }
     }*/
 
-    public void SourceSet(AudioSource bgm, AudioSource effect, AudioSource gameSource)
+    public void VolumeSave(float bgm, float effect, float game)
+    {
+        this.bgm = bgm;
+        this.effect = effect;
+        this.game = game;
+    }
+
+    public void SourceSet(AudioSource bgm, AudioSource effect, AudioSource gameSource, Slider bgmSd =null, Slider effectSd = null)
     {
         BGMSource = bgm;
         EffectSource = effect;
         GameSource = gameSource;
+
+        BGMSlider = bgmSd;
+        EffectSlider = effectSd;
+
+        VoulumeSetting();
+    }
+
+    private void VoulumeSetting()
+    {
+        BGMSource.volume = bgm;
+        EffectSource.volume = effect;
+        GameSource.volume = game;
+
+        if (BGMSlider != null)
+        {
+            BGMSlider.value = BGMSource.volume;
+            EffectSlider.value = EffectSource.volume;
+        }
     }
 
     public void BGMCheck(int newIndex)
