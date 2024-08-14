@@ -35,6 +35,8 @@ public class StartManager : MonoBehaviour
 
     public void SceneChange()
     {
+        StopAllCoroutines();
+
         topFadeImage.gameObject.SetActive(true);
         loadingSlider.gameObject.SetActive(true);
         TipTextSet();

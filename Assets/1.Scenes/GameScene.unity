@@ -7090,7 +7090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &675022453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15687,7 +15687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1108294291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26815,7 +26815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2127282050
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32915,7 +32915,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitSpawnController: {fileID: 4965910695393517695}
-  unitController: {fileID: 0}
   happyEnergy: {fileID: 2547328375565112211}
   stage1:
   - {fileID: 4018060270828729963}
@@ -47547,6 +47546,9 @@ MonoBehaviour:
   effectAudioList:
   - {fileID: 8300000, guid: 006ac69d274f1974eba5f11975e3132e, type: 3}
   gameAudioList: []
+  bgm: 0
+  effect: 0
+  game: 0
 --- !u!114 &7688011695914337445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49839,7 +49841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &8541036835027698611
 CanvasRenderer:
   m_ObjectHideFlags: 0
