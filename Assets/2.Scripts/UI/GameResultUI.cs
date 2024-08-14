@@ -95,6 +95,8 @@ public class GameResultUI : MonoBehaviour
 
         eBook.text = rewardData.GetByKey(rewardID).Enforcebook.ToString() + "개";
         GameManager.Instance.UnitManager.ChangeUnitPiece(rewardData.GetByKey(rewardID).Enforcebook);
+
+        SaveSystem.Save();
     }
 
     // 메인 화면으로 이동

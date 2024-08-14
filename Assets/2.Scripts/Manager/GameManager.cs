@@ -3,11 +3,14 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public struct Save_MoneyData
+public struct Save_GameData
 {
     public int Gold;
     public int Key;
     public int Diamond;
+
+    public int Stage1BestScore;
+    public int Stage2BestScore;
 }
 
 public class GameManager : MonoBehaviour
@@ -76,14 +79,15 @@ public class GameManager : MonoBehaviour
         get { return key; }
         set
         {
-            if (key >= 30 && value < 0)
-                TimeManager.lastDate = DateTime.Now;
+            if (key >= 30 && value < 0)//키를 사용했을때 원래 키가 30~ 이라면
+                timeManager.KeyTimerStart(true);          
 
             key += value;
 
-            if (key > 30)
+            if (key >= 30)
             {
                 key = 30;
+                timeManager.KeyTimerStart(false);
             }
             uiMnager.MoneyTypeUpdate(MoneyType.KEY, key);
         }
@@ -200,18 +204,24 @@ public class GameManager : MonoBehaviour
         Stage = stage;
     }
 
-    public void Save(ref Save_MoneyData saveData)
+    public void Save(ref Save_GameData saveData)
     {
         saveData.Gold = Gold;
         saveData.Key = Key;
         saveData.Diamond = Diamond;
-    }
 
-    public void Load(Save_MoneyData saveData)
+        saveData.Stage1BestScore = BestScore1;
+        saveData.Stage2BestScore = BestScore2;
+}
+
+    public void Load(Save_GameData saveData)
     {
         Gold = saveData.Gold;
         Key = saveData.Key;
         Diamond = saveData.Diamond;
+
+        BestScore1 = saveData.Stage1BestScore;
+        BestScore2 = saveData.Stage2BestScore;
     }
 
     public void GameExit()

@@ -86,5 +86,6 @@ public class UnitUpgradeController : MonoBehaviour
     public void GachaUnitPieceBtn(int count)
     {
         unitManager.GachaUnitPiece(count);
+        SaveSystem.Save();
     }
 }

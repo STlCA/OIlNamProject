@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using Random = UnityEngine.Random;
 
 public class SceneEffect : Manager
@@ -37,7 +38,7 @@ public class SceneEffect : Manager
     private float time = 0f;
     private float circleScale = 100f;
 
-    [HideInInspector]public TMP_Text storyText = null;//임시public
+    [HideInInspector] public TMP_Text storyText = null;//임시public
 
     private void Start()
     {
@@ -107,10 +108,13 @@ public class SceneEffect : Manager
 
         //crackingImage.gameObject.SetActive(true);
         startVideoImage.gameObject.SetActive(true);
+        skipImage.gameObject.SetActive(true);
+        startManager.soundManager.BGMChange(1);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds((float)startVideoImage.GetComponent<VideoPlayer>().length);
 
-        StartCoroutine("StoryTypeTextEffect");
+        startManager.SceneChange();
+        //StartCoroutine("StoryTypeTextEffect");
     }
 
 
@@ -212,7 +216,7 @@ public class SceneEffect : Manager
 
         mySlider.gameObject.SetActive(true);
 
-        int random = Random.Range(0,tipBase.ItemsList.Count);
+        int random = Random.Range(0, tipBase.ItemsList.Count);
 
         tipText.text = tipBase.ItemsList[random].Tip;
     }

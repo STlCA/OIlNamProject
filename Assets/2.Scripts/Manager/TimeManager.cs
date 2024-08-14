@@ -6,34 +6,44 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[Serializable]
+public struct Save_TimeData
+{
+    public string LastTime;
+}
+
 public class TimeManager : Manager
 {
-    public string saveLastDate;//마지막접속저장용
+    //public string saveLastDate;//마지막접속저장용
+    //saveLastDate = "2024-08-14T03:06:01";
 
-    public DateTime lastDate;//마지막접속 DataTime형식으로 변환
+    public DateTime lastDate = default;//마지막접속 DataTime형식으로 변환
     private static DateTime now;
     private TimeSpan timeOffset;//지금 - 마지막을 초로변환
 
     public TMP_Text offsetTxt;
 
     private int keyTime;
+    private bool keyTimerStart = false;
+
+    public override void Init(GameManager gm)
+    {
+        base.Init(gm);
+
+        keyTime = 360;
+        now = DateTime.Now;
+    }
 
     private void Start()
     {
-        keyTime = 360;
+        if (lastDate != default)
+            StartKeyCheck();//지금까지 자리를 비운 시간 계산해서 그만큼 재화지급  
+    }
 
-        now = DateTime.Now;
-
-        //Temp
-        saveLastDate = "2024-08-14T03:06:01";
-
-        if (saveLastDate.Length == 0)
-            saveLastDate = DateTime.Now.ToString("s");
-
-        lastDate = Convert.ToDateTime(saveLastDate);
+    private void StartKeyCheck()
+    {
         timeOffset = now - lastDate;
 
-        //지금까지 자리를 비운 시간 계산해서 그만큼 재화지급
         int count = (int)timeOffset.TotalSeconds / keyTime >= 30 ? 30 : (int)timeOffset.TotalSeconds / keyTime;
 
         Debug.Log(count + "번 키 얻음");
@@ -41,41 +51,56 @@ public class TimeManager : Manager
         for (int i = 0; i < count; i++)
         {
             GetKey();
-        }
+        }        
 
-        if (GameManager.Instance.Key >= 30)
+        if (GameManager.Instance.Key < 30)
         {
-            offsetTxt.text = "";
-            lastDate = DateTime.Now;
+            keyTimerStart = true;
+
+            while (timeOffset >= new TimeSpan(00, 06, 00))
+            {
+                timeOffset -= new TimeSpan(00, 06, 00);
+            }
+
+            lastDate = DateTime.Now - timeOffset;
         }
         else
-        {
-            count = (int)timeOffset.TotalSeconds % keyTime;
-            offsetTxt.text = ((keyTime - count) / 60).ToString("00") + " : " + ((keyTime - count) % 60).ToString("00");
-            Debug.Log(offsetTxt.text);
-        }
+            lastDate = DateTime.MaxValue;
     }
 
     private void Update()
     {
-        if (GameManager.Instance.Key >= 30)
-        {
-            offsetTxt.text = "";
-            return;
-        }
+        if (keyTimerStart)
+            KeyTimerUpdate();
+    }
 
+    private void KeyTimerUpdate()
+    {
         now = DateTime.Now;
-        timeOffset = now - lastDate;//lastDate를 열쇠를 써서 열쇠가 30개보다 작아졌을떄 갱신
 
-/*        Debug.Log((int)timeOffset.TotalSeconds);*/
+        timeOffset = now - lastDate;
 
         offsetTxt.text = ((keyTime - (int)timeOffset.TotalSeconds) / 60).ToString("00") + " : " + ((keyTime - (int)timeOffset.TotalSeconds) % 60).ToString("00");
 
-        if (timeOffset.Seconds >= keyTime)
+        if ((int)timeOffset.TotalSeconds >= keyTime)
         {
             GetKey();
-            lastDate = DateTime.Now;
         }
+    }
+
+    public void KeyTimerStart(bool keyTimer)//열쇠 사용했을때 true 30개됐을때 false
+    {
+        keyTimerStart = keyTimer;
+
+        if (!keyTimerStart)//타이머 안돌아가도댐
+        {
+            offsetTxt.text = "";
+            lastDate = DateTime.MaxValue;
+        }
+        else if (keyTimerStart)
+            lastDate = DateTime.Now;        
+        else
+            Debug.Log("lastDate그대로");        
     }
 
     public void TextUIInit(TMP_Text offsetTxt)
@@ -96,6 +121,22 @@ public class TimeManager : Manager
         if (!CanGetKey())
             return;
 
+        lastDate = DateTime.Now;
         GameManager.Instance.MoneyChange(MoneyType.KEY, 1);
+    }
+
+    //--------------------------------------------------------------Save
+
+    public void Save(ref Save_TimeData saveData)
+    {
+        if (lastDate == DateTime.MaxValue)
+            saveData.LastTime = "";
+        else if (lastDate < DateTime.MaxValue)
+            saveData.LastTime = lastDate.ToString("s");
+    }
+
+    public void Load(Save_TimeData saveData)
+    {
+        lastDate = Convert.ToDateTime(saveData.LastTime);
     }
 }

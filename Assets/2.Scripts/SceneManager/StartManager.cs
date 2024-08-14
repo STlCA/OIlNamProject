@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class StartManager : MonoBehaviour
 {
+    public SoundManager soundManager;
+
     public Image topFadeImage;
     public Image whiteImage;
     public Slider loadingSlider;
@@ -35,6 +37,8 @@ public class StartManager : MonoBehaviour
 
     public void SceneChange()
     {
+        StopAllCoroutines();
+
         topFadeImage.gameObject.SetActive(true);
         loadingSlider.gameObject.SetActive(true);
         TipTextSet();
@@ -53,6 +57,9 @@ public class StartManager : MonoBehaviour
         while (!loading.isDone) //씬 로딩 완료시 while문이 나가짐
         {
             timer += Time.deltaTime;
+
+            if (loading.progress < 0.8f)
+                loadingSlider.value = 0.2f;
 
             if (loading.progress >= 0.8f)
                 loadingSlider.value = 0.8f;

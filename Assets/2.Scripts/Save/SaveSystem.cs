@@ -9,10 +9,11 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public struct SaveData
 {
-    public Save_MoneyData MoneyData;
+    public Save_GameData MoneyData;
     public Save_PlayerData PlayerData;
     public Save_PlayerEvenet PlayerEventData;
     public Save_UnitData UnitData;
+    public Save_TimeData TimeData;
 }
 
 public class SaveSystem : MonoBehaviour
@@ -39,6 +40,7 @@ public class SaveSystem : MonoBehaviour
         saveData.PlayerData = new();
         saveData.PlayerEventData = new();
         saveData.UnitData = new();
+        saveData.TimeData = new();
     }
 
     public static void Save()
@@ -49,6 +51,7 @@ public class SaveSystem : MonoBehaviour
         GameManager.Instance.Player.Save(ref saveData.PlayerData);
         GameManager.Instance.PlayerEvent.Save(ref saveData.PlayerEventData);
         GameManager.Instance.UnitManager.Save(ref saveData.UnitData);
+        GameManager.Instance.TimeManager.Save(ref saveData.TimeData);
 
         string data = JsonUtility.ToJson(saveData);
 
@@ -76,6 +79,7 @@ public class SaveSystem : MonoBehaviour
         GameManager.Instance.Player.Load(saveData.PlayerData);
         GameManager.Instance.PlayerEvent.Load(saveData.PlayerEventData);
         GameManager.Instance.UnitManager.Load(saveData.UnitData);
+        GameManager.Instance.TimeManager.Load(saveData.TimeData);
 
         SceneManager.sceneLoaded -= SceneLoaded;
     }

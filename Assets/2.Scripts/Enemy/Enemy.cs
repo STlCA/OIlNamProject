@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
     public EnemyData enemyData;
     public BossData bossData;
     private SpriteRenderer image;
-    private bool isDead;
+    //private bool isDead;
     public bool isBoss = false;
     [SerializeField] private Slider enemyHpSlider;
     //[SerializeField] private GameObject enemyHpSliderUI;
@@ -144,14 +144,14 @@ public class Enemy : MonoBehaviour
     private void Activate()
     {
         //Init();
-        isDead = false;
+        //isDead = false;
         this.gameObject.SetActive(true);
     }
 
     // 마물 비활성화
     private void Disable()
     {
-        isDead = true;
+        //isDead = true;
         this.gameObject.SetActive(false);
         gameSceneManager.ChangeRuby(2);//수정
     }

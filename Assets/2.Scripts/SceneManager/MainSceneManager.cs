@@ -20,6 +20,7 @@ public class MainSceneManager : MonoBehaviour
     [Header("UI : SHOP / HOME / GACHA / UNIT")]
     public List<GameObject> tabUI;
     public List<GameObject> btnUI;
+    public GameObject firstGachaUI;
 
     [Header("UI")]//UnitManager로
     public TMP_Text tabPieceTxt;
@@ -135,6 +136,9 @@ public class MainSceneManager : MonoBehaviour
         if (StartCheck())
         {
             gameManager.MoneyChange(MoneyType.KEY, -5);
+
+            SaveSystem.Save();
+
             gameManager.SceneEffect.MainToGame();
         }
         else
@@ -142,7 +146,7 @@ public class MainSceneManager : MonoBehaviour
     }
     private bool StartCheck()
     {
-        return gameManager.Key > 0;
+        return gameManager.Key >= 5;
     }
     public void Click()
     {
@@ -194,6 +198,12 @@ public class MainSceneManager : MonoBehaviour
                 GameManager.Instance.SoundManager.BGMCheck(8);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
+
+                if (!PlayerEvent.FirstGacha)
+                {
+                    firstGachaUI.SetActive(true);
+                    playerEvent.FirstGachaStart();
+                }
                 break;
 
             case (int)TabType.Unit:
@@ -209,7 +219,7 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
-    //BTN Stage //임시로 호출
+    //BTN Stage
     public void SetStage(int stage)
     {
         if (stage == 2)
