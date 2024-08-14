@@ -199,7 +199,7 @@ public class MainSceneManager : MonoBehaviour
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
 
-                if(!PlayerEvent.FirstGacha)
+                if (!PlayerEvent.FirstGacha)
                 {
                     firstGachaUI.SetActive(true);
                     playerEvent.FirstGachaStart();
@@ -219,26 +219,23 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
-    //BTN Stage //임시로 호출
+    //BTN Stage
     public void SetStage(int stage)
     {
         if (stage == 2)
         {
-            canStart = true;
-            GameManager.Instance.SetStage(stage);
-
-            /*            if (PlayerEvent.Stage1Clear)
-                        {
-                            canStart = true;
-                            stage2Icon.color = Color.white;
-                            GameManager.Instance.SetStage(stage);
-                        }
-                        else
-                        {
-                            stage2Icon.color = Color.black;
-                            canStart = false;
-                            return;
-                        }*/
+            if (PlayerEvent.Stage1Clear)
+            {
+                canStart = true;
+                stage2Icon.color = Color.white;
+                GameManager.Instance.SetStage(stage);
+            }
+            else
+            {
+                stage2Icon.color = Color.black;
+                canStart = false;
+                return;
+            }
         }
         else
         {
