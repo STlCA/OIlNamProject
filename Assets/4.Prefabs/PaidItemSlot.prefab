@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.26666668, g: 0.44705886, b: 0.7686275, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1056,8 +1056,9 @@ GameObject:
   - component: {fileID: 4697058745904106466}
   - component: {fileID: 1762164149188772818}
   - component: {fileID: 6590458704033141870}
+  - component: {fileID: -5218062724872139504}
   m_Layer: 5
-  m_Name: DownShopSlot
+  m_Name: PaidItemSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1180,3 +1181,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-5218062724872139504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206774066577256512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67879cb27c59389498aaab6a7678cd64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemNameText: {fileID: 4037650737814459310}
+  itemImage: {fileID: 8064260092302404114}
+  itemQuantity: {fileID: 2859734109710140441}
+  itemQuantityText: {fileID: 19965217857210932}
+  itemCostText: {fileID: 2260450717663712502}
