@@ -23,6 +23,12 @@ public class DataManager : Manager
     // 보상
     public DataTable_WaveRewardLoader dataTable_WaveRewardLoader;
 
+    // 상점
+    public DataTable_ShopLoader dataTable_ShopLoader;
+
+    // 재화
+    public DataTable_GoodsLoader dataTable_GoodsLoader;
+
     private void Awake()
     {
         EnemyAwake();
@@ -33,6 +39,8 @@ public class DataManager : Manager
         UnitAwake();
         RewardAwake();
         TipAwake();
+        ShopAwake();
+        GoodsAwake();
     }
 
     private void EnemyAwake()
@@ -86,5 +94,15 @@ public class DataManager : Manager
     private void TipAwake()
     {
         dataTable_TIPLoader = new DataTable_TIPLoader();
+    }
+    
+    private void ShopAwake()
+    {
+        dataTable_ShopLoader = new DataTable_ShopLoader();
+    }
+    
+    private void GoodsAwake()
+    {
+        dataTable_GoodsLoader = new DataTable_GoodsLoader();
     }
 }
