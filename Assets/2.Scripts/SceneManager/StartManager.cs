@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class StartManager : MonoBehaviour
 {
+    public SoundManager soundManager;
+
     public Image topFadeImage;
     public Image whiteImage;
     public Slider loadingSlider;

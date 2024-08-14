@@ -109,7 +109,8 @@ public class SceneEffect : Manager
         //crackingImage.gameObject.SetActive(true);
         startVideoImage.gameObject.SetActive(true);
         skipImage.gameObject.SetActive(true);
-                
+        startManager.soundManager.BGMChange(1);
+
         yield return new WaitForSeconds((float)startVideoImage.GetComponent<VideoPlayer>().length);
 
         startManager.SceneChange();

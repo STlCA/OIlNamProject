@@ -177,16 +177,16 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31903880}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 8d8e2eff5d45e554eb608b13f96475ac, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: bfa490ea90d0c414ca0698c5e0b25150, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
+  m_TargetCamera: {fileID: 1168297968}
   m_TargetTexture: {fileID: 8400000, guid: 452ae81375cacb941a8f177eea192a1f, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
-  m_AspectRatio: 4
+  m_AspectRatio: 0
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
@@ -284,6 +284,7 @@ MonoBehaviour:
   EffectSlider: {fileID: 0}
   bgmList:
   - {fileID: 8300000, guid: 6a94a6761be94254ea9f550d8b4a7c1d, type: 3}
+  - {fileID: 8300000, guid: 2250812457992234bb24f82040871dbb, type: 3}
   effectAudioList:
   - {fileID: 8300000, guid: 006ac69d274f1974eba5f11975e3132e, type: 3}
   gameAudioList: []
@@ -573,18 +574,6 @@ MonoBehaviour:
       - m_Target: {fileID: 671594207}
         m_TargetAssemblyTypeName: SceneEffect, Assembly-CSharp
         m_MethodName: StorySceneOn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1007681320}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1410,6 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd57d75c706e2246a5631e6dc542068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 129121157}
   topFadeImage: {fileID: 8229350720875854138}
   whiteImage: {fileID: 1713846124}
   loadingSlider: {fileID: 5264691210045293176}
