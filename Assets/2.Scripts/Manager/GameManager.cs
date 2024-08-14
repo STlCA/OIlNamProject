@@ -2,6 +2,14 @@ using Constants;
 using System;
 using UnityEngine;
 
+[Serializable]
+public struct Save_MoneyData
+{
+    public int Gold;
+    public int Key;
+    public int Diamond;
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -127,7 +135,8 @@ public class GameManager : MonoBehaviour
         timeManager.Init(this);
 
         //Gold
-        MoneyInit();
+        if (!SaveSystem.SaveFile())
+            MoneyInit();
     }
 
     private void Update()
@@ -187,8 +196,24 @@ public class GameManager : MonoBehaviour
         Stage = stage;
     }
 
+    public void Save(ref Save_MoneyData saveData)
+    {
+        saveData.Gold = Gold;
+        saveData.Key = Key;
+        saveData.Diamond = Diamond;
+    }
+
+    public void Load(Save_MoneyData saveData)
+    {
+        Gold = saveData.Gold;
+        Key = saveData.Key;
+        Diamond = saveData.Diamond;
+    }
+
     public void GameExit()
     {
+        SaveSystem.Save();
+
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else

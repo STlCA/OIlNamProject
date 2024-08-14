@@ -1,7 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+
+[Serializable]
+public struct Save_PlayerData
+{
+    public string UserName;
+    public int Level;
+    public float CurrentExp;
+}
 
 public class Player : Manager
 {
@@ -33,7 +42,7 @@ public class Player : Manager
     {
         base.Init(gm);
 
-        UserName = "5팀가자";
+        UserName = "주인공";
         Level = 1;
         FullExp = 2000;
         CurrentExp = 0;
@@ -83,5 +92,19 @@ public class Player : Manager
     public void LevelUpUIClear()
     {
         IsLevelUp = false;
+    }
+
+    public void Save(ref Save_PlayerData saveData)
+    {
+        saveData.UserName = UserName;
+        saveData.Level = Level;
+        saveData.CurrentExp = CurrentExp;
+    }
+
+    public void Load(Save_PlayerData saveData)
+    {
+        UserName = saveData.UserName;
+        Level = saveData.Level;
+        CurrentExp = saveData.CurrentExp;
     }
 }

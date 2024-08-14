@@ -38,6 +38,7 @@ public class StartManager : MonoBehaviour
         topFadeImage.gameObject.SetActive(true);
         loadingSlider.gameObject.SetActive(true);
         TipTextSet();
+        SaveSystem.Load();
 
         StartCoroutine("LoadingScene");
     }
@@ -53,13 +54,14 @@ public class StartManager : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (loading.progress >= 0.9f)
-                loadingSlider.value = 1f;
+            if (loading.progress >= 0.8f)
+                loadingSlider.value = 0.8f;
             else
                 loadingSlider.value = Mathf.Lerp(loadingSlider.value, loading.progress, timer);
 
             if (loading.progress >= 0.9f && timer > 2f)
             {
+                loadingSlider.value = 1f;
                 //whiteImage.gameObject.SetActive(true);
                 //yield return StartCoroutine("SceneChangeFadeOut");
                 loading.allowSceneActivation = true;

@@ -1,50 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct SaveData
 {
-    //public SavePlayerData PlayerData;
-    //public SaveDayData DayData;
-    //public SaveTileData TileData;
-    //public SaveSpawnData NatureData;
-    //public SaveInvenList InvenData;
-
-    //public SaveData[] ScenesData; indoor/outdoor나눌때
-}
-
-[System.Serializable]
-public struct SceneSaveData
-{
-    //public string SceneName;
-    //public SaveTileData TerrainData;
+    public Save_MoneyData MoneyData;
+    public Save_PlayerData PlayerData;
+    public Save_PlayerEvenet PlayerEventData;
+    //public Save_UnitData UnitData;
 }
 
 public class SaveSystem : MonoBehaviour
 {
-    //public static SavePlayerData slotData;
-    //public static string path; // 경로
-    //public static int nowSlot; // 현재 슬롯번호
-
-    private static SaveData SaveData = new();
-    //private static Dictionary<string, SceneSaveData> s_ScenesDataLookup = new Dictionary<string, SceneSaveData>();
+    public static string path; // 경로
+    private static SaveData saveData = new();
 
     private void Awake()
     {
-        //path = Application.persistentDataPath + "/save";	// 경로 지정
-        //print(path);
+        path = Application.persistentDataPath + "/save";	// 경로 지정
+        print(path);//경로디버그
     }
 
-    public static void SlotDataLoad(int slot)
+    public static bool SaveFile()
     {
-        //string data = File.ReadAllText(path + slot.ToString());
-        //SaveData = JsonUtility.FromJson<SaveData>(data);
-        //slotData = SaveData.PlayerData;
+        return File.Exists(path);
     }
-    public static void Save(string name, bool isNewData = false)
+
+    public static void Save()
     {
+        saveData = new();
+
+        GameManager.Instance.Save(ref saveData.MoneyData);
+        GameManager.Instance.Player.Save(ref saveData.PlayerData);
+        GameManager.Instance.PlayerEvent.Save(ref saveData.PlayerEventData);
+
         //if (isNewData)//true면
         //    GameManager.Instance.Player.PlayerNameSetting(name);
         //
@@ -55,25 +48,33 @@ public class SaveSystem : MonoBehaviour
         //GameManager.Instance.Player.Inventory.Save(ref SaveData.InvenData, isNewData);
         ////SaveSceneData();
         //
-        //string data = JsonUtility.ToJson(SaveData);
-        //
-        //if (File.Exists(path + nowSlot.ToString()))
-        //    File.Delete(path + nowSlot.ToString());
-        //
-        //File.WriteAllText(path + nowSlot.ToString(), data);
+
+        string data = JsonUtility.ToJson(saveData);
+
+        if (File.Exists(path))
+            File.Delete(path);
+
+        File.WriteAllText(path, data);
     }
 
     public static void Load()
     {
-        //string data = File.ReadAllText(path + nowSlot.ToString());
-        //SaveData = JsonUtility.FromJson<SaveData>(data);
+        if (!File.Exists(path))//파일이 없으면
+            return;
+
+        string data = File.ReadAllText(path);
+        saveData = new();
+        saveData = JsonUtility.FromJson<SaveData>(data);
 
         SceneManager.sceneLoaded += SceneLoaded;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
     private static void SceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        GameManager.Instance.Load(saveData.MoneyData);
+        GameManager.Instance.Player.Load(saveData.PlayerData);
+        GameManager.Instance.PlayerEvent.Load(saveData.PlayerEventData);
+
         //GameManager.Instance.Player.Load(SaveData.PlayerData);
         //GameManager.Instance.DayCycleHandler.Load(SaveData.DayData);
         //GameManager.Instance.TileManager.Load(SaveData.TileData);

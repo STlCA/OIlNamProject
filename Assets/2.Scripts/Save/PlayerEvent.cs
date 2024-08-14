@@ -1,9 +1,17 @@
 using Constants;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+[Serializable]
+public struct Save_PlayerEvenet
+{
+    public bool UseStartCoupon;
+    public bool Stage1Clear;
+}
 
 public class PlayerEvent : Manager
 {
@@ -48,6 +56,7 @@ public class PlayerEvent : Manager
 
         GameManager.Instance.SoundManager.EffectAudioClipPlay(EffectList.Recall);
         GameManager.Instance.MoneyChange(MoneyType.Diamond, 50);
+        GameManager.Instance.UnitManager.ChangeUnitPiece(100);
         UseStartCoupon = true;
         canUseCoupon.SetActive(true);
     }
@@ -58,5 +67,20 @@ public class PlayerEvent : Manager
             return;
         else
             Stage1Clear = true;      
+    }
+
+
+    //-----------------------------------------------------SaveLoad
+
+    public void Save(ref Save_PlayerEvenet saveData)
+    {
+        saveData.UseStartCoupon = UseStartCoupon;
+        saveData.Stage1Clear = Stage1Clear;
+    }
+
+    public void Load(Save_PlayerEvenet saveData)
+    {
+        UseStartCoupon = saveData.UseStartCoupon;
+        Stage1Clear = saveData.Stage1Clear;
     }
 }

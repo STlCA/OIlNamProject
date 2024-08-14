@@ -153,7 +153,7 @@ public class MainSceneManager : MonoBehaviour
     {
         GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Intro);
 
-        if (nameInputField.text.Length <= 0 || nameInputField.text.Length > 10)
+        if (nameInputField.text.Length <= 0 || nameInputField.text.Length > 7)
         {
             nameFalse.SetActive(true);
             return;
