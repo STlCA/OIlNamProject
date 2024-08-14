@@ -62,7 +62,10 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
             if (step == 1)
                 star1.SetActive(true);
             else if (step == 2)
+            {
+                star1.SetActive(false);
                 star2.SetActive(true);
+            }
         }
     }
     private int step;
