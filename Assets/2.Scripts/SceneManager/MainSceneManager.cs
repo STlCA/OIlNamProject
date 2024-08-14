@@ -187,6 +187,7 @@ public class MainSceneManager : MonoBehaviour
                 GameManager.Instance.SoundManager.BGMCheck(1);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
+                stage2Icon.transform.parent.GetComponent<StageAnimation>().ReAnim();
                 break;
 
             case (int)TabType.Gacha:
