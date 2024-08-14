@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public struct SaveData
 {
-    public Save_MoneyData MoneyData;
+    public Save_GameData MoneyData;
     public Save_PlayerData PlayerData;
     public Save_PlayerEvenet PlayerEventData;
     public Save_UnitData UnitData;
