@@ -100,12 +100,12 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         shadowSR = transform.GetChild(1).GetComponentInChildren<SpriteRenderer>();
 
         rangeGO = spriteGO.transform.GetChild(0).gameObject;
-        skillGO = spriteGO.transform.GetChild(1).gameObject;
-        sellBtn = spriteGO.transform.GetChild(2).gameObject;
-        upgradeBtn = spriteGO.transform.GetChild(3).gameObject;
+        sellBtn = spriteGO.transform.GetChild(1).gameObject;
+        upgradeBtn = spriteGO.transform.GetChild(2).gameObject;
 
         star1 = myGO.transform.GetChild(1).GetChild(1).gameObject;
         star2 = myGO.transform.GetChild(1).GetChild(2).gameObject;
+        skillGO = myGO.transform.GetChild(1).GetChild(3).gameObject;
 
         sellBtn.GetComponent<ClickSpriteBtn>().Init(controller, pos);
         upgradeBtn.GetComponent<ClickSpriteBtn>().Init(controller, pos);
@@ -155,7 +155,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         ATKChange();
 
         unitAnimation = GetComponentInChildren<UnitAnimation>();
-        unitAnimation.TypeSet(unitData.type);
+        unitAnimation.TypeSet(unitData.type,skillGO.GetComponentInChildren<Animator>(),myUnitData.tier);        
 
         spriteGO.SetActive(false);
     }
@@ -245,9 +245,12 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
             findEnemy = FindEnemy();
 
             if (findEnemy != null)
-            {
+            {               
                 //gameObject.AddComponent<AudioSource>().PlayOneShot(GameManager.Instance.SoundManager.gameAudioList[0]);
                 GameManager.Instance.SoundManager.GameAudioClipPlay(0);//공격사운드
+
+                //skillGO.transform.position = new Vector3(-0.5f, 0);
+                //skillGO.transform.position = findEnemy.transform.position;
                 unitAnimation.AttackEffect();
                 deltaSpeed = 0;
             }

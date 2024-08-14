@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8298526567679622220}
   - component: {fileID: 3741235628606586470}
+  - component: {fileID: 2793107326096393403}
   m_Layer: 6
   m_Name: skillGo
   m_TagString: Untagged
@@ -109,11 +110,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010811942682050319}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.49999997, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2072729995047874540}
+  m_Father: {fileID: 5223866266987354357}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3741235628606586470
@@ -159,7 +160,7 @@ SpriteRenderer:
   m_SortingOrder: 19
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.14117648}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -169,6 +170,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2793107326096393403
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010811942682050319}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59f0476b1f09e2b419a0bdaa6ffba7c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2658615509108365051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,7 +1028,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6767354964752594086}
-  - {fileID: 8298526567679622220}
   - {fileID: 245040376478336675}
   - {fileID: 1644475504548266353}
   m_Father: {fileID: 5223866266987354357}
@@ -1043,6 +1064,7 @@ Transform:
   - {fileID: 2072729995047874540}
   - {fileID: 1336875770104806613}
   - {fileID: 5496105116337991539}
+  - {fileID: 8298526567679622220}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
