@@ -202,26 +202,6 @@
     },
     {
       "key": 1011,
-      "Item": "켠왕 패키지",
-      "ItemName": "켠왕 패키지",
-      "Description": "켠왕 도전! 삼각 김밥보다 싸다!",
-      "PID1": 1501,
-      "PCount1": 500,
-      "PID2": 1504,
-      "PCount2": 300,
-      "PID3": -1,
-      "PCount3": -1,
-      "isCash": true,
-      "isAd": false,
-      "MoneyType": -1,
-      "Cost": 1100,
-      "AvailiableCount": 1,
-      "isOnce": true,
-      "AvailiableTime": -1,
-      "Path": "Item/Starter"
-    },
-    {
-      "key": 1012,
       "Item": "골든 패스",
       "ItemName": "골든 패스",
       "Description": "골든 패스! 도시락보다 싸다!",
@@ -239,6 +219,26 @@
       "isOnce": true,
       "AvailiableTime": -1,
       "Path": "Item/GoldenPass"
+    },
+    {
+      "key": 1012,
+      "Item": "켠왕 패키지",
+      "ItemName": "켠왕 패키지",
+      "Description": "켠왕 도전! 삼각 김밥보다 싸다!",
+      "PID1": 1501,
+      "PCount1": 500,
+      "PID2": 1504,
+      "PCount2": 300,
+      "PID3": -1,
+      "PCount3": -1,
+      "isCash": true,
+      "isAd": false,
+      "MoneyType": -1,
+      "Cost": 1100,
+      "AvailiableCount": 1,
+      "isOnce": true,
+      "AvailiableTime": -1,
+      "Path": "Item/Starter"
     }
   ]
 }
