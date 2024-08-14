@@ -55,6 +55,10 @@ public class GameManager : MonoBehaviour
     public UnitManager UnitManager { get { return unitManager; } }
     private UnitManager unitManager;
 
+    //====================== Shop
+    public ShopUI ShopUI;
+    public ShopSlotUI ShopSlotUI;
+
     //====================== Money
     public int Gold
     {
