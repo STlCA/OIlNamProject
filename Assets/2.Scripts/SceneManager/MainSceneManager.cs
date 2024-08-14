@@ -224,18 +224,21 @@ public class MainSceneManager : MonoBehaviour
     {
         if (stage == 2)
         {
-            if (PlayerEvent.Stage1Clear)
-            {
-                canStart = true;
-                stage2Icon.color = Color.white;
-                GameManager.Instance.SetStage(stage);
-            }
-            else
-            {
-                stage2Icon.color = Color.black;
-                canStart = false;
-                return;
-            }
+            canStart = true;
+            GameManager.Instance.SetStage(stage);
+
+            /*            if (PlayerEvent.Stage1Clear)
+                        {
+                            canStart = true;
+                            stage2Icon.color = Color.white;
+                            GameManager.Instance.SetStage(stage);
+                        }
+                        else
+                        {
+                            stage2Icon.color = Color.black;
+                            canStart = false;
+                            return;
+                        }*/
         }
         else
         {

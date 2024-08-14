@@ -382,7 +382,7 @@ public class HappyEnergy : MonoBehaviour
 
     private IEnumerator CoClickFalse()
     {
-        clickFalse.SetActive(true);
+        clickFalse.SetActive(true);      
 
         yield return new WaitForSecondsRealtime(2);
 

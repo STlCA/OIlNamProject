@@ -9,7 +9,10 @@ public class StageAnimation : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();      
+        animator = GetComponent<Animator>();
+
+        if (stage != 0)
+            SetStage(stage);
     }
 
     public void SetStage(int setStage)//btn
