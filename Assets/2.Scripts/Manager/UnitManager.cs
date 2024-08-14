@@ -4,6 +4,7 @@ using System;
 using Random = UnityEngine.Random;
 using Constants;
 using TMPro;
+using UnityEditor;
 
 [Serializable]
 public struct Save_UnitData
@@ -75,7 +76,7 @@ public struct UnitSaveData
 public class UnitData
 {
     //기본정보
-    public int key;
+    public int key = -1;
     public int upgradeKey;
     public int stepKey;
     public string name;
@@ -101,6 +102,14 @@ public class UnitData
     {
         this.upgradeData = upgradeData;
 
+        if (key == -1)//load데이터가 없다는 뜻
+        {
+            open = unit.Open;
+
+            level = 0;
+            piece = 0;
+        }
+
         key = unit.key;
         upgradeKey = unit.UpgradeKey;
         stepKey = unit.StepKey;
@@ -109,26 +118,21 @@ public class UnitData
         atk = unit.ATK;
         speed = unit.Speed / 10000f;
         range = unit.Range;
-        open = unit.Open;
         type = unit.UnitType;
 
-        level = 0;
-        piece = 0;
+        if (level > 0)
+            SetStatus();
 
         profile = Resources.Load<Sprite>("Unit/Profile/" + unit.Profile);
         prefabs = Resources.Load<GameObject>("Unit/Prefabs/" + unit.Sprite);
     }
 
-    public void Load(UnitSaveData data, DataTable_Upgrade upgradeData)
+    public void Load(UnitSaveData data)
     {
-        this.upgradeData = upgradeData;
-
         key = data.Key;
         level = data.Level;
         piece = data.Piece;
         open = data.Open;
-
-        SetStatus();
     }
 
     private void SetStatus()
@@ -215,16 +219,9 @@ public class UnitManager : Manager
             upgradeLoader = DataManager.dataTable_UpgradeLoader;
         }
 
-        if (unitDataDic.Count == 0)
-        {
-            FirstInit();
-        }
-
+        UnitInit();
         InitTierID();
         PercentInit();
-
-        //Temp
-        //pieceData.unitPiece = 30;
     }
 
     public void SetUIText(TMP_Text tabTxt, TMP_Text gachaTabTxt, GameObject falseGacha,
@@ -244,15 +241,31 @@ public class UnitManager : Manager
         ChangeAllUnitPiece();
     }
 
-    private void FirstInit()
+    private void UnitInit()
     {
         foreach (var item in unitLoader.ItemsList)
         {
-            UnitData newData = new();
-            newData.Init(item, upgradeLoader.GetByKey(item.UpgradeKey));
+            if (unitDataDic.Count != 0)//유닛데이터가 0개가 아니면
+            {
+                if (unitDataDic.ContainsKey(item.key))//키가있는키면
+                {
+                    unitDataDic[item.key].Init(item, upgradeLoader.GetByKey(item.UpgradeKey));
+                }
+                else
+                {
+                    UnitData newData = new();
+                    newData.Init(item, upgradeLoader.GetByKey(item.UpgradeKey));
 
-            //unitDataBase.Add(newData);
-            unitDataDic.Add(newData.key, newData);
+                    unitDataDic.Add(newData.key, newData);
+                }
+            }
+            else // 유닛데이터가 0개라면
+            {
+                UnitData newData = new();
+                newData.Init(item, upgradeLoader.GetByKey(item.UpgradeKey));
+
+                unitDataDic.Add(newData.key, newData);
+            }
         }
     }
 
@@ -329,7 +342,7 @@ public class UnitManager : Manager
             total += t;
         }
 
-        for (int i = 0; i < count; i++)
+        for (int i = 0; i < count * 3; i++)
         {
             random = Random.value * total;
 
@@ -362,8 +375,9 @@ public class UnitManager : Manager
             }
 
             pieceData.UsePiece((PieceType)index, 1);
-            pieceData.UsePiece(PieceType.Unit, -30);
         }
+
+        pieceData.UsePiece(PieceType.Unit, -30 * count);
 
         gachaAnim.SetActive(true);
 
@@ -568,8 +582,8 @@ public class UnitManager : Manager
 
     public void Save(ref Save_UnitData data)
     {
-        data.unitSaveDatas.Clear();
         data.unitSaveDatas = new();
+        data.pieceData = new();
 
         foreach (var (key, item) in unitDataDic)
         {
@@ -591,7 +605,7 @@ public class UnitManager : Manager
         {
             UnitData unit = new();
             unit.Init(unitLoader.GetByKey(item.Key), upgradeLoader.GetByKey(unitLoader.GetByKey(item.Key).UpgradeKey));
-            unit.Load(item, upgradeLoader.GetByKey(unitLoader.GetByKey(item.Key).UpgradeKey));
+            unit.Load(item);
 
             unitDataDic.Add(item.Key, unit);
         }
