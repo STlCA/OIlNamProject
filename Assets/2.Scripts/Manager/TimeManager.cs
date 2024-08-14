@@ -34,7 +34,7 @@ public class TimeManager : Manager
         timeOffset = now - lastDate;
 
         //지금까지 자리를 비운 시간 계산해서 그만큼 재화지급
-        int count = (int)timeOffset.TotalSeconds / keyTime;
+        int count = (int)timeOffset.TotalSeconds / keyTime >= 30 ? 30 : (int)timeOffset.TotalSeconds / keyTime;
 
         Debug.Log(count + "번 키 얻음");
 

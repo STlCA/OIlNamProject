@@ -108,7 +108,7 @@ public class SceneEffect : Manager
         //crackingImage.gameObject.SetActive(true);
         startVideoImage.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
 
         StartCoroutine("StoryTypeTextEffect");
     }
