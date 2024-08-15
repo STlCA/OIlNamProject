@@ -81,9 +81,9 @@ public class Player : Manager
             IsLevelUp = true;
         }
 
-        if (Level > 130)
+        if (Level > 150)
         {
-            Level = 130;
+            Level = 150;
             CurrentExp = FullExp;
             IsLevelUp = false;
         }
