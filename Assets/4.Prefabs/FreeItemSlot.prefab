@@ -631,7 +631,15 @@ MonoBehaviour:
   itemImage: {fileID: 3590372703518212258}
   itemQuantity: {fileID: 1538721112000950861}
   itemQuantityText: {fileID: 218913350336948662}
+  itemValue: {fileID: 1754988253476983512}
+  itemValueText: {fileID: 0}
   itemCostText: {fileID: 5155832975041232189}
+  popupImage: {fileID: 0}
+  popupQuantity: {fileID: 0}
+  popupQuantityText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  popupCostIcon: {fileID: 0}
+  popupCostText: {fileID: 0}
 --- !u!1 &5539516993144836424
 GameObject:
   m_ObjectHideFlags: 0
