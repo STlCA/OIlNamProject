@@ -142,6 +142,10 @@ public class SoundManager : Manager
         BGMSource.clip = bgmList[index];
         BGMSource.Play();
     }
+    public void EffectAudioClipPlay(int index)
+    {
+        EffectSource.PlayOneShot(effectAudioList[index], 1);
+    }
 
     public void EffectAudioClipPlay(int index,float volum = 1)
     {
