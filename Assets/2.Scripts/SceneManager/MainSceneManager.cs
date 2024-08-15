@@ -1,4 +1,3 @@
-using Cainos.PixelArtTopDown_Basic;
 using Constants;
 using System;
 using System.Collections;
