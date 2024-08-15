@@ -51,7 +51,7 @@ public class TimeManager : Manager
         for (int i = 0; i < count; i++)
         {
             GetKey();
-        }        
+        }
 
         if (GameManager.Instance.Key < 30)
         {
@@ -98,9 +98,9 @@ public class TimeManager : Manager
             lastDate = DateTime.MaxValue;
         }
         else if (keyTimerStart)
-            lastDate = DateTime.Now;        
+            lastDate = DateTime.Now;
         else
-            Debug.Log("lastDate그대로");        
+            Debug.Log("lastDate그대로");
     }
 
     public void TextUIInit(TMP_Text offsetTxt)
@@ -137,6 +137,9 @@ public class TimeManager : Manager
 
     public void Load(Save_TimeData saveData)
     {
-        lastDate = Convert.ToDateTime(saveData.LastTime);
+        if (saveData.LastTime.Length <= 0)
+            lastDate = DateTime.MaxValue;
+        else
+            lastDate = Convert.ToDateTime(saveData.LastTime);
     }
 }
