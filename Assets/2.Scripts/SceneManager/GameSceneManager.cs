@@ -42,6 +42,10 @@ public class GameSceneManager : MonoBehaviour
         private set
         {
             useRuby += value;
+
+            if (useRuby >= 100)
+                useRuby = 100;
+
             useRubyTxt.text = useRuby.ToString("N0");
         }
     }
@@ -132,7 +136,7 @@ public class GameSceneManager : MonoBehaviour
 
     public bool CanUseRuby()
     {
-        bool canUse = Ruby >= UseRuby;                
+        bool canUse = Ruby >= UseRuby;
 
         return canUse;
     }
