@@ -92,7 +92,7 @@ public class DataTable_Shop
     public bool isOnce;
 
     /// <summary>
-    /// Availiable_Time
+    /// Availiable_Time 상품 재구매시 필요 기간 (단위 : day)
     /// </summary>
     public int AvailiableTime;
 
