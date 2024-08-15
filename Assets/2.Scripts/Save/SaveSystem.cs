@@ -83,4 +83,11 @@ public class SaveSystem : MonoBehaviour
 
         SceneManager.sceneLoaded -= SceneLoaded;
     }
+
+    //파일삭제
+    public void DeleteSave()
+    {
+        if (File.Exists(path))
+            File.Delete(path);
+    }
 }

@@ -66,7 +66,7 @@ public class StartManager : MonoBehaviour
             else
                 loadingSlider.value = Mathf.Lerp(loadingSlider.value, loading.progress, timer);
 
-            if (loading.progress >= 0.9f && timer > 2f)
+            if (loading.progress >= 0.9f && timer > 1.5f)
             {
                 loadingSlider.value = 1f;
                 //whiteImage.gameObject.SetActive(true);

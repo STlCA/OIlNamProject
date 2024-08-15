@@ -242,7 +242,7 @@ public class SceneEffect : Manager
             else
                 mySlider.value = Mathf.Lerp(mySlider.value, loading.progress, timer);
 
-            if (loading.progress >= 0.9f && timer > 2f)
+            if (loading.progress >= 0.9f && timer > 1.5f)
             {
                 mySlider.value = 1f;
                 //whiteImage.gameObject.SetActive(true);

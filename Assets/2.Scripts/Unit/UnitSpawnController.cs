@@ -211,14 +211,22 @@ public class UnitSpawnController : MonoBehaviour
             case 0:
                 if (step0[id].count >= 3)
                 {
-                    step0[id].count -= 3;
-
                     List<Vector3> temp = new();
+                    int count = 0;
 
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < step0[id].count; i++)
                     {
-                        temp.Add(step0[id].pos[i]);
+                        if (step0[id].pos[i] != key)
+                        {
+                            temp.Add(step0[id].pos[i]);
+                            count++;
+                        }
+                        if (count == 2)
+                            break;                        
                     }
+                    temp.Add(key);
+
+                    step0[id].count -= 3;
 
                     foreach (var t in temp)
                     {
@@ -252,14 +260,22 @@ public class UnitSpawnController : MonoBehaviour
             case 1:
                 if (step1[id].count >= 3)
                 {
-                    step1[id].count -= 3;
-
                     List<Vector3> temp = new(3);
+                    int count = 0;
 
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < step1[id].count; i++)
                     {
-                        temp.Add(step1[id].pos[i]);
+                        if (step1[id].pos[i] != key)
+                        {
+                            temp.Add(step1[id].pos[i]);
+                            count++;
+                        }
+                        if (count == 2)
+                            break;
                     }
+                    temp.Add(key);
+
+                    step1[id].count -= 3;
 
                     foreach (var t in temp)
                     {
