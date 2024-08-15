@@ -273,6 +273,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         foreach (Enemy monster in enemyList)
         {
+            if (monster == null) continue;
+
             current = Vector3.Distance(transform.position, monster.transform.position);
 
             if (min > current)
