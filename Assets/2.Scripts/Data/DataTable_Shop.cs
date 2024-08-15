@@ -27,6 +27,11 @@ public class DataTable_Shop
     public string Description;
 
     /// <summary>
+    /// Value
+    /// </summary>
+    public string Value;
+
+    /// <summary>
     /// Product_Value_1
     /// </summary>
     public int PID1;
