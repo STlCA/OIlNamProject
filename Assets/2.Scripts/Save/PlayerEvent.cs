@@ -12,6 +12,7 @@ public struct Save_PlayerEvenet
     public bool UseStartCoupon;
     public bool Stage1Clear;
     public bool FirstGacha;
+    public bool GoldenPass;
 }
 
 public class PlayerEvent : Manager
@@ -19,11 +20,12 @@ public class PlayerEvent : Manager
     public TMP_InputField couponInput;
     public GameObject falseCoupon;//번호틀림
     public GameObject falseUseCoupon;//이미사용
-    public GameObject canUseCoupon;//사용한UI
+    public GameObject canUseCoupon;//사용한UI    
 
     public static bool UseStartCoupon { get; private set; } = false;
     public static bool Stage1Clear { get; private set; } = false;
     public static bool FirstGacha { get; private set; } = false;
+    public static bool GoldenPass { get; private set; } = false;
 
     public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2, GameObject canUseCoupon)
     {
@@ -79,6 +81,11 @@ public class PlayerEvent : Manager
             return;
     }
 
+    public void BuyGoldenPass()
+    {
+        GoldenPass = true;
+    }
+
 
     //-----------------------------------------------------SaveLoad
 
@@ -87,6 +94,7 @@ public class PlayerEvent : Manager
         saveData.UseStartCoupon = UseStartCoupon;
         saveData.Stage1Clear = Stage1Clear;
         saveData.FirstGacha = FirstGacha;
+        saveData.GoldenPass = GoldenPass;
     }
 
     public void Load(Save_PlayerEvenet saveData)
@@ -94,5 +102,6 @@ public class PlayerEvent : Manager
         UseStartCoupon = saveData.UseStartCoupon;
         Stage1Clear = saveData.Stage1Clear;
         FirstGacha = saveData.FirstGacha;
+        GoldenPass = saveData.GoldenPass;
     }
 }

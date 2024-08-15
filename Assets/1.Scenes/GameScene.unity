@@ -1676,21 +1676,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7850713056063250789}
-        m_TargetAssemblyTypeName: PopUpController, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 927026206}
         m_TargetAssemblyTypeName: PopUpController, Assembly-CSharp
-        m_MethodName: UIOn
+        m_MethodName: RecallInfo
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1195982930}

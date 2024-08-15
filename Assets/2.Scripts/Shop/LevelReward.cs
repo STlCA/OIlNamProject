@@ -36,6 +36,16 @@ public class LevelReward : MonoBehaviour
         DicInit();
 
         RewardSetting(0);
+
+        GoldenPassSetting();
+    }
+
+    private void GoldenPassSetting()
+    {
+        if(PlayerEvent.GoldenPass)
+            nonClickImage.SetActive(false);
+        else
+            nonClickImage.SetActive(true);
     }
 
     private void ListInit()
@@ -96,6 +106,14 @@ public class LevelReward : MonoBehaviour
 
             goldenSlots[30 - i].Init(this, level, LevelRewardType.GoldenPass, (RewardType)data.GoldenType, data.GoldenValue, canGet, icons, canGetLevel);
         }
+    }
+
+    public void BuyGoldenPass()
+    {
+        //»ç±â
+
+        GameManager.Instance.PlayerEvent.BuyGoldenPass();
+        GoldenPassSetting();
     }
 
     public void GetReward(int level, LevelRewardType type)
