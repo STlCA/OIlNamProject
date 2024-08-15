@@ -211,7 +211,7 @@ public class HappyEnergy : MonoBehaviour
         turn[slot[temp]] = 0;//0¹øÈ¿°ú
 
         texts[slot[temp]][0].text = currentMessage.Info1_1;
-        texts[slot[temp]][0].fontSize = 30;
+        texts[slot[temp]][0].fontSize = 25;
         texts[slot[temp]][1].text = currentMessage.Info1_2;
         texts[slot[temp]][1].fontSize = 20;
         texts[slot[temp]][2].text = currentMessage.Answer1;
@@ -226,7 +226,7 @@ public class HappyEnergy : MonoBehaviour
         turn[slot[temp]] = 1;
 
         texts[slot[temp]][0].text = currentMessage.Info2;
-        texts[slot[temp]][0].fontSize = 22;
+        texts[slot[temp]][0].fontSize = 35;
         texts[slot[temp]][1].text = "";
         texts[slot[temp]][2].text = currentMessage.Answer2;
         texts[slot[temp]][3].text = currentMessage.Energy2.ToString();
