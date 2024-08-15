@@ -173,10 +173,10 @@ MonoBehaviour:
   BGMSlider: {fileID: 0}
   EffectSlider: {fileID: 0}
   bgmList:
-  - {fileID: 8300000, guid: 6a94a6761be94254ea9f550d8b4a7c1d, type: 3}
+  - {fileID: 8300000, guid: 764dd771bc8358c4dabc4b8a7ce4eba5, type: 3}
   - {fileID: 8300000, guid: 2250812457992234bb24f82040871dbb, type: 3}
   effectAudioList:
-  - {fileID: 8300000, guid: 006ac69d274f1974eba5f11975e3132e, type: 3}
+  - {fileID: 8300000, guid: 691c85ca845ece644a0ba8cd1ebcf95d, type: 3}
   gameAudioList: []
   bgm: 0
   effect: 0
@@ -710,6 +710,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 129121157}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: EffectAudioClipPlay
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 671594209}
         m_TargetAssemblyTypeName: StartManager, Assembly-CSharp
         m_MethodName: SceneChange
@@ -1568,7 +1580,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710313588}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -1612,18 +1624,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1496891390}
-        m_TargetAssemblyTypeName: PopUpController, Assembly-CSharp
-        m_MethodName: UIOn
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 472205375}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2741,7 +2741,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 061f865eb7f71b243b95d52636a33894, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 764dd771bc8358c4dabc4b8a7ce4eba5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

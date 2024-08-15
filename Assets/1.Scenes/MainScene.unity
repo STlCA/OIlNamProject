@@ -28730,7 +28730,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 550, y: 0}
-  m_SizeDelta: {x: 710, y: 710}
+  m_SizeDelta: {x: 650, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1026835523
 MonoBehaviour:
@@ -28752,7 +28752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fd21165ca34b139489f0d0d49bfd05d2, type: 2}
+  m_Sprite: {fileID: 21300000, guid: c487ee77f76023f48a0d079e822bbc06, type: 2}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36225,6 +36225,18 @@ MonoBehaviour:
       - m_Target: {fileID: 595863819}
         m_TargetAssemblyTypeName: StageAnimation, Assembly-CSharp
         m_MethodName: SetStage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1172293952}
+        m_TargetAssemblyTypeName: BestRecord, Assembly-CSharp
+        m_MethodName: UpdateBestRecordUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -57942,6 +57954,18 @@ MonoBehaviour:
       - m_Target: {fileID: 595863819}
         m_TargetAssemblyTypeName: StageAnimation, Assembly-CSharp
         m_MethodName: SetStage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1172293952}
+        m_TargetAssemblyTypeName: BestRecord, Assembly-CSharp
+        m_MethodName: UpdateBestRecordUI
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
