@@ -19,6 +19,7 @@ public class WaveUI : MonoBehaviour
 
     private int atkPlus;//수정
     private int speedPlus;//수정
+    int ruby;
     //private void Start()
     //{
     //    if (GameManager.Instance != null)
@@ -45,6 +46,8 @@ public class WaveUI : MonoBehaviour
         happyEnergy = gameSceneManager.GetComponent<HappyEnergy>();
         //wavePopUp = GetComponent<WavePopUp>();
 
+        ruby = chapterDatabase.GetByKey(currentWave).Gold;
+
         StartWave();
     }
 
@@ -52,13 +55,15 @@ public class WaveUI : MonoBehaviour
     private void StartWave()
     {
         timerUI.Init();
+        // Wave 진입시 루비 지급
+        gameSceneManager.ChangeRuby(ruby);
         UpdateWaveUI();
     }
 
     // 다음 Wave로 진입
     public void NextWave()
     {
-        int ruby = chapterDatabase.GetByKey(currentWave).Gold;
+        //int ruby = chapterDatabase.GetByKey(currentWave).Gold;
 
         if(atkPlus > 0)
         {
