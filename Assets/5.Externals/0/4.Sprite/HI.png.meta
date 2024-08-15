@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 719c841213c73ec4ea525f644a5fc5a1
+guid: 590e69da89067e640aeedc90c78d5b5f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,30 +132,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SP_Frame_and_Glass_Vial_0
+      name: HI_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 31
-        width: 64
-        height: 16
+        x: 0
+        y: 333.3333
+        width: 266.66666
+        height: 166.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 564d41702a69b0547b17d8f7f1010dc7
-      internalID: -1130954801
+      spriteID: bbd6fa8f95ae2be45bdfd00370cb89e4
+      internalID: -101260392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SP_Frame_and_Glass_Vial_1
+      name: HI_1
       rect:
         serializedVersion: 2
-        x: 148
-        y: 31
-        width: 64
-        height: 16
+        x: 266
+        y: 333.3333
+        width: 266.66666
+        height: 166.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87a990c4baf10d643aa4ad0ed979c588
-      internalID: -2105587399
+      spriteID: 2e86276bb87feb546b866c980f63fb1e
+      internalID: 31421951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SP_Frame_and_Glass_Vial_2
+      name: HI_2
       rect:
         serializedVersion: 2
-        x: 7
-        y: 8
-        width: 58
-        height: 10
+        x: 532
+        y: 333.3333
+        width: 266.66666
+        height: 166.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dca9b7f1ceed6634b8a4682cecec8a18
-      internalID: -1321810420
+      spriteID: d16e97189565dcf46b42f8f857274a3c
+      internalID: -2000934165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SP_Frame_and_Glass_Vial_3
+      name: HI_3
       rect:
         serializedVersion: 2
-        x: 80
-        y: 11
-        width: 56
-        height: 6
+        x: 0
+        y: 167.33333
+        width: 266.66666
+        height: 166.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6931f0fee9b7c5c48955040e35cdc364
-      internalID: -1440471829
+      spriteID: 25073b83df931ae449bee8422dd110d5
+      internalID: 1730942625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SP_Frame_and_Glass_Vial_4
+      name: HI_4
       rect:
         serializedVersion: 2
-        x: 151
-        y: 8
-        width: 58
-        height: 10
+        x: 266
+        y: 167.33333
+        width: 266.66666
+        height: 166.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +234,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a149e2c01ab42e479bed8f8666290e3
-      internalID: 105340631
+      spriteID: 1141e42b648285b49a0328bb33fa80c2
+      internalID: 427593421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_5
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 167.33333
+        width: 266.66666
+        height: 166.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f0bd269af795b4fa41e10c8f3b1770
+      internalID: 1481989920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333282
+        width: 266.66666
+        height: 166.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73612cc0c9d419941a2d8f1616e38fd8
+      internalID: -1013131229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_7
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1.3333282
+        width: 266.66666
+        height: 166.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742021ab61c263a449dddfe743f76cd5
+      internalID: 792701229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HI_8
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 1.3333282
+        width: 266.66666
+        height: 166.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f9b938518b8174ba4467afe4345739
+      internalID: -402506641
       vertices: []
       indices: 
       edges: []
@@ -264,11 +335,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SP_Frame_and_Glass_Vial_0: -1130954801
-      SP_Frame_and_Glass_Vial_1: -2105587399
-      SP_Frame_and_Glass_Vial_2: -1321810420
-      SP_Frame_and_Glass_Vial_3: -1440471829
-      SP_Frame_and_Glass_Vial_4: 105340631
+      HI_0: -101260392
+      HI_1: 31421951
+      HI_2: -2000934165
+      HI_3: 1730942625
+      HI_4: 427593421
+      HI_5: 1481989920
+      HI_6: -1013131229
+      HI_7: 792701229
+      HI_8: -402506641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
