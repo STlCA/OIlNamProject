@@ -125,7 +125,7 @@ public class GameSceneManager : MonoBehaviour
 
     public void RubyInit()
     {
-        Ruby = 25;
+        Ruby = 60;
         UseRuby = 5;
     }
 
