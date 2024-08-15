@@ -18,11 +18,20 @@ public class ItemData
 
 public class ShopSlotUI : MonoBehaviour
 {
+    // 상점 내 슬롯
     [SerializeField] private TMP_Text itemNameText;     // 아이템 이름
-    [SerializeField] private Image itemImage;      // 아이템 아이콘
+    [SerializeField] private Image itemImage;           // 아이템 아이콘
     [SerializeField] private GameObject itemQuantity;   // 아이템 수량 오브젝트
     [SerializeField] private TMP_Text itemQuantityText; // 아이템 수량
     [SerializeField] private TMP_Text itemCostText;     // 아이템 가격
+
+    // 팝업
+    [SerializeField] private Image popupImage;          // 팝업창 아이템 이미지
+    [SerializeField] private GameObject popupQuantity;  // 팝업창 아이템 수량 오브젝트
+    [SerializeField] private TMP_Text popupQuantityText;// 팝업창 아이템 수량
+    [SerializeField] private TMP_Text descriptionText;  // 팝업창 아이템 설명
+    [SerializeField] private GameObject popupCostIcon;  // 팝업창 아이템 구입 재화 아이콘
+    [SerializeField] private TMP_Text popupCostText;    // 팝업창 아이템 가격
 
     private DataTable_ShopLoader shopData;
     private ItemData itemData;
@@ -62,5 +71,32 @@ public class ShopSlotUI : MonoBehaviour
         }
 
         return this;
+    }
+
+    // 팝업창 세팅
+    public void PopupSet()
+    {
+        popupImage.sprite = itemImage.sprite;
+        // 만약 단일 상품이면
+        if (itemData.itemData.PCount2 < 0 && itemData.itemData.PCount3 < 0)
+        {
+            popupQuantity.SetActive(true);
+            popupQuantityText.text = itemQuantityText.text;
+        }
+        // 세트 상품이면
+        else
+        {
+            popupQuantity.SetActive(false);
+        }
+        descriptionText.text = itemData.itemData.Description;
+        if (itemData.itemData.isCash)
+        {
+            popupCostIcon.SetActive(false);
+        }
+        else
+        {
+            popupCostIcon.SetActive(true);
+        }
+        popupCostText.text = itemCostText.text;
     }
 }
