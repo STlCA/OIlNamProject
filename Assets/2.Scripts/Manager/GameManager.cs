@@ -76,6 +76,10 @@ public class GameManager : MonoBehaviour
         set
         {
             gold += value;
+
+            if (gold < 0)
+                Debug.Log("¹ö±×¹ß»ý °ñµå°¡ 0¹ØÀ¸·Î ¶³¾îÁü");
+
             uiMnager.MoneyTypeUpdate(MoneyType.Gold, gold);
         }
     }
