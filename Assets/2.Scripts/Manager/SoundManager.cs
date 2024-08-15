@@ -143,9 +143,9 @@ public class SoundManager : Manager
         BGMSource.Play();
     }
 
-    public void EffectAudioClipPlay(int index)
+    public void EffectAudioClipPlay(int index,float volum = 1)
     {
-        EffectSource.PlayOneShot(effectAudioList[index], 1);
+        EffectSource.PlayOneShot(effectAudioList[index], volum);
     }
     public void EffectAudioClipPlay(EffectList index)
     {
@@ -163,6 +163,6 @@ public class SoundManager : Manager
             GameSource.Play();
         }*/
 
-        GameSource.PlayOneShot(gameAudioList[index],0.5f);
+        GameSource.PlayOneShot(gameAudioList[index],0.4f);
     }
 }
