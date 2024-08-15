@@ -25,6 +25,8 @@ public class SceneEffect : Manager
     public Image crackingImage = null;
     public RawImage startVideoImage = null;
     public Image textBackImage = null;
+    public Image storyAnim = null;
+    public Image infoAmin = null;
     public Image skipImage = null;
 
     [Header("Scene")]
@@ -107,13 +109,14 @@ public class SceneEffect : Manager
         yield return new WaitForSeconds(1);
 
         //crackingImage.gameObject.SetActive(true);
-        startVideoImage.gameObject.SetActive(true);
+        //startVideoImage.gameObject.SetActive(true);
+        storyAnim.gameObject.SetActive(true);
         skipImage.gameObject.SetActive(true);
         startManager.soundManager.BGMChange(1);
 
-        yield return new WaitForSeconds((float)startVideoImage.GetComponent<VideoPlayer>().length);
-
-        startManager.SceneChange();
+        //yield return new WaitForSeconds((float)startVideoImage.GetComponent<VideoPlayer>().length);
+        //
+        //startManager.SceneChange();
         //StartCoroutine("StoryTypeTextEffect");
     }
 
