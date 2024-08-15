@@ -14055,24 +14055,39 @@ MonoBehaviour:
   BGMSlider: {fileID: 6471886045868222596}
   EffectSlider: {fileID: 1005355322}
   bgmList:
-  - {fileID: 8300000, guid: 061f865eb7f71b243b95d52636a33894, type: 3}
-  - {fileID: 8300000, guid: 63e2d732badada7439c476ac14746617, type: 3}
-  - {fileID: 8300000, guid: bef0cef2ded0f0645ad90c6e5bdd4965, type: 3}
-  - {fileID: 8300000, guid: 89f935015cc98724a862a586326fdf21, type: 3}
-  - {fileID: 8300000, guid: 1f2ad53bacc245642854dbdc8ea71a9b, type: 3}
-  - {fileID: 8300000, guid: 35967e8a4dfb1664e9b066939272c0a4, type: 3}
-  - {fileID: 8300000, guid: fc5af015011ea3745b7f78ea1dd1049f, type: 3}
-  - {fileID: 8300000, guid: 51a4f1157b7ff1449b5e5cf064d584c7, type: 3}
+  - {fileID: 8300000, guid: 7e9f5698092c05b45b4001f3fc3d6cf8, type: 3}
+  - {fileID: 8300000, guid: 764dd771bc8358c4dabc4b8a7ce4eba5, type: 3}
+  - {fileID: 8300000, guid: ac326f82ffca5834ebc557731b00cce6, type: 3}
+  - {fileID: 8300000, guid: a7ef2df60bb028441aa7e834e20d6d28, type: 3}
+  - {fileID: 8300000, guid: 536d0f1692e02c54498c33af53715fdc, type: 3}
+  - {fileID: 8300000, guid: 8a5c568b6fc30894592ceaf63a54fa3c, type: 3}
+  - {fileID: 8300000, guid: 2250812457992234bb24f82040871dbb, type: 3}
   - {fileID: 8300000, guid: c9a9a6a64322e504a91d8ef847fddac4, type: 3}
+  - {fileID: 8300000, guid: 67b2c9de31a741c409c8e3fa5d05221a, type: 3}
+  - {fileID: 8300000, guid: fc5af015011ea3745b7f78ea1dd1049f, type: 3}
+  - {fileID: 8300000, guid: 42a6e4e230cce4646953a0dd33a9d75a, type: 3}
+  - {fileID: 8300000, guid: 00379ff33019bab4c9495c70aa3c3ff7, type: 3}
+  - {fileID: 8300000, guid: 466f7ce0edba30549bebcb8e96e931dd, type: 3}
   effectAudioList:
   - {fileID: 8300000, guid: 691c85ca845ece644a0ba8cd1ebcf95d, type: 3}
   - {fileID: 8300000, guid: 6f805e337418de947815f294a373551b, type: 3}
   - {fileID: 8300000, guid: ab90197c526097d4680fb3abfa07cf7e, type: 3}
+  - {fileID: 8300000, guid: 67113cb3a42b1e941a7dd96fa4e2e02a, type: 3}
   - {fileID: 8300000, guid: 5b9504328e3ada14ba512e5da384bce7, type: 3}
   - {fileID: 8300000, guid: 4345fee3fb20cf74aa45e5b8f2fb226d, type: 3}
   - {fileID: 8300000, guid: acbcb75601b0082458fda8807f67c813, type: 3}
+  - {fileID: 8300000, guid: 05d02ba7341a443429fb81cfb911613b, type: 3}
+  - {fileID: 8300000, guid: 1d25c85c12734ed4e8c64efdd9e0870e, type: 3}
+  - {fileID: 8300000, guid: 0e9e7ee64e1001040aa735039ad9e638, type: 3}
+  - {fileID: 8300000, guid: b723270e8924ffa408a9f887be97e328, type: 3}
+  - {fileID: 8300000, guid: c67cd2c9196dfd649a37d8be629ba320, type: 3}
+  - {fileID: 8300000, guid: 1ae0da752f10cb4498bdd0abb1c54610, type: 3}
+  - {fileID: 8300000, guid: 634c278aea2005c4cae0bc33e39bcf6b, type: 3}
+  - {fileID: 8300000, guid: eb9a2b0facc0fc149a9f5ffa9f0dfacb, type: 3}
+  - {fileID: 8300000, guid: 8278fbf292e6b614bbc35d6a9dece87a, type: 3}
+  - {fileID: 8300000, guid: ef30cd9d99e42044ab7b2d3788009fd6, type: 3}
   gameAudioList:
-  - {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
+  - {fileID: 8300000, guid: 6ba53cdd4b6df41789f95e65da62da69, type: 3}
   bgm: 0
   effect: 0
   game: 0
@@ -22327,8 +22342,8 @@ MonoBehaviour:
   bgmSource: {fileID: 1920566193}
   effectSource: {fileID: 1068055956}
   gameSource: {fileID: 1831765927}
-  bgmSlider: {fileID: 0}
-  effectSlider: {fileID: 0}
+  bgmSlider: {fileID: 6471886045868222596}
+  effectSlider: {fileID: 1005355322}
   fadeImage: {fileID: 0}
   slider: {fileID: 0}
   nameFalse: {fileID: 5676963361422018431}
@@ -23022,9 +23037,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 99.99%
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 78721d1e8f7d7cc45831eb9b115c9c36, type: 2}
-  m_sharedMaterial: {fileID: -9076588198459017618, guid: 78721d1e8f7d7cc45831eb9b115c9c36,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -23048,7 +23062,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.9
+  m_fontSize: 26.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
