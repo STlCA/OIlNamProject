@@ -249,7 +249,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
             if (findEnemy != null)
             {               
                 //gameObject.AddComponent<AudioSource>().PlayOneShot(GameManager.Instance.SoundManager.gameAudioList[0]);
-                GameManager.Instance.SoundManager.GameAudioClipPlay(0);//공격사운드
+                GameManager.Instance.SoundManager.GameAudioClipPlay(myUnitData.sound);//공격사운드
 
                 //skillGO.transform.position = new Vector3(-0.5f, 0);
                 //skillGO.transform.position = findEnemy.transform.position;

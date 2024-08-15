@@ -86,6 +86,7 @@ public class UnitData
     public int range;
     public bool open;
     public string type;
+    public int sound;
 
     //강화용정보
     public int level;
@@ -119,6 +120,7 @@ public class UnitData
         speed = unit.Speed / 10000f;
         range = unit.Range;
         type = unit.UnitType;
+        sound = unit.Sound;
 
         if (level > 0)
             SetStatus();

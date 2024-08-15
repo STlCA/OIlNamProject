@@ -475,6 +475,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -4569,6 +4570,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -13415,6 +13417,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -14163,8 +14166,23 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb9a2b0facc0fc149a9f5ffa9f0dfacb, type: 3}
   - {fileID: 8300000, guid: 8278fbf292e6b614bbc35d6a9dece87a, type: 3}
   - {fileID: 8300000, guid: ef30cd9d99e42044ab7b2d3788009fd6, type: 3}
+  - {fileID: 8300000, guid: b39538c72e907a44f8905c1500e0714c, type: 3}
+  - {fileID: 8300000, guid: 4381fd9834054144d8d0df825273b51d, type: 3}
+  - {fileID: 8300000, guid: 8e01b10f4cf4658458a1bcacbc6f6ee5, type: 3}
+  - {fileID: 8300000, guid: fa1613e30730ec94a9af15ec494e8202, type: 3}
+  - {fileID: 8300000, guid: 778e2a33779af46808f9d5d5026ccb6a, type: 3}
+  - {fileID: 8300000, guid: fc28225342df0407aae453af7703eca9, type: 3}
+  - {fileID: 8300000, guid: f8b332255e432466bbea7faf598190d0, type: 3}
   gameAudioList:
+  - {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+  - {fileID: 8300000, guid: eaae8fe8d600e1f459f34aa5757fa3b8, type: 3}
+  - {fileID: 8300000, guid: 0fc02b7ed11b44d859c274dea7da187d, type: 3}
   - {fileID: 8300000, guid: 6ba53cdd4b6df41789f95e65da62da69, type: 3}
+  - {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
+  - {fileID: 8300000, guid: 556ce29765ad8437c82a0839e967ca4b, type: 3}
+  - {fileID: 8300000, guid: 60f9efe3d97bc8f47bea1af7f7093d41, type: 3}
+  - {fileID: 8300000, guid: 5c7b6d4002009e842bd2621585546d19, type: 3}
+  - {fileID: 8300000, guid: a5f3d872501934b32a3f2c6515f74b73, type: 3}
   bgm: 0
   effect: 0
   game: 0
@@ -22136,6 +22154,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -25263,6 +25282,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -25444,6 +25464,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -25895,6 +25916,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -26389,6 +26411,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -26820,6 +26843,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -38379,6 +38403,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -39216,6 +39241,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -45365,6 +45391,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -50282,6 +50309,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -51666,6 +51694,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -51847,6 +51876,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -53551,6 +53581,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -53808,6 +53839,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -54643,6 +54675,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -57090,6 +57123,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -59053,6 +59087,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}
@@ -59486,6 +59521,7 @@ MonoBehaviour:
     range: 0
     open: 0
     type: 
+    sound: 0
     level: 0
     piece: 0
     profile: {fileID: 0}

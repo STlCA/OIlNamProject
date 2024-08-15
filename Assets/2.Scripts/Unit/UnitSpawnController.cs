@@ -208,6 +208,16 @@ public class UnitSpawnController : MonoBehaviour
     {
         int id = spawnData[key].key;
 
+        switch (spawnData[key].myUnitData.tier)
+        {
+            case 1:
+                GameManager.Instance.SoundManager.EffectAudioClipPlay(21); break;
+            case 2:
+                GameManager.Instance.SoundManager.EffectAudioClipPlay(22); break;
+            case 3:
+                GameManager.Instance.SoundManager.EffectAudioClipPlay(23); break;
+        }
+
         switch (spawnData[key].Step)
         {
             case 0:

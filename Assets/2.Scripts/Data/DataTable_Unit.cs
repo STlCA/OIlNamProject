@@ -71,6 +71,11 @@ public class DataTable_Unit
     /// </summary>
     public string UnitType;
 
+    /// <summary>
+    /// SoundIndex
+    /// </summary>
+    public int Sound;
+
 }
 public class DataTable_UnitLoader
 {
