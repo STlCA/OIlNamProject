@@ -56,7 +56,7 @@ public class LevelReward : MonoBehaviour
         if (getFree.Count != 0)
             return;
 
-        for (int i = 0; i < 130; ++i)
+        for (int i = 0; i < passDatabase.ItemsList.Count; ++i)
         {
             getFree.Add((i + 1), false);
             getGolden.Add((i + 1), false);
@@ -65,16 +65,16 @@ public class LevelReward : MonoBehaviour
 
 
     //BTN 메인 리워드버튼에서 켜지기전에 부르기
-    public void RewardSetting(int count)//1~20 = 0 / 21~40 = 1/41~60 = 2 ...
+    public void RewardSetting(int count)//1~30 = 0 / 31~60 = 1/61~90 = 2 ...
     {
         /*        int count = GameManager.Instance.Player.Level / 20;*/
 
-        for (int i = 20; i > 0; i--)//20 19 18 17 ~ 1
+        for (int i = 30; i > 0; i--)//20 19 18 17 ~ 1
         {
-            int level = i + (20 * count);
+            int level = i + (30 * count);
             int index = level - 1;
 
-            levelSlots[20 - i].text = "Lv." + level.ToString();
+            levelSlots[30 - i].text = "Lv." + level.ToString();
 
             DataTable_LevelPass data = new DataTable_LevelPass();
             data = passDatabase.ItemsList[index];
@@ -82,11 +82,11 @@ public class LevelReward : MonoBehaviour
             bool canGetLevel = GameManager.Instance.Player.Level >= level;
             bool canGet = !getFree[level];
 
-            freeSlots[20 - i].Init(this, level, LevelRewardType.Free, (RewardType)data.FreeType, data.FreeValue, canGet, icons, canGetLevel);
+            freeSlots[30 - i].Init(this, level, LevelRewardType.Free, (RewardType)data.FreeType, data.FreeValue, canGet, icons, canGetLevel);
 
             canGet = !getGolden[level];
 
-            goldenSlots[20 - i].Init(this, level, LevelRewardType.GoldenPass, (RewardType)data.GoldenType, data.GoldenValue, canGet, icons, canGetLevel);
+            goldenSlots[30 - i].Init(this, level, LevelRewardType.GoldenPass, (RewardType)data.GoldenType, data.GoldenValue, canGet, icons, canGetLevel);
         }
     }
 
