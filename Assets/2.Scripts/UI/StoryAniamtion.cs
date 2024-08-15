@@ -6,7 +6,7 @@ public class StoryAniamtion : MonoBehaviour
 {
     public StartManager manager;
     public GameObject story;
-    public GameObject tutorial;
+    public GameObject tutorial;    
 
     public void StoryEnd()
     {
@@ -17,5 +17,10 @@ public class StoryAniamtion : MonoBehaviour
     public void TutorialEnd()
     {
         manager.SceneChange();
+    }
+
+    public void SelfEnd()
+    {
+        gameObject.SetActive(false);
     }
 }

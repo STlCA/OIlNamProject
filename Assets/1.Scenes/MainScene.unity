@@ -30423,7 +30423,6 @@ GameObject:
   - component: {fileID: 1057517404}
   - component: {fileID: 1057517407}
   - component: {fileID: 1057517406}
-  - component: {fileID: 1057517405}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -30451,19 +30450,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1057517405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057517403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e416d40f3c0ba9e4e9d3c43586a2ea3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go: {fileID: 1499698244}
 --- !u!114 &1057517406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43633,6 +43619,7 @@ GameObject:
   - component: {fileID: 1499698248}
   - component: {fileID: 1499698250}
   - component: {fileID: 1499698249}
+  - component: {fileID: 1499698251}
   m_Layer: 5
   m_Name: <FirstGachaUI>
   m_TagString: Untagged
@@ -43720,6 +43707,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1499698251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499698244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19cef7f135f81a46a4e5a7532bf164b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  story: {fileID: 0}
+  tutorial: {fileID: 0}
 --- !u!1 &1501247808
 GameObject:
   m_ObjectHideFlags: 0
@@ -47111,6 +47113,7 @@ GameObject:
   - component: {fileID: 1607710366}
   - component: {fileID: 1607710368}
   - component: {fileID: 1607710367}
+  - component: {fileID: 1607710369}
   m_Layer: 5
   m_Name: Skip
   m_TagString: Untagged
@@ -47177,6 +47180,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607710365}
   m_CullTransparentMesh: 1
+--- !u!114 &1607710369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607710365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e416d40f3c0ba9e4e9d3c43586a2ea3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 1499698244}
 --- !u!1 &1608821340
 GameObject:
   m_ObjectHideFlags: 0
