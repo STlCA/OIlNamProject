@@ -17,7 +17,8 @@ public class WaveUI : MonoBehaviour
     [SerializeField] private GameSceneManager gameSceneManager;
     //private WavePopUp wavePopUp;
 
-    private int plus;//수정
+    private int atkPlus;//수정
+    private int speedPlus;//수정
     //private void Start()
     //{
     //    if (GameManager.Instance != null)
@@ -59,26 +60,33 @@ public class WaveUI : MonoBehaviour
     {
         int ruby = chapterDatabase.GetByKey(currentWave).Gold;
 
-        if(plus > 0)
+        if(atkPlus > 0)
         {
-            gameSceneManager.unitSpawnController.ATKChange(-plus,false,true);
+            gameSceneManager.unitSpawnController.ATKChange(-atkPlus,false,true);
+            gameSceneManager.unitSpawnController.SpeedChange(speedPlus, false, true);
             gameSceneManager.unitSpawnController.wavePlus.SetActive(false);
-            plus = 0;
+            gameSceneManager.unitSpawnController.waveSpeedPlus.SetActive(false);
+            atkPlus = 0;
+            speedPlus = 0;
         }
 
         if (gameSceneManager.happyEnergy.isAnswer)//무시제외 버튼클릭
         {
             gameSceneManager.happyEnergy.isAnswer = false;
-            plus = gameSceneManager.happyEnergy.value;
+            atkPlus = gameSceneManager.happyEnergy.atkValue;
+            speedPlus = gameSceneManager.happyEnergy.speedValue;
 
-            if (plus == 2)//공증2퍼 = 누적
+            if (atkPlus == 2)//공증2퍼 = 누적
             {
-                gameSceneManager.unitSpawnController.ATKChange(plus, true,false);
-                plus = 0;
+                gameSceneManager.unitSpawnController.ATKChange(atkPlus, true,false);
+                gameSceneManager.unitSpawnController.SpeedChange(-speedPlus, true, false);
+                atkPlus = 0;
+                speedPlus = 0;
             }
             else //일시적
             {
-                gameSceneManager.unitSpawnController.ATKChange(plus,false,true);
+                gameSceneManager.unitSpawnController.ATKChange(atkPlus,false,true);
+                gameSceneManager.unitSpawnController.SpeedChange(-speedPlus, false, true);
             }
         }
 

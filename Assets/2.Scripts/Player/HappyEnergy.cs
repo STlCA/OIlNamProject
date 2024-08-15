@@ -52,7 +52,8 @@ public class HappyEnergy : MonoBehaviour
     private float currentSpeed;
 
     public bool isAnswer = false;
-    public int value;
+    public int atkValue;
+    public int speedValue;
 
     public int Energy
     {
@@ -345,7 +346,8 @@ public class HappyEnergy : MonoBehaviour
                 ChangeHappyEnergy(currentMessage.Energy1);
                 Debug.Log("//공격력20프로증가 //웨이브끝나면 끝");
                 isAnswer = true;
-                value = 20;
+                atkValue = 20;
+                speedValue = -10;
                 //gameSceneManager.unitSpawnController.ATKChange(20);
                 //gameSceneManager.unitController.PlusATK(20, PlusChangeType.NormalChange, false);
                 popUp.gameObject.SetActive(false);
@@ -360,7 +362,8 @@ public class HappyEnergy : MonoBehaviour
                 gameSceneManager.ChangeRuby(currentMessage.Price2);
                 ChangeHappyEnergy(currentMessage.Energy2);
                 isAnswer = true;
-                value = 2;
+                atkValue = 2;
+                speedValue = -2;
                 //gameSceneManager.unitSpawnController.ATKChange(2,true);
                 //gameSceneManager.unitController.PlusATK(2, PlusChangeType.FixChange, false);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");
