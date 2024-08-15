@@ -63,10 +63,15 @@ public class UnitUpgradeUI : MonoBehaviour
 
     public void UpdateText()
     {
-        if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level] && myUpgradeData.UseGold[myUnitData.level] <= GameManager.Instance.Gold)
-            btnFalseImage.gameObject.SetActive(false);
-        else
+        if (myUnitData.level >= 14)
             btnFalseImage.gameObject.SetActive(true);
+        else
+        {
+            if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level] && myUpgradeData.UseGold[myUnitData.level] <= GameManager.Instance.Gold)
+                btnFalseImage.gameObject.SetActive(false);
+            else
+                btnFalseImage.gameObject.SetActive(true);
+        }
 
         nameTxt.text = myUnitData.name;
 
@@ -81,19 +86,34 @@ public class UnitUpgradeUI : MonoBehaviour
                 tierTxt.color = Color.white;
                 break;
             case 3:
-                tierTxt.text = "B 티어";                
+                tierTxt.text = "B 티어";
                 tierTxt.color = Color.black;
                 break;
         }
 
-        levelTxt.text = "Lv. " + myUnitData.level+1.ToString();
-        pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
+        levelTxt.text = "Lv. " + myUnitData.level.ToString();
         atkTxt.text = "공격력 " + myUnitData.atk.ToString();
-        plusAtkTxt.text = "+" + myUpgradeData.ATK[myUnitData.level].ToString();
         plusAtkTxt.color = Color.cyan;
-        speedTxt.text = myUnitData.speed.ToString();
+        speedTxt.text = "공격속도 " + myUnitData.speed.ToString();
+
+        if (myUnitData.level >= 14)
+        {
+            atkTxt.text = "공격력 " + myUnitData.atk.ToString();
+            atkTxt.transform.position = new Vector3(35, 0);
+            pieceTxt.text = "최고단계";
+            plusAtkTxt.text = "";
+            upgradeGoldTxt.text = "-";
+        }
+        else
+        {
+            atkTxt.text = "공격력 " + myUnitData.atk.ToString();
+            atkTxt.transform.position = new Vector3(35, 20);
+            pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
+            plusAtkTxt.text = "+" + myUpgradeData.ATK[myUnitData.level].ToString();
+            upgradeGoldTxt.text = myUpgradeData.UseGold[myUnitData.level].ToString();
+        }
+
         //plusSpeedTxt.text = "+" + upgradeData.Speed[unitData.level].ToString();
-        upgradeGoldTxt.text = myUpgradeData.UseGold[myUnitData.level].ToString();
     }
 
 
@@ -103,7 +123,7 @@ public class UnitUpgradeUI : MonoBehaviour
         if (GameManager.Instance.Gold < myUpgradeData.UseGold[myUnitData.level])
             return;
         GameManager.Instance.Gold = -myUpgradeData.UseGold[myUnitData.level];//골드 빠져나가고
-        upgradeController.UpdateSlot(myUnitData.tier,slotNum);//모든슬롯 업데이트해야하고
+        upgradeController.UpdateSlot(myUnitData.tier, slotNum);//모든슬롯 업데이트해야하고
         UpdateText();//강화창 업데이트
 
         SaveSystem.Save();

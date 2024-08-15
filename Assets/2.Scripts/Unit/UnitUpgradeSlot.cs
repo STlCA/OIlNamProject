@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,12 +35,21 @@ public class UnitUpgradeSlot : MonoBehaviour
 
         nameTxt.text = myUnitData.name;
         levelTxt.text = "Lv. " + myUnitData.level.ToString();
-        pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
 
-        if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level])
-            canUpgradeIcon.gameObject.SetActive(true);
-        else
+        if (myUnitData.level >= 14)
+        {
+            pieceTxt.text = "최고단계";
             canUpgradeIcon.gameObject.SetActive(false);
+        }
+        else
+        {
+            pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
+
+            if (myUnitData.piece >= myUpgradeData.NeedPiece[myUnitData.level])
+                canUpgradeIcon.gameObject.SetActive(true);
+            else
+                canUpgradeIcon.gameObject.SetActive(false);
+        }
 
         switch (myUnitData.tier)
         {

@@ -15088,10 +15088,10 @@ MonoBehaviour:
   tierAnim: []
   gachaAnim: {fileID: 1893593514}
   pieceData:
-    unitPiece: 0
+    unitPiece: 2000
     sPiece: 0
     aPiece: 0
-    bPiece: 0
+    bPiece: 2000
 --- !u!1 &553212431
 GameObject:
   m_ObjectHideFlags: 0
@@ -44556,7 +44556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1573009790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -56669,7 +56669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1997881293
 RectTransform:
   m_ObjectHideFlags: 0
