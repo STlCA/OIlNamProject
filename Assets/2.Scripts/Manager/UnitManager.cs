@@ -199,8 +199,6 @@ public class UnitManager : Manager
     private List<int> aTierUnitID = new();
     private List<int> bTierUnitID = new();
 
-    public List<UnitInstance> canSpawnUnit = new();
-
     private float[] percents;
 
     public override void Init(GameManager gm)
