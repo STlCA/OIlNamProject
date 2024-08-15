@@ -86,7 +86,7 @@ public class UnitUpgradeUI : MonoBehaviour
                 break;
         }
 
-        levelTxt.text = "Lv. " + myUnitData.level.ToString();
+        levelTxt.text = "Lv. " + myUnitData.level+1.ToString();
         pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
         atkTxt.text = "공격력 " + myUnitData.atk.ToString();
         plusAtkTxt.text = "+" + myUpgradeData.ATK[myUnitData.level].ToString();
@@ -100,6 +100,8 @@ public class UnitUpgradeUI : MonoBehaviour
     //강화버튼 눌렀을때 //BTN
     public void ClickUnitUpgrade()
     {
+        if (GameManager.Instance.Gold < myUpgradeData.UseGold[myUnitData.level])
+            return;
         GameManager.Instance.Gold = -myUpgradeData.UseGold[myUnitData.level];//골드 빠져나가고
         upgradeController.UpdateSlot(myUnitData.tier,slotNum);//모든슬롯 업데이트해야하고
         UpdateText();//강화창 업데이트
