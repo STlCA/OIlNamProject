@@ -81,4 +81,17 @@ namespace Constants
         Sell,
         Upgrade,
     }
+
+    public enum LevelRewardType
+    {
+        Free,
+        GoldenPass,
+    }
+
+    public enum RewardType
+    {
+        Gold = 1,
+        Diamond,
+        EnforceBook,
+    }
 }
