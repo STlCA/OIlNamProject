@@ -108,7 +108,7 @@ public class ShopSlotUI : MonoBehaviour
             popupQuantity.SetActive(false);
         }
         // ** 설명
-        descriptionText.text = itemData.itemData.Description.Replace("\n", Environment.NewLine);
+        descriptionText.text = itemData.itemData.Description;
         // ** 재화 아이콘
         if (itemData.itemData.isCash)
         {
