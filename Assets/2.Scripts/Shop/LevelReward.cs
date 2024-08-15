@@ -1,4 +1,5 @@
 using Constants;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,14 +8,14 @@ using UnityEngine;
 
 public class LevelReward : MonoBehaviour
 {
+    [Header("Level")]
+    public GameObject levelParent;
+    private TMP_Text[] levelSlots;
+
     [Header("Free")]
     public GameObject freeParent;
     private RewardSlot[] freeSlots;
     private Dictionary<int, bool> getFree = new(); //¿˙¿Â
-
-    [Header("Level")]
-    public GameObject levelParent;
-    private TMP_Text[] levelSlots;
 
     [Header("GoldenPass")]
     public GameObject passParent;
@@ -53,14 +54,21 @@ public class LevelReward : MonoBehaviour
 
     private void DicInit()
     {
-        if (getFree.Count != 0)
-            return;
-
-        for (int i = 0; i < passDatabase.ItemsList.Count; ++i)
+        if (GameManager.Instance.GetFree.Count == 0)
         {
-            getFree.Add((i + 1), false);
-            getGolden.Add((i + 1), false);
+            for (int i = 0; i < passDatabase.ItemsList.Count; ++i)
+            {
+                getFree.Add((i + 1), false);
+                getGolden.Add((i + 1), false);
+            }
+
+            GameManager.Instance.SetLevelReward(getFree, getGolden);
         }
+        else
+        {
+            getFree = GameManager.Instance.GetFree;
+            getGolden = GameManager.Instance.GetGolden;
+        }           
     }
 
 

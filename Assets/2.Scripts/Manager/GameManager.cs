@@ -1,5 +1,6 @@
 using Constants;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -11,6 +12,12 @@ public struct Save_GameData
 
     public int Stage1BestScore;
     public int Stage2BestScore;
+}
+[Serializable]
+public struct Save_LevelReward
+{
+    public List<bool> GetFree;
+    public List<bool> GetGolden;
 }
 
 public class GameManager : MonoBehaviour
@@ -109,6 +116,9 @@ public class GameManager : MonoBehaviour
 
     public int Stage { get; private set; } = 1;
 
+    public Dictionary<int, bool> GetFree { get; private set; } = new(); //¿˙¿Â
+    public Dictionary<int, bool> GetGolden { get; private set; } = new(); //¿˙¿Â
+
     private void Awake()
     {
         #region ΩÃ±€≈Ê
@@ -204,6 +214,12 @@ public class GameManager : MonoBehaviour
         Stage = stage;
     }
 
+    public void SetLevelReward(Dictionary<int, bool> free, Dictionary<int, bool> golden)
+    {
+        GetFree = free;
+        GetGolden = golden;
+    }
+//------------------------------------------------------------Save
     public void Save(ref Save_GameData saveData)
     {
         saveData.Gold = Gold;
@@ -213,6 +229,17 @@ public class GameManager : MonoBehaviour
         saveData.Stage1BestScore = BestScore1;
         saveData.Stage2BestScore = BestScore2;
 }
+    public void Save(ref Save_LevelReward saveData)
+    {
+        saveData.GetFree = new();
+        saveData.GetGolden = new();
+
+        for(int i = 1;i<=GetFree.Count; ++i)
+        {
+            saveData.GetFree.Add(GetFree[i]);
+            saveData.GetGolden.Add(GetGolden[i]);
+        }
+    }
 
     public void Load(Save_GameData saveData)
     {
@@ -223,6 +250,17 @@ public class GameManager : MonoBehaviour
         BestScore1 = saveData.Stage1BestScore;
         BestScore2 = saveData.Stage2BestScore;
     }
+
+    public void Load(Save_LevelReward saveData)
+    {
+        for (int i = 0; i < saveData.GetFree.Count; ++i)
+        {
+            GetFree.Add(i+1, saveData.GetFree[i]);
+            GetGolden.Add(i+1,saveData.GetGolden[i]);            
+        }
+    }
+
+    //--------------------------------------------------------------
 
     public void GameExit()
     {
