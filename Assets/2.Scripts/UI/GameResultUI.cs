@@ -103,6 +103,7 @@ public class GameResultUI : MonoBehaviour
     public void GoHome()
     {
         Time.timeScale = 1f;
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
         SceneManager.LoadScene("MainScene");
     }
 
@@ -122,6 +123,8 @@ public class GameResultUI : MonoBehaviour
     // 게임 재시작
     public void GameStart(GameObject ui)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
+
         if (StartCheck())
         {
             GameManager.Instance.MoneyChange(Constants.MoneyType.KEY, -5);

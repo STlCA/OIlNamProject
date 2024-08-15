@@ -299,6 +299,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
+
         controller.spriteCanvas.SetActive(true);        
         controller.unitBG.SetActive(true);
         controller.UnitInfoSet(pos);

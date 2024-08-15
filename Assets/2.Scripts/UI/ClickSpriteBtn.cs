@@ -22,7 +22,9 @@ public class ClickSpriteBtn : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        switch(type)
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
+
+        switch (type)
         {
             case UnitButtonType.EffectOpen:
                 if(controller.effectList.Count != 0)

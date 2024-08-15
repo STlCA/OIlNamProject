@@ -80,7 +80,12 @@ public class LethalEnergy : MonoBehaviour
     public void UseLethal()//버튼 연결
     {
         if (Energy < maxEnergy)
+        {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
             return;
+        }
+
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(16);
 
         lethalAnim.SetActive(true);
         lethalBtnAnim.SetActive(false);
@@ -88,7 +93,7 @@ public class LethalEnergy : MonoBehaviour
         ChangeEnergy(-maxEnergy);
 
         gameSceneManager.unitSpawnController.SpeedChange(-20, false);
-        gameSceneManager.unitSpawnController.SpeedChange(20, false);
+        gameSceneManager.unitSpawnController.ATKChange(20, false);
 
         GameManager.Instance.EnemySpawn.LethalAttack1();
 
@@ -99,6 +104,6 @@ public class LethalEnergy : MonoBehaviour
     {
         yield return new WaitForSeconds(20);
         gameSceneManager.unitSpawnController.SpeedChange(20, false);
-        gameSceneManager.unitSpawnController.SpeedChange(-20, false);
+        gameSceneManager.unitSpawnController.ATKChange(-20, false);
     }
 }

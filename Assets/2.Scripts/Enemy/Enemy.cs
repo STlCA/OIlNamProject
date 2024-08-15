@@ -166,6 +166,8 @@ public class Enemy : MonoBehaviour
         // 보스인 경우
         if (isBoss)
         {
+            gameManager.SoundManager.EffectAudioClipPlay(19);
+
             hp = bossData.hp;
             maxHP = bossData.maxHP;
             ruby = bossData.bossData.PlayGoods;
@@ -175,6 +177,7 @@ public class Enemy : MonoBehaviour
         // 일반 마물일 경우
         else
         {
+            gameManager.SoundManager.EffectAudioClipPlay(20);
             hp = enemyData.hp;
             maxHP = enemyData.maxHP;
             ruby = enemyData.enemyData.PlayGoods;

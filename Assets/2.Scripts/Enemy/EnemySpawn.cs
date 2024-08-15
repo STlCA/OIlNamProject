@@ -127,7 +127,7 @@ public class EnemySpawn : MonoBehaviour
                 currentCount++;
 
                 // 보스 등장 사운드 이펙트
-                soundManager.EffectAudioClipPlay(3);
+                soundManager.EffectAudioClipPlay(4);
 
                 isBossDead = false;
             }
@@ -145,6 +145,8 @@ public class EnemySpawn : MonoBehaviour
         // 마물이 70마리 이상이 되었을 시 경고창 팝업
         else if (enemyList.Count >= 70 && tooManyEnemy == false)
         {
+            soundManager.EffectAudioClipPlay(12);
+
             tooManyEnemy = true;
             StartCoroutine(wavePopUp.PopUp("마물의 수가 너무 많습니다!!", Color.red));
         }
@@ -178,6 +180,8 @@ public class EnemySpawn : MonoBehaviour
         {
             isBossDead = true;
 
+            soundManager.EffectAudioClipPlay(17);
+
             // 보스 클리어 팝업
             //StartCoroutine(wavePopUp.PopUp("보스 클리어", Color.yellow));
 
@@ -192,6 +196,7 @@ public class EnemySpawn : MonoBehaviour
         }
         else
         {
+            soundManager.EffectAudioClipPlay(18);
             //deadEnemyCount++;
             //player.ExpUp(deadEnemyCount);
             exp = enemy.enemyData.enemyData.Exp;
@@ -231,7 +236,7 @@ public class EnemySpawn : MonoBehaviour
     public void GameOver(bool isGameOver = true)
     {
         // 사운드 이펙트
-        soundManager.EffectAudioClipPlay(5);
+        soundManager.EffectAudioClipPlay(6);
 
         GameManager.Instance.PopUpController.UIOnNPause(gameoverPopup);
 
@@ -252,7 +257,7 @@ public class EnemySpawn : MonoBehaviour
     private void GameClear()
     {
         // 사운드 이펙트
-        soundManager.EffectAudioClipPlay(4);
+        soundManager.EffectAudioClipPlay(5);
 
         GameManager.Instance.PopUpController.UIOnNPause(gameoverPopup);
 

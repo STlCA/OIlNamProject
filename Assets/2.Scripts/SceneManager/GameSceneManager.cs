@@ -100,7 +100,7 @@ public class GameSceneManager : MonoBehaviour
     public void TimeChange()
     {
         if (GameManager.Instance != null)
-            GameManager.Instance.SoundManager.EffectAudioClipPlay(0);
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
 
         if (time == 1)
         {

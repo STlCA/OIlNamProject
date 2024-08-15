@@ -153,11 +153,13 @@ public class UnitSpawnController : MonoBehaviour
     {
         if (!gameSceneManager.CanUseRuby())//루비모자라면
         {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(14);
             rubyFalse.SetActive(true);
             return;
         }
         if (canSpawnPoints.Count <= 0)//스폰할자리가없으면
         {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(14);
             spawnFalse.SetActive(true);
             return;
         }

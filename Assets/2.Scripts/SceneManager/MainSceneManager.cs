@@ -118,6 +118,7 @@ public class MainSceneManager : MonoBehaviour
             levelUpText.text = gameManager.Player.Level.ToString();
             levelUpUI.SetActive(true);
             gameManager.Player.LevelUpUIClear();
+            gameManager.SoundManager.EffectAudioClipPlay(15);
         }
     }
 

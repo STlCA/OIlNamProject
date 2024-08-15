@@ -68,7 +68,7 @@ public class PopUpController : MonoBehaviour
     }
     public void PauseUIOn(GameObject ui)
     {
-        soundManager.EffectAudioClipPlay(0);
+        soundManager.EffectAudioClipPlay(9);
 
         if (ui == null)
             return;
@@ -79,7 +79,7 @@ public class PopUpController : MonoBehaviour
     }
     public void PauseUIOff(GameObject ui)
     {
-        soundManager.EffectAudioClipPlay(0);
+        soundManager.EffectAudioClipPlay(9);
 
         if (ui == null)
             return;
@@ -90,7 +90,7 @@ public class PopUpController : MonoBehaviour
     }
     public void PauseUIHomeOut(GameObject ui)
     {
-        soundManager.EffectAudioClipPlay(0);
+        soundManager.EffectAudioClipPlay(9);
 
         if (ui == null)
             return;
@@ -107,6 +107,12 @@ public class PopUpController : MonoBehaviour
     {
         monsterArea.SetActive(false);
         transform.parent.gameObject.SetActive(false);
+    }
+
+    public void RecallInfo(GameObject ui)
+    {
+        soundManager.EffectAudioClipPlay(9);
+        ui.SetActive(true);
     }
 }
 

@@ -182,6 +182,8 @@ public class HappyEnergy : MonoBehaviour
 
     public void SetPopUp()//웨이브체크해서부르기 TODO
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(10);
+
         SetMessage();
         popUp.gameObject.SetActive(true);
 
@@ -283,6 +285,8 @@ public class HappyEnergy : MonoBehaviour
         //이걸부르는곳에서 gameSceneManager.unitController.BadEnergy(5);쓰기
         if (currentEnergyPercent <= 15)
         {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(11);
+
             //마물
             onBad = true;
             gameSceneManager.unitSpawnController.ATKChange(-5);
@@ -291,6 +295,8 @@ public class HappyEnergy : MonoBehaviour
         }
         else if (currentEnergyPercent <= 30)
         {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(11);
+
             //마물
             onSad = true;
             gameSceneManager.unitSpawnController.SpeedChange(5);
@@ -304,6 +310,8 @@ public class HappyEnergy : MonoBehaviour
         }
         else if (currentEnergyPercent >= 100)
         {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(7);
+
             onLove = true;
             gameSceneManager.unitSpawnController.ATKChange(20);
             gameSceneManager.unitSpawnController.SpeedChange(-10);
@@ -314,6 +322,8 @@ public class HappyEnergy : MonoBehaviour
 
     public void ClickMessage(int num)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
+
         switch (num)
         {
             case 1:

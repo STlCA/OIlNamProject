@@ -160,11 +160,11 @@ public class WaveUI : MonoBehaviour
                 // 보스 BGM 재생
                 if (currentWave != 50)
                 {
-                    GameManager.Instance.SoundManager.BGMChange(4);
+                    GameManager.Instance.SoundManager.BGMChange(5);
                 }
                 else
                 {
-                    GameManager.Instance.SoundManager.BGMChange(5);
+                    GameManager.Instance.SoundManager.BGMChange(4);
                 }
 
                 isBossWave = true;
