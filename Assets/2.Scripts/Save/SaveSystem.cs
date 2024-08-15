@@ -14,6 +14,7 @@ public struct SaveData
     public Save_PlayerEvenet PlayerEventData;
     public Save_UnitData UnitData;
     public Save_TimeData TimeData;
+    public Save_LevelReward LevelRewardData;
 }
 
 public class SaveSystem : MonoBehaviour
@@ -41,6 +42,7 @@ public class SaveSystem : MonoBehaviour
         saveData.PlayerEventData = new();
         saveData.UnitData = new();
         saveData.TimeData = new();
+        saveData.LevelRewardData = new();
     }
 
     public static void Save()
@@ -52,6 +54,7 @@ public class SaveSystem : MonoBehaviour
         GameManager.Instance.PlayerEvent.Save(ref saveData.PlayerEventData);
         GameManager.Instance.UnitManager.Save(ref saveData.UnitData);
         GameManager.Instance.TimeManager.Save(ref saveData.TimeData);
+        GameManager.Instance.Save(ref saveData.LevelRewardData);
 
         string data = JsonUtility.ToJson(saveData);
 
@@ -80,6 +83,7 @@ public class SaveSystem : MonoBehaviour
         GameManager.Instance.PlayerEvent.Load(saveData.PlayerEventData);
         GameManager.Instance.UnitManager.Load(saveData.UnitData);
         GameManager.Instance.TimeManager.Load(saveData.TimeData);
+        GameManager.Instance.Load(saveData.LevelRewardData);
 
         SceneManager.sceneLoaded -= SceneLoaded;
     }

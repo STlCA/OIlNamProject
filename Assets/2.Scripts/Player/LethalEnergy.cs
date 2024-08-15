@@ -18,6 +18,7 @@ public class LethalEnergy : MonoBehaviour
     public GameObject lethalAnim;
 
     private string text;
+    private int maxEnergy = 160;
 
     private void Start()
     {
@@ -33,16 +34,16 @@ public class LethalEnergy : MonoBehaviour
         {
             energy += value;
 
-            if (energy >= 200)
+            if (energy >= maxEnergy)
             {
-                energy = 200;
+                energy = maxEnergy;
                 lethalBtnAnim.SetActive(true);                
             }
             else if (energy < 0)
                 energy = 0;
 
-            percent = energy / 200 * 100;
-            energySlider.value = energy / 200;
+            percent = energy / maxEnergy * 100;
+            energySlider.value = energy / maxEnergy;
 
             //text = percent.ToString("F0") + "%";
 
@@ -78,13 +79,13 @@ public class LethalEnergy : MonoBehaviour
 
     public void UseLethal()//버튼 연결
     {
-        if (Energy < 200)
+        if (Energy < maxEnergy)
             return;
 
         lethalAnim.SetActive(true);
         lethalBtnAnim.SetActive(false);
 
-        ChangeEnergy(-200);
+        ChangeEnergy(-maxEnergy);
 
         gameSceneManager.unitSpawnController.SpeedChange(-20, false);
         gameSceneManager.unitSpawnController.SpeedChange(20, false);
