@@ -19,7 +19,7 @@ public class DataTable_LevelPass
     /// <summary>
     /// type
     /// </summary>
-    public int LevelType;
+    public int FreeType;
 
     /// <summary>
     /// type
@@ -29,7 +29,7 @@ public class DataTable_LevelPass
     /// <summary>
     /// count
     /// </summary>
-    public int LevelValue;
+    public int FreeValue;
 
     /// <summary>
     /// count

@@ -1,6 +1,8 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevelReward : MonoBehaviour
@@ -8,6 +10,7 @@ public class LevelReward : MonoBehaviour
     [Header("Free")]
     public GameObject freeParent;
     private RewardSlot[] freeSlots;
+    private Dictionary<int, bool> getFree = new(); //저장
 
     [Header("Level")]
     public GameObject levelParent;
@@ -15,58 +18,88 @@ public class LevelReward : MonoBehaviour
 
     [Header("GoldenPass")]
     public GameObject passParent;
-    private RewardSlot[] passSlots;
+    private RewardSlot[] goldenSlots;
+    private Dictionary<int, bool> getGolden = new(); //저장
+
     public GameObject nonClickImage;
 
     private DataTable_LevelPassLoader passDatabase;
+    private Sprite[] icons = new Sprite[3];
 
     private void Start()
     {
         passDatabase = GameManager.Instance.DataManager.dataTable_LevelPassLoader;
 
         ListInit();
+        IconInit();
+        DicInit();
+
+        RewardSetting(0);
     }
 
     private void ListInit()
     {
         freeSlots = freeParent.GetComponentsInChildren<RewardSlot>();
         levelSlots = levelParent.GetComponentsInChildren<TMP_Text>();
-        passSlots = passParent.GetComponentsInChildren<RewardSlot>();
+        goldenSlots = passParent.GetComponentsInChildren<RewardSlot>();
     }
+
+    private void IconInit()
+    {
+        icons[0] = Resources.Load<Sprite>("Icon/Gold");
+        icons[1] = Resources.Load<Sprite>("Icon/Diamond");
+        icons[2] = Resources.Load<Sprite>("Icon/Enforcebook");
+    }
+
+    private void DicInit()
+    {
+        if (getFree.Count != 0)
+            return;
+
+        for (int i = 0; i < 130; ++i)
+        {
+            getFree.Add((i + 1), false);
+            getGolden.Add((i + 1), false);
+        }
+    }
+
 
     //BTN 메인 리워드버튼에서 켜지기전에 부르기
-    public void RewardSetting()
+    public void RewardSetting(int count)//1~20 = 0 / 21~40 = 1/41~60 = 2 ...
     {
-        //TODO:20단위 버튼으로 나누기 
+        /*        int count = GameManager.Instance.Player.Level / 20;*/
 
-        int index = GameManager.Instance.Player.Level - 1;//이거아니고 잘리는 숫자
-
-        for (int i = 0; i < 20; i++)
+        for (int i = 20; i > 0; i--)//20 19 18 17 ~ 1
         {
-            levelSlots[i].text = "Lv." + (index + i).ToString();
-            //freeSlots[i]
-            //passSlots[i]
+            int level = i + (20 * count);
+            int index = level - 1;
 
-            switch (passDatabase.ItemsList[i].LevelType)
-            {
-                case 1://골드 //이미지, LevelValue 텍스트설정, init(), 보상어디까지받았는지 노말용 패스용 레벨별 truefalse 딕셔너리만들기///버튼달아놨는데 스스로를 주고 스스로의 타입에따라 돈받기
-                    break;
-                case 2://다이아
-                    break;
-                case 3://모집권
-                    break;
-            }
+            levelSlots[20 - i].text = "Lv." + level.ToString();
 
-            switch (passDatabase.ItemsList[i].GoldenType)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-            }
+            DataTable_LevelPass data = new DataTable_LevelPass();
+            data = passDatabase.ItemsList[index];
+
+            bool canGetLevel = GameManager.Instance.Player.Level >= level;
+            bool canGet = !getFree[level];
+
+            freeSlots[20 - i].Init(this, level, LevelRewardType.Free, (RewardType)data.FreeType, data.FreeValue, canGet, icons, canGetLevel);
+
+            canGet = !getGolden[level];
+
+            goldenSlots[20 - i].Init(this, level, LevelRewardType.GoldenPass, (RewardType)data.GoldenType, data.GoldenValue, canGet, icons, canGetLevel);
         }
-
     }
+
+    public void GetReward(int level, LevelRewardType type)
+    {
+        switch (type)
+        {
+            case LevelRewardType.Free:
+                getFree[level] = true; break;
+            case LevelRewardType.GoldenPass:
+                getGolden[level] = true; break;
+        }
+    }
+
 }
+

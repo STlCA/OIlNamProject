@@ -70,15 +70,15 @@ public class ShopSlotUI : MonoBehaviour
             itemQuantity.SetActive(false);
         }
         // ** 상품 가치
-        if (itemData.itemData.Value != "-1")
-        {
-            itemValue.SetActive(true);
-            itemValueText.text = itemData.itemData.Value;
-        }
-        else
-        {
-            itemValue.SetActive(false);
-        }
+        //if (itemData.itemData.Value != "-1")
+        //{
+        //    itemValue.SetActive(true);
+        //    itemValueText.text = itemData.itemData.Value;
+        //}
+        //else
+        //{
+        //    itemValue.SetActive(false);
+        //}
         // ** 가격
         itemCostText.text = itemData.itemData.Cost.ToString("N0");
         if(itemData.itemData.isCash)
