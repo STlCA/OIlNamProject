@@ -9,6 +9,7 @@ public class ClickUI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(0);
         go.SetActive(false);
     }
 }

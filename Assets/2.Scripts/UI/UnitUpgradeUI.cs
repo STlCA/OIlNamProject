@@ -122,6 +122,9 @@ public class UnitUpgradeUI : MonoBehaviour
     {
         if (GameManager.Instance.Gold < myUpgradeData.UseGold[myUnitData.level])
             return;
+
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(15);
+
         GameManager.Instance.Gold = -myUpgradeData.UseGold[myUnitData.level];//골드 빠져나가고
         upgradeController.UpdateSlot(myUnitData.tier, slotNum);//모든슬롯 업데이트해야하고
         UpdateText();//강화창 업데이트

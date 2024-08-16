@@ -164,7 +164,10 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SoundManager.EffectAudioClipPlay(2);
             ExitGameUI.SetActive(true);
+        }
     }
 
     private void MoneyInit()

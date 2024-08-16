@@ -87,6 +87,8 @@ public class LevelReward : MonoBehaviour
     {
         /*        int count = GameManager.Instance.Player.Level / 20;*/
 
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(0);
+
         for (int i = 30; i > 0; i--)//20 19 18 17 ~ 1
         {
             int level = i + (30 * count);
@@ -111,13 +113,15 @@ public class LevelReward : MonoBehaviour
     public void BuyGoldenPass()
     {
         //»ç±â
-
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(EffectList.Recall);
         GameManager.Instance.PlayerEvent.BuyGoldenPass();
         GoldenPassSetting();
     }
 
     public void GetReward(int level, LevelRewardType type)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(8);
+
         switch (type)
         {
             case LevelRewardType.Free:

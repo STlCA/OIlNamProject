@@ -150,7 +150,11 @@ public class MainSceneManager : MonoBehaviour
     }
     public void Click()
     {
-        GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Intro);
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(2);
+    }
+    public void Click(int index)
+    {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(index);
     }
 
     public void ChangeName(GameObject closeUI)
@@ -222,6 +226,8 @@ public class MainSceneManager : MonoBehaviour
     //BTN Stage
     public void SetStage(int stage)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(2);
+
         if (stage == 2)
         {
             if (PlayerEvent.Stage1Clear)
@@ -248,5 +254,12 @@ public class MainSceneManager : MonoBehaviour
     public void CouponCheck()
     {
         playerEvent.CouponCheck();
+    }
+
+    //BTN
+    public void GameExit()
+    {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(2);
+        GameManager.Instance.ExitGameUI.SetActive(true);
     }
 }
