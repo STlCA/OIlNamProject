@@ -28,14 +28,7 @@ public class ShopSlotUI : MonoBehaviour
     [SerializeField] private TMP_Text itemValueText;    // 아이템 구매 시 가치 표기
     [SerializeField] private TMP_Text itemCostText;     // 아이템 가격
 
-    // 팝업
-    [SerializeField] private Image popupImage;          // 팝업창 아이템 이미지
-    [SerializeField] private GameObject popupQuantity;  // 팝업창 아이템 수량 오브젝트
-    [SerializeField] private TMP_Text popupQuantityText;// 팝업창 아이템 수량
-    [SerializeField] private TMP_Text descriptionText;  // 팝업창 아이템 설명
-    [SerializeField] private GameObject popupCostIcon;  // 팝업창 아이템 구입 재화 아이콘
-    [SerializeField] private TMP_Text popupCostText;    // 팝업창 아이템 가격
-
+    [SerializeField] private ShopPopupUI popupUI;
     private DataTable_ShopLoader shopData;
     private ItemData itemData;
 
@@ -90,35 +83,9 @@ public class ShopSlotUI : MonoBehaviour
         return this;
     }
 
-    // 팝업창 세팅
+    // 팝업 세팅
     public void PopupSet()
     {
-        // ** 이미지
-        popupImage.sprite = itemImage.sprite;
-        // ** 수량
-        // 만약 단일 상품이면
-        if (itemData.itemData.PCount2 < 0 && itemData.itemData.PCount3 < 0)
-        {
-            popupQuantity.SetActive(true);
-            popupQuantityText.text = itemQuantityText.text;
-        }
-        // 세트 상품이면
-        else
-        {
-            popupQuantity.SetActive(false);
-        }
-        // ** 설명
-        descriptionText.text = itemData.itemData.Description;
-        // ** 재화 아이콘
-        if (itemData.itemData.isCash)
-        {
-            popupCostIcon.SetActive(false);
-        }
-        else
-        {
-            popupCostIcon.SetActive(true);
-        }
-        // ** 가격
-        popupCostText.text = itemCostText.text;
+        popupUI.PopupSet(itemData);
     }
 }

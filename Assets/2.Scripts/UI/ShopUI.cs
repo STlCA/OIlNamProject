@@ -31,11 +31,11 @@ public class ShopUI : MonoBehaviour
 
     public void Init()
     {
-        slots[0] = shopSlotUI[0].Init(shopData.ItemsDict.Count + 1000);
+        slots[0] = shopSlotUI[0].Init(shopData.ItemsDict.Count + 1100);
 
         for (int i = 1; i < slots.Count; i++)
         {
-            slots[i] = shopSlotUI[i].Init(shopData.GetByKey(i + 1000).key);
+            slots[i] = shopSlotUI[i].Init(shopData.GetByKey(i + 1100).key);
         }
     }
 }

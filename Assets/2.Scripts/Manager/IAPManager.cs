@@ -9,9 +9,17 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
     void Start()
     {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.IAPManager = this;
+        }
+
         var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
-        builder.AddProduct("1005", ProductType.Consumable);
-        builder.AddProduct("no_ads", ProductType.NonConsumable);
+        builder.AddProduct("1104", ProductType.Consumable);         // 다이아 200개
+        builder.AddProduct("1105", ProductType.Consumable);         // 다이아 1,200개
+        builder.AddProduct("1106", ProductType.Consumable);         // 다이아 2,000개
+        builder.AddProduct("1112", ProductType.Consumable);         // 골든패스
+        builder.AddProduct("1113", ProductType.NonConsumable);      // 켠왕 패키지 (모집권 300개, 골드 500개)
         UnityPurchasing.Initialize(this, builder);
     }
 
@@ -33,7 +41,27 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs e)
     {
-        Debug.Log("Purchase Successful: " + e.purchasedProduct.definition.id);
+        switch (e.purchasedProduct.definition.id)
+        {
+            case "1104":
+                GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, 200);
+                break;
+            case "1105":
+                GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, 1200);
+                break;
+            case "1106":
+                GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, 2000);
+                break;
+            case "1112":
+                GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, 600);
+                GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, 200);
+                GameManager.Instance.UnitManager.ChangeUnitPiece(30);
+                break;
+            case "1113":
+                GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, 500);
+                GameManager.Instance.UnitManager.ChangeUnitPiece(300);
+                break;
+        }
         return PurchaseProcessingResult.Complete;
     }
 

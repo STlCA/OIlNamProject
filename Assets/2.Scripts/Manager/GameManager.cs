@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
     public TimeManager TimeManager { get { return timeManager; } }
     private TimeManager timeManager;
 
+    public IAPManager IAPManager;
+
     //====================== Enemy, UI
     public EnemySpawn EnemySpawn;
     public WaveUI WaveUI;
