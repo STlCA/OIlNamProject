@@ -1,3 +1,4 @@
+using System.Transactions;
 using UnityEngine;
 using UnityEngine.Purchasing;
 using UnityEngine.Purchasing.Extension;
@@ -53,15 +54,16 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
                 GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, 2000);
                 break;
             case "1112":
-                GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, 600);
-                GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, 200);
-                GameManager.Instance.UnitManager.ChangeUnitPiece(30);
+                GameManager.Instance.BuyGoldenPass();
                 break;
             case "1113":
                 GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, 500);
                 GameManager.Instance.UnitManager.ChangeUnitPiece(300);
                 break;
         }
+
+        SaveSystem.Save();
+
         return PurchaseProcessingResult.Complete;
     }
 
@@ -74,7 +76,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     {
         if (controller != null)
         {
-            controller.InitiatePurchase(productId);
+            controller.InitiatePurchase(productId);            
         }
         else
         {
@@ -84,6 +86,9 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
 
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("∞·¡¶æ»µ ");
+
+
+        //throw new System.NotImplementedException();
     }
 }

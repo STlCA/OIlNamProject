@@ -19,12 +19,14 @@ public class LevelReward : MonoBehaviour
 
     [Header("GoldenPass")]
     public GameObject passParent;
+    public GameObject infoTxtBox;
     private RewardSlot[] goldenSlots;
     private Dictionary<int, bool> getGolden = new(); //저장
 
     [Header("UI")]
     public GameObject nonClickImage;
     public GameObject shopFalse;
+    public GameObject buyInfoUI;
 
     private DataTable_LevelPassLoader passDatabase;    
     private Sprite[] icons = new Sprite[3];
@@ -32,6 +34,7 @@ public class LevelReward : MonoBehaviour
     private void Start()
     {
         passDatabase = GameManager.Instance.DataManager.dataTable_LevelPassLoader;
+        GameManager.Instance.LevelReward = this;
 
         ListInit();
         IconInit();
@@ -42,12 +45,19 @@ public class LevelReward : MonoBehaviour
         GoldenPassSetting();
     }
 
-    private void GoldenPassSetting()
+    public void GoldenPassSetting()
     {
         if(PlayerEvent.GoldenPass)
+        {
             nonClickImage.SetActive(false);
+            infoTxtBox.SetActive(false);
+            buyInfoUI.SetActive(false);
+        }
         else
+        {
+            infoTxtBox.SetActive(true);
             nonClickImage.SetActive(true);
+        }
     }
 
     private void ListInit()
@@ -114,12 +124,8 @@ public class LevelReward : MonoBehaviour
 
     public void BuyGoldenPass()
     {
-        shopFalse.SetActive(false);
-
-        //사기
-        GameManager.Instance.SoundManager.EffectAudioClipPlay(EffectList.Recall);
-        //GameManager.Instance.PlayerEvent.BuyGoldenPass();
-        //GoldenPassSetting();
+        //shopFalse.SetActive(false);
+        GameManager.Instance.IAPManager.BuyProduct("1112");
     }
 
     public void GetReward(int level, LevelRewardType type)

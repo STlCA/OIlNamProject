@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
 
     public IAPManager IAPManager;
 
+    public LevelReward LevelReward;
+
     //====================== Enemy, UI
     public EnemySpawn EnemySpawn;
     public WaveUI WaveUI;
@@ -239,6 +241,17 @@ public class GameManager : MonoBehaviour
         GetFree = free;
         GetGolden = golden;
     }
+
+    public void BuyGoldenPass()
+    {
+        //»ç±â
+        SoundManager.EffectAudioClipPlay(EffectList.Recall);
+        PlayerEvent.BuyGoldenPass();
+        LevelReward.GoldenPassSetting();        
+    }
+
+
+
     //------------------------------------------------------------Save
     public void Save(ref Save_GameData saveData)
     {
