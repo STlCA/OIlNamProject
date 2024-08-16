@@ -111,7 +111,7 @@ public class PopUpController : MonoBehaviour
 
     public void RecallInfo(GameObject ui)
     {
-        soundManager.EffectAudioClipPlay(9);
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
         ui.SetActive(true);
     }
 }
