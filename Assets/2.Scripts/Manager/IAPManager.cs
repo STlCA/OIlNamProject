@@ -76,7 +76,10 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
     {
         if (controller != null)
         {
-            controller.InitiatePurchase(productId);            
+            if (productId == "1112" && PlayerEvent.GoldenPass)//∞ÒµÁ∆–Ω∫
+                return;
+
+            controller.InitiatePurchase(productId);
         }
         else
         {
