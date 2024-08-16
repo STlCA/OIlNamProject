@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ShopPopupUI : MonoBehaviour
 {
+    [SerializeField] private MainSceneManager mainSceneManager;
     [SerializeField] private Image popupImage;          // 팝업창 아이템 이미지
     [SerializeField] private GameObject popupQuantity;  // 팝업창 아이템 수량 오브젝트
     [SerializeField] private TMP_Text popupQuantityText;// 팝업창 아이템 수량
@@ -64,30 +65,36 @@ public class ShopPopupUI : MonoBehaviour
         // 골드로 구매
         else if (itemData.itemData.MoneyType == 1501)
         {
-            if (GameManager.Instance.Gold > 0)
+            if (GameManager.Instance.Gold >= itemData.itemData.Cost)
             {
                 GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, -itemData.itemData.Cost);
                 GameManager.Instance.MoneyChange(Constants.MoneyType.KEY, itemData.itemData.PCount1);
             }
+            else
+                mainSceneManager.falseGold.SetActive(true);
         }
         // 다이아로 구매
         else if (itemData.itemData.MoneyType == 1502)
         {
             if (itemData.itemData.PID1 == 1501)
             {
-                if (GameManager.Instance.Diamond > 0)
+                if (GameManager.Instance.Diamond >= itemData.itemData.Cost)
                 {
                     GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, -itemData.itemData.Cost);
                     GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, itemData.itemData.PCount1);
                 }
+                else
+                    mainSceneManager.falseDiamond.SetActive(true);
             }
             else if (itemData.itemData.PID1 == 1504)
             {
-                if (GameManager.Instance.Diamond > 0)
+                if (GameManager.Instance.Diamond >= itemData.itemData.Cost)
                 {
                     GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, -itemData.itemData.Cost);
                     GameManager.Instance.UnitManager.ChangeUnitPiece(itemData.itemData.PCount1);
                 }
+                else
+                    mainSceneManager.falseDiamond.SetActive(true);
             }
         }
         // 광고는 어떻게 해야할지 생각좀 해보자.

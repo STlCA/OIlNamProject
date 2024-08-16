@@ -138,6 +138,6 @@ public class GameResultUI : MonoBehaviour
     // 재화 확인
     private bool StartCheck()
     {
-        return GameManager.Instance.Key > 0;
+        return GameManager.Instance.Key >= 5;
     }
 }

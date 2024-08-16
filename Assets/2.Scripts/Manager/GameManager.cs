@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             gold += value;
 
             if (gold < 0)
-                Debug.Log("¹ö±×¹ß»ý °ñµå°¡ 0¹ØÀ¸·Î ¶³¾îÁü");
+                Debug.Log("¹ö±×¹ß»ý °ñµå°¡ 0¹ØÀ¸·Î ¶³¾îÁü");            
 
             uiMnager.MoneyTypeUpdate(MoneyType.Gold, gold);
         }
@@ -104,7 +104,6 @@ public class GameManager : MonoBehaviour
 
             if (key >= 30)
             {
-                key = 30;
                 timeManager.KeyTimerStart(false);
             }
             uiMnager.MoneyTypeUpdate(MoneyType.KEY, key);
