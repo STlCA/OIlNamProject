@@ -180,7 +180,7 @@ public class EnemySpawn : MonoBehaviour
         {
             isBossDead = true;
 
-            soundManager.EffectAudioClipPlay(17);
+            soundManager.EffectAudioClipPlay(5);
 
             // 보스 클리어 팝업
             //StartCoroutine(wavePopUp.PopUp("보스 클리어", Color.yellow));
