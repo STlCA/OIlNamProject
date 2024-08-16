@@ -65,7 +65,7 @@ public class ShopPopupUI : MonoBehaviour
         // 인앱 결제 상품
         if (itemData.itemData.isCash && itemData.itemData.MoneyType == -1)
         {
-            GameManager.Instance.IAPManager.BuyProduct("itemData.itemData.key");
+            GameManager.Instance.IAPManager.BuyProduct(itemData.itemData.key.ToString());
             //purchaseButton.OnPurchaseButtonClicked(itemData.itemData.key.ToString());
         }
         // 골드로 구매
