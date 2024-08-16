@@ -94,8 +94,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -230,8 +230,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -772,8 +772,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1200,9 +1200,4 @@ MonoBehaviour:
   itemValue: {fileID: 8228903346392986692}
   itemValueText: {fileID: 3974692963106472288}
   itemCostText: {fileID: 2260450717663712502}
-  popupImage: {fileID: 0}
-  popupQuantity: {fileID: 0}
-  popupQuantityText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  popupCostIcon: {fileID: 0}
-  popupCostText: {fileID: 0}
+  popupUI: {fileID: 0}
