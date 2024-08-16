@@ -199,7 +199,7 @@ public class MainSceneManager : MonoBehaviour
                 break;
 
             case (int)TabType.Gacha:
-                GameManager.Instance.SoundManager.BGMCheck(0);
+                GameManager.Instance.SoundManager.BGMCheck(7);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
 
