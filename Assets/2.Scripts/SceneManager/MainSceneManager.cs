@@ -68,6 +68,8 @@ public class MainSceneManager : MonoBehaviour
     public GameObject falseUseCoupon;//이미사용
     public GameObject falseStart;
     public GameObject canUseCoupon;
+    public GameObject falseGold;
+    public GameObject falseDiamond;
 
     private bool canStart = true;
 
