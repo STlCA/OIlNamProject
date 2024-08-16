@@ -7545,6 +7545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9055c245f55dcb438b75c366eb9c602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IAPManager: {fileID: 0}
   EnemySpawn: {fileID: 0}
   WaveUI: {fileID: 0}
   TimerUI: {fileID: 0}
@@ -46882,7 +46883,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1636033131}
   - component: {fileID: 1636033132}
-  - component: {fileID: 1636033133}
   m_Layer: 5
   m_Name: <ShopInfo_OnOff>
   m_TagString: Untagged
@@ -46936,19 +46936,6 @@ MonoBehaviour:
   descriptionText: {fileID: 1528573003}
   popupCostIcon: {fileID: 1463955307}
   popupCostText: {fileID: 866146366}
---- !u!114 &1636033133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636033130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d060c3ca2ad624c4293a13a692b3003d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  iapMange: {fileID: 1666039761}
 --- !u!1 &1636571964
 GameObject:
   m_ObjectHideFlags: 0
