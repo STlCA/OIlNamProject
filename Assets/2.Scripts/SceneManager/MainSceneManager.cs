@@ -105,7 +105,7 @@ public class MainSceneManager : MonoBehaviour
         gameManager.Player.PlayerUIInit(player, nameInputField);
 
         gameManager.SoundManager.SourceSet(bgmSource, effectSource, gameSource, bgmSlider, effectSlider);
-        gameManager.SoundManager.BGMChange(1);
+        gameManager.SoundManager.BGMChange(0);
 
         unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim, unitTabTierPiece);
 
@@ -137,7 +137,7 @@ public class MainSceneManager : MonoBehaviour
         {
             gameManager.MoneyChange(MoneyType.KEY, -5);
 
-            //SaveSystem.Save();
+            SaveSystem.Save();
 
             gameManager.SceneEffect.MainToGame();
         }
@@ -150,7 +150,11 @@ public class MainSceneManager : MonoBehaviour
     }
     public void Click()
     {
-        GameManager.Instance.SoundManager.EffectAudioClipPlay((int)EffectList.Intro);
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(2);
+    }
+    public void Click(int index)
+    {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(index);
     }
 
     public void ChangeName(GameObject closeUI)
@@ -182,20 +186,20 @@ public class MainSceneManager : MonoBehaviour
         switch (tabType)
         {
             case (int)TabType.Shop://Çò°¥·Á¼­enum
-                GameManager.Instance.SoundManager.BGMCheck(1);
+                GameManager.Instance.SoundManager.BGMCheck(0);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
                 break;
 
             case (int)TabType.Home:
-                GameManager.Instance.SoundManager.BGMCheck(1);
+                GameManager.Instance.SoundManager.BGMCheck(0);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
                 stage2Icon.transform.parent.GetComponent<StageAnimation>().ReAnim();
                 break;
 
             case (int)TabType.Gacha:
-                GameManager.Instance.SoundManager.BGMCheck(8);
+                GameManager.Instance.SoundManager.BGMCheck(7);
                 btnUI[tabType].SetActive(true);
                 tabUI[tabType].SetActive(true);
 
@@ -207,7 +211,7 @@ public class MainSceneManager : MonoBehaviour
                 break;
 
             case (int)TabType.Unit:
-                GameManager.Instance.SoundManager.BGMCheck(1);
+                GameManager.Instance.SoundManager.BGMCheck(0);
                 btnUI[tabType].SetActive(true);
                 unitUpgradeController.OnUnitTab();
                 tabUI[tabType].SetActive(true);
@@ -222,6 +226,8 @@ public class MainSceneManager : MonoBehaviour
     //BTN Stage
     public void SetStage(int stage)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(2);
+
         if (stage == 2)
         {
             if (PlayerEvent.Stage1Clear)
@@ -248,5 +254,12 @@ public class MainSceneManager : MonoBehaviour
     public void CouponCheck()
     {
         playerEvent.CouponCheck();
+    }
+
+    //BTN
+    public void GameExit()
+    {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(2);
+        GameManager.Instance.ExitGameUI.SetActive(true);
     }
 }

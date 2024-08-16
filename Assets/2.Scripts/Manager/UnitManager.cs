@@ -431,6 +431,9 @@ public class UnitManager : Manager
         pieceData.UsePiece(type, val);
         ChangeAllUnitPiece();
         UnitPieceTextUpdate();
+
+        if (val < 0)
+            SaveSystem.Save();
     }
 
     //¿µ¿õ »Ì±âÇÒ¶§

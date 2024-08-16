@@ -24,6 +24,9 @@ public class GameSceneManager : MonoBehaviour
     public GameObject speed1x;
     public GameObject speed2x;
 
+    [Header("Animation")]
+    public GameObject heart;
+
     private float time = 1;
     public int Ruby
     {

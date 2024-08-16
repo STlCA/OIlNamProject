@@ -275,6 +275,7 @@ public class HappyEnergy : MonoBehaviour
         }
         else if (onLove)
         {
+            gameSceneManager.heart.SetActive(false);
             onLove = false;
             gameSceneManager.unitSpawnController.ATKChange(-20);
             gameSceneManager.unitSpawnController.SpeedChange(10);
@@ -311,6 +312,7 @@ public class HappyEnergy : MonoBehaviour
         else if (currentEnergyPercent >= 100)
         {
             GameManager.Instance.SoundManager.EffectAudioClipPlay(7);
+            gameSceneManager.heart.SetActive(true);
 
             onLove = true;
             gameSceneManager.unitSpawnController.ATKChange(20);
@@ -391,11 +393,16 @@ public class HappyEnergy : MonoBehaviour
         }
 
         Time.timeScale = currentSpeed;
+
+        if (currentEnergyPercent >= 100)
+            gameSceneManager.heart.SetActive(true);
+        else
+            gameSceneManager.heart.SetActive(false);
     }
 
     private IEnumerator CoClickFalse()
     {
-        clickFalse.SetActive(true);      
+        clickFalse.SetActive(true);
 
         yield return new WaitForSecondsRealtime(2);
 

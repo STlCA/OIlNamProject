@@ -59,6 +59,8 @@ public class UnitUpgradeController : MonoBehaviour
     //강화창 켤때//BTN
     public void OnUpgradeUI(GameObject go)//슬롯에 달아서 버튼클릭할때 스스로를 주기
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(2);
+
         int slotNum = int.Parse(go.name.ToString());
 
         //매개변수에 go를 받아서
@@ -85,6 +87,7 @@ public class UnitUpgradeController : MonoBehaviour
     //가챠BTN
     public void GachaUnitPieceBtn(int count)
     {
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
         unitManager.GachaUnitPiece(count);
         SaveSystem.Save();
     }

@@ -92,14 +92,13 @@ public class UnitUpgradeUI : MonoBehaviour
         }
 
         levelTxt.text = "Lv. " + myUnitData.level.ToString();
-        atkTxt.text = "공격력 " + myUnitData.atk.ToString();
         plusAtkTxt.color = Color.cyan;
         speedTxt.text = "공격속도 " + myUnitData.speed.ToString();
 
         if (myUnitData.level >= 14)
         {
             atkTxt.text = "공격력 " + myUnitData.atk.ToString();
-            atkTxt.transform.position = new Vector3(35, 0);
+            atkTxt.rectTransform.anchoredPosition = new Vector2(35, 0);
             pieceTxt.text = "최고단계";
             plusAtkTxt.text = "";
             upgradeGoldTxt.text = "-";
@@ -107,7 +106,7 @@ public class UnitUpgradeUI : MonoBehaviour
         else
         {
             atkTxt.text = "공격력 " + myUnitData.atk.ToString();
-            atkTxt.transform.position = new Vector3(35, 20);
+            atkTxt.rectTransform.anchoredPosition = new Vector2(35, 20);
             pieceTxt.text = myUnitData.piece.ToString() + " / " + myUpgradeData.NeedPiece[myUnitData.level].ToString();
             plusAtkTxt.text = "+" + myUpgradeData.ATK[myUnitData.level].ToString();
             upgradeGoldTxt.text = myUpgradeData.UseGold[myUnitData.level].ToString();
@@ -122,6 +121,9 @@ public class UnitUpgradeUI : MonoBehaviour
     {
         if (GameManager.Instance.Gold < myUpgradeData.UseGold[myUnitData.level])
             return;
+
+        GameManager.Instance.SoundManager.EffectAudioClipPlay(15);
+
         GameManager.Instance.Gold = -myUpgradeData.UseGold[myUnitData.level];//골드 빠져나가고
         upgradeController.UpdateSlot(myUnitData.tier, slotNum);//모든슬롯 업데이트해야하고
         UpdateText();//강화창 업데이트
