@@ -91,9 +91,12 @@ public class GameManager : MonoBehaviour
         set
         {
             if (key >= 30 && value < 0)//키를 사용했을때 원래 키가 30~ 이라면
-                timeManager.KeyTimerStart(true);          
+                timeManager.KeyTimerStart(true);
 
             key += value;
+
+            if (key < 0)
+                Debug.Log("버그발생 키가 0밑으로 떨어짐");
 
             if (key >= 30)
             {
@@ -111,6 +114,10 @@ public class GameManager : MonoBehaviour
         set
         {
             diamond += value;
+
+            if (diamond < 0)
+                Debug.Log("버그발생 다이아몬드가 0밑으로 떨어짐");
+
             uiMnager.MoneyTypeUpdate(MoneyType.Diamond, diamond);
         }
     }
@@ -188,6 +195,10 @@ public class GameManager : MonoBehaviour
             case MoneyType.Diamond:
                 Diamond = val; break;
         }
+
+        if (val < 0)
+            SaveSystem.Save();
+
     }
 
     // 최고 기록 갱신
@@ -226,7 +237,7 @@ public class GameManager : MonoBehaviour
         GetFree = free;
         GetGolden = golden;
     }
-//------------------------------------------------------------Save
+    //------------------------------------------------------------Save
     public void Save(ref Save_GameData saveData)
     {
         saveData.Gold = Gold;
@@ -235,13 +246,13 @@ public class GameManager : MonoBehaviour
 
         saveData.Stage1BestScore = BestScore1;
         saveData.Stage2BestScore = BestScore2;
-}
+    }
     public void Save(ref Save_LevelReward saveData)
     {
         saveData.GetFree = new();
         saveData.GetGolden = new();
 
-        for(int i = 1;i<=GetFree.Count; ++i)
+        for (int i = 1; i <= GetFree.Count; ++i)
         {
             saveData.GetFree.Add(GetFree[i]);
             saveData.GetGolden.Add(GetGolden[i]);
@@ -262,8 +273,8 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < saveData.GetFree.Count; ++i)
         {
-            GetFree.Add(i+1, saveData.GetFree[i]);
-            GetGolden.Add(i+1,saveData.GetGolden[i]);            
+            GetFree.Add(i + 1, saveData.GetFree[i]);
+            GetGolden.Add(i + 1, saveData.GetGolden[i]);
         }
     }
 

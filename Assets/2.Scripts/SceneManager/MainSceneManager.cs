@@ -137,7 +137,7 @@ public class MainSceneManager : MonoBehaviour
         {
             gameManager.MoneyChange(MoneyType.KEY, -5);
 
-            //SaveSystem.Save();
+            SaveSystem.Save();
 
             gameManager.SceneEffect.MainToGame();
         }
