@@ -13,13 +13,7 @@ public class ShopPopupUI : MonoBehaviour
     [SerializeField] private GameObject popupCostIcon;  // 팝업창 아이템 구입 재화 아이콘
     [SerializeField] private TMP_Text popupCostText;    // 팝업창 아이템 가격
 
-    //private PurchaseButton purchaseButton;
     private ItemData itemData;
-
-    private void Awake()
-    {
-        //purchaseButton = GetComponent<PurchaseButton>();
-    }
 
     // 팝업창 세팅
     public void PopupSet(ItemData itemData)
@@ -66,7 +60,6 @@ public class ShopPopupUI : MonoBehaviour
         if (itemData.itemData.isCash && itemData.itemData.MoneyType == -1)
         {
             GameManager.Instance.IAPManager.BuyProduct(itemData.itemData.key.ToString());
-            //purchaseButton.OnPurchaseButtonClicked(itemData.itemData.key.ToString());
         }
         // 골드로 구매
         else if (itemData.itemData.MoneyType == 1501)
