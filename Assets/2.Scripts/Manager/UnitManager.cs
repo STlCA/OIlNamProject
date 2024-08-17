@@ -425,6 +425,17 @@ public class UnitManager : Manager
         resultPieceTxt.text = pieceData.unitPiece.ToString();
     }
 
+    //치트키BTN
+    public void ChageAllTierPiece(int val)
+    {
+        pieceData.UsePiece(PieceType.STier, val);
+        pieceData.UsePiece(PieceType.ATier, val);
+        pieceData.UsePiece(PieceType.BTier, val);
+
+        ChangeAllUnitPiece();
+        UnitPieceTextUpdate();
+    }
+
     //영웅조각 사용 세트 묶음
     public void ChangePiece(PieceType type, int val)
     {
