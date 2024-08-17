@@ -44,6 +44,11 @@ public class PlayerEvent : Manager
 
             return;
         }
+        else if (couponInput.text == "1s3bhellingfarm")
+        {
+            HellingFarm();
+            couponInput.text = "";
+        }
         else
         {
             falseCoupon.SetActive(true);
@@ -63,6 +68,17 @@ public class PlayerEvent : Manager
         GameManager.Instance.UnitManager.ChangeUnitPiece(100);
         UseStartCoupon = true;
         canUseCoupon.SetActive(true);
+    }
+
+    private void HellingFarm()
+    {
+        GameManager.Instance.MoneyChange(MoneyType.Gold, 100000);
+        GameManager.Instance.MoneyChange(MoneyType.Diamond, 100000);
+        GameManager.Instance.MoneyChange(MoneyType.KEY, 100000);
+        GameManager.Instance.UnitManager.ChangeUnitPiece(100000);
+        GameManager.Instance.UnitManager.ChangePiece(PieceType.STier, 100000);
+        GameManager.Instance.UnitManager.ChangePiece(PieceType.ATier, 100000);
+        GameManager.Instance.UnitManager.ChangePiece(PieceType.BTier, 100000);
     }
 
     public void StageClear()
