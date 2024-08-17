@@ -237,6 +237,6 @@ public class Enemy : MonoBehaviour
 
         enemyData.hp = 0;
         gameSceneManager.ChangeRuby(enemyData.enemyData.PlayGoods);//¼öÁ¤
-        enemySpawn.EnemyDie(this, gameObject);
+        enemySpawn.EnemyDie(this, gameObject,true);
     }
 }

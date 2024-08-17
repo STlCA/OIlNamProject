@@ -61,7 +61,7 @@ public class EnemySpawn : MonoBehaviour
         {
             player = GameManager.Instance.Player;
         }
-        
+
         //popUpController = gameManager.GetComponent<PopUpController>();
         chapterDatabase = dataManager.dataTable_ChapterLoader;
         wavePopUp = GetComponent<WavePopUp>();
@@ -169,14 +169,14 @@ public class EnemySpawn : MonoBehaviour
     }
 
     // ***임시*** 마물이 죽었을 때
-    public void EnemyDie(Enemy enemy, GameObject gameObject)
+    public void EnemyDie(Enemy enemy, GameObject gameObject, bool isLethal = false)
     {
         // ***** TODO : 마물 죽었을 때 처리 방법 수정하기 *****
         //currentCount--;
         int exp;
 
         // 처리한 마물이 보스인지, 마물인지 확인
-        if(enemy.isBoss)
+        if (enemy.isBoss)
         {
             isBossDead = true;
 
@@ -203,10 +203,13 @@ public class EnemySpawn : MonoBehaviour
             enemyList.Remove(enemy);
             UpdateEnemyCountUI();
         }
+
         player.ExpUp(exp);
 
         Destroy(gameObject);
-        lethalEnergy.ChangeEnergy(2);
+
+        if (!isLethal)
+            lethalEnergy.ChangeEnergy(2);
 
         int maxPerWave = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
 
@@ -214,7 +217,7 @@ public class EnemySpawn : MonoBehaviour
         if (currentCount >= maxPerWave && enemyList.Count == 0)
         {
             // 마지막 스테이지의 보스까지 다 잡았을 경우
-            if(isBossDead && waveUI.currentWave == 50)
+            if (isBossDead && waveUI.currentWave == 50)
             {
                 GameClear();
             }
@@ -252,7 +255,7 @@ public class EnemySpawn : MonoBehaviour
         gameResultUI.GetReward(waveUI.currentWave);
         gameResultUI.RestartButtonActivation(isGameOver);
     }
-    
+
     // 게임 클리어
     private void GameClear()
     {
@@ -262,7 +265,7 @@ public class EnemySpawn : MonoBehaviour
         GameManager.Instance.PopUpController.UIOnNPause(gameoverPopup);
 
         // 클리어 팝업창 세팅
-        if(gameManager.Stage == 1)
+        if (gameManager.Stage == 1)
         {
             gameResultUI.PrintRecord(waveUI.currentWave, gameManager.BestScore1, true);
         }
@@ -278,7 +281,8 @@ public class EnemySpawn : MonoBehaviour
     {
         monsterArea.SetActive(true);
     }
-    public void LethalAttack2()
+
+    public void LethalAttack2()//싹쥬금
     {
         int temp = enemyList.Count;
         for (int i = 0; i < temp; i++) // 버그찾음 제거하면서 인덱스 땅겨져서 그럼

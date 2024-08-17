@@ -18,7 +18,7 @@ public class LethalEnergy : MonoBehaviour
     public GameObject lethalAnim;
 
     private string text;
-    private int maxEnergy = 160;
+    private int maxEnergy = 200;
 
     private void Start()
     {
