@@ -13,6 +13,8 @@ public struct Save_PlayerEvenet
     public bool Stage1Clear;
     public bool FirstGacha;
     public bool GoldenPass;
+    public bool DelayCoupon;
+    public bool Package1;
 }
 
 public class PlayerEvent : Manager
@@ -21,18 +23,22 @@ public class PlayerEvent : Manager
     public GameObject falseCoupon;//번호틀림
     public GameObject falseUseCoupon;//이미사용
     public GameObject canUseCoupon;//사용한UI    
+    public GameObject useDelayCoupon;
 
     public static bool UseStartCoupon { get; private set; } = false;
     public static bool Stage1Clear { get; private set; } = false;
     public static bool FirstGacha { get; private set; } = false;
     public static bool GoldenPass { get; private set; } = false;
+    public static bool DelayCoupon { get; private set; } = false;
+    public static bool Package1 { get; private set; } = false;
 
-    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2, GameObject canUseCoupon)
+    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2, GameObject canUseCoupon,GameObject useDelayCoupon)
     {
         couponInput = field;
         falseCoupon = false1;
         falseUseCoupon = false2;
         this.canUseCoupon = canUseCoupon;
+        this.useDelayCoupon = useDelayCoupon;
     }
 
     public void CouponCheck()
@@ -40,19 +46,37 @@ public class PlayerEvent : Manager
         if (couponInput.text == "2024TTAL0816")
         {
             CanUseStartCoupon();
-            couponInput.text = "";
-
-            return;
         }
         else if (couponInput.text == "1s3bhellingfarm")
         {
             HellingFarm();
-            couponInput.text = "";
+        }
+        else if (couponInput.text == "IMSORRY0820")
+        {
+            CanDelayCoupon();
         }
         else
         {
             falseCoupon.SetActive(true);
         }
+
+        couponInput.text = "";
+    }
+
+    private void CanDelayCoupon()
+    {
+        if (DelayCoupon == true)
+        {
+            falseUseCoupon.SetActive(true);
+            return;
+        }
+
+        GameManager.Instance.MoneyChange(MoneyType.KEY, 30);
+        GameManager.Instance.MoneyChange(MoneyType.Gold, 1000);
+        GameManager.Instance.UnitManager.ChangeUnitPiece(100);
+
+        DelayCoupon = true;
+        useDelayCoupon.SetActive(true);
     }
 
     private void CanUseStartCoupon()
@@ -102,6 +126,10 @@ public class PlayerEvent : Manager
         GoldenPass = true;
     }
 
+    public void BuyPackage1()
+    {
+        Package1 = true;
+    }
 
     //-----------------------------------------------------SaveLoad
 
@@ -111,6 +139,8 @@ public class PlayerEvent : Manager
         saveData.Stage1Clear = Stage1Clear;
         saveData.FirstGacha = FirstGacha;
         saveData.GoldenPass = GoldenPass;
+        saveData.DelayCoupon = DelayCoupon;
+        saveData.Package1 = Package1;
     }
 
     public void Load(Save_PlayerEvenet saveData)
@@ -119,5 +149,7 @@ public class PlayerEvent : Manager
         Stage1Clear = saveData.Stage1Clear;
         FirstGacha = saveData.FirstGacha;
         GoldenPass = saveData.GoldenPass;
+        DelayCoupon = saveData.DelayCoupon;
+        Package1 = saveData.Package1;
     }
 }
