@@ -195,6 +195,6 @@ public class WaveUI : MonoBehaviour
     // wave UI 업데이트
     private void UpdateWaveUI()
     {
-        waveText.text = "WAVE " + currentWave.ToString();
+        waveText.text = "WAVE " + currentWave.ToString() + " / 50";
     }
 }
