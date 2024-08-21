@@ -373,7 +373,7 @@ Transform:
   - {fileID: 6085148780975882895}
   - {fileID: 1283263772151879138}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7568666017246621499
 MonoBehaviour:
@@ -557,9 +557,9 @@ MonoBehaviour:
   lerpSettings:
     speed: 5
     minX: -0.4
-    maxX: 0.4
+    maxX: 0
     minY: 0.5
-    maxY: 1
+    maxY: 0.4
     randomFlip: 0
   enableVelocity: 0
   velocitySettings:
