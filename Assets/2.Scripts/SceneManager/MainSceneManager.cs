@@ -68,6 +68,7 @@ public class MainSceneManager : MonoBehaviour
     public GameObject falseUseCoupon;//이미사용
     public GameObject falseStart;
     public GameObject canUseCoupon;
+    public GameObject canUseSorryCoupon;
     public GameObject falseGold;
     public GameObject falseDiamond;
 
@@ -111,7 +112,7 @@ public class MainSceneManager : MonoBehaviour
 
         unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim, unitTabTierPiece);
 
-        playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon, canUseCoupon);
+        playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon, canUseCoupon, canUseSorryCoupon);
 
         gameManager.TimeManager.TextUIInit(offsetTxt);
 
