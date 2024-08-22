@@ -48,7 +48,7 @@ public class GameResultUI : MonoBehaviour
         int difference;
 
         // 신기록 일 경우
-        if (currentWave > bestRecord)
+        if (currentWave >= bestRecord)
         {
             difference = currentWave - bestRecord;
 
@@ -69,7 +69,7 @@ public class GameResultUI : MonoBehaviour
             GameManager.Instance.UpdateRecord(currentWave, GameManager.Instance.Stage);
         }
         // 신기록이 아닐 경우
-        else if (bestRecord >= currentWave)
+        else if (bestRecord > currentWave)
         {
             difference = bestRecord - currentWave;
 
