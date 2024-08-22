@@ -18,6 +18,7 @@ public struct Save_PlayerEvenet
     public bool FirstStory;
     public bool FirstUnitMerge;
     public bool FirstAnswer;
+    public bool FriendCoupon;
 }
 
 public class PlayerEvent : Manager
@@ -27,6 +28,7 @@ public class PlayerEvent : Manager
     public GameObject falseUseCoupon;//¿ÃπÃªÁøÎ
     public GameObject canUseCoupon;//ªÁøÎ«—UI    
     public GameObject useDelayCoupon;
+    public GameObject friendCoupon;
 
     public static bool UseStartCoupon { get; private set; } = false;
     public static bool Stage1Clear { get; private set; } = false;
@@ -37,14 +39,16 @@ public class PlayerEvent : Manager
     public static bool FirstStory { get; private set; } = false;
     public static bool FirstUnitMerge { get; private set; } = false;
     public static bool FirstAnswer { get; private set; } = false;
+    public static bool FriendCoupon { get; private set; } = false;
 
-    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2, GameObject canUseCoupon, GameObject useDelayCoupon)
+    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2, GameObject canUseCoupon, GameObject useDelayCoupon, GameObject friendCoupon)
     {
         couponInput = field;
         falseCoupon = false1;
         falseUseCoupon = false2;
         this.canUseCoupon = canUseCoupon;
         this.useDelayCoupon = useDelayCoupon;
+        this.friendCoupon = friendCoupon;
     }
 
     public void CouponCheck()
@@ -61,6 +65,10 @@ public class PlayerEvent : Manager
         {
             CanDelayCoupon();
         }
+        else if (couponInput.text == "5∆¿∆¿¿Â±‚»π±Ë¡ÿ±‘")
+        {
+            CheckFriendCoupon();
+        }
         else
         {
             falseCoupon.SetActive(true);
@@ -69,6 +77,21 @@ public class PlayerEvent : Manager
         couponInput.text = "";
 
         SaveSystem.Save();
+    }
+
+    private void CheckFriendCoupon()
+    {
+        if (FriendCoupon == true)
+        {
+            falseUseCoupon.SetActive(true);
+            return;
+        }
+
+        GameManager.Instance.MoneyChange(MoneyType.Gold, 500);
+        GameManager.Instance.UnitManager.ChangeUnitPiece(300);
+
+        FriendCoupon = true;
+        friendCoupon.SetActive(true);
     }
 
     private void CanDelayCoupon()

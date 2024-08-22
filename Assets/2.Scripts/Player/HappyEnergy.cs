@@ -369,8 +369,8 @@ public class HappyEnergy : MonoBehaviour
                 gameSceneManager.ChangeRuby(currentMessage.Price2);
                 ChangeHappyEnergy(currentMessage.Energy2);
                 isAnswer = true;
-                atkValue = 2;
-                speedValue = -2;
+                atkValue = 4;
+                speedValue = -4;
                 //gameSceneManager.unitSpawnController.ATKChange(2,true);
                 //gameSceneManager.unitController.PlusATK(2, PlusChangeType.FixChange, false);
                 Debug.Log("//공+2 마물이동-2 보스이동-2 //누적");

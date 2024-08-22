@@ -72,6 +72,7 @@ public class MainSceneManager : MonoBehaviour
     public GameObject falseGold;
     public GameObject falseDiamond;
     public GameObject useDelayCoupon;
+    public GameObject friendCoupon;
 
     private bool canStart = true;
 
@@ -113,7 +114,7 @@ public class MainSceneManager : MonoBehaviour
 
         unitManager.SetUIText(tabPieceTxt, gachaTabPieceTxt, falseGacha, resultUI, resultPieceTxt, resultTierPiece, tierAnim, gachaAnim, unitTabTierPiece);
 
-        playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon, canUseCoupon, useDelayCoupon);
+        playerEvent.CouponUISetting(couponInputField, falseCoupon, falseUseCoupon, canUseCoupon, useDelayCoupon, friendCoupon);
 
         gameManager.TimeManager.TextUIInit(offsetTxt);
 

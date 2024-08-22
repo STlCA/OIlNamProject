@@ -54,10 +54,10 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             case "1106":
                 GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, 2000);
                 break;
-            case "1112":
+            case "1112"://°ñµçÆÐ½º
                 GameManager.Instance.BuyGoldenPass();
                 break;
-            case "1113":
+            case "1113"://ÄÒ¿Õ
                 GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, 500);
                 GameManager.Instance.UnitManager.ChangeUnitPiece(300);
                 break;
