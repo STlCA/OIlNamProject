@@ -232,6 +232,9 @@ public class Enemy : MonoBehaviour
         // 보스일 경우 리턴
         if (isBoss)
         {
+            int damage = (int)(bossData.hp * 0.05f);
+            bossData.hp -= damage;
+            AttackedEffect(damage);
             return;
         }
 
