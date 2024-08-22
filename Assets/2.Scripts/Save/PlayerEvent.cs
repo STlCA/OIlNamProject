@@ -189,6 +189,7 @@ public class PlayerEvent : Manager
         saveData.FirstStory = FirstStory;
         saveData.FirstAnswer = FirstAnswer;
         saveData.FirstUnitMerge = FirstUnitMerge;
+        saveData.FriendCoupon = FriendCoupon;
     }
 
     public void Load(Save_PlayerEvenet saveData)
@@ -202,5 +203,6 @@ public class PlayerEvent : Manager
         FirstStory = saveData.FirstStory;
         FirstAnswer = saveData.FirstAnswer;
         FirstUnitMerge = saveData.FirstUnitMerge;
+        FriendCoupon = saveData.FriendCoupon;
     }
 }

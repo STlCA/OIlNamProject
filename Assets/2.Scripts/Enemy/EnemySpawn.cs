@@ -267,6 +267,7 @@ public class EnemySpawn : MonoBehaviour
         // 클리어 팝업창 세팅
         if (gameManager.Stage == 1)
         {
+            GameManager.Instance.PlayerEvent.StageClear();
             gameResultUI.PrintRecord(waveUI.currentWave, gameManager.BestScore1, true);
         }
         else
