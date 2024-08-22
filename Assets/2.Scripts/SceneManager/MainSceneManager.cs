@@ -246,7 +246,6 @@ public class MainSceneManager : MonoBehaviour
         }
         else
         {
-            stage2Icon.color = Color.white;
             canStart = true;
             GameManager.Instance.SetStage(stage);
         }

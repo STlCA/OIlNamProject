@@ -37,6 +37,9 @@ public class HappyEnergy : MonoBehaviour
 
     private string text;
 
+    [Header("Tutorial")]
+    public GameObject answerTutorial;
+
     /*
      *  È®·ü¶§ ÇÊ¿ä
         private float totalTime;
@@ -390,6 +393,14 @@ public class HappyEnergy : MonoBehaviour
         Time.timeScale = currentSpeed;
 
         CheckPercent();
+
+        if (!PlayerEvent.FirstAnswer)
+        {
+            GameManager.Instance.PlayerEvent.CheckFirstAnswer();
+            answerTutorial.SetActive(true);
+            GameSceneManager.CurrentTimeScale = Time.timeScale;
+            Time.timeScale = 0;
+        }
     }
 
     private void CheckPercent()
