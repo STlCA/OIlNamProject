@@ -17,6 +17,18 @@ public class ItemData
     }
 }
 
+public class GoodsData
+{
+    public DataTable_Goods goodsData;
+    public Sprite sprite;
+
+    public GoodsData(DataTable_Goods data)
+    {
+        goodsData = data;
+        sprite = Resources.Load<Sprite>(data.Path);
+    }
+}
+
 public class ShopSlotUI : MonoBehaviour
 {
     // 상점 내 슬롯
@@ -26,11 +38,15 @@ public class ShopSlotUI : MonoBehaviour
     [SerializeField] private TMP_Text itemQuantityText; // 아이템 수량
     [SerializeField] private GameObject itemValue;      // 아이템 구매 시 가치 오브젝트 ==>> FreeItemSlot에서는 해당 부분이 없어서 오류가 나므로 아무거나 필요없는거 할당해줘야 함!!!
     [SerializeField] private TMP_Text itemValueText;    // 아이템 구매 시 가치 표기
+    [SerializeField] private GameObject itemCost;       // 아이템 구매 재화 아이콘
+    [SerializeField] private Image itemCostIcon;        // 아이템 구매 재화 아이콘
     [SerializeField] private TMP_Text itemCostText;     // 아이템 가격
 
     [SerializeField] private ShopPopupUI popupUI;
-    private DataTable_ShopLoader shopData;
+    private DataTable_ShopLoader shopDataL;
+    private DataTable_GoodsLoader goodsDataL;
     private ItemData itemData;
+    private GoodsData goodsData;
 
     private void Start()
     {
@@ -42,9 +58,10 @@ public class ShopSlotUI : MonoBehaviour
 
     public ShopSlotUI Init(int itemID)
     {
-        shopData = GameManager.Instance.DataManager.dataTable_ShopLoader;
+        shopDataL = GameManager.Instance.DataManager.dataTable_ShopLoader;
+        goodsDataL = GameManager.Instance.DataManager.dataTable_GoodsLoader;
 
-        itemData = new ItemData(shopData.GetByKey(itemID));
+        itemData = new ItemData(shopDataL.GetByKey(itemID));
 
         // **** 슬롯 세팅 ****
         // ** 이름
@@ -53,7 +70,7 @@ public class ShopSlotUI : MonoBehaviour
         itemImage.sprite = itemData.sprite;
         // ** 수량
         // 만약 단일 상품이면
-        if(itemData.itemData.PCount2 < 0 && itemData.itemData.PCount3 < 0)
+        if (itemData.itemData.PCount2 < 0 && itemData.itemData.PCount3 < 0)
         {
             itemQuantity.SetActive(true);
             itemQuantityText.text = "X " + itemData.itemData.PCount1.ToString();
@@ -73,9 +90,20 @@ public class ShopSlotUI : MonoBehaviour
         {
             itemValue.SetActive(false);
         }
+        // ** 재화 아이콘
+        if (!itemData.itemData.isCash && !itemData.itemData.isAd)
+        {
+            goodsData = new GoodsData(goodsDataL.GetByKey(itemData.itemData.MoneyType));
+            itemCostIcon.sprite = goodsData.sprite;
+            itemCost.SetActive(true);
+        }
+        else
+        {
+            itemCost.SetActive(false);
+        }
         // ** 가격
         itemCostText.text = itemData.itemData.Cost.ToString("N0");
-        if(itemData.itemData.isCash)
+        if (itemData.itemData.isCash)
         {
             itemCostText.text += " KRW";
         }
@@ -86,6 +114,6 @@ public class ShopSlotUI : MonoBehaviour
     // 팝업 세팅
     public void PopupSet()
     {
-        popupUI.PopupSet(itemData);
+        popupUI.PopupSet(itemData, itemCostIcon);
     }
 }
