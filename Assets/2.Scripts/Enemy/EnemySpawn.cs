@@ -204,7 +204,7 @@ public class EnemySpawn : MonoBehaviour
             UpdateEnemyCountUI();
         }
 
-        player.ExpUp(exp);
+        //player.ExpUp(exp);
 
         Destroy(gameObject);
 
