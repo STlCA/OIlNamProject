@@ -204,6 +204,9 @@ public class UnitSpawnController : MonoBehaviour
             case 3:
                 infoTxt.text = "<#525252>BÆ¼¾î " + newUnit.name + "</color>" + "<color=black>" + " ¿µ¿õÀ» È¹µæÇÏ¿´½À´Ï´Ù.</color>"; break;
         }
+
+        if (step0[newUnit.key].count == 3 && !PlayerEvent.FirstUnitMerge)
+            gameSceneManager.MergeToturial(step0[newUnit.key].pos[0], step0[newUnit.key].pos[1], step0[newUnit.key].pos[2]);
     }
 
     public void Upgrade(Vector3 key)
