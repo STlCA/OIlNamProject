@@ -32,9 +32,9 @@ public class BestRecord : MonoBehaviour
         UpdateBestRecordUI(bestRecord);
     }
 
-    public void BestScoreUpdate()
+    public void BestScoreUpdate(int stage)
     {
-        if (GameManager.Instance.Stage == 1)
+        if (stage == 1)
         {
             bestRecord = GameManager.Instance.BestScore1;
         }

@@ -241,14 +241,16 @@ public class MainSceneManager : MonoBehaviour
             {
                 stage2Icon.color = Color.black;
                 canStart = false;
-                return;
             }
         }
         else
         {
+            stage2Icon.color = Color.white;
             canStart = true;
             GameManager.Instance.SetStage(stage);
         }
+
+        GameManager.Instance.SetScore(stage);
     }
 
     public void CouponCheck()
