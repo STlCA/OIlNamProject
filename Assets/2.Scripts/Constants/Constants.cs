@@ -94,4 +94,10 @@ namespace Constants
         Diamond,
         EnforceBook,
     }
+
+    public enum BossEffectType
+    {
+        Boss,
+        Lethal,
+    }
 }

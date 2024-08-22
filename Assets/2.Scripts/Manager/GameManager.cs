@@ -169,7 +169,12 @@ public class GameManager : MonoBehaviour
         //Gold
         if (!SaveSystem.SaveFile())
             MoneyInit();
+
+        //FirstStory
+        if (!PlayerEvent.FirstStory)
+            playerEvent.CheckFirstStory();
     }
+
 
     private void Update()
     {

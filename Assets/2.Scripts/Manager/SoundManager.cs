@@ -156,7 +156,7 @@ public class SoundManager : Manager
         EffectSource.PlayOneShot(effectAudioList[(int)index], 1);
     }
 
-    public void GameAudioClipPlay(int index)//맞을때나오는소리
+    public void GameAudioClipPlay(int index)
     {
 /*        if (GameSource.isPlaying)
             return;
@@ -167,6 +167,6 @@ public class SoundManager : Manager
             GameSource.Play();
         }*/
 
-        GameSource.PlayOneShot(gameAudioList[index],0.4f);
+        GameSource.PlayOneShot(gameAudioList[index],0.1f);
     }
 }

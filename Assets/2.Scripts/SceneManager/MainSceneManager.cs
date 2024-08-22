@@ -7,6 +7,7 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Unity.Collections.AllocatorManager;
 
 public class MainSceneManager : MonoBehaviour
 {
@@ -138,10 +139,7 @@ public class MainSceneManager : MonoBehaviour
 
         if (StartCheck())
         {
-            gameManager.MoneyChange(MoneyType.KEY, -5);
-
-            SaveSystem.Save();
-
+            gameManager.MoneyChange(MoneyType.KEY, -5);//moneychange에서 세이브하고있음
             gameManager.SceneEffect.MainToGame();
         }
         else
@@ -251,11 +249,11 @@ public class MainSceneManager : MonoBehaviour
             canStart = true;
             GameManager.Instance.SetStage(stage);
         }
-
     }
 
     public void CouponCheck()
     {
+        Click();
         playerEvent.CouponCheck();
     }
 

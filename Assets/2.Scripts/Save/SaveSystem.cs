@@ -33,6 +33,18 @@ public class SaveSystem : MonoBehaviour
         return File.Exists(path);
     }
 
+    public static bool FirstCheck()
+    {
+        if (!File.Exists(path))//파일이 없으면
+            return false;
+
+        string data = File.ReadAllText(path);
+        SaveData temp = new();
+        temp = JsonUtility.FromJson<SaveData>(data);
+
+        return temp.PlayerEventData.FirstStory;
+    }
+
     private static void DataReset()//세이브데이타 new
     {
         saveData = new();

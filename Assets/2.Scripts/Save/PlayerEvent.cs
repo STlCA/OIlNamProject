@@ -15,6 +15,9 @@ public struct Save_PlayerEvenet
     public bool GoldenPass;
     public bool DelayCoupon;
     public bool Package1;
+    public bool FirstStory;
+    public bool FirstUnitMerge;
+    public bool FirstAnswer;
 }
 
 public class PlayerEvent : Manager
@@ -31,8 +34,11 @@ public class PlayerEvent : Manager
     public static bool GoldenPass { get; private set; } = false;
     public static bool DelayCoupon { get; private set; } = false;
     public static bool Package1 { get; private set; } = false;
+    public static bool FirstStory { get; private set; } = false;
+    public static bool FirstUnitMerge { get; private set; } = false;
+    public static bool FirstAnswer { get; private set; } = false;
 
-    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2, GameObject canUseCoupon,GameObject useDelayCoupon)
+    public void CouponUISetting(TMP_InputField field, GameObject false1, GameObject false2, GameObject canUseCoupon, GameObject useDelayCoupon)
     {
         couponInput = field;
         falseCoupon = false1;
@@ -61,6 +67,8 @@ public class PlayerEvent : Manager
         }
 
         couponInput.text = "";
+
+        SaveSystem.Save();
     }
 
     private void CanDelayCoupon()
@@ -131,6 +139,20 @@ public class PlayerEvent : Manager
         Package1 = true;
     }
 
+    public void CheckFirstStory()
+    {
+        FirstStory = true;
+    }
+
+    public void CheckFirstUnitMerge()
+    {
+        FirstUnitMerge = true;
+    }
+    public void CheckFirstAnswer()
+    {
+        FirstAnswer = true;
+    }
+
     //-----------------------------------------------------SaveLoad
 
     public void Save(ref Save_PlayerEvenet saveData)
@@ -141,6 +163,9 @@ public class PlayerEvent : Manager
         saveData.GoldenPass = GoldenPass;
         saveData.DelayCoupon = DelayCoupon;
         saveData.Package1 = Package1;
+        saveData.FirstStory = FirstStory;
+        saveData.FirstAnswer = FirstAnswer;
+        saveData.FirstUnitMerge = FirstUnitMerge;
     }
 
     public void Load(Save_PlayerEvenet saveData)
@@ -151,5 +176,8 @@ public class PlayerEvent : Manager
         GoldenPass = saveData.GoldenPass;
         DelayCoupon = saveData.DelayCoupon;
         Package1 = saveData.Package1;
+        FirstStory = saveData.FirstStory;
+        FirstAnswer = saveData.FirstAnswer;
+        FirstUnitMerge = saveData.FirstUnitMerge;
     }
 }
