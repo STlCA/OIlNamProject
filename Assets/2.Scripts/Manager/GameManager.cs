@@ -238,6 +238,11 @@ public class GameManager : MonoBehaviour
     public void SetStage(int stage)
     {
         Stage = stage;
+    }    
+
+    public void SetScore(int stage)
+    {
+        BestRecord.BestScoreUpdate(stage);
     }
 
     public void SetLevelReward(Dictionary<int, bool> free, Dictionary<int, bool> golden)
