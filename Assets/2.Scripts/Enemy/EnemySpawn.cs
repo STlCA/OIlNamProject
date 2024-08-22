@@ -209,7 +209,7 @@ public class EnemySpawn : MonoBehaviour
         Destroy(gameObject);
 
         if (!isLethal)
-            lethalEnergy.ChangeEnergy(2);
+            lethalEnergy.ChangeEnergy(exp);
 
         int maxPerWave = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
 
