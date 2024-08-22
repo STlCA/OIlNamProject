@@ -48522,12 +48522,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae5d2211cfb99444aca46a50de55934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSceneManager: {fileID: 0}
+  mainSceneManager: {fileID: 822128225}
   popupImage: {fileID: 1764518398}
   popupQuantity: {fileID: 1990843562}
   popupQuantityText: {fileID: 227801845}
   descriptionText: {fileID: 1528573003}
-  popupCostIcon: {fileID: 1463955307}
+  popupCost: {fileID: 1463955307}
+  popupCostIcon: {fileID: 1463955309}
   popupCostText: {fileID: 866146366}
 --- !u!1 &1636571964
 GameObject:
