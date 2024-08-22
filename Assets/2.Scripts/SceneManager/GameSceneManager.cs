@@ -8,6 +8,7 @@ public class GameSceneManager : MonoBehaviour
 {
     public UnitSpawnController unitSpawnController;
     public HappyEnergy happyEnergy;
+    public static float CurrentTimeScale;
 
     [Header("Stage : Tile / Spirte / Way / Spawn")]
     public List<GameObject> stage1;
@@ -26,6 +27,12 @@ public class GameSceneManager : MonoBehaviour
 
     [Header("Animation")]
     public GameObject heart;
+
+    [Header("Tutorial")]
+    public GameObject mergeTutorial;
+    public RectTransform circle1;
+    public RectTransform circle2;
+    public RectTransform circle3;    
 
     private float time = 1;
     public int Ruby
@@ -154,5 +161,23 @@ public class GameSceneManager : MonoBehaviour
     public void PlayerExpUp()//ġƮŰ
     {
         GameManager.Instance.Player.ExpUp(2000);
+    }
+
+    public void MergeToturial(Vector3 unit1, Vector3 unit2, Vector3 unit3)
+    {
+        GameManager.Instance.PlayerEvent.CheckFirstUnitMerge();
+
+
+        Vector3 temp = new Vector3(unit1.x, unit1.y + 0.25f, -10);
+        circle1.transform.position = Camera.main.WorldToScreenPoint(temp);
+        temp = new Vector3(unit2.x, unit2.y+0.25f, -10);
+        circle2.transform.position = Camera.main.WorldToScreenPoint(temp);
+        temp = new Vector3(unit3.x, unit3.y + 0.25f, -10);
+        circle3.transform.position = Camera.main.WorldToScreenPoint(temp);
+
+        mergeTutorial.SetActive(true);
+
+        CurrentTimeScale = Time.timeScale;
+        Time.timeScale = 0f;
     }
 }

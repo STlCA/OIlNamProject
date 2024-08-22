@@ -23,4 +23,9 @@ public class StoryAniamtion : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public void MergeTutorialEnd()
+    {
+        Time.timeScale = GameSceneManager.CurrentTimeScale;
+        gameObject.SetActive(false);
+    }
 }
