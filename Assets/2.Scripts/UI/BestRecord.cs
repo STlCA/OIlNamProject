@@ -32,6 +32,20 @@ public class BestRecord : MonoBehaviour
         UpdateBestRecordUI(bestRecord);
     }
 
+    public void BestScoreUpdate()
+    {
+        if (GameManager.Instance.Stage == 1)
+        {
+            bestRecord = GameManager.Instance.BestScore1;
+        }
+        else
+        {
+            bestRecord = GameManager.Instance.BestScore2;
+        }
+
+        UpdateBestRecordUI(bestRecord);
+    }
+
     // 최고 기록 UI 업데이트
     public void UpdateBestRecordUI(int waveNum)
     {

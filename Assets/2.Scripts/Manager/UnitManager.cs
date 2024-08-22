@@ -272,9 +272,9 @@ public class UnitManager : Manager
     private void PercentInit()
     {
         percents = new float[3];
-        percents[0] = 3f;
-        percents[1] = 25f;
-        percents[2] = 72f;
+        percents[0] = 20f;
+        percents[1] = 30f;
+        percents[2] = 50f;
     }
 
     private void InitTierID()
