@@ -2123,7 +2123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACF5\uACA9\uC18D\uB3C4 2% \u25B2\n(\uB204\uC801 \uACF5\uACA9\uB825 \uC99D\uAC00)"
+  m_text: "\uACF5\uACA9\uC18D\uB3C4 4% \u25B2\n(\uB204\uC801 \uACF5\uACA9\uB825 \uC99D\uAC00)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bab43c7e2bdf26b4e81a9d73493e9153, type: 2}
   m_sharedMaterial: {fileID: 7013500441506914403, guid: bab43c7e2bdf26b4e81a9d73493e9153,
@@ -4864,7 +4864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -50}
+  m_AnchoredPosition: {x: 33.333332, y: -50}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323971843
@@ -7091,7 +7091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -50}
+  m_AnchoredPosition: {x: 150, y: -50}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &645857944
@@ -13640,7 +13640,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -50}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758525638
@@ -14853,7 +14853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACF5\uACA9\uB825 2% \u25B2\n(\uB204\uC801 \uACF5\uACA9\uB825 \uC99D\uAC00)"
+  m_text: "\uACF5\uACA9\uB825 4% \u25B2\n(\uB204\uC801 \uACF5\uACA9\uB825 \uC99D\uAC00)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bab43c7e2bdf26b4e81a9d73493e9153, type: 2}
   m_sharedMaterial: {fileID: 7013500441506914403, guid: bab43c7e2bdf26b4e81a9d73493e9153,
@@ -19241,6 +19241,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2505334796868677101, guid: 0e81a17f386d7c749a87b195ebde4c78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3857771787194172129, guid: 0e81a17f386d7c749a87b195ebde4c78,
         type: 3}
       propertyPath: m_Name
@@ -26319,7 +26324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1989556943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26337,7 +26342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 30, y: 10}
   m_SizeDelta: {x: 60, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989556944
@@ -26427,7 +26432,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1989556945
