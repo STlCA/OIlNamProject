@@ -286,8 +286,6 @@ public class HappyEnergy : MonoBehaviour
         //이걸부르는곳에서 gameSceneManager.unitController.BadEnergy(5);쓰기
         if (currentEnergyPercent <= 15)
         {
-            GameManager.Instance.SoundManager.EffectAudioClipPlay(11);
-
             //마물
             onBad = true;
             gameSceneManager.unitSpawnController.ATKChange(-5);
@@ -296,8 +294,6 @@ public class HappyEnergy : MonoBehaviour
         }
         else if (currentEnergyPercent <= 30)
         {
-            GameManager.Instance.SoundManager.EffectAudioClipPlay(11);
-
             //마물
             onSad = true;
             gameSceneManager.unitSpawnController.SpeedChange(5);
@@ -311,7 +307,6 @@ public class HappyEnergy : MonoBehaviour
         }
         else if (currentEnergyPercent >= 100)
         {
-            GameManager.Instance.SoundManager.EffectAudioClipPlay(7);
             gameSceneManager.heart.SetActive(true);
 
             onLove = true;
@@ -394,11 +389,28 @@ public class HappyEnergy : MonoBehaviour
 
         Time.timeScale = currentSpeed;
 
-        if (currentEnergyPercent >= 100)
-            gameSceneManager.heart.SetActive(true);
-        else
-            gameSceneManager.heart.SetActive(false);
+        CheckPercent();
     }
+
+    private void CheckPercent()
+    {
+        if (currentEnergyPercent <= 15)
+        {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(11);
+            gameSceneManager.heart.SetActive(false);
+        }
+        else if (currentEnergyPercent <= 30)
+        {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(11);
+            gameSceneManager.heart.SetActive(false);
+        }
+        else if (currentEnergyPercent >= 100)
+        {
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(7);
+            gameSceneManager.heart.SetActive(true);
+        }
+    }
+
 
     private IEnumerator CoClickFalse()
     {
