@@ -1,23 +1,32 @@
+using Constants;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BossUI : MonoBehaviour
 {
-    public List<GameObject> effects = new();
+    public BossEffectType type;
+
+    public List<GameObject> bossEffects = new();
+    public List<GameObject> lethalEffects = new();
 
     private void Start()
     {
-        StartCoroutine("CoEffectsOn");
+        if (type == BossEffectType.Boss)
+            StartCoroutine("CoBossEffectsOn");
+        else if (type == BossEffectType.Lethal)
+            lethalEffects[0].SetActive(true);
+        else
+            Debug.Log("ÀÌÆåÆ®È¿°ú¾ÈµÊ");
     }
 
-    private IEnumerator CoEffectsOn()
+    private IEnumerator CoBossEffectsOn()
     {
-        effects[0].SetActive(true);
+        bossEffects[0].SetActive(true);
         yield return new WaitForSecondsRealtime(3);
-        effects[1].SetActive(true);
+        bossEffects[1].SetActive(true);
         yield return new WaitForSecondsRealtime(1);
-        effects[2].SetActive(true);
+        bossEffects[2].SetActive(true);
         yield return new WaitForSecondsRealtime(2);
     }
 }

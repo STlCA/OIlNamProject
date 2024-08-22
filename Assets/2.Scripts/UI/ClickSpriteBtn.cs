@@ -1,6 +1,7 @@
 using Constants;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -22,7 +23,8 @@ public class ClickSpriteBtn : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
+        if(type != UnitButtonType.Close)
+            GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
 
         switch (type)
         {
@@ -38,12 +40,14 @@ public class ClickSpriteBtn : MonoBehaviour, IPointerClickHandler
             case UnitButtonType.Close:
                 if (controller.effectList.Count != 0)
                 {
+                    GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
                     controller.effectList[0].SetActive(false);
                     controller.effectList.Clear();
                 }
 
                 if (controller.onUnitPopUP.Count != 0)
                 {
+                    GameManager.Instance.SoundManager.EffectAudioClipPlay(9);
                     controller.onUnitPopUP[1].GetComponent<SortingGroup>().sortingOrder = 15;
                     controller.onUnitPopUP[0].SetActive(false);
                     controller.onUnitPopUP.Clear();

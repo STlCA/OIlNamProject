@@ -16,6 +16,7 @@ public class LethalEnergy : MonoBehaviour
     [Header("Animation")]
     public GameObject lethalBtnAnim;
     public GameObject lethalAnim;
+    public GameObject feverEffect;
 
     private string text;
     private int maxEnergy = 200;
@@ -37,7 +38,7 @@ public class LethalEnergy : MonoBehaviour
             if (energy >= maxEnergy)
             {
                 energy = maxEnergy;
-                lethalBtnAnim.SetActive(true);                
+                lethalBtnAnim.SetActive(true);
             }
             else if (energy < 0)
                 energy = 0;
@@ -96,13 +97,14 @@ public class LethalEnergy : MonoBehaviour
         gameSceneManager.unitSpawnController.ATKChange(20, false);
 
         GameManager.Instance.EnemySpawn.LethalAttack1();
-
+        feverEffect.SetActive(true);
         StartCoroutine("CoCancelLethal");
     }
 
     public IEnumerator CoCancelLethal()
     {
         yield return new WaitForSeconds(20);
+        feverEffect.SetActive(false);
         gameSceneManager.unitSpawnController.SpeedChange(20, false);
         gameSceneManager.unitSpawnController.ATKChange(-20, false);
     }
