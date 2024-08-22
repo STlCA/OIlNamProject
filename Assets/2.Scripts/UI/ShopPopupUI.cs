@@ -71,9 +71,13 @@ public class ShopPopupUI : MonoBehaviour
             {
                 GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, -itemData.itemData.Cost);
                 GameManager.Instance.MoneyChange(Constants.MoneyType.KEY, itemData.itemData.PCount1);
+                GameManager.Instance.SoundManager.EffectAudioClipPlay(1);
             }
             else
+            {
                 mainSceneManager.falseGold.SetActive(true);
+                GameManager.Instance.SoundManager.EffectAudioClipPlay(6);
+            }
         }
         // 다이아로 구매
         else if (itemData.itemData.MoneyType == 1502)
@@ -84,9 +88,13 @@ public class ShopPopupUI : MonoBehaviour
                 {
                     GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, -itemData.itemData.Cost);
                     GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, itemData.itemData.PCount1);
+                    GameManager.Instance.SoundManager.EffectAudioClipPlay(1);
                 }
                 else
+                {
                     mainSceneManager.falseDiamond.SetActive(true);
+                    GameManager.Instance.SoundManager.EffectAudioClipPlay(6);
+                }
             }
             else if (itemData.itemData.PID1 == 1504)
             {
@@ -94,9 +102,13 @@ public class ShopPopupUI : MonoBehaviour
                 {
                     GameManager.Instance.MoneyChange(Constants.MoneyType.Diamond, -itemData.itemData.Cost);
                     GameManager.Instance.UnitManager.ChangeUnitPiece(itemData.itemData.PCount1);
+                    GameManager.Instance.SoundManager.EffectAudioClipPlay(1);
                 }
                 else
+                {
                     mainSceneManager.falseDiamond.SetActive(true);
+                    GameManager.Instance.SoundManager.EffectAudioClipPlay(6);
+                }
             }
         }
         // 광고는 어떻게 해야할지 생각좀 해보자.
