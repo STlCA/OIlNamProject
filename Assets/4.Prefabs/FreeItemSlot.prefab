@@ -439,7 +439,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 25, y: 2}
-  m_SizeDelta: {x: 45, y: 45}
+  m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5105658703751819612
 CanvasRenderer:
@@ -634,6 +634,8 @@ MonoBehaviour:
   itemQuantityText: {fileID: 218913350336948662}
   itemValue: {fileID: 1754988253476983512}
   itemValueText: {fileID: 0}
+  itemCost: {fileID: 4694672259285899114}
+  itemCostIcon: {fileID: 6483615806967413544}
   itemCostText: {fileID: 5155832975041232189}
   popupUI: {fileID: 0}
 --- !u!1 &5539516993144836424
