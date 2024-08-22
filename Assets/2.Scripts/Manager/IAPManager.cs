@@ -5,6 +5,7 @@ using UnityEngine.Purchasing.Extension;
 
 public class IAPManager : MonoBehaviour, IDetailedStoreListener
 {
+    [SerializeField] private GameObject failMessage;
     private IStoreController controller;
     private IExtensionProvider extensions;
 
@@ -19,7 +20,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         builder.AddProduct("1104", ProductType.Consumable);         // 다이아 200개
         builder.AddProduct("1105", ProductType.Consumable);         // 다이아 1,200개
         builder.AddProduct("1106", ProductType.Consumable);         // 다이아 2,000개
-        builder.AddProduct("1112", ProductType.NonConsumable);         // 골든패스
+        builder.AddProduct("1112", ProductType.NonConsumable);      // 골든패스
         builder.AddProduct("1113", ProductType.Consumable);         // 켠왕 패키지 (모집권 300개, 골드 500개)
         UnityPurchasing.Initialize(this, builder);
     }
@@ -77,10 +78,16 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         if (controller != null)
         {
             if (productId == "1112" && PlayerEvent.GoldenPass)//골든패스
+            {
+                failMessage.SetActive(true);
                 return;
+            }
 
             if (productId == "1113" && PlayerEvent.Package1)
+            {
+                failMessage.SetActive(true);
                 return;
+            }
 
             controller.InitiatePurchase(productId);
         }
