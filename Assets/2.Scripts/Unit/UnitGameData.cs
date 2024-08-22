@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
@@ -22,6 +24,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
     private GameObject upgradeBtn;
     private GameObject star1;
     private GameObject star2;
+    private TMP_Text sellPrice;
 
 
     //----------------------------------------------------------------Enemy
@@ -111,6 +114,8 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
 
         sellBtn.GetComponent<ClickSpriteBtn>().Init(controller, pos);
         upgradeBtn.GetComponent<ClickSpriteBtn>().Init(controller, pos);
+
+        sellPrice = sellBtn.transform.GetChild(2).GetComponent<TMP_Text>();
 
         star1.SetActive(false);
         star2.SetActive(false);
@@ -304,6 +309,7 @@ public class UnitGameData : MonoBehaviour, IPointerClickHandler
         controller.spriteCanvas.SetActive(true);        
         controller.unitBG.SetActive(true);
         controller.UnitInfoSet(pos);
+        sellPrice.text = SellGold.ToString();
 
         if (controller.onUnitPopUP.Count != 0)
         {
