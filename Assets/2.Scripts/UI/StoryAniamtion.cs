@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class StoryAniamtion : MonoBehaviour
 {
-    public StartManager manager;
+    public StartManager manager;    
     public GameObject story;
-    public GameObject tutorial;    
+    public GameObject tutorial;        
 
     public void StoryEnd()
     {
@@ -16,7 +17,13 @@ public class StoryAniamtion : MonoBehaviour
 
     public void TutorialEnd()
     {
-        manager.SceneChange();
+        if(manager != null) 
+            manager.SceneChange();
+        else
+        {
+            GameManager.Instance.SoundManager.BGMCheck(0);
+            tutorial.SetActive(false);        
+        }
     }
 
     public void SelfEnd()
@@ -27,5 +34,10 @@ public class StoryAniamtion : MonoBehaviour
     {
         Time.timeScale = GameSceneManager.CurrentTimeScale;
         gameObject.SetActive(false);
+    }
+    public void AllEnd()
+    {
+        tutorial.SetActive(false);
+        gameObject.SetActive(true);
     }
 }

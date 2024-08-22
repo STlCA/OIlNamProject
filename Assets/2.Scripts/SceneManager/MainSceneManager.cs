@@ -254,6 +254,11 @@ public class MainSceneManager : MonoBehaviour
         GameManager.Instance.SetScore(stage);
     }
 
+    public void SoundChange(int index)
+    {
+        GameManager.Instance.SoundManager.BGMCheck(index);
+    }
+
     public void CouponCheck()
     {
         Click();
