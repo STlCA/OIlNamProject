@@ -54,6 +54,8 @@ public class UnitSpawnController : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text atkTxt;
     public TMP_Text speedTxt;
+    public GameObject star1;
+    public GameObject star2;
 
     public Dictionary<Vector3, UnitGameData> spawnData = new();
     public List<GameObject> onUnitPopUP = new();
@@ -234,7 +236,7 @@ public class UnitSpawnController : MonoBehaviour
                             count++;
                         }
                         if (count == 2)
-                            break;                        
+                            break;
                     }
                     temp.Add(key);
 
@@ -397,23 +399,39 @@ public class UnitSpawnController : MonoBehaviour
             case 1:
                 baseImage.color = new Color(0.9019608f, 0.5294118f, 0.5294118f);
                 borderImage.color = Color.red;
-                nameText.text = "<color=red>S티어 </color>" + unitData.name;
+                nameText.text = "Lv." + unitData.level + " <color=red>S티어 </color>" + unitData.name;
                 break;
             case 2:
                 baseImage.color = new Color(0.5843138f, 0.627451f, 0.9019608f);
                 borderImage.color = Color.blue;
-                nameText.text = "<color=blue>A티어 </color>" + unitData.name;
+                nameText.text = "Lv." + unitData.level + " <color=blue>A티어 </color>" + unitData.name;
                 break;
             case 3:
-                baseImage.color = Color.white;
+                baseImage.color = Color.white;                
                 borderImage.color = Color.white;
-                nameText.text = "<#525252>B티어 </color>" + unitData.name;
+                nameText.text = "Lv." + unitData.level + " <#525252>B티어 </color>" + unitData.name;
                 break;
         }
 
         unitImage.sprite = unitData.profile;
         unitImage.SetNativeSize();
-        atkTxt.text = spawnData[pos].fixAtk.ToString();
-        speedTxt.text = spawnData[pos].fixSpeed.ToString();
+        atkTxt.text = Math.Round(spawnData[pos].fixAtk,2).ToString();
+        speedTxt.text = Math.Round(spawnData[pos].fixSpeed, 2).ToString();
+
+        switch (spawnData[pos].Step)
+        {
+            case 0:
+                star1.SetActive(false);
+                star2.SetActive(false);
+                break;
+            case 1:
+                star1.SetActive(true);
+                star2.SetActive(false);
+                break;
+            case 2:
+                star1.SetActive(false);
+                star2.SetActive(true);
+                break;
+        }
     }
 }
