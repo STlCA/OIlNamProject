@@ -21,7 +21,7 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
         builder.AddProduct("1105", ProductType.Consumable);         // ´ÙÀÌ¾Æ 1,200°³
         builder.AddProduct("1106", ProductType.Consumable);         // ´ÙÀÌ¾Æ 2,000°³
         builder.AddProduct("1112", ProductType.NonConsumable);      // °ñµçÆÐ½º
-        builder.AddProduct("1113", ProductType.NonConsumable);         // ÄÒ¿Õ ÆÐÅ°Áö (¸ðÁý±Ç 300°³, °ñµå 500°³)
+        builder.AddProduct("1114", ProductType.NonConsumable);         // ÄÒ¿Õ ÆÐÅ°Áö (¸ðÁý±Ç 300°³, °ñµå 500°³)
         UnityPurchasing.Initialize(this, builder);
     }
 
@@ -57,7 +57,8 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
             case "1112"://°ñµçÆÐ½º
                 GameManager.Instance.BuyGoldenPass();
                 break;
-            case "1113"://ÄÒ¿Õ
+            case "1114"://ÄÒ¿Õ//¾÷µ¥ÀÌÆ®·Î 1113»ç¶óÁü
+                GameManager.Instance.PlayerEvent.BuyPackage1();
                 GameManager.Instance.MoneyChange(Constants.MoneyType.Gold, 500);
                 GameManager.Instance.UnitManager.ChangeUnitPiece(300);
                 break;
@@ -88,8 +89,12 @@ public class IAPManager : MonoBehaviour, IDetailedStoreListener
                 failMessage.SetActive(true);
                 return;
             }
-
-            controller.InitiatePurchase(productId);
+            else if (productId == "1113" && !PlayerEvent.Package1)
+            {
+                controller.InitiatePurchase("1114");
+            }
+            else
+                controller.InitiatePurchase(productId);
         }
         else
         {
