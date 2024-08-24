@@ -62,7 +62,11 @@ public class GameResultUI : MonoBehaviour
             // 상단 신기록 UI 출력
             else
             {
-                NewRecordText();
+                // 최고 기록이 같을 경우 최초 한번만 활성화 되도록
+                if(currentWave > bestRecord)
+                {
+                    NewRecordText();
+                }
             }
 
             // 기록 갱신
