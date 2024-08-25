@@ -1,11 +1,14 @@
 using Constants;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
 public struct Save_GameData
 {
+    public float SaveVersion;
+
     public int Gold;
     public int Key;
     public int Diamond;
@@ -82,7 +85,7 @@ public class GameManager : MonoBehaviour
             gold += value;
 
             if (gold < 0)
-                Debug.Log("¹ö±×¹ß»ý °ñµå°¡ 0¹ØÀ¸·Î ¶³¾îÁü");            
+                Debug.Log("¹ö±×¹ß»ý °ñµå°¡ 0¹ØÀ¸·Î ¶³¾îÁü");
 
             uiMnager.MoneyTypeUpdate(MoneyType.Gold, gold);
         }
@@ -127,6 +130,11 @@ public class GameManager : MonoBehaviour
     private int diamond;
 
     //================================================
+
+
+    public float UpdateVersion = 0f;
+    private float saveVersion;
+    private bool isUpdate;
 
     public int Stage { get; private set; } = 1;
 
@@ -173,8 +181,25 @@ public class GameManager : MonoBehaviour
         //FirstStory
         if (!PlayerEvent.FirstStory)
             playerEvent.CheckFirstStory();
+
+        UpdateVersion = 1.09f;
     }
 
+    private void Start()
+    {
+        if (isUpdate)
+            VersionUpdate();
+    }
+
+    public void VersionUpdate()
+    {
+        isUpdate = false;
+
+        if (saveVersion < 1.09f && BestScore2 > 0)
+        {
+            BestScore2 = 0;
+        }
+    }
 
     private void Update()
     {
@@ -238,7 +263,7 @@ public class GameManager : MonoBehaviour
     public void SetStage(int stage)
     {
         Stage = stage;
-    }    
+    }
 
     public void SetScore(int stage)
     {
@@ -256,14 +281,14 @@ public class GameManager : MonoBehaviour
         //»ç±â
         SoundManager.EffectAudioClipPlay(EffectList.Recall);
         PlayerEvent.BuyGoldenPass();
-        LevelReward.GoldenPassSetting();        
+        LevelReward.GoldenPassSetting();
     }
-
-
 
     //------------------------------------------------------------Save
     public void Save(ref Save_GameData saveData)
     {
+        saveData.SaveVersion = UpdateVersion;
+
         saveData.Gold = Gold;
         saveData.Key = Key;
         saveData.Diamond = Diamond;
@@ -285,12 +310,17 @@ public class GameManager : MonoBehaviour
 
     public void Load(Save_GameData saveData)
     {
+        saveVersion = saveData.SaveVersion;
+
         Gold = saveData.Gold;
         Key = saveData.Key;
         Diamond = saveData.Diamond;
 
         BestScore1 = saveData.Stage1BestScore;
         BestScore2 = saveData.Stage2BestScore;
+
+        if (saveVersion < UpdateVersion)
+            isUpdate = true;
     }
 
     public void Load(Save_LevelReward saveData)
