@@ -3460,7 +3460,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 0}
-  monsterArea: {fileID: 948364395}
+  monsterArea1: {fileID: 948364395}
+  monsterArea2: {fileID: 173459407}
 --- !u!1 &224232633
 GameObject:
   m_ObjectHideFlags: 0
@@ -15778,7 +15779,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 0}
-  monsterArea: {fileID: 0}
+  monsterArea1: {fileID: 0}
+  monsterArea2: {fileID: 0}
 --- !u!1 &928951739
 GameObject:
   m_ObjectHideFlags: 0
@@ -37812,7 +37814,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 0}
-  monsterArea: {fileID: 0}
+  monsterArea1: {fileID: 0}
+  monsterArea2: {fileID: 0}
 --- !u!1 &3773338620188115980
 GameObject:
   m_ObjectHideFlags: 0
@@ -50475,7 +50478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 0}
-  monsterArea: {fileID: 0}
+  monsterArea1: {fileID: 0}
+  monsterArea2: {fileID: 0}
 --- !u!224 &8072158364165655364
 RectTransform:
   m_ObjectHideFlags: 0

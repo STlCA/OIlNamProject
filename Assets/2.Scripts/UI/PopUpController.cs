@@ -9,7 +9,8 @@ public class PopUpController : MonoBehaviour
     private float currentTimeScale;
 
     public GameObject Result;
-    public GameObject monsterArea = null;
+    public GameObject monsterArea1 = null;
+    public GameObject monsterArea2 = null;
 
     private void Start()
     {
@@ -105,7 +106,11 @@ public class PopUpController : MonoBehaviour
 
     public void SelfSetActive()
     {
-        monsterArea.SetActive(false);
+        if (GameManager.Instance.Stage == 1)
+            monsterArea1.SetActive(false);
+        else if (GameManager.Instance.Stage == 2)
+            monsterArea2.SetActive(false);
+
         transform.parent.gameObject.SetActive(false);
     }
 

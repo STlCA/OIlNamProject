@@ -2499,7 +2499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VER.1.07
+  m_text: VER.1.09
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a7caffeeef08bde4cb444adc9237b1e7, type: 2}
   m_sharedMaterial: {fileID: 616585381604430723, guid: a7caffeeef08bde4cb444adc9237b1e7,
@@ -4261,7 +4261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Result: {fileID: 0}
-  monsterArea: {fileID: 0}
+  monsterArea1: {fileID: 0}
+  monsterArea2: {fileID: 0}
 --- !u!1 &1559334544
 GameObject:
   m_ObjectHideFlags: 0
