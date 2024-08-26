@@ -30,6 +30,9 @@ public class DataManager : Manager
     // 재화
     public DataTable_GoodsLoader dataTable_GoodsLoader;
 
+    // 스크립트
+    public DataTable_TalkLoader dataTable_TalkLoader;
+
     private void Awake()
     {
         EnemyAwake();
@@ -43,6 +46,7 @@ public class DataManager : Manager
         ShopAwake();
         GoodsAwake();
         LevelPassAwake();
+        TalkAwake();
     }
 
     private void EnemyAwake()
@@ -111,5 +115,10 @@ public class DataManager : Manager
     private void LevelPassAwake()
     {
         dataTable_LevelPassLoader = new DataTable_LevelPassLoader();
+    }
+
+    private void TalkAwake()
+    {
+        dataTable_TalkLoader = new DataTable_TalkLoader();
     }
 }
