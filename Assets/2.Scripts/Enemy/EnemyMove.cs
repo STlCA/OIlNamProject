@@ -26,7 +26,7 @@ public class EnemyMove : MonoBehaviour
     public void Init(int enemyID, int bossID, Transform[] _wayPoints, bool isBoss = false)
     {
         enemy = GetComponent<Enemy>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
         if (!isBoss)
         {

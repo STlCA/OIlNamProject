@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
 
         // Script
         enemyMove = GetComponent<EnemyMove>();
-        image = GetComponent<SpriteRenderer>();
+        image = GetComponentInChildren<SpriteRenderer>();
         //enemyHPBar = enemyHpSliderUI.GetComponent<EnemyHPBar>();
         //gameManager = GameManager.Instance;
         //dataManager = gameManager.DataManager;
