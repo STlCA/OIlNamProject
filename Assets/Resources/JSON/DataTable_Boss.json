@@ -4,7 +4,7 @@
       "key": 501,
       "Name": "보스1",
       "Speed": 1,
-      "Exp": 10,
+      "Exp": 50,
       "PlayGoods": 100,
       "Path": "Boss/Boss01",
       "Anim": "Boss/Boss01Anim"
@@ -13,7 +13,7 @@
       "key": 502,
       "Name": "보스2",
       "Speed": 1,
-      "Exp": 10,
+      "Exp": 50,
       "PlayGoods": 200,
       "Path": "Boss/Boss02",
       "Anim": "Boss/Boss02Anim"
@@ -22,7 +22,7 @@
       "key": 503,
       "Name": "보스3",
       "Speed": 1,
-      "Exp": 10,
+      "Exp": 50,
       "PlayGoods": 300,
       "Path": "Boss/Boss03",
       "Anim": "Boss/Boss03Anim"
@@ -31,7 +31,7 @@
       "key": 504,
       "Name": "보스4",
       "Speed": 1,
-      "Exp": 10,
+      "Exp": 50,
       "PlayGoods": 400,
       "Path": "Boss/Boss04",
       "Anim": "Boss/Boss04Anim"
@@ -40,10 +40,55 @@
       "key": 505,
       "Name": "보스5",
       "Speed": 1,
-      "Exp": 10,
+      "Exp": 50,
       "PlayGoods": 0,
       "Path": "Boss/Boss05",
       "Anim": "Boss/Boss05Anim"
+    },
+    {
+      "key": 506,
+      "Name": "보스6",
+      "Speed": 1,
+      "Exp": 50,
+      "PlayGoods": 100,
+      "Path": "Boss/Boss06",
+      "Anim": "Boss/Boss06Anim"
+    },
+    {
+      "key": 507,
+      "Name": "보스7",
+      "Speed": 1,
+      "Exp": 50,
+      "PlayGoods": 200,
+      "Path": "Boss/Boss07",
+      "Anim": "Boss/Boss07Anim"
+    },
+    {
+      "key": 508,
+      "Name": "보스8",
+      "Speed": 1,
+      "Exp": 50,
+      "PlayGoods": 300,
+      "Path": "Boss/Boss08",
+      "Anim": "Boss/Boss08Anim"
+    },
+    {
+      "key": 509,
+      "Name": "보스9",
+      "Speed": 1,
+      "Exp": 50,
+      "PlayGoods": 400,
+      "Path": "Boss/Boss09",
+      "Anim": "Boss/Boss09Anim"
+    },
+    {
+      "key": 510,
+      "Name": "보스10",
+      "Speed": 1,
+      "Exp": 50,
+      "PlayGoods": 0,
+      "Path": "Boss/Boss10",
+      "Anim": "Boss/Boss10Anim"
     }
   ]
 }
