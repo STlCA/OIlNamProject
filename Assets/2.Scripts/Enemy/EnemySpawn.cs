@@ -71,7 +71,7 @@ public class EnemySpawn : MonoBehaviour
         waveUI.Init();
 
         int maxPerWave = chapterDatabase.GetByKey(waveUI.currentWave).EnemyCount;
-        StartCoroutine(SpawnEnemy(maxPerWave, 1));
+        StartCoroutine(SpawnEnemy(maxPerWave, waveUI.currentStageWave));
     }
 
     // SpawnPoint에서 마물 생성
@@ -99,7 +99,7 @@ public class EnemySpawn : MonoBehaviour
 
         //enemyMove = enemyPrefab.GetComponent<EnemyMove>();
         //enemyMove.Init(wayPoints);
-
+        
         int chapterID = waveNum;
         int enemyID = chapterDatabase.GetByKey(chapterID).SpawnEnemy;
         int bossID = chapterDatabase.GetByKey(chapterID).SpawnBoss;
@@ -109,6 +109,7 @@ public class EnemySpawn : MonoBehaviour
 
         if (!isBoss)
         {
+            // 일반 마물일 때
             if (enemyID > -1)
             {
                 enemy.Init(enemyID, chapterID, gameSceneManager, dataManager);//수정
@@ -118,6 +119,7 @@ public class EnemySpawn : MonoBehaviour
         }
         else
         {
+            // 보스일 때
             if (bossID > -1)
             {
                 // 보스 등장 팝업
@@ -155,7 +157,7 @@ public class EnemySpawn : MonoBehaviour
         {
             tooManyEnemy = false;
         }
-
+        
         UpdateEnemyCountUI();
     }
 

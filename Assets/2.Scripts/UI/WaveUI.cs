@@ -20,6 +20,7 @@ public class WaveUI : MonoBehaviour
     private int atkPlus;//수정
     private int speedPlus;//수정
     int ruby;
+    public int currentStageWave;
     //private void Start()
     //{
     //    if (GameManager.Instance != null)
@@ -48,6 +49,15 @@ public class WaveUI : MonoBehaviour
 
         ruby = chapterDatabase.GetByKey(currentWave).Gold;
 
+        if (GameManager.Instance.Stage == 1)
+        {
+            currentStageWave = currentWave;
+        }
+        else
+        {
+            currentStageWave = currentWave + 100;
+        }
+
         StartWave();
     }
 
@@ -65,9 +75,9 @@ public class WaveUI : MonoBehaviour
     {
         //int ruby = chapterDatabase.GetByKey(currentWave).Gold;
 
-        if(atkPlus > 0)
+        if (atkPlus > 0)
         {
-            gameSceneManager.unitSpawnController.ATKChange(-atkPlus,false,true);
+            gameSceneManager.unitSpawnController.ATKChange(-atkPlus, false, true);
             gameSceneManager.unitSpawnController.SpeedChange(speedPlus, false, true);
             gameSceneManager.unitSpawnController.wavePlus.SetActive(false);
             gameSceneManager.unitSpawnController.waveSpeedPlus.SetActive(false);
@@ -83,14 +93,14 @@ public class WaveUI : MonoBehaviour
 
             if (atkPlus == 2)//공증2퍼 = 누적
             {
-                gameSceneManager.unitSpawnController.ATKChange(atkPlus, true,false);
+                gameSceneManager.unitSpawnController.ATKChange(atkPlus, true, false);
                 gameSceneManager.unitSpawnController.SpeedChange(-speedPlus, true, false);
                 atkPlus = 0;
                 speedPlus = 0;
             }
             else //일시적
             {
-                gameSceneManager.unitSpawnController.ATKChange(atkPlus,false,true);
+                gameSceneManager.unitSpawnController.ATKChange(atkPlus, false, true);
                 gameSceneManager.unitSpawnController.SpeedChange(-speedPlus, false, true);
             }
         }
@@ -110,6 +120,15 @@ public class WaveUI : MonoBehaviour
 
 
         currentWave++;
+        //currentStageWave++;
+        if (GameManager.Instance.Stage == 1)
+        {
+            currentStageWave = currentWave;
+        }
+        else
+        {
+            currentStageWave = currentWave + 100;
+        }
 
         // 넘어갈 다음 Wave가 있을 때
         if (currentWave <= maxWave)
@@ -118,8 +137,8 @@ public class WaveUI : MonoBehaviour
             gameSceneManager.ChangeRuby(ruby);
 
             int tmpWave = currentWave % 10;
-            int setTime = chapterDatabase.GetByKey(currentWave).Time;
-            int daughterWave = chapterDatabase.GetByKey(currentWave).Message;
+            int setTime = chapterDatabase.GetByKey(currentStageWave).Time;
+            int daughterWave = chapterDatabase.GetByKey(currentStageWave).Message;
 
             UpdateWaveUI();
 
@@ -135,13 +154,23 @@ public class WaveUI : MonoBehaviour
             // 다음이 일반 Wave일 때
             if (tmpWave != 0)
             {
-                if (isBossWave && currentWave < 30)
+                // 1 스테이지 BGM
+                if (isBossWave && currentStageWave < 30)
                 {
                     GameManager.Instance.SoundManager.BGMChange(2);
                 }
-                else if (isBossWave && currentWave > 30)
+                else if (isBossWave && currentStageWave > 30 && currentStageWave < 100)
                 {
                     GameManager.Instance.SoundManager.BGMChange(3);
+                }
+                // 2 스테이지 BGM
+                if (isBossWave && currentStageWave < 130)
+                {
+                    GameManager.Instance.SoundManager.BGMChange(9);
+                }
+                else if (isBossWave && currentStageWave > 130)
+                {
+                    GameManager.Instance.SoundManager.BGMChange(10);
                 }
 
                 isBossWave = false;
@@ -149,31 +178,39 @@ public class WaveUI : MonoBehaviour
                 // wave 안내 팝업
                 //StartCoroutine(wavePopUp.PopUp(currentWave.ToString() + " WAVE 시작!", Color.yellow));
 
-                int enemyCount = chapterDatabase.GetByKey(currentWave).EnemyCount;
+                int enemyCount = chapterDatabase.GetByKey(currentStageWave).EnemyCount;
 
                 timerUI.SetTimer(setTime);
-                enemySpawn.RestartSpawnEnemy(enemyCount, currentWave);
+                enemySpawn.RestartSpawnEnemy(enemyCount, currentStageWave);
             }
             // 다음이 보스 Wave일 때
             else if (tmpWave == 0/* && currentWave != 50*/)
             {
-                // 보스 BGM 재생
-                if (currentWave != 50)
+                // 1 스테이지 보스 BGM 재생
+                if (currentStageWave != 50 && currentStageWave < 100)
                 {
-                    //GameManager.Instance.SoundManager.EffectAudioClipPlay(4);
                     GameManager.Instance.SoundManager.BGMChange(5);
+                }
+                else if (currentStageWave == 50)
+                {
+                    GameManager.Instance.SoundManager.BGMChange(4);
+                }
+                // 2 스테이지 보스 BGM 재생
+                else if (currentStageWave != 150 && currentStageWave > 100)
+                {
+                    GameManager.Instance.SoundManager.BGMChange(11);
                 }
                 else
                 {
-                    GameManager.Instance.SoundManager.BGMChange(4);
+                    GameManager.Instance.SoundManager.BGMChange(12);
                 }
 
                 isBossWave = true;
 
-                int bossCount = chapterDatabase.GetByKey(currentWave).BossCount;
+                int bossCount = chapterDatabase.GetByKey(currentStageWave).BossCount;
 
                 timerUI.SetTimer(setTime);
-                enemySpawn.RestartSpawnEnemy(bossCount, currentWave, true);
+                enemySpawn.RestartSpawnEnemy(bossCount, currentStageWave, true);
             }
             // 다음이 50 Wave일 때
             //else
