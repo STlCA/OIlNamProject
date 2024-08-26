@@ -102,7 +102,14 @@ public class GameSceneManager : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.SoundManager.SourceSet(bgmSource, effectSource, gameSource);
-            GameManager.Instance.SoundManager.BGMChange(2);
+            if(GameManager.Instance.Stage == 1)
+            {
+                GameManager.Instance.SoundManager.BGMChange(2);
+            }
+            else
+            {
+                GameManager.Instance.SoundManager.BGMChange(9);
+            }
         }
 
     }
