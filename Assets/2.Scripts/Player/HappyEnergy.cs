@@ -261,18 +261,24 @@ public class HappyEnergy : MonoBehaviour
             onBad = false;
             gameSceneManager.unitSpawnController.ATKChange(5);
             gameSceneManager.unitSpawnController.SpeedChange(-10);
+
+            gameSceneManager.unitSpawnController.sadPlus.SetActive(false);
             //gameSceneManager.unitController.PlusSpeed(-5, PlusChangeType.NormalChange, false);
         }
         else if (onSad)
         {
             onBad = false;
             gameSceneManager.unitSpawnController.SpeedChange(-5);
+
+            gameSceneManager.unitSpawnController.sadPlus.SetActive(false);
             //gameSceneManager.unitController.PlusSpeed(-5, PlusChangeType.NormalChange, false);
         }
         else if (onHappy)
         {
             onHappy = false;
             gameSceneManager.unitSpawnController.ATKChange(-10);
+
+            gameSceneManager.unitSpawnController.happyPlus.SetActive(false);
             //gameSceneManager.unitController.PlusATK(-10, PlusChangeType.NormalChange, false);
 
         }
@@ -282,6 +288,8 @@ public class HappyEnergy : MonoBehaviour
             onLove = false;
             gameSceneManager.unitSpawnController.ATKChange(-20);
             gameSceneManager.unitSpawnController.SpeedChange(10);
+
+            gameSceneManager.unitSpawnController.happyPlus.SetActive(false);
             //gameSceneManager.unitController.PlusATK(-30, PlusChangeType.NormalChange, false);
         }
 
@@ -289,7 +297,9 @@ public class HappyEnergy : MonoBehaviour
         //이걸부르는곳에서 gameSceneManager.unitController.BadEnergy(5);쓰기
         if (currentEnergyPercent <= 15)
         {
-            //마물
+            gameSceneManager.unitSpawnController.sadPlus.SetActive(true);
+            gameSceneManager.unitSpawnController.sadTxt.text = "[딸의 미움]\n공격력 5%▼ \n공격속도 10% ▼";
+
             onBad = true;
             gameSceneManager.unitSpawnController.ATKChange(-5);
             gameSceneManager.unitSpawnController.SpeedChange(10);
@@ -297,13 +307,18 @@ public class HappyEnergy : MonoBehaviour
         }
         else if (currentEnergyPercent <= 30)
         {
-            //마물
+            gameSceneManager.unitSpawnController.sadPlus.SetActive(true);
+            gameSceneManager.unitSpawnController.sadTxt.text = "[딸의 슬픔]\n공격속도 5% ▼";
+
             onSad = true;
             gameSceneManager.unitSpawnController.SpeedChange(5);
             //gameSceneManager.unitController.PlusSpeed(5, PlusChangeType.NormalChange, false);
         }
         else if (75 <= currentEnergyPercent && currentEnergyPercent < 100)
         {
+            gameSceneManager.unitSpawnController.happyPlus.SetActive(true);
+            gameSceneManager.unitSpawnController.happyTxt.text = "[딸의 응원 <행복>]\n공격력 10% ▲";
+
             onHappy = true;
             gameSceneManager.unitSpawnController.ATKChange(10);
             //gameSceneManager.unitController.PlusATK(10, PlusChangeType.NormalChange, false);
@@ -311,6 +326,8 @@ public class HappyEnergy : MonoBehaviour
         else if (currentEnergyPercent >= 100)
         {
             gameSceneManager.heart.SetActive(true);
+            gameSceneManager.unitSpawnController.happyPlus.SetActive(true);
+            gameSceneManager.unitSpawnController.happyTxt.text = "[딸의 응원 <사랑>]\n공격력 20% ▲\n공격속도 10% ▲";
 
             onLove = true;
             gameSceneManager.unitSpawnController.ATKChange(20);

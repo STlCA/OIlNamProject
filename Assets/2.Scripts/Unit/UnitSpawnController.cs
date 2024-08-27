@@ -27,7 +27,11 @@ public class UnitSpawnController : MonoBehaviour
     public GameObject fixPlus;
     public TMP_Text fixTxt;
     public TMP_Text fixTxt2;
-    public GameObject waveSpeedPlus;
+    public GameObject lethalPlus;
+    public GameObject happyPlus;
+    public TMP_Text happyTxt;
+    public GameObject sadPlus;
+    public TMP_Text sadTxt;
 
     public List<GameObject> effectList = new();//clickspritebtn스크립트에서 씀
     private int fixStack = 0;
@@ -377,7 +381,6 @@ public class UnitSpawnController : MonoBehaviour
         if (isWave)
         {
             wavePlus.SetActive(true);
-            waveSpeedPlus.SetActive(true);
         }
         if (isFixChange && val > 0)
         {

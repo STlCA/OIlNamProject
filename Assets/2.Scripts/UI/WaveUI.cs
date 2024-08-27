@@ -80,7 +80,6 @@ public class WaveUI : MonoBehaviour
             gameSceneManager.unitSpawnController.ATKChange(-atkPlus, false, true);
             gameSceneManager.unitSpawnController.SpeedChange(speedPlus, false, true);
             gameSceneManager.unitSpawnController.wavePlus.SetActive(false);
-            gameSceneManager.unitSpawnController.waveSpeedPlus.SetActive(false);
             atkPlus = 0;
             speedPlus = 0;
         }
@@ -91,7 +90,7 @@ public class WaveUI : MonoBehaviour
             atkPlus = gameSceneManager.happyEnergy.atkValue;
             speedPlus = gameSceneManager.happyEnergy.speedValue;
 
-            if (atkPlus == 2)//공증2퍼 = 누적
+            if (atkPlus == 4)//공증4퍼 = 누적
             {
                 gameSceneManager.unitSpawnController.ATKChange(atkPlus, true, false);
                 gameSceneManager.unitSpawnController.SpeedChange(-speedPlus, true, false);

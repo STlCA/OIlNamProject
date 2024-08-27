@@ -99,12 +99,16 @@ public class LethalEnergy : MonoBehaviour
         GameManager.Instance.EnemySpawn.LethalAttack1();
 
         feverEffect.SetActive(true);
+        gameSceneManager.unitSpawnController.lethalPlus.SetActive(true) ;        
+
         StartCoroutine("CoCancelLethal");
     }
 
     public IEnumerator CoCancelLethal()
     {
         yield return new WaitForSeconds(20);
+
+        gameSceneManager.unitSpawnController.lethalPlus.SetActive(false);
         feverEffect.SetActive(false);
         gameSceneManager.unitSpawnController.SpeedChange(20, false);
         gameSceneManager.unitSpawnController.ATKChange(-20, false);
