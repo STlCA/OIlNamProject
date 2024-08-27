@@ -275,6 +275,7 @@ public class EnemySpawn : MonoBehaviour
         else
         {
             gameResultUI.PrintRecord(waveUI.currentWave, gameManager.BestScore2, true);
+            gameManager.onEnding = true;
         }
         gameResultUI.GetReward(waveUI.currentWave);
         gameResultUI.RestartButtonActivation(false);

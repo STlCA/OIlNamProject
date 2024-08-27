@@ -137,6 +137,7 @@ public class GameManager : MonoBehaviour
     private bool isUpdate;
 
     public int Stage { get; private set; } = 1;
+    public bool onEnding = false;
 
     public Dictionary<int, bool> GetFree { get; private set; } = new(); //저장
     public Dictionary<int, bool> GetGolden { get; private set; } = new(); //저장

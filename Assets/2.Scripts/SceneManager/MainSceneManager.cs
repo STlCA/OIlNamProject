@@ -63,6 +63,7 @@ public class MainSceneManager : MonoBehaviour
     public Image fadeImage;
     public Slider slider;
     public GameObject nameFalse;
+    public GameObject ending;
 
     [Header("FalseUI")]
     public GameObject falseCoupon;//번호틀림
@@ -87,6 +88,13 @@ public class MainSceneManager : MonoBehaviour
 
         if (goldTxt != null)
             Init();
+
+        if(GameManager.Instance.onEnding)
+        {
+            GameManager.Instance.SoundManager.BGMSource.Stop();
+            GameManager.Instance.onEnding = false;
+            ending.SetActive(true);
+        }
     }
 
     public void Init()
